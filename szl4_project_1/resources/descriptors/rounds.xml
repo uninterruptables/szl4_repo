@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<round-root>
+	<round id='0'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>0</elf>
+		<hobbit>10</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='1'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>5</elf>
+		<hobbit>5</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='2'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>5</elf>
+		<hobbit>7</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='3'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>10</elf>
+		<hobbit>10</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='4'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>0</elf>
+		<hobbit>0</hobbit>
+		<boss applied='true'>Legolas</boss>
+	</round>
+	<round id='5'>
+		<human>0</human>
+		<dwarf>3</dwarf>
+		<elf>7</elf>
+		<hobbit>7</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='6'>
+		<human>0</human>
+		<dwarf>5</dwarf>
+		<elf>10</elf>
+		<hobbit>10</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='7'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>0</elf>
+		<hobbit>0</hobbit>
+		<boss applied='true'>Gimli</boss>
+	</round>
+	<round id='8'>
+		<human>5</human>
+		<dwarf>7</dwarf>
+		<elf>10</elf>
+		<hobbit>10</hobbit>
+		<boss applied='false' />
+	</round>
+	<round id='9'>
+		<human>0</human>
+		<dwarf>0</dwarf>
+		<elf>0</elf>
+		<hobbit>0</hobbit>
+		<boss applied='true'>Aragorn</boss>
+	</round>
+</round-root>
