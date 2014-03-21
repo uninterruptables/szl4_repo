@@ -1,6 +1,6 @@
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
-import szl4.uninterruptables.gamespace.Tower.Missile;
+import team.uninter.mordorq.gamespace.Tower.Missile;
 
 public interface Vulnerable {
 	void interactWith(EnemyTroop troop);

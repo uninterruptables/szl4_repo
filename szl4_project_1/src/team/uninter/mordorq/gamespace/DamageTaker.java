@@ -1,4 +1,4 @@
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
 @SuppressWarnings("serial")
 abstract public class DamageTaker extends GameObject 

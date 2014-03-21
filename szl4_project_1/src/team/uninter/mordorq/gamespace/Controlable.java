@@ -1,12 +1,9 @@
 /**
  * Controlable.java
  */
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
-/**
- * 
- * @author redcloud
- */
+
 public interface Controlable {
 	void controlIt();
 	boolean isActive();

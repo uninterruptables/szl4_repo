@@ -1,15 +1,12 @@
 /**
  * GameObject.java
  */
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * @author redcloud
- *
- */
+
 @SuppressWarnings("serial")
 public abstract class GameObject extends JPanel{
 

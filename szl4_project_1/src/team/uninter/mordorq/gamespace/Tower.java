@@ -1,6 +1,6 @@
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
-import szl4.uninterruptables.gamespace.Tower.Missile.MissileState;
+import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget 

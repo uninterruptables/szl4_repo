@@ -1,6 +1,6 @@
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
-public interface TargetProvider {
+public interface TargetPublisher {
 
 	void attach(TargetSubscriber subscriber);
 	void detach(TargetSubscriber subscriber);

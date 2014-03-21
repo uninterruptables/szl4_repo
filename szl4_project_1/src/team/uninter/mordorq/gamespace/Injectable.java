@@ -1,4 +1,4 @@
-package szl4.uninterruptables.gamespace;
+package team.uninter.mordorq.gamespace;
 
 public interface Injectable {
 	boolean canInjectOn(Tower tower);
