@@ -26,10 +26,19 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 	private static TroopStepSimulator instance = null;
 	private static Object syncObject = new Object();
 	
+	/**
+	 * Public constructor for setting the default configuration.
+	 * */
 	protected TroopStepSimulator(){
 		super.configuration = TroopStepAlias.DEFAULT;
 	}
 		
+	/**
+	 * Factory method for creating the instance on-demand or getting
+	 * the existing one.
+	 * 
+	 * @return the only <code>TroopStepSimulator</code> instance
+	 * */
 	public static TroopStepSimulator getInstance(){
 		if(instance == null){
 			synchronized(syncObject){
@@ -39,6 +48,12 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		return instance;
 	}
 	
+	/**
+	 * Sets up the simulation environment according to the configuration set previously,
+	 * then runs the simulation.
+	 * 
+	 * @throws Exception if some error occure (some precondition violation)
+	 * */
 	@Override
 	public void simulate() throws Exception{
 		EnemyTroop human = new Human();
@@ -76,6 +91,13 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		if(human.isActive()) human.controlIt();
 	}
 	
+	/**
+	 * Configures the  <code>TroopStepSimulator</code> instance for a simulation.
+	 * The modification will be visible only in the next simulation.
+	 * 
+	 * @param  alias preferably a <code>TroopStepAlias</code> instance
+	 * @throws UnsupportedConfigurationException in case the given instance is not a <code>TroopStepAlias</code>
+	 * */
 	@Override
 	void configureFor(ConfigurationAlias alias) 
 			throws UnsupportedConfigurationException {

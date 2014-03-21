@@ -50,11 +50,13 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "4":
-					//TODO:
+					simulatable = TroopStepSimulator.getInstance();
 					runSimulation();
 					break;
 				case "5":
-					//TODO:
+					simulatable = TroopStepSimulator.getInstance();
+					((TroopStepSimulator)simulatable)
+						.configureFor(TroopStepSimulator.TroopStepAlias.TRAP_AFFECTS);
 					runSimulation();
 					break;
 				case "6":
@@ -62,7 +64,9 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "7":
-					//TODO:
+					simulatable = TroopStepSimulator.getInstance();
+					((TroopStepSimulator)simulatable)
+						.configureFor(TroopStepSimulator.TroopStepAlias.TOWER_FIRES);
 					runSimulation();
 					break;
 				case "8":
@@ -78,7 +82,9 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "11":
-					//TODO:
+					simulatable = TroopStepSimulator.getInstance();
+					((TroopStepSimulator)simulatable)
+						.configureFor(TroopStepSimulator.TroopStepAlias.DAMAGES_MOUNTAIN);
 					runSimulation();
 					break;
 				default: printUsage();
