@@ -37,9 +37,10 @@ public class MordorFrame extends JFrame{
 	protected MordorFrame(String filePath) throws IOException {
 		super("Mordor Quest");
 		//TODO:
-		System.out.println("in MordorFrame.MordorFrame()");
+		System.out.println("MordorFrame.MordorFrame(String) called");
 		scene = new Scene.Builder(this).filePath(filePath).build();
 		initWidgets();
+		System.out.println("MordorFrame.MordorFrame(String) returned");
 	}
 	
 	/**
@@ -48,10 +49,11 @@ public class MordorFrame extends JFrame{
 	 * */
 	private void initWidgets(){
 		//TODO:
-		System.out.println("in MordorFrame.initWidgets()");
+		System.out.println("MordorFrame.initWidgets(): void called");
 		userManaField = new JTextField();
 		userManaField.setEditable(false);
 		userManaField.setText("1000");
+		System.out.println("MordorFrame.initWidgets(): void returned");
 	}
 	
 	/**
@@ -63,8 +65,10 @@ public class MordorFrame extends JFrame{
 	 * */
 	public static MordorFrame newInstance() throws IOException {
 		//TODO:
-		System.out.println("in MordorFrame.newInstance()");
-		return new MordorFrame(DEFAULT_FILE_PATH);
+		System.out.println("MordorFrame.newInstance(): MordorFrame called");
+		MordorFrame frame = new MordorFrame(DEFAULT_FILE_PATH);
+		System.out.println("MordorFrame.newInstance(): MordorFrame returned");
+		return frame;
 	}
 	
 	/**
@@ -76,8 +80,10 @@ public class MordorFrame extends JFrame{
 	 * */
 	public static MordorFrame newInstance(String filePath) throws IOException{
 		//TODO:
-		System.out.println("in MordorFrame.newInstance()");
-		return new MordorFrame(filePath);
+		System.out.println("MordorFrame.newInstance(String): MordorFrame called");
+		MordorFrame frame = new MordorFrame(filePath);
+		System.out.println("MordorFrame.newInstance(String): MordorFrame returned");
+		return frame;
 	}
 	
 	/**
@@ -87,7 +93,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public int getUserMana(){
 		//TODO:
-		System.out.println("in MordorFrame.getUserMana()");
+		System.out.println("MordorFrame.getUserMana(): int called");
+		System.out.println("MordorFrame.getUserMana(): int returned");
 		return Integer.parseInt(userManaField.getText());
 	}
 	
@@ -98,8 +105,9 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void setUserMana(int mana){
 		//TODO:
-		System.out.println("in MordorFrame.setUserMana()");
+		System.out.println("MordorFrame.setUserMana(int): void called");
 		userManaField.setText(Integer.toString(mana));
+		System.out.println("MordorFrame.setUserMana(int): void returned");
 	}
 	
 	

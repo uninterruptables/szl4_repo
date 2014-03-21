@@ -44,9 +44,12 @@ public class Scene extends JPanel{
 	 * */
 	protected Scene(MordorFrame owner, List<TerrainGrid> grids){
 		super();
+		//TODO:
+		System.out.println("Scene.Scene(MordorFrame, List) called");
 		this.owner = owner;
 		this.grids = grids;
 		this.towers = new ArrayList<Tower>();
+		System.out.println("Scene.Scene(MordorFrame, List) returned");
 	}
 	
 	/**
@@ -63,7 +66,10 @@ public class Scene extends JPanel{
 		 * in which the <code>Scene</code> is going to take place.
 		 * */
 		public Builder(MordorFrame owner){
+			//TODO:
+			System.out.println("Scene.Builder.Builder(MordorFrame) called");
 			this.owner = owner;
+			System.out.println("Scene.Builder.Builder(MordorFrame) returned");
 		}
 		
 		/**
@@ -74,7 +80,10 @@ public class Scene extends JPanel{
 		 * @return the current <code>Builder</code> instance being configured
 		 * */
 		public Builder filePath(String filePath){
+			//TODO:
+			System.out.println("Scene.Builder.filePath(String): Builder called");
 			this.filePath=filePath;
+			System.out.println("Scene.Builder.filePath(String): Builder returned");
 			return this;
 		}
 		
@@ -85,7 +94,10 @@ public class Scene extends JPanel{
 		 * @return a new instance of <code>Sceen</code>
 		 * */
 		public Scene build() throws IOException {
+			//TODO:
+			System.out.println("Scene.Builder.build(): Scene called");
             List<TerrainGrid> grids = buildScene();
+            System.out.println("Scene.Builder.build(): Scene returned");
 			return new Scene(owner, grids);
 		}
 		
@@ -97,6 +109,8 @@ public class Scene extends JPanel{
 		 * @return a list of <>TerrainGrid</code>
 		 * */
 		private List<TerrainGrid> buildScene() throws IOException {
+			//TODO:
+			System.out.println("Scene.Builder.buildScene(): List<TerrainGrids> called");
 			List<TerrainGrid> grids = new ArrayList<TerrainGrids>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
 			int width, height;
@@ -160,6 +174,8 @@ public class Scene extends JPanel{
 						}catch(IOException e){}
 					}
 				}
+			//TODO:
+			System.out.println("Scene.Builder.buildScene(): List<TerrainGrids> returned");
 			return grids;
 		}
 	}
