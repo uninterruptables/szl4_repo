@@ -17,6 +17,10 @@ import team.uninter.mordorq.gamespace.*;
  */
 public class MordorFrameBuilds implements Simulatable{
 	
+	private static Object obj = new Object();
+	private static MordorFrameBuilds instance = null;
+	private static final String SIMULATION_FILE_PATH = "resources/descriptors/simuframed.txt";
+	
 	/**
 	 * Provides that only in this class can the constructor
 	 * be called thus the instance be instantiated.
@@ -49,8 +53,4 @@ public class MordorFrameBuilds implements Simulatable{
 		}
 		return instance;
 	}
-	
-	private static Object obj = new Object();
-	private static MordorFrameBuilds instance = null;
-	private static final String SIMULATION_FILE_PATH = "resources/descriptors/simuframed.txt";
 }

@@ -16,6 +16,9 @@ import java.io.*;
  * */
 public class Skeleton {
 	
+	private static final String USAGE_STRING;
+	private Simulatable simulatable;
+	
 	/**
 	 * Publishes a no-arg constructor for the <code>Skeleton</code>.
 	 * */
@@ -114,9 +117,7 @@ public class Skeleton {
 	private static void printLine(String message){
 		System.out.println(message);
 	}
-	
-	private static final String USAGE_STRING;
-	private Simulatable simulatable;
+
 	
 	/**
 	 * Initializes the usage string in a manner that is is separated from
