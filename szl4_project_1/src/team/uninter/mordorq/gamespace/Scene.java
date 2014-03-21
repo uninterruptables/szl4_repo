@@ -129,7 +129,7 @@ public class Scene extends JPanel{
 						  int util = Integer.parseInt(_util);
 						  if(!bucketHash.containsKey(util)) bucketHash.put(util, new ArrayList<TerrainGrid>());
 						  List<TerrainGrid> _grids = bucketHash.get(util);
-						  _grids.add( util > 0 ? new RoadGrid(util) : new GroundGrid(util) );
+						  _grids.add( util > 0 ? new RoadGrid(util) : new GroundGrid() );
 						  bucketHash.put(util, _grids);
 					  }catch(NumberFormatException e){}
 				  }
