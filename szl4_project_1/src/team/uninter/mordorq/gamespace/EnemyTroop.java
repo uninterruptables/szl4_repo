@@ -1,8 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
 @SuppressWarnings("serial")
-abstract public class EnemyTroop extends DamageTaker 
-												implements Controlable{
+abstract public class EnemyTroop extends DamageTaker implements Controlable{
 
 	protected EnemyTroop(int x, int y) {
 		super(x, y);

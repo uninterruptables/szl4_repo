@@ -1,94 +1,138 @@
 package team.uninter.mordorq.gamespace;
 
+import java.util.List;
+
 public class RoadGrid extends TerrainGrid implements TargetPublisher{
 
-	protected RoadGrid(int x, int y) {
+	private Trap trap;
+	private Vulnerable vulnerable;
+	private List<TargetSubscriber> subscribers;
+	private int utility;
+	
+	
+	public RoadGrid(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public int getUtility() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public void attach(TargetSubscriber subscriber) {
-		// TODO Auto-generated method stub
+		// TODO remove sysout
+		System.out.println("RoadGrid attach(TargetSubscriber subscriber) called");
+		subscribers.add(subscriber);
+		System.out.println("RoadGrid attach(TargetSubscriber subscriber) returned");
 		
 	}
 
 	@Override
 	public void detach(TargetSubscriber subscriber) {
-		// TODO Auto-generated method stub
+		// TODO remove sysout
+		System.out.println("RoadGrid detach(TargetSubscriber subscriber) called");
+		subscribers.remove(subscribers.indexOf(subscriber));
+		System.out.println("RoadGrid detach(TargetSubscriber subscriber) returned");
 		
 	}
 
 	@Override
-	public void notifySubscribers() {
-		// TODO Auto-generated method stub
-		
+	public void notifyAllWith(EnemyTroop troop) {
+		// TODO remove sysout
+		System.out.println("RoadGrid notifyAllWith() called");
+		setVulnerable(troop);
+		for(TargetSubscriber t : subscribers){
+			t.notifyWith(troop);
+		}
+		System.out.println("RoadGrid notifyAllWith() returned");
 	}
 	
-	//TODO szerintem ez nem is kell
-	public EnemyTroop getTarget(){
-		System.out.println("RoadGrid getTarget called");
-		//TODO return value
-		System.out.println("RoadGrid getTarget returned");
-		return null;
+	@Override
+	public boolean contains(EnemyTroop troop) {
+		// TODO remove sysout
+		System.out.println("RoadGrid notifyAllWith() called");
+		System.out.println("RoadGrid notifyAllWith() returned");
+		return subscribers.contains(troop);
 	}
 	
-	public Trap getTrap(){
-		System.out.println("RoadGrid getTrap called");
-		//TODO return value
-		System.out.println("RoadGrid getTrap returned");
-		return null;
-	}
-	
-	public void setTrap(Trap trap){
-		System.out.println("RoadGrid setTrap called");
-		System.out.println("RoadGrid setTrap returned");
-	}
-	
-	public Vulnerable getVulnerable(){
-		System.out.println("RoadGrid getVulnerable called");
-		//TODO return value
-		System.out.println("RoadGrid getVulnerable returned");
-		return null;
-	}
-	
-	public void setVulnerable(Vulnerable vulnerable){
-		System.out.println("RoadGrid setVulnerable called");
-		System.out.println("RoadGrid setVulnerable returned");
-	}
-	
-	public void remove(Vulnerable vulnerable){
-		System.out.println("RoadGrid remove called");
-		System.out.println("RoadGrid remove returned");
-	}
-	
-	public void setUtility(int utility){
-		System.out.println("RoadGrid setUtility called");
-		System.out.println("RoadGrid setUtility returned");
+	public void remove(){
+		//TODO remove sysout
+		System.out.println("RoadGrid remove() called");
+		vulnerable = null;
+		System.out.println("RoadGrid remove() returned");
 	}
 	
 	public boolean isAvailableFor(Trap trap){
-		System.out.println("RoadGrid isAvailableFor called");
-		//TODO return value
-		System.out.println("RoadGrid isAvailableFor returned");
+		//TODO remove sysout
+		System.out.println("RoadGrid isAvailableFor(Trap trap) called");
+		System.out.println("RoadGrid isAvailableFor(Trap trap) returned");
 		return true;
 	}
 	
 	public boolean isAvailableFor(Tower tower){
-		System.out.println("RoadGrid isAvailableFor called");
+		//TODO remove sysout
+		System.out.println("RoadGrid isAvailableFor(Tower tower) called");
 		//TODO return value
-		System.out.println("RoadGrid isAvailableFor returned");
-		return true;
+		System.out.println("RoadGrid isAvailableFor(Tower tower) returned");
+		return false;
 	}
 	
 	public void repaint(){
-		System.out.println("RoadGrid repaint called");
-		System.out.println("RoadGrid repaint returned");
+		//TODO remove sysout
+		System.out.println("RoadGrid repaint() called");
+		//TODO not implemented yet
+		System.out.println("RoadGrid repaint() returned");
 	}
+	
+	@Override
+	public EnemyTroop getTarget() {
+		// TODO remove sysout
+		System.out.println("RoadGrid getTarget() called");
+		EnemyTroop targetEnemy = null;
+		if(vulnerable instanceof EnemyTroop){
+			targetEnemy = (EnemyTroop)vulnerable;
+		}
+		System.out.println("RoadGrid getTarget() returned");
+		return targetEnemy;
+	}
+	
+	@Override
+	public int getUtility() {
+		// TODO remove sysout
+		System.out.println("RoadGrid getUtility() called");
+		System.out.println("RoadGrid getUtility() returned");
+		return utility;
+	}
+	
+	public Trap getTrap(){
+		//TODO remove sysout
+		System.out.println("RoadGrid getTrap() called");
+		System.out.println("RoadGrid getTrap() returned");
+		return trap;
+	}
+	
+	public Vulnerable getVulnerable(){
+		//TODO remove sysout
+		System.out.println("RoadGrid getVulnerable() called");
+		System.out.println("RoadGrid getVulnerable() returned");
+		return vulnerable;
+	}
+	
+	public void setUtility(int utility){
+		//TODO remove sysout
+		System.out.println("RoadGrid setUtility(int utility) called");
+		this.utility = utility;
+		System.out.println("RoadGrid setUtility(int utility) returned");
+	}
+	
+	public void setTrap(Trap trap){
+		System.out.println("RoadGrid setTrap called");
+		this.trap = trap;
+		System.out.println("RoadGrid setTrap returned");
+	}
+	
+	public void setVulnerable(Vulnerable vulnerable){
+		//TODO remove sysout
+		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) called");
+		this.vulnerable = vulnerable;
+		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) returned");
+	}
+
 }
