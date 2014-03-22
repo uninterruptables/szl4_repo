@@ -57,6 +57,7 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 	 * */
 	@Override
 	public void simulate() throws Exception{
+		System.out.println("TroopStepSimulator is simulating..");
 		EnemyTroop human = new Human();
 		RoadGrid initialGrid = new RoadGrid(7);
 		initialGrid.setVulnerable(human);
@@ -92,6 +93,7 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		}
 		
 		if(human.isActive()) human.controlIt();
+		System.out.println("TroopStepSimulator finished..");
 	}
 	
 	/**

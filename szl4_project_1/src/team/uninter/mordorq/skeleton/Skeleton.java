@@ -65,7 +65,7 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "6":
-					//TODO:
+					simulatable = MissileDamageSimulator.getInstance();
 					runSimulation();
 					break;
 				case "7":

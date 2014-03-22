@@ -65,7 +65,7 @@ public class CastSimulator extends ConfigurableSimulator{
 	 * */
 	@Override
 	public void simulate() throws Exception {
-		System.out.println("CastSimulator configuration: "+configuration.toString());
+		System.out.println("CastSimulator configuration: "+configuration.toString()+" is simulating..");
 		simulate(SimulationVersion.VERSION_1);
 		System.out.println("Cast-"+configuration.toString()+" simulation finished...");
 	}
