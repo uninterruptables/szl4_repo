@@ -4,7 +4,7 @@ import java.awt.Color;
 
 abstract public class Casted extends GameObject {
 
-	private int manaCost;
+	protected int manaCost;
 	
 	public Casted(int x, int y) {
 		super(x, y);
@@ -28,7 +28,7 @@ abstract public class Casted extends GameObject {
 		System.out.println("Casted.Casted(manaCost) returned");
 	}
 	
-	abstract void castOn(GameObject object);
+	abstract public void castOn(GameObject object);
 	
 	public int getCost(){
 		// TODO remove sysout

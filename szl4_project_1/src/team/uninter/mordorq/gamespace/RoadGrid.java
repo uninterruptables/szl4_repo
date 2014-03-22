@@ -1,6 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
 import java.util.List;
+import java.lang.Math;
 
 public class RoadGrid extends TerrainGrid implements TargetPublisher{
 
@@ -77,16 +78,35 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	public boolean isAvailableFor(Trap trap){
 		//TODO remove sysout
 		System.out.println("RoadGrid isAvailableFor(Trap trap) called");
-		System.out.println("RoadGrid isAvailableFor(Trap trap) returned");
+		System.out.println("RoadGrid isAvailableFor(Trap trap) returned true");
 		return true;
 	}
 	
 	public boolean isAvailableFor(Tower tower){
 		//TODO remove sysout
 		System.out.println("RoadGrid isAvailableFor(Tower tower) called");
-		//TODO return value
-		System.out.println("RoadGrid isAvailableFor(Tower tower) returned");
+		System.out.println("RoadGrid isAvailableFor(Tower tower) returned false");
 		return false;
+	}
+	
+	public boolean isInRangeOf(Tower tower){
+		//TODO remove sysout
+		System.out.println("RoadGrid isInRangeOf(Tower) called");
+		int currentX = super.x;
+		int currentY = super.y;
+		int targetX = tower.getX();
+		int targetY = tower.getY();
+		int distanceX = targetX - currentX;
+		int distanceY = targetY - currentY;
+		int distance = (int) Math.sqrt(distanceX^2 + distanceY^2);
+		if(distance <= tower.getRadius()){
+			System.out.println("RoadGrid isAvailableFor(Tower tower) returned true");
+			return true;
+		}
+		else{
+			System.out.println("RoadGrid isAvailableFor(Tower tower) returned false");
+			return false;
+		}
 	}
 	
 	public void repaint(){
