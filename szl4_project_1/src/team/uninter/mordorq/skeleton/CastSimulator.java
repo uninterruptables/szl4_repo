@@ -68,40 +68,21 @@ public class CastSimulator extends ConfigurableSimulator{
 		System.out.println("CastSimulator configuration: "+configuration.toString());
 		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
 		Casted activeObject;
-		TerrainGrid iniGrid ;
+		TerrainGrid iniGrid = new RoadGrid(13);
 
 		
 		
 		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazghul();
 		else if(configuration.equals(CastAlias.TOWER_GROUND)){
-			iniGrid = new GroundGrid();
+			iniGrid = buildGridWeb(new GroundGrid());
 			activeObject = new BasicTower();
 		}
-		else if(configuration.equals(CastAlias.TRAP_ROAD)){
-			iniGrid = new RoadGrid(13);
-			activeObject = new SlowDownTrap();
-		}
+		else if(configuration.equals(CastAlias.TRAP_ROAD))	activeObject = new SlowDownTrap();
 		else{
 			activeObject = new PoisonTrapRune();
-			if(configuration.equals(CastAlias.TRAPRUNE_TRAP)){
-				iniGrid = new RoadGrid(13);
-				(new SlowDownTrap()).castOn(iniGrid);
-			}
+			if(configuration.equals(CastAlias.TRAPRUNE_TRAP)) (new SlowDownTrap()).castOn(iniGrid);
 			else{
-				iniGrid        = new GroundGrid();
-				GroundGrid gg1 = new GroundGrid();
-				GroundGrid gg2 = new GroundGrid();
-				GroundGrid gg3 = new GroundGrid();
-				
-				iniGrid.set(Neighbour.EAST, gg1);
-				iniGrid.set(Neighbour.SOUTH, gg2);
-				gg1.set(Neighbour.WEST, iniGrid);
-				gg1.set(Neighbour.SOUTH, gg3);
-				gg2.set(Neighbour.NORTH, iniGrid);
-				gg2.set(Neighbour.EAST, gg3);
-				gg3.set(Neighbour.NORTH, gg1);
-				gg3.set(Neighbour.WEST, gg2);
-				
+				iniGrid = buildGridWeb(new GroundGrid());
 				(new BasicTower()).castOn(iniGrid);
 			}
 		}
@@ -117,6 +98,29 @@ public class CastSimulator extends ConfigurableSimulator{
 			}
 		}
 		System.out.println("Cast-"+configuration.toString()+" simulation finished...");
+	}
+	
+	/**
+	 * Builds a web of four of <code>GroundGrid</code>s for future use, most likely
+	 * to cast towers upon them.
+	 * 
+	 * @param iniGrid the initial grid in the web of grids upon which towers will be casted.
+	 * @return the reference to the initial grid in the web.
+	 * */
+	private static GroundGrid buildGridWeb(GroundGrid iniGrid){
+		GroundGrid gg1 = new GroundGrid();
+		GroundGrid gg2 = new GroundGrid();
+		GroundGrid gg3 = new GroundGrid();
+		
+		iniGrid.set(Neighbour.EAST, gg1);
+		iniGrid.set(Neighbour.SOUTH, gg2);
+		gg1.set(Neighbour.WEST, iniGrid);
+		gg1.set(Neighbour.SOUTH, gg3);
+		gg2.set(Neighbour.NORTH, iniGrid);
+		gg2.set(Neighbour.EAST, gg3);
+		gg3.set(Neighbour.NORTH, gg1);
+		gg3.set(Neighbour.WEST, gg2);
+		return iniGrid;
 	}
 
 	/**
