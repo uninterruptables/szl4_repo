@@ -35,18 +35,18 @@ public class GroundGrid extends TerrainGrid{
 	}
 	
 	@Override
-	boolean isAvailableFor(Trap trap) {
+	public boolean isAvailableFor(Trap trap) {
 		//TODO remove sysout
 		System.out.println("GroundGrid isAvailableFor(Trap trap) called");
-		System.out.println("GroundGrid isAvailableFor(Trap trap) returned");
+		System.out.println("GroundGrid isAvailableFor(Trap trap) returned false");
 		return false;
 	}
 
 	@Override
-	boolean isAvailableFor(Tower tower) {
+	public boolean isAvailableFor(Tower tower) {
 		//TODO remove sysout
 		System.out.println("GroundGrid isAvailableFor(Tower tower) called");
-		System.out.println("GroundGrid isAvailableFor(Tower tower) returned");
+		System.out.println("GroundGrid isAvailableFor(Tower tower) returned true");
 		return true;
 	}
 	

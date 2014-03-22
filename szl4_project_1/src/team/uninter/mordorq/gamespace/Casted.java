@@ -4,7 +4,7 @@ import java.awt.Color;
 
 abstract public class Casted extends GameObject {
 
-	private int manaCost;
+	protected int manaCost;
 	
 	public Casted(int x, int y) {
 		super(x, y);

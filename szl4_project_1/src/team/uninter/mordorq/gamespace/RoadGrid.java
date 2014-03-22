@@ -133,7 +133,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		// TODO remove sysout
 		System.out.println("RoadGrid getUtility() called");
 		System.out.println("RoadGrid getUtility() returned");
-		return super.utility;
+		return utility;
 	}
 	
 	public Trap getTrap(){
@@ -153,7 +153,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	public void setUtility(int utility){
 		//TODO remove sysout
 		System.out.println("RoadGrid setUtility(int utility) called");
-		super.utility = utility;
+		this.utility = utility;
 		System.out.println("RoadGrid setUtility(int utility) returned");
 	}
 	
