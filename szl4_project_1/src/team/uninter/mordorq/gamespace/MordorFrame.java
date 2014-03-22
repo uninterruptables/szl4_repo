@@ -126,4 +126,32 @@ public class MordorFrame extends JFrame{
 		userManaField.setText(Integer.toString(mana));
 		System.out.println("MordorFrame.setUserMana(int): void returned");
 	}
+	
+	/**
+	 * Notifies the user about the positive output of the game!
+	 * */
+	public void win(){
+		//TODO: JOptionPane.showMessageDialog(...);
+		System.out.println("MordorFrame.win(): void called");
+		System.out.println("MordorFrame.win(): void returned");
+	}
+	
+	/**
+	 * Notifies the user about the negative output of the game!
+	 * */
+	public void gameOver(){
+		//TODO: JOptionPane.showMessageDialog(...);
+		System.out.println("MordorFrame.win(): void called");
+		System.out.println("MordorFrame.win(): void returned");
+	}
+	
+	/**
+	 * Resets the game space for another game!
+	 * */
+	public void reset(){
+		//TODO: scene = new Scene.Builder()...build()
+		// contentPane .add(scene)
+		System.out.println("MordorFrame.reset(): void called");
+		System.out.println("MordorFrame.reset(): void returned");
+	}
 }

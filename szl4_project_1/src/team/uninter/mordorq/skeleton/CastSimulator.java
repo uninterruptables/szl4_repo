@@ -66,11 +66,68 @@ public class CastSimulator extends ConfigurableSimulator{
 	@Override
 	public void simulate() throws Exception {
 		System.out.println("CastSimulator configuration: "+configuration.toString());
+		simulate(SimulationVersion.VERSION_1);
+		System.out.println("Cast-"+configuration.toString()+" simulation finished...");
+	}
+	
+	/**
+	 * Dispatches the simulation among the implemented mechanisms according to
+	 * the given version.
+	 * 
+	 *  @param version a <code>SimulationVersion</code> that indicates which API is used
+	 * */
+	private void simulate(SimulationVersion version){
+		if(version.equals(SimulationVersion.VERSION_1))			simulate1();
+		else if(version.equals(SimulationVersion.VERSION_2))	simulate2();
+	}
+	
+	
+	/**
+	 * Uses the latest features of the gamespace package.
+	 * 
+	 * @see team.uninter.mordorq.gamespace
+	 * @see Scene
+	 * */
+	private void simulate2(){
+		//TODO:
 		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
 		Casted activeObject;
-		TerrainGrid iniGrid = new RoadGrid(13);
-
+		TerrainGrid iniGrid = new RoadGrid(13);		
 		
+		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazghul();
+		else if(configuration.equals(CastAlias.TOWER_GROUND)){
+			iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(0);
+			activeObject = new BasicTower();
+		}
+		else if(configuration.equals(CastAlias.TRAP_ROAD))	activeObject = new SlowDownTrap();
+		else{
+			activeObject = new PoisonTrapRune();
+			if(configuration.equals(CastAlias.TRAPRUNE_TRAP)) (new SlowDownTrap()).castOn(iniGrid);
+			else{
+				iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(0);
+				(new BasicTower()).castOn(iniGrid);
+			}
+		}
+		
+		if(activeObject.canCastOn(iniGrid)) {
+			int mana = frame.getUserMana();
+			if(mana - activeObject.getCost() >= 0){
+				if(activeObject instanceof Magic){
+					frame.getScene().cast((Magic)activeObject);
+				}
+				else frame.getScene().place(activeObject, iniGrid);
+				frame.setUserMana(mana - activeObject.getCost());
+			}
+		}
+	}
+	
+	/**
+	 * Uses the standard implementation of this simulation.
+	 * */
+	private void simulate1(){
+		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
+		Casted activeObject;
+		TerrainGrid iniGrid = new RoadGrid(13);		
 		
 		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazghul();
 		else if(configuration.equals(CastAlias.TOWER_GROUND)){
@@ -89,15 +146,14 @@ public class CastSimulator extends ConfigurableSimulator{
 		
 		if(activeObject.canCastOn(iniGrid)) {
 			int mana = frame.getUserMana();
-			if(mana - activeObject.getManaCost() >= 0){
+			if(mana - activeObject.getCost() >= 0){
 				if(activeObject instanceof Magic){
 					frame.getScene().cast((Magic)activeObject);
 				}
 				else activeObject.castOn(iniGrid);
-				frame.setUserMana(mana - activeObject.getManaCost());
+				frame.setUserMana(mana - activeObject.getCost());
 			}
 		}
-		System.out.println("Cast-"+configuration.toString()+" simulation finished...");
 	}
 	
 	/**
@@ -148,5 +204,9 @@ public class CastSimulator extends ConfigurableSimulator{
 	 * */
 	public static enum CastAlias implements ConfigurationAlias{
 		MAGIC, TRAPRUNE_TRAP, TRAPRUNE_TOWER, TOWER_GROUND, TRAP_ROAD
+	}
+	
+	private static enum SimulationVersion{
+		VERSION_1, VERSION_2
 	}
 }
