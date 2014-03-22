@@ -6,12 +6,31 @@ import java.util.Map;
 @SuppressWarnings("serial")
 abstract public class TerrainGrid extends GameObject{
 
+	private int utility;
 	private Map<Neighbour,TerrainGrid> neighbours;
 	
 	public TerrainGrid(int x, int y) {
 		super(x, y);
+		//TODO remove sysout
+		System.out.println("TerrainGrid.TerrainGrid(x,y) called");		
 		neighbours = new HashMap<Neighbour,TerrainGrid>();
+		System.out.println("TerrainGrid.TerrainGrid(x,y) returned");
 	}
+	
+	public TerrainGrid(int utility) {
+		//TODO remove sysout
+		System.out.println("TerrainGrid.TerrainGrid(utility) called");	
+		this.utility = utility;
+		neighbours = new HashMap<Neighbour,TerrainGrid>();
+		System.out.println("TerrainGrid.TerrainGrid(utility) returned");
+	}
+	
+	public TerrainGrid(){
+		//TODO remove sysout
+		System.out.println("TerrainGrid.TerrainGrid() called");	
+		neighbours = new HashMap<Neighbour,TerrainGrid>();
+		System.out.println("TerrainGrid.TerrainGrid() returned");
+	};
 	
 	abstract public int getUtility();
 

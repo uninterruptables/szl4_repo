@@ -13,9 +13,11 @@ public abstract class GameObject extends JPanel{
 	protected Image image;
 	protected int x, y;
 	
-	protected GameObject(int x, int y){
+	public GameObject(int x, int y){
 		this.x = x; this.y = y;
 	}
+	
+	public GameObject(){}
 	
 	public int getX(){
 		return x;

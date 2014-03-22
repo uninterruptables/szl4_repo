@@ -7,7 +7,23 @@ abstract public class InjectionTarget extends Casted{
 	
 	public InjectionTarget(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		// TODO remove sysout
+		System.out.println("InjectionTarget.InjectionTarget(x,y) called");
+		System.out.println("InjectionTarget.InjectionTarget(x,y) returned");
+	}
+	
+	public InjectionTarget(int x, int y, int manaCost) {
+		super(x, y, manaCost);
+		// TODO remove sysout
+		System.out.println("InjectionTarget.InjectionTarget(x,y,manaCost) called");
+		System.out.println("InjectionTarget.InjectionTarget(x,y,manaCost) returned");
+	}
+	
+	public InjectionTarget(int manaCost) {
+		// TODO remove sysout
+		super(manaCost);
+		System.out.println("Casted.Casted(manaCost) called");
+		System.out.println("Casted.Casted(manaCost) returned");
 	}
 	
 	abstract public void injectOn(Injectable injectable);

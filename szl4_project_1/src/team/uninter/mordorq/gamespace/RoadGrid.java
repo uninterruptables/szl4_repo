@@ -7,12 +7,27 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	private Trap trap;
 	private Vulnerable vulnerable;
 	private List<TargetSubscriber> subscribers;
-	private int utility;
 	
 	
 	public RoadGrid(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		//TODO remove sysout
+		System.out.println("RoadGrid.RoadGrid(x,y) called");
+		System.out.println("RoadGrid.RoadGrid(x,y) returned");
+	}
+	
+	public RoadGrid(int utility) {
+		super(utility);
+		//TODO remove sysout
+		System.out.println("RoadGrid.RoadGrid(utility) called");
+		System.out.println("RoadGrid.RoadGrid(utility) returned");
+	}
+	
+	public RoadGrid(){
+		super();
+		//TODO remove sysout
+		System.out.println("RoadGrid.RoadGrid() called");
+		System.out.println("RoadGrid.RoadGrid() returned");
 	}
 
 	@Override

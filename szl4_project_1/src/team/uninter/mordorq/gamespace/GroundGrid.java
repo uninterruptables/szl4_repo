@@ -4,11 +4,26 @@ public class GroundGrid extends TerrainGrid{
 
 	private boolean available = true;
 	private Tower tower;
-	private int utility = 0;
 	
 	public GroundGrid(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		//TODO remove sysout
+		System.out.println("GroundGrid.GroundGrid(x,y) called");
+		System.out.println("GroundGrid.GroundGrid(x,y) returned");
+	}
+	
+	public GroundGrid(int utility) {
+		super(utility);
+		//TODO remove sysout
+		System.out.println("GroundGrid.GroundGrid(utility) called");
+		System.out.println("GroundGrid.GroundGrid(utility) returned");
+	}
+	
+	public GroundGrid() {
+		super(0);
+		//TODO remove sysout
+		System.out.println("GroundGrid.GroundGrid() called");
+		System.out.println("GroundGrid.GroundGrid() returned");
 	}
 	
 	public void reserve(Tower tower){
