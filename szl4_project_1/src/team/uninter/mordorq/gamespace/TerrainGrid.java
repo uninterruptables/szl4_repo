@@ -6,8 +6,8 @@ import java.util.Map;
 @SuppressWarnings("serial")
 abstract public class TerrainGrid extends GameObject{
 
-	private int utility;
-	private Map<Neighbour,TerrainGrid> neighbours;
+	protected int utility;
+	protected Map<Neighbour,TerrainGrid> neighbours;
 	
 	public TerrainGrid(int x, int y) {
 		super(x, y);
@@ -34,9 +34,9 @@ abstract public class TerrainGrid extends GameObject{
 	
 	abstract public int getUtility();
 
-	abstract boolean isAvailableFor(Trap trap);
+	abstract public boolean isAvailableFor(Trap trap);
 	
-	abstract boolean isAvailableFor(Tower tower);
+	abstract public boolean isAvailableFor(Tower tower);
 	
 	public TerrainGrid get(Neighbour neighbour){
 		//TODO remove sysout
