@@ -53,6 +53,47 @@ public class Scene extends JPanel{
 	}
 	
 	/**
+	 * Applies all <code>StatusModifier</code>s of the casted <code>Magic</code> to all
+	 * <code>EnemyTroop</code> still alive on the scene.
+	 * 
+	 * @param magic the magic instance casted to this scene object
+	 * */
+	public void cast(Magic magic){
+		//TODO:
+		System.out.println("Scene.cast(Magic): void called");
+		for(EnemyTroop : enemies)
+			enemy.addAll(magic.getEffects());
+		System.out.println("Scene.cast(Magic): void returned");
+	}
+	
+	/**
+	 * Delegates the call to the owner <code>MordorFrama</code> from
+	 * which the current value can be requested.
+	 * 
+	 * @return the mana measured in units left for the user to spend.
+	 * */
+	public int getUserMana(){
+		//TODO:
+		System.out.println("Scene.getUserMana(): int called");
+		int userMana = owner.getUserMana();
+		System.out.println("Scene.getUserMana(): int returned");
+		return userMana;
+	}
+	
+	/**
+	 * Sets the mana the user is left with to spend in the owner <code>MordorFrame</code>
+	 * instance by delegating the call to it.
+	 * 
+	 * @param mana an integer value representing the new quantity of mana the user has.
+	 * */
+	public void setUserMana(int mana){
+		//TODO:
+		System.out.println("Scene.setUserMana(int): void called");
+		owner.setUserMana(mana);
+		System.out.println("Scene.setUserMana(int): void returned");
+	}
+	
+	/**
 	 * The public class responsible for the construction of (each) <code>Scene</code>
 	 * instance. From a file stream as a source given by a filePath it builds each grid.
 	 * */

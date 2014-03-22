@@ -4,6 +4,8 @@
 package team.uninter.mordorq.skeleton;
 
 import java.io.*;
+
+import team.uninter.mordorq.skeleton.CastSimulator.CastAlias;
 //TODO: finish the comment @see section!
 /**
  * <code>Skeleton</code> is responsible for providing a CLI for the user,
@@ -13,6 +15,7 @@ import java.io.*;
  * @author Imre Szekeres
  * @version "%I%, %G%"
  * @see MordorFrameBuilds
+ * @see TroopStepSimulator
  * */
 public class Skeleton {
 	
@@ -42,11 +45,13 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "2":
-					//TODO:
+					simulatable = CastSimulator.getInstance();
+					((CastSimulator)simulatable).configureFor(CastAlias.TRAPRUNE_TRAP);
 					runSimulation();
 					break;
 				case "3":
-					//TODO:
+					simulatable = CastSimulator.getInstance();
+					((CastSimulator)simulatable).configureFor(CastAlias.TRAPRUNE_TOWER);
 					runSimulation();
 					break;
 				case "4":
@@ -70,15 +75,18 @@ public class Skeleton {
 					runSimulation();
 					break;
 				case "8":
-					//TODO:
+					simulatable = CastSimulator.getInstance();
+					((CastSimulator)simulatable).configureFor(CastAlias.TOWER_GROUND);
 					runSimulation();
 					break;
 				case "9":
-					//TODO:
+					simulatable = CastSimulator.getInstance();
+					((CastSimulator)simulatable).configureFor(CastAlias.TRAP_ROAD);
 					runSimulation();
 					break;
 				case "10":
-					//TODO:
+					simulatable = CastSimulator.getInstance();
+					((CastSimulator)simulatable).configureFor(CastAlias.MAGIC);
 					runSimulation();
 					break;
 				case "11":

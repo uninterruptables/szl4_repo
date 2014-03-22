@@ -20,6 +20,7 @@ import team.uninter.mordorq.gamespace.*;
  * @see GoundGrid
  * @see Tower
  * @see Trap
+ * @see MountainOfDoom
  */
 public class TroopStepSimulator extends  ConfigurableSimulator {
 
@@ -109,6 +110,10 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		}
 	}
 	
+	/**
+	 * Published enumeration (containing aliases of each real configurations) of the available
+	 * configurations of the <code>TroopStepSimulator</code> class.
+	 * */
 	public static enum TroopStepAlias implements ConfigurationAlias {
 		DEFAULT, TRAP_AFFECTS, TOWER_FIRES, DAMAGES_MOUNTAIN
 	}

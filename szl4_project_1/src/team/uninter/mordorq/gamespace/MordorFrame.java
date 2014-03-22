@@ -27,6 +27,10 @@ import java.io.*;
 @SuppressWarnings({"unused", "serial"})
 public class MordorFrame extends JFrame{
 	
+	private static final String DEFAULT_FILE_PATH = "resources/descriptors/scened.txt";
+	private JTextField userManaField;
+	private Scene scene;
+	
 	/**
 	 * Builds the <code>Scene</code> object from the source of the given
 	 * file path, and the widgets displayed by the GUI.
@@ -87,9 +91,22 @@ public class MordorFrame extends JFrame{
 	}
 	
 	/**
+	 * Publishes the <code>Scene</code> constructed and managed by this instance of
+	 * the <code>MordorFrame</code> class.
+	 * 
+	 * @return the <code>Scene</code> instance contained by this <code>MordorFrame</code> object.
+	 * */
+	public Scene getScene(){
+		//TODO:
+		System.out.println("MordorFrame.getScene(): Scene called");
+		System.out.println("MordorFrame.getScene(): Scene returned");
+		return scene;
+	}
+	
+	/**
 	 * Returns the mana the user still owns to spend on casting objects.
 	 * 
-	 * @return the remaining mana being at the users disposal
+	 * @return the remaining mana being at the users disposal.
 	 * */
 	public int getUserMana(){
 		//TODO:
@@ -109,9 +126,4 @@ public class MordorFrame extends JFrame{
 		userManaField.setText(Integer.toString(mana));
 		System.out.println("MordorFrame.setUserMana(int): void returned");
 	}
-	
-	
-	private static final String DEFAULT_FILE_PATH = "resources/descriptors/scened.txt";
-	private JTextField userManaField;
-	private Scene scene;
 }
