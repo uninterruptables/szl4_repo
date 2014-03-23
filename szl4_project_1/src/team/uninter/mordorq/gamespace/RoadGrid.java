@@ -167,6 +167,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		//TODO remove sysout
 		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) called");
 		this.vulnerable = vulnerable;
+		((GameObject)this.vulnerable).setX(this.x);
+		((GameObject)this.vulnerable).setY(this.y);
 		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) returned");
 	}
 
