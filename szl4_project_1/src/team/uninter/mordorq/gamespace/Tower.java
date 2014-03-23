@@ -41,34 +41,48 @@ abstract public class Tower extends InjectionTarget
 	}
 	public final int getSpeciesDamage(String type)
 	{
+		System.out.println("Tower.getSpeciesDamage(String) : int called");
+		System.out.println("Tower.getSpeciesDamage(String) : int returned");
 		return (int)missile.racialDamages.get(type);
 	}
 	public final void setSpeciesDamage(String type, int value)
 	{
+		System.out.println("Tower.setSpeciesDamage(String, int) called");
 		missile.racialDamages.put(type, missile.racialDamages.get(type) + value);
+		System.out.println("Tower.setSpeciesDamage(String, int) returned");
 	}
 	
 	public final int getRadius()
 	{
-		return radius;
+		System.out.println("Tower.getRadius() : int called");
+		System.out.println("Tower.getRadius() : int returned");
+		return radius;	
 	}
 	public final void setRadius(int newRadius)
 	{
+		System.out.println("Tower.setRadius(int) called");
 		radius=newRadius;
+		System.out.println("Tower.setRadius(int) returned");
 	}
 	public final int getMaxCooldown()
 	{
+		System.out.println("Tower.getMaxCooldown() : int called");
+		System.out.println("Tower.getMaxCooldown() : int returned");
 		return missile.maxCooldown;
 	}
 	public final void setMaxCooldown(int newMaxCooldown)
 	{
+		System.out.println("Tower.setMaxCooldown(int) called");
 		missile.maxCooldown=newMaxCooldown;
+		System.out.println("Tower.setMaxCooldown(int) returned");
 	}
 	public void addAllDamage(int damage)
 	{
+		System.out.println("Tower.addAllDamage(int) called");
 		for (String key : missile.racialDamages.keySet()) {
 		    missile.racialDamages.put(key, missile.racialDamages.get(key)+damage);
 		}
+		System.out.println("Tower.addAllDamage(int) returned");
 	}
 	
 	final public boolean isActive(){
