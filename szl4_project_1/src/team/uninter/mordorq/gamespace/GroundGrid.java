@@ -30,6 +30,8 @@ public class GroundGrid extends TerrainGrid{
 		//TODO remove sysout
 		System.out.println("GroundGrid reserve(Tower tower) called");
 		this.tower = tower;
+		this.tower.setX(this.x);
+		this.tower.setY(this.y);
 		available = false;
 		System.out.println("GroundGrid reserve(Tower tower) returned");
 	}
