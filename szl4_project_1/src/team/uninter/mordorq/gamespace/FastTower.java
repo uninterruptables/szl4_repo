@@ -147,4 +147,16 @@ public void castOn(GameObject object) {
 	// TODO Auto-generated method stub
 	
 }
+
+@Override
+public void injectOn(InjectionTarget target) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void inject(Injectable injectable) {
+	// TODO Auto-generated method stub
+	
+}
 }

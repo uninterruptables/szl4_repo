@@ -5,6 +5,8 @@ abstract public class DamageTaker extends GameObject implements Vulnerable{
 
 	int health;
 	
+	protected DamageTaker() {}
+	
 	public DamageTaker(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
