@@ -13,24 +13,12 @@ public class Barricade extends Casted implements Vulnerable {
 		System.out.println("Barricade() called");
 		System.out.println("Barricade() returned");
 	}
-	public Barricade(int manaCost) {
-		super(manaCost);
-		health=0;
-		System.out.println("Barricade(Int) called");
-		System.out.println("Barricade(Int) returned");
-	}
 	
 	public Barricade(int x, int y) {
 		super(x, y);
 		health=0;
 		System.out.println("Barricade(Int, Int) called");
 		System.out.println("Barricade(Int, Int) returned");
-	}
-	public Barricade(int x, int y, int manacost) {
-		super(x, y, manacost);
-		health=0;
-		System.out.println("Barricade(Int, Int, Int) called");
-		System.out.println("Barricade(Int, Int, Int) returned");
 	}
 	@Override
 	public void interactWith(EnemyTroop troop)

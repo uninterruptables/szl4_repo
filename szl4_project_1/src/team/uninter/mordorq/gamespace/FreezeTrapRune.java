@@ -9,21 +9,11 @@ public class FreezeTrapRune extends TrapRune{
 		System.out.println("FreezeTrapRune() called");
 		System.out.println("FreezeTrapRune() returned");
 	}
-	public FreezeTrapRune(int manaCost) {
-		super(manaCost);
-		System.out.println("FreezeTrapRune(Int) called");
-		System.out.println("FreezeTrapRune(Int) returned");
-	}
 	
 	public FreezeTrapRune(int x, int y) {
 		super(x, y);
 		System.out.println("FreezeTrapRune(Int, Int) called");
 		System.out.println("FreezeTrapRune(Int, Int) returned");
-	}
-	public FreezeTrapRune(int x, int y, int manacost) {
-		super(x, y, manacost);
-		System.out.println("FreezeTrapRune(Int, Int, Int) called");
-		System.out.println("FreezeTrapRune(Int, Int, Int) returned");
 	}
 	
 	public boolean canInjectOn(Trap trap){

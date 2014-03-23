@@ -9,21 +9,11 @@ public class DOTTrapRune extends TrapRune{
 		System.out.println("DOTTrapRune() called");
 		System.out.println("DOTTrapRune() returned");
 	}
-	public DOTTrapRune(int manaCost) {
-		super(manaCost);
-		System.out.println("DOTTrapRune(Int) called");
-		System.out.println("DOTTrapRune(Int) returned");
-	}
 	
 	public DOTTrapRune(int x, int y) {
 		super(x, y);
 		System.out.println("DOTTrapRune(Int, Int) called");
 		System.out.println("DOTTrapRune(Int, Int) returned");
-	}
-	public DOTTrapRune(int x, int y, int manacost) {
-		super(x, y, manacost);
-		System.out.println("DOTTrapRune(Int, Int, Int) called");
-		System.out.println("DOTTrapRune(Int, Int, Int) returned");
 	}
 	
 	public boolean canInjectOn(Trap trap){

@@ -6,21 +6,11 @@ public class SpeedBoosterTowerRune extends TowerRune{
 		System.out.println("SpeedBoosterTowerRune() called");
 		System.out.println("SpeedBoosterTowerRune() returned");
 	}
-	public SpeedBoosterTowerRune(int manaCost) {
-		super(manaCost);
-		System.out.println("SpeedBoosterTowerRune(Int) called");
-		System.out.println("SpeedBoosterTowerRune(Int) returned");
-	}
 	
 	public SpeedBoosterTowerRune(int x, int y) {
 		super(x, y);
 		System.out.println("SpeedBoosterTowerRune(Int, Int) called");
 		System.out.println("SpeedBoosterTowerRune(Int, Int) returned");
-	}
-	public SpeedBoosterTowerRune(int x, int y, int manaCost) {
-		super(x, y, manaCost);
-		System.out.println("SpeedBoosterTowerRune(Int, Int, Int) called");
-		System.out.println("SpeedBoosterTowerRune(Int, Int, Int) returned");
 	}
 
 	public boolean canInjectOn(Tower tower)

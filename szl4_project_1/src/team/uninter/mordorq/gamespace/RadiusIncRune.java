@@ -7,21 +7,11 @@ public class RadiusIncRune extends TowerRune{
 		System.out.println("RadiusIncRune() called");
 		System.out.println("RadiusIncRune() returned");
 	}
-	public RadiusIncRune(int manaCost) {
-		super(manaCost);
-		System.out.println("RadiusIncRune(Int) called");
-		System.out.println("RadiusIncRune(Int) returned");
-	}
 	
 	public RadiusIncRune(int x, int y) {
 		super(x, y);
 		System.out.println("RadiusIncRune(Int, Int) called");
 		System.out.println("RadiusIncRune(Int, Int) returned");
-	}
-	public RadiusIncRune(int x, int y, int manaCost) {
-		super(x, y, manaCost);
-		System.out.println("RadiusIncRune(Int, Int, Int) called");
-		System.out.println("RadiusIncRune(Int, Int, Int) returned");
 	}
 
 	public boolean canInjectOn(Tower tower)
