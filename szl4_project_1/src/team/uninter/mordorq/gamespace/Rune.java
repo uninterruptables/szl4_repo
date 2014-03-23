@@ -27,7 +27,7 @@ public abstract class Rune extends Casted implements Injectable {
 		System.out.println("Rune.castOn(object) called");
 		if(grid.isAvailableFor(this))
 		{
-			
+			grid.getInjectionTarget().inject(this);
 		}
 		System.out.println("Rune.castOn(object) returned");
 	}
