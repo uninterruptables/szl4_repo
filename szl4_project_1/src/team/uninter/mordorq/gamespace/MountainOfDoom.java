@@ -21,7 +21,7 @@ public class MountainOfDoom extends DamageTaker{
 
 	public void setHealth(int healthDiff )
 	{
-		health-= troop.getDamage;
+		//health-= troop.getDamage;
 	}
 	@Override
 	public void interactWith(EnemyTroop troop)
