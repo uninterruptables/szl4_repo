@@ -1,6 +1,8 @@
 package team.uninter.mordorq.gamespace;
 
 public class SpeedBoosterTowerRune extends TowerRune{
+	
+	//a class used to create runes that can increase a tower's speed.
 	public SpeedBoosterTowerRune() {
 		super();
 		System.out.println("SpeedBoosterTowerRune() called");

@@ -3,14 +3,18 @@ package team.uninter.mordorq.gamespace;
 import java.util.ArrayList;
 
 public abstract class Magic extends Casted{
+	
+	//Class used to handle different global spells. It contains a list of status modifiers, that
+	//can be applied on the enemy units.
+	//It's manacost can be asked, for user input check.
 	int manaCost;
 	protected ArrayList<StatusModifier> effects;
-	public Magic() {
+	protected Magic() {
 		super();
 		System.out.println("Magic() called");
 		System.out.println("Magic() returned");
 	}
-	public Magic(int x, int y) {
+	protected Magic(int x, int y) {
 		super(x, y);
 		System.out.println("Magic(Int, Int) called");
 		System.out.println("Magic(Int, Int) returned");

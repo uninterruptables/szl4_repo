@@ -4,14 +4,17 @@ import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 abstract public class Trap extends InjectionTarget{
+	
+	//generic class used to handle trap objects, that can be placed on roads.
+	//They contain a number of different effects they can apply on enemy troops.
 
 	ArrayList<StatusModifier> effects;
-	public Trap() {
+	protected Trap() {
 		super();
 		System.out.println("Trap() called");
 		System.out.println("Trap() returned");
 	}
-	public Trap(int x, int y) {
+	protected Trap(int x, int y) {
 		super(x, y);
 		System.out.println("Trap(Int, Int) called");
 		System.out.println("Trap(Int, Int) returned");
@@ -61,6 +64,13 @@ abstract public class Trap extends InjectionTarget{
 	{
 		System.out.println("Trap.castOn(TerrainGrid) returned");
 		System.out.println("Trap.castOn(TerrainGrid) returned");
+	}
+	
+	public final void inject(Injectable inject)
+	{
+		System.out.println("Trap.Inject(Injectable) returned");
+		inject.injectOn(this);
+		System.out.println("Trap.Inject(Injectable) returned");
 	}
 
 }

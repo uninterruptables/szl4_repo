@@ -2,6 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 public class DamageBoostDwarvenTowerRune extends TowerRune{
 	
+	//Class used to increase damage versus dwarves. On inject on, it calls the tower-s
+	//setSpecies function, to increase it's damage
 	float extraDamage;
 	
 	public DamageBoostDwarvenTowerRune() {

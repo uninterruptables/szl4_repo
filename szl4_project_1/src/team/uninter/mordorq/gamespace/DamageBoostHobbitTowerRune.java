@@ -2,6 +2,9 @@ package team.uninter.mordorq.gamespace;
 
 public class DamageBoostHobbitTowerRune extends TowerRune{
 	
+	
+	//Class used to increase damage versus hobbits. On inject on, it calls the tower-s
+	//setSpecies function, to increase it's damage
 	float extraDamage;
 	
 	public DamageBoostHobbitTowerRune() {

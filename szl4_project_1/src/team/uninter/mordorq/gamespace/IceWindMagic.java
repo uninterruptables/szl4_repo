@@ -2,6 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 public class IceWindMagic extends Magic{
 
+	
+	//Class used to simulate a magical spell, that applies a slow status on every unit on the map
 	public IceWindMagic() {
 		super();
 		System.out.println("IceWindMagic() called");
@@ -15,11 +17,5 @@ public class IceWindMagic extends Magic{
 		System.out.println("IceWindMagic(Int, Int) returned");
 	}
 
-	@Override
-	public void castOn(GameObject object) {
-		System.out.println("IceWindMagic.castOn(GameObject) called");
-		System.out.println("IceWindMagic.castOn(GameObject) returned");
-		
-	}
 
 }
