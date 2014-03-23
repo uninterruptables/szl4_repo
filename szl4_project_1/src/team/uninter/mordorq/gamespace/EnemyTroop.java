@@ -17,6 +17,8 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	public int targetGrid;
 	ArrayList<StatusModifier> sm;
 	
+	protected EnemyTroop() {} 
+	
 	protected EnemyTroop(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub

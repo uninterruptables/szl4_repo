@@ -5,6 +5,8 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 @SuppressWarnings("serial")
 public class Human extends EnemyTroop {
 
+	protected Human() {}
+	
 	protected Human(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub

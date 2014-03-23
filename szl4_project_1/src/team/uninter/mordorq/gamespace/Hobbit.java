@@ -5,6 +5,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 @SuppressWarnings("serial")
 public class Hobbit extends EnemyTroop {
 
+	protected Hobbit() {}
 	
 	protected Hobbit(int x, int y) {
 		super(x, y);

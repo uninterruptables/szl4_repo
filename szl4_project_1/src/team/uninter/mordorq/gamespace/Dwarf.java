@@ -5,6 +5,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 @SuppressWarnings("serial")
 public class Dwarf extends EnemyTroop {
 
+	protected Dwarf() {}
 	
 	protected Dwarf(int x, int y) {
 		super(x, y);
