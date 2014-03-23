@@ -5,6 +5,7 @@ public class PoisonFidMagic extends Magic{
 	public PoisonFidMagic() {
 		super();
 		System.out.println("PoisonFidMagic() called");
+		effects.add(new PoisonStatus());
 		System.out.println("PoisonFidMagic() returned");
 	}
 	

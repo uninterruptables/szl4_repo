@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Magic extends Casted{
 	int manaCost;
-	ArrayList<StatusModifier> effects;
+	protected ArrayList<StatusModifier> effects;
 	public Magic() {
 		super();
 		System.out.println("Magic() called");
@@ -27,6 +27,12 @@ public abstract class Magic extends Casted{
 		System.out.println("Magic.getStatusModifiers() : ArrayList called");
 		System.out.println("Magic.getStatusModifiers() : ArrayList returned");
 		return effects;
+	}
+	
+	public final void castOn(TerrainGrid grid)
+	{
+		System.out.println("Magic.castOn(GameObject) returned");
+		System.out.println("Magic.castOn(GameObject) returned");
 	}
 	
 	

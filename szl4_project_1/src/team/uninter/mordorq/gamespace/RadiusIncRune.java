@@ -17,6 +17,7 @@ public class RadiusIncRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 		System.out.println("RadiusIncRune.injectOn(Tower) called");
+		tower.setRadius(tower.getRadius()+10);
 		System.out.println("RadiusIncRune.injectOn(Tower) returned");
 	}
 	

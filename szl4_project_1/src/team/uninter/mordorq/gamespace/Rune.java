@@ -22,7 +22,7 @@ public abstract class Rune extends Casted implements Injectable {
 		return false;
 	}
 	
-	public final void castOn(GameObject object)
+	public final void castOn(TerrainGrid grid)
 	{
 		System.out.println("Rune.castOn(object) called");
 		System.out.println("Rune.castOn(object) returned");

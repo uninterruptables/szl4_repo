@@ -5,6 +5,7 @@ public class IceWindMagic extends Magic{
 	public IceWindMagic() {
 		super();
 		System.out.println("IceWindMagic() called");
+		effects.add(new SlowStatus());
 		System.out.println("IceWindMagic() returned");
 	}
 	

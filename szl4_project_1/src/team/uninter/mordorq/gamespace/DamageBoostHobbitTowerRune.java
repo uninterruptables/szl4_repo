@@ -19,6 +19,7 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 		System.out.println("DamageBoostHobbitTowerRune.injectOn(Tower) called");
+		tower.setSpeciesDamage("hobbit", tower.getSpeciesDamage("hobbit")+10);
 		System.out.println("DamageBoostHobbitTowerRune.injectOn(Tower) returned");
 	}
 }

@@ -16,6 +16,7 @@ public class SpeedBoosterTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) called");
+		tower.setMaxCooldown(tower.getMaxCooldown()-10);
 		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) returned");
 	}
 	

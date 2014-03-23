@@ -46,7 +46,7 @@ public class Barricade extends Casted implements Vulnerable {
 		health+=healthDiff;
 	}
 	@Override
-	public void castOn(GameObject object) {
+	public void castOn(TerrainGrid grid) {
 		System.out.println("Barricade.castOn(GameObject) called");
 		System.out.println("Barricade.castOn(GameObject) returned");
 	}

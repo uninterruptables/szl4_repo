@@ -5,6 +5,7 @@ public class Nazgul extends Magic{
 	public Nazgul() {
 		super();
 		System.out.println("Nazgul() called");
+		effects.add(new WeakenStatus());		
 		System.out.println("Nazgul() returned");
 	}
 	public Nazgul(int x, int y) {
