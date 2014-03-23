@@ -12,16 +12,19 @@ abstract public class Trap extends InjectionTarget{
 	protected Trap() {
 		super();
 		System.out.println("Trap() called");
+		effects=new ArrayList<>();
 		System.out.println("Trap() returned");
 	}
 	protected Trap(int x, int y) {
 		super(x, y);
 		System.out.println("Trap(Int, Int) called");
+		effects=new ArrayList<>();
 		System.out.println("Trap(Int, Int) returned");
 	}
 
 	public void addEffect(StatusModifier newStatus) {
 		System.out.println("Trap.addEffect(StatusModifier) called");
+		effects.add(newStatus);
 		System.out.println("Trap.addEffect(StatusModifier) returned");
 	}
 	
