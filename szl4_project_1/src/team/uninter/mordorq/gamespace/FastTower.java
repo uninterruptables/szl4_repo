@@ -1,11 +1,18 @@
 package team.uninter.mordorq.gamespace;
 
 import java.util.Vector;
+import java.util.HashMap;
+import java.util.Map;
 
-public class FastTower extends Tower {
-	private float radius;
+public class FastTower extends Tower implements Injectable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int radius;
+	private Map<String, ?> damagetable;
 	
-	public FasTower( int x, int y){
+	public FastTower( int x,int y){
 		super (x, y);
 		fmissile= createMissile();
 		//TODO remove sysout
@@ -14,7 +21,7 @@ public class FastTower extends Tower {
 	}
 	
 	public void fire(EnemyTroop target){
-		this.notifyWith();
+		this.notifyWith(target); 
 		//TODO remove sysout
 				System.out.println("FastTower.fire(EnemyTroop targer) called");
 				System.out.println("FastTower.fire(EnemyTroop targer) returned");
@@ -26,29 +33,29 @@ public class FastTower extends Tower {
 			System.out.println("FastTower.notifyWith(EnemyTroop targer) called");
 			System.out.println("FastTower.notifyWith(EnemyTroop targer) returned");
 	
-	final public void controlIt (){
-		fmissile.controlIt();
-		//TODO remove sysout
-		System.out.println("FastTower.controlIt() called");
-		System.out.println("FastTower.controlIt() returned");
+	
 	}
 	
 	public FastMissile createMissile(){	
-		FastMissile fmissile = new FastMissile;
+		
 		//TODO remove sysout
 				System.out.println("FastTower.createMissile() called");
+				FastMissile fmissile = new FastMissile(x,  y);
+				
+				
 				System.out.println("FastTower.createMissile() returned");
+				return fmissile;
 	}
 	
 	
-	public void setRadius(float x){
+	public void setRadius(int x){
 		this.radius=x;
 		//TODO remove sysout
 		System.out.println("FastTower.setRadius() called");
 		System.out.println("FastTower.setRadius() returned");
 	}
 	
-	public float getRadius(){
+	public int getRadius(){
 		//TODO remove sysout
 		System.out.println("FastTower.setRadius() called");
 		System.out.println("FastTower.setRadius() returned");
@@ -78,31 +85,66 @@ public class FastMissile extends Missile {
 				System.out.println("FastMissile.set(int cooldown) returned");
 	}
 	
-	public void int getElfDamage(){
+	public Map<String, ?> getElfDamage(){
 		//TODO remove sysout
 		System.out.println("FastMissile.getElfDamage() called");
 		System.out.println("FastMissile.getElfDamage() returned");
+		return damagetable;
 	}
 	
-	public void int getHumanDamage(){
+	public Map<String, ?> getHumanDamage(){
 		//TODO remove sysout
 		System.out.println("FastMissile.getHumanDamage() called");
 		System.out.println("FastMissile.getHumanDamage() returned");
+		return damagetable;
 	}
 	
-	public void int getDwarfDamage(){
+	public Map<String, ?> getDwarfDamage(){
 		//TODO remove sysout
 				System.out.println("FastMissile.getDwarfDamage() called");
 				System.out.println("FastMissile.getDwarfDamage() returned");
-	}
+				return damagetable;
+				}
 	
-	public void int getHobbitDamage(){
+	public Map<String, ?> getHobbitDamage(){
 		//TODO remove sysout
 				System.out.println("FastMissile.getHobbitDamage() called");
+								
 				System.out.println("FastMissile.getHobbitDamage() returned");
+				return damagetable; 
 	}
 	
 	
 }
 protected FastMissile fmissile;
+
+@Override
+public void attach(TargetPublisher publisher) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public boolean canInjectOn(Tower tower) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean canInjectOn(Trap trap) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public void injectOn(Injectable injectable) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void castOn(GameObject object) {
+	// TODO Auto-generated method stub
+	
+}
 }
