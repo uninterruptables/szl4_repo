@@ -1,13 +1,12 @@
 package team.uninter.mordorq.gamespace;
 
 public class DOTTrapRune extends TrapRune{
-	float damagePerTick;
-	public boolean canInjectOn(Tower tower)
-	{
-		System.out.println("DOTTrapRune.canInjectOn(Tower) : boolean called");
-		System.out.println("DOTTrapRune.canInjectOn(Tower) : boolean returned");
-		return false;
+	public DOTTrapRune(int manaCost) {
+		super(manaCost);
+		// TODO Auto-generated constructor stub
 	}
+
+	float damagePerTick;
 	
 	public boolean canInjectOn(Trap trap){
 		System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean called");
@@ -22,7 +21,13 @@ public class DOTTrapRune extends TrapRune{
 		else
 		{
 			System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean returned");
-			return false
+			return false;
 		}
+	}
+
+	@Override
+	public void castOn(GameObject object) {
+		// TODO Auto-generated method stub
+		
 	}
 }

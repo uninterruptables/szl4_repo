@@ -1,10 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
-public class SlowStatus {
-
+public class SlowStatus extends StatusModifier{
 	float slowAmount;
-	EnemyTroop affectedEntity;
-	public SlowStatus(float slowAmount)
+
+	public SlowStatus(float slowAmount, int duration)
 	{
 		System.out.println("SlowStatus(float, EnemyTroop) called");
 		System.out.println("SlowStatus(float, EnemyTroop) returned");

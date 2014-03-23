@@ -1,11 +1,10 @@
 package team.uninter.mordorq.gamespace;
 
-public class PoisonStatus {
+public class PoisonStatus extends StatusModifier{
 
 	float damagePerTick;
-	EnemyTroop affectedEntity;
 	
-	public PoisonStatus(float damagePerTick)
+	public PoisonStatus(float damagePerTick, int duration)
 	{
 		System.out.println("PoisonStatus(float, EnemyTroop) called");
 		System.out.println("PoisonStatus(float, EnemyTroop) returned");

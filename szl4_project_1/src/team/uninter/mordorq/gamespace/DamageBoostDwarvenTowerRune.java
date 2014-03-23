@@ -1,6 +1,11 @@
 package team.uninter.mordorq.gamespace;
 
 public class DamageBoostDwarvenTowerRune extends TowerRune{
+	public DamageBoostDwarvenTowerRune(int manaCost) {
+		super(manaCost);
+		// TODO Auto-generated constructor stub
+	}
+
 	float extraDamage;
 	
 	public boolean canInjectOn(Tower tower)
@@ -17,10 +22,11 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 			return false;
 		}
 	}
-	
-	public boolean canInjectOn(Trap trap){
-		System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean called");
-		System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean returned");
-		return false;
+
+	@Override
+	public void castOn(GameObject object) {
+		// TODO Auto-generated method stub
+		
 	}
+	
 }

@@ -1,10 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
-public class WeakenStatus {
+public class WeakenStatus extends StatusModifier{
 	float weakenAmount;
-	EnemyTroop affectedEntity;
 	
-	public WeakenStatus(float weakenAmount)
+	public WeakenStatus(float weakenAmount, int duration)
 	{
 		System.out.println("PoisonStatus(float, EnemyTroop) called");
 		System.out.println("PoisonStatus(float, EnemyTroop) returned");
