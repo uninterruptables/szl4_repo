@@ -28,7 +28,6 @@ public class DOTTrapRune extends TrapRune{
 	
 	public boolean canInjectOn(Trap trap){
 		System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean called");
-		trap.getRunesRemained();
 		if(trap.getRunesRemained()>0)
 		{
 			PoisonStatus poisonStatus=new PoisonStatus(damagePerTick);

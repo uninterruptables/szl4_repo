@@ -6,13 +6,13 @@ public class SlowStatus extends StatusModifier{
 	public SlowStatus()
 	{
 		System.out.println("SlowStatus() called");
-		System.out.println("SlowStatus() returned"
+		System.out.println("SlowStatus() returned");
 	}
 	public SlowStatus(float slowAmount)
 	{
 		System.out.println("SlowStatus(float) called");
 		this.slowAmount=slowAmount;
-		System.out.println("SlowStatus(float) returned"
+		System.out.println("SlowStatus(float) returned");
 	}
 	public SlowStatus(float slowAmount, int duration)
 	{
