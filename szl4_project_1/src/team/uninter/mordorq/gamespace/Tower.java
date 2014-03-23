@@ -18,8 +18,14 @@ abstract public class Tower extends InjectionTarget
 		missile.controlIt();
 	}
 	
+	public void fire(EnemyTroop enemy){
+		missile.setPosition(getX(), getY());
+		missile.setTarget(enemy);
+	}
+	
 	public final void castOn(TerrainGrid grid)
 	{
+		//TODO:
 		System.out.println("Tower.castOn(TerrainGrid) returned");
 		System.out.println("Tower.castOn(TerrainGrid) returned");
 	}
@@ -44,6 +50,7 @@ abstract public class Tower extends InjectionTarget
 		System.out.println("Tower.getSpeciesDamage(String) : int returned");
 		return (int)missile.racialDamages.get(type);
 	}
+	
 	public final void setSpeciesDamage(String type, int value)
 	{
 		System.out.println("Tower.setSpeciesDamage(String, int) called");
@@ -57,24 +64,28 @@ abstract public class Tower extends InjectionTarget
 		System.out.println("Tower.getRadius() : int returned");
 		return radius;	
 	}
+	
 	public final void setRadius(int newRadius)
 	{
 		System.out.println("Tower.setRadius(int) called");
 		radius=newRadius;
 		System.out.println("Tower.setRadius(int) returned");
 	}
+	
 	public final int getMaxCooldown()
 	{
 		System.out.println("Tower.getMaxCooldown() : int called");
 		System.out.println("Tower.getMaxCooldown() : int returned");
 		return missile.maxCooldown;
 	}
+	
 	public final void setMaxCooldown(int newMaxCooldown)
 	{
 		System.out.println("Tower.setMaxCooldown(int) called");
 		missile.maxCooldown=newMaxCooldown;
 		System.out.println("Tower.setMaxCooldown(int) returned");
 	}
+	
 	public void addAllDamage(int damage)
 	{
 		System.out.println("Tower.addAllDamage(int) called");
@@ -87,13 +98,8 @@ abstract public class Tower extends InjectionTarget
 	final public boolean isActive(){
 		if(missile.state.equals(MissileState.FIRE_READY)){
 			EnemyTroop target = getNewTarget();
-			missile.setTarget(target);
 			if(target == null) missile.set(MissileState.WAITING);
-			else {
-				int _x = target.getX(); //+ target.getImage().getWidth() / 2;
-				int _y = target.getY();
-				missile.setTargetPosition(_x, _y);
-			}
+			else fire(target);
 		}
 		return missile.isActive();
 	}
@@ -108,7 +114,13 @@ abstract public class Tower extends InjectionTarget
 	
 	public abstract static class Missile extends GameObject implements Controlable{
 		
-		HashMap<String, Integer> racialDamages;
+		private int deltaXY;
+		private HashMap<String, Integer> racialDamages;
+		private int cooldown, maxCooldown;
+		private MissileState state;
+		private EnemyTroop target;
+		private int targetX, targetY;
+		
 		protected Missile(int x, int y){
 			super(x,y);
 			state = MissileState.WAITING;
@@ -128,6 +140,7 @@ abstract public class Tower extends InjectionTarget
 		}
 		
 		public void set(MissileState state){
+			if(state.equals(MissileState.WAITING)) setTarget(null);
 			this.state = state;
 		}
 		
@@ -137,15 +150,33 @@ abstract public class Tower extends InjectionTarget
 		
 		public void setTarget(EnemyTroop target){
 			this.target = target;
+			if(this.target != null){
+				int x = this.target.getX();
+				int y = this.target.getY();
+				int _x = x + 10/2; //TODO
+				int _y = y + 10/2;
+				this.setTargetPosition( _x,_y );
+				this.set(MissileState.ON_THE_FLY);
+			}
+		}
+		
+		public void setDeltaXY(int deltaXY){
+			this.deltaXY = deltaXY;
 		}
 		
 		protected void moveAhead(){
-			//TODO:
+			this.x += deltaXY;
+			this.y += deltaXY;
+		}
+		
+		protected void setPosition(int x, int y){
+			this.setX(x);
+			this.setY(y);
 		}
 		
 		public void setTargetPosition(int x, int y){
-			this.setX(x);
-			this.setY(y);
+			this.targetX = x;
+			this.targetY = y;
 		}
 		
 		public boolean isActive(){
@@ -156,11 +187,6 @@ abstract public class Tower extends InjectionTarget
 		public enum MissileState{
 			WAITING, DORMANT, FIRE_READY, ON_THE_FLY
 		}
-		
-		private int cooldown, maxCooldown;
-		private MissileState state;
-		private EnemyTroop target;
-		private int targetX, targetY;
 	}
 	
 	protected Missile missile;
