@@ -90,7 +90,8 @@ public class CastSimulator extends ConfigurableSimulator{
 	 * */
 	private void simulate2(){
 		//TODO:
-		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
+		System.out.println("in CastSimulator.simulate2");
+	/*	MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
 		Casted activeObject;
 		TerrainGrid iniGrid = new RoadGrid(13);		
 		
@@ -118,14 +119,16 @@ public class CastSimulator extends ConfigurableSimulator{
 				else frame.getScene().place(activeObject, iniGrid);
 				frame.setUserMana(mana - activeObject.getCost());
 			}
-		}
+		}*/
 	}
 	
 	/**
 	 * Uses the standard implementation of this simulation.
 	 * */
 	private void simulate1(){
-		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
+		//TODO:
+		System.out.println("in CastSimulator.simulate2");
+		/*MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
 		Casted activeObject;
 		TerrainGrid iniGrid = new RoadGrid(13);		
 		
@@ -153,7 +156,7 @@ public class CastSimulator extends ConfigurableSimulator{
 				else activeObject.castOn(iniGrid);
 				frame.setUserMana(mana - activeObject.getCost());
 			}
-		}
+		}*/
 	}
 	
 	/**

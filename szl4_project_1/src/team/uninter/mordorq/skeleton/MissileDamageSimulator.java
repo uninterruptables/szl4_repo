@@ -51,7 +51,7 @@ public class MissileDamageSimulator implements Simulatable {
 	@Override
 	public void simulate(){
 		System.out.println("MissileDamageSimulator is simulating..");
-		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/missiledd.txt");
+		/*MordorFrame frame = MordorFrame.newInstance("resources/descriptors/missiledd.txt");
 		Tower tower = new BasicTower();
 		EnemyTroop troop = new Elf();
 		List<TerrainGrid> grids = frame.getScene().getGrids();
@@ -61,7 +61,7 @@ public class MissileDamageSimulator implements Simulatable {
 	    while(troop.isActive()){
 	    	tower.controlIt();
 	    }
-	    frame.getScene().rewardUser(troop.getReward());
+	    frame.getScene().rewardUser(troop.getReward());*/
 	    System.out.println("MissileDamageSimulator finished the simulation..");
 	}
 }
