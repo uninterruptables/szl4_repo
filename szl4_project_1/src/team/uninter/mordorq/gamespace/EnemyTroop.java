@@ -66,11 +66,7 @@ public int getHealth()
 	System.out.println("EnemyTroop.getHealth() called");
 	System.out.println("EnemyTroop.getHealth() returned");	
 }
-public int setHealth(int health)
-{
-	System.out.println("EnemyTroop.setHealth(health) called");
-	System.out.println("EnemyTroop.setHealth(health) returned");	
-}
+
 public int getCooldown()
 {
 	System.out.println("EnemyTroop.getCooldown() called");
@@ -84,4 +80,4 @@ public int setCooldown(int cooldown)
 public abstract int getReward();
 
 
-}
+}//utso jelecske
