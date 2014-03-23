@@ -8,13 +8,13 @@ public abstract class TrapRune extends Rune{
 	
 	//If prequisitions are met, one can call the injectOn method, which is overwritten by
 	//every descendant of this class.
-	public TrapRune() {
+	protected TrapRune() {
 		super();
 		System.out.println("TrapRune() called");
 		System.out.println("TrapRune() returned");
 	}
 	
-	public TrapRune(int x, int y) {
+	protected TrapRune(int x, int y) {
 		super(x, y);
 		System.out.println("TrapRune(Int, Int) called");
 		System.out.println("TrapRune(Int, Int) returned");

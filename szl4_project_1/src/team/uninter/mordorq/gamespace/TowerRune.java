@@ -9,13 +9,13 @@ public abstract class TowerRune extends Rune{
 	
 	//If prequisitions are met, one can call the injectOn method, which is overwritten by
 	//every descendant of this class.
-	public TowerRune() {
+	protected TowerRune() {
 		super();
 		System.out.println("TowerRune() called");
 		System.out.println("TowerRune() returned");
 	}
 	
-	public TowerRune(int x, int y) {
+	protected TowerRune(int x, int y) {
 		super(x, y);
 		System.out.println("TowerRune(Int, Int) called");
 		System.out.println("TowerRune(Int, Int) returned");

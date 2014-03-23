@@ -9,12 +9,12 @@ public abstract class Magic extends Casted{
 	//It's manacost can be asked, for user input check.
 	int manaCost;
 	protected ArrayList<StatusModifier> effects;
-	public Magic() {
+	protected Magic() {
 		super();
 		System.out.println("Magic() called");
 		System.out.println("Magic() returned");
 	}
-	public Magic(int x, int y) {
+	protected Magic(int x, int y) {
 		super(x, y);
 		System.out.println("Magic(Int, Int) called");
 		System.out.println("Magic(Int, Int) returned");
