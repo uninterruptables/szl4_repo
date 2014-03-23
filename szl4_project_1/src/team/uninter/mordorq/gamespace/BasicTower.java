@@ -9,7 +9,6 @@ public class BasicTower extends Tower implements Injectable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int radius;
 	private Map<String, ?> damagetable;
 	protected int cooldown;
 	
@@ -149,6 +148,18 @@ public void injectOn(Injectable injectable) {
 
 @Override
 public void castOn(GameObject object) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void injectOn(InjectionTarget target) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void inject(Injectable injectable) {
 	// TODO Auto-generated method stub
 	
 }
