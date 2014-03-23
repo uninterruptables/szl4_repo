@@ -2,6 +2,7 @@ package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
 
+@SuppressWarnings("serial")
 public class Elf extends EnemyTroop {
 
 	
