@@ -2,6 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 public class WeakenTrapRune extends TrapRune{
 
+	float slowAmount;
+	
 	public WeakenTrapRune() {
 		super();
 		System.out.println("WeakenTrapRune() called");
@@ -23,16 +25,14 @@ public class WeakenTrapRune extends TrapRune{
 		System.out.println("WeakenTrapRune(Int, Int, Int) called");
 		System.out.println("WeakenTrapRune(Int, Int, Int) returned");
 	}
-
-	float damagePerTick;
 	
 	public boolean canInjectOn(Trap trap){
 		System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean called");
 		trap.getRunesRemained();
 		if(trap.getRunesRemained()>0)
 		{
-			PoisonStatus poisonStatus=new PoisonStatus(damagePerTick);
-			trap.addEffect(poisonStatus);
+			WeakenStatus weakenStatus=new WeakenStatus(slowAmount);
+			trap.addEffect(weakenStatus);
 			System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean returned");
 			return true;
 		}
@@ -41,11 +41,5 @@ public class WeakenTrapRune extends TrapRune{
 			System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean returned");
 			return false;
 		}
-	}
-
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
 	}
 }

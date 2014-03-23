@@ -38,10 +38,4 @@ public class FreezeTrapRune extends TrapRune{
 		return false;
 		
 	}
-
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
-	}
 }

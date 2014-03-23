@@ -40,10 +40,4 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 			return false;
 		}
 	}
-
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
-	}
 }

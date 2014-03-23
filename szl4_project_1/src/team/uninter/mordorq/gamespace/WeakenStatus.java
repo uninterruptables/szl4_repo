@@ -8,6 +8,13 @@ public class WeakenStatus extends StatusModifier{
 		System.out.println("WeakenStatus() called");
 		System.out.println("WeakenStatus() returned"
 	}
+	
+	public WeakenStatus(float weakenAmount)
+	{
+		System.out.println("WeakenStatus(float) called");
+		this.weakenAmount=weakenAmount;
+		System.out.println("WeakenStatus(float) returned"
+	}
 	public WeakenStatus(float weakenAmount, int duration)
 	{
 		System.out.println("WeakenStatus(float, EnemyTroop) called");

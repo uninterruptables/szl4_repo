@@ -41,10 +41,5 @@ public class DamageBoosterTowerRune extends TowerRune{
 		}
 	}
 
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

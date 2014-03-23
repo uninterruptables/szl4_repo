@@ -41,10 +41,5 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 		}
 	}
 
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

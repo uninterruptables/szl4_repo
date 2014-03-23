@@ -37,10 +37,4 @@ public class SpeedBoosterTowerRune extends TowerRune{
 		}
 	}
 	
-	@Override
-	public void castOn(GameObject object) {
-		System.out.println("SpeedBoosterTowerRune.castOn(GameObject) called");
-		System.out.println("SpeedBoosterTowerRune.castOn(GameObject) returned");
-		
-	}
 }

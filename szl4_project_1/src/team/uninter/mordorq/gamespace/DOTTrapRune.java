@@ -43,9 +43,4 @@ public class DOTTrapRune extends TrapRune{
 		}
 	}
 
-	@Override
-	public void castOn(GameObject object) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -38,10 +38,4 @@ public class RadiusIncRune extends TowerRune{
 		}
 	}
 	
-	@Override
-	public void castOn(GameObject object) {
-		System.out.println("RadiusIncRune.castOn(GameObject) called");
-		System.out.println("RadiusIncRune.castOn(GameObject) returned");
-		
-	}
 }

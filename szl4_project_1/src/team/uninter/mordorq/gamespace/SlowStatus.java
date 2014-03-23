@@ -8,6 +8,12 @@ public class SlowStatus extends StatusModifier{
 		System.out.println("SlowStatus() called");
 		System.out.println("SlowStatus() returned"
 	}
+	public SlowStatus(float slowAmount)
+	{
+		System.out.println("SlowStatus(float) called");
+		this.slowAmount=slowAmount;
+		System.out.println("SlowStatus(float) returned"
+	}
 	public SlowStatus(float slowAmount, int duration)
 	{
 		System.out.println("SlowStatus(float, EnemyTroop) called");
