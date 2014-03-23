@@ -4,6 +4,9 @@
 package team.uninter.mordorq.gamespace;
 
 import javax.swing.*;
+
+import team.uninter.mordorq.utils.RoundInitiator;
+
 import java.util.*;
 import java.io.*;
 
@@ -64,7 +67,7 @@ public class Scene extends JPanel{
 		//TODO:
 		System.out.println("Scene.cast(Magic): void called");
 		for(Controlable enemy : enemies)
-			((EnemyTroop)enemy).addAll(magic.getEffects());
+			((EnemyTroop)enemy).addAll(magic.getStatusModifiers());
 		System.out.println("Scene.cast(Magic): void returned");
 	}
 	
