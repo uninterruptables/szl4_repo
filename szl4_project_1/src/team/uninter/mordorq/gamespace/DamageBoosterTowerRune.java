@@ -16,19 +16,10 @@ public class DamageBoosterTowerRune extends TowerRune{
 		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
 	}
 	
-	public boolean canInjectOn(Tower tower)
+	public void injectOn(Tower tower)
 	{
-		System.out.println("DamageBoosterTowerRune.canInjectOn(Tower) : boolean called");
-		if(tower.getRunesRemained()>0)
-		{
-			System.out.println("DamageBoosterTowerRune.canInjectOn(Tower) : boolean returned");
-			return true;
-		}
-		else
-		{
-			System.out.println("DamageBoosterTowerRune.canInjectOn(Tower) : boolean returned");
-			return false;
-		}
+		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
+		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
 	}
 
 	

@@ -14,18 +14,10 @@ public class RadiusIncRune extends TowerRune{
 		System.out.println("RadiusIncRune(Int, Int) returned");
 	}
 
-	public boolean canInjectOn(Tower tower)
+	public void injectOn(Tower tower)
 	{
-		System.out.println("RadiusIncRune.canInjectOn(Tower) : boolean called");
-		if(tower.getRunesRemained()>0)
-		{
-			System.out.println("RadiusIncRune.canInjectOn(Tower) : boolean returned");
-			return true;
-		}
-		else{
-			System.out.println("RadiusIncRune.canInjectOn(Tower) : boolean returned");
-			return false;
-		}
+		System.out.println("RadiusIncRune.injectOn(Tower) called");
+		System.out.println("RadiusIncRune.injectOn(Tower) returned");
 	}
 	
 }

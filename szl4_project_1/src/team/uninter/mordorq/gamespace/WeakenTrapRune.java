@@ -2,7 +2,7 @@ package team.uninter.mordorq.gamespace;
 
 public class WeakenTrapRune extends TrapRune{
 
-	float slowAmount;
+	float weakenAmount;
 	
 	public WeakenTrapRune() {
 		super();
@@ -16,20 +16,10 @@ public class WeakenTrapRune extends TrapRune{
 		System.out.println("WeakenTrapRune(Int, Int) returned");
 	}
 	
-	public boolean canInjectOn(Trap trap){
-		System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean called");
-		trap.getRunesRemained();
-		if(trap.getRunesRemained()>0)
-		{
-			WeakenStatus weakenStatus=new WeakenStatus(slowAmount);
-			trap.addEffect(weakenStatus);
-			System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean returned");
-			return true;
-		}
-		else
-		{
-			System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean returned");
-			return false;
-		}
+	public void injectOn(Trap trap){
+		System.out.println("WeakenTrapRune.injectOn(Trap) called");
+		WeakenStatus weakenStatus=new WeakenStatus(weakenAmount);
+		trap.addEffect(weakenStatus);
+		System.out.println("WeakenTrapRune.injectOn(Trap) returned");
 	}
 }

@@ -13,18 +13,10 @@ public class SpeedBoosterTowerRune extends TowerRune{
 		System.out.println("SpeedBoosterTowerRune(Int, Int) returned");
 	}
 
-	public boolean canInjectOn(Tower tower)
+	public void injectOn(Tower tower)
 	{
-		System.out.println("SpeedBoosterTowerRune.canInjectOn(Tower) : boolean called");
-		if(tower.getRunesRemained()>0)
-		{
-			System.out.println("SpeedBoosterTowerRune.canInjectOn(Tower) : boolean returned");
-			return true;
-		}
-		else{
-			System.out.println("SpeedBoosterTowerRune.canInjectOn(Tower) : boolean returned");
-			return false;
-		}
+		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) called");
+		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) returned");
 	}
 	
 }

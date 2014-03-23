@@ -16,20 +16,10 @@ public class FreezeTrapRune extends TrapRune{
 		System.out.println("FreezeTrapRune(Int, Int) returned");
 	}
 	
-	public boolean canInjectOn(Trap trap){
-		System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean called");
-		if(trap.getRunesRemained()>0)
-		{
-			SlowStatus slowStatus=new SlowStatus(slowAmount);
-			trap.addEffect(slowStatus);
-			System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean returned");
-			return true;
-		}
-		else 
-		{
-			System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean returned");
-			return false;
-		}
-		
+	public void injectOn(Trap trap){
+		System.out.println("FreezeTrapRune.injectOn(Trap) called");
+		SlowStatus slowStatus=new SlowStatus(slowAmount);
+		trap.addEffect(slowStatus);
+		System.out.println("FreezeTrapRune.injectOn(Trap) returned");
 	}
 }

@@ -12,7 +12,20 @@ public abstract class TowerRune extends Rune{
 		System.out.println("TowerRune(Int, Int) called");
 		System.out.println("TowerRune(Int, Int) returned");
 	}
-	abstract public boolean canInjectOn(Tower tower);
+	final public boolean canInjectOn(Tower tower)
+	{
+		System.out.println("TowerRune.canInjectOn(Tower) : boolean called");
+		if(tower.getRunesRemained()>0)
+		{
+			System.out.println("TowerRune.canInjectOn(Tower) : boolean returned");
+			return true;
+		}
+		else
+		{
+			System.out.println("TowerRune.canInjectOn(Tower) : boolean returned");
+			return false;
+		}
+	}
 	final public boolean canInjectOn(Trap trap)
 	{
 		System.out.println("TowerRune.canInjectOn(Trap) : boolean called");

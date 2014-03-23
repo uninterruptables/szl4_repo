@@ -16,18 +16,9 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 		System.out.println("DamageBoostHobbitTowerRune(Int, Int) returned");
 	}
 	
-	public boolean canInjectOn(Tower tower)
+	public void injectOn(Tower tower)
 	{
-		System.out.println("DamageBoostHobbitTowerRune.canInjectOn(Tower) : boolean called");
-		if(tower.getRunesRemained()>0)
-		{
-			System.out.println("DamageBoostHobbitTowerRune.canInjectOn(Tower) : boolean returned");
-			return true;
-		}
-		else
-		{
-			System.out.println("DamageBoostHobbitTowerRune.canInjectOn(Tower) : boolean returned");
-			return false;
-		}
+		System.out.println("DamageBoostHobbitTowerRune.injectOn(Tower) called");
+		System.out.println("DamageBoostHobbitTowerRune.injectOn(Tower) returned");
 	}
 }
