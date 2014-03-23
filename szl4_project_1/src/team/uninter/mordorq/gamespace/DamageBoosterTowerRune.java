@@ -2,6 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 public class DamageBoosterTowerRune extends TowerRune{
 	
+	//Class used to increase damage versus everything. On inject on, it calls the tower-s
+	//setAllDamage function, to increase it's damage
 	float extraDamage;
 	
 	public DamageBoosterTowerRune() {

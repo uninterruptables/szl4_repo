@@ -1,6 +1,12 @@
 package team.uninter.mordorq.gamespace;
 
 public class SlowStatus extends StatusModifier{
+	
+	//A class used to simulate a slow effect on the enemy troops.
+	//During different animation cycles, the affect method is called, that slows
+	//the enemy troop by increasing it's cooldown. If it already affects it, it does not
+	//do anything.
+	
 	float slowAmount;
 
 	public SlowStatus()

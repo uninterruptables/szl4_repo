@@ -2,6 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 public class DamageBoostElvenTowerRune extends TowerRune{
 	
+	//Class used to increase damage versus elves. On inject on, it calls the tower-s
+	//setSpecies function, to increase it's damage
 	float extraDamage;
 	
 	public DamageBoostElvenTowerRune() {

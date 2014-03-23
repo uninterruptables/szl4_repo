@@ -2,6 +2,9 @@ package team.uninter.mordorq.gamespace;
 
 public class PoisonStatus extends StatusModifier{
 
+	//A class used to simulate a damage over time effect on the enemy troops.
+	//During different animation cycles, the affect method is called, that deals damage
+	//to the enemy troop it affects.
 	float damagePerTick;
 	
 	public PoisonStatus()

@@ -2,6 +2,9 @@ package team.uninter.mordorq.gamespace;
 
 public abstract class StatusModifier extends GameObject{
 	
+	//Generic class used to handle different status modifiing effects. It has an affected 
+	//entity, as an enemy troop, and a duration. Each status modifier must create they own 
+	//affect method to simulate their effects.
 	protected EnemyTroop affectedEntity;
 	protected int duration;
 	
