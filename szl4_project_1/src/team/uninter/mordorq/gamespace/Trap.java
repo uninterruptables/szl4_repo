@@ -59,8 +59,8 @@ abstract public class Trap extends InjectionTarget{
 	
 	public final void castOn(TerrainGrid grid)
 	{
-		System.out.println("Trap.castOn(GameObject) returned");
-		System.out.println("Trap.castOn(GameObject) returned");
+		System.out.println("Trap.castOn(TerrainGrid) returned");
+		System.out.println("Trap.castOn(TerrainGrid) returned");
 	}
 
 }

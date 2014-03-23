@@ -19,7 +19,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
-		tower.increaseAllDamage(10);
+		tower.addAllDamage(10);
 		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
 	}
 

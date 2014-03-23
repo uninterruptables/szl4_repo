@@ -1,18 +1,74 @@
 package team.uninter.mordorq.gamespace;
 
+import java.util.HashMap;
+import java.util.Iterator;
+
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget 
 					implements TargetSubscriber, Controlable{
 
+	int radius;
 	protected Tower(int x, int y) {
 		super(x, y);
 		missile = createMissile();
 	}
-
+	
 	final public void controlIt(){
 		missile.controlIt();
+	}
+	
+	public final void castOn(TerrainGrid grid)
+	{
+		System.out.println("Tower.castOn(TerrainGrid) returned");
+		System.out.println("Tower.castOn(TerrainGrid) returned");
+	}
+	
+	public final boolean canInject(Injectable inj)
+	{
+		System.out.println("Tower.canInject(Injectable) : bool called");
+		if(inj.canInjectOn(this))
+		{
+			System.out.println("Tower.canInject(Injectable) : bool returned");
+			return true;
+		}
+		else
+		{
+			System.out.println("Tower.canInject(Injectable) : bool returned");
+			return false;
+		}
+	}
+	public final int getSpeciesDamage(String type)
+	{
+		return (int)missile.racialDamages.get(type);
+	}
+	public final void setSpeciesDamage(String type, int value)
+	{
+		missile.racialDamages.put(type, missile.racialDamages.get(type) + value);
+	}
+	
+	public final int getRadius()
+	{
+		return radius;
+	}
+	public final void setRadius(int newRadius)
+	{
+		radius=newRadius;
+	}
+	public final int getMaxCooldown()
+	{
+		return missile.maxCooldown;
+	}
+	public final void setMaxCooldown(int newMaxCooldown)
+	{
+		missile.maxCooldown=newMaxCooldown;
+	}
+	public void addAllDamage(int damage)
+	{
+		for (String key : missile.racialDamages.keySet()) {
+		    missile.racialDamages.put(key, missile.racialDamages.get(key)+damage);
+		}
 	}
 	
 	final public boolean isActive(){
@@ -35,8 +91,11 @@ abstract public class Tower extends InjectionTarget
 		return null;
 	}
 	
+	
+	
 	public abstract static class Missile extends GameObject implements Controlable{
 		
+		HashMap<String, Integer> racialDamages;
 		protected Missile(int x, int y){
 			super(x,y);
 			state = MissileState.WAITING;
@@ -85,7 +144,7 @@ abstract public class Tower extends InjectionTarget
 			WAITING, DORMANT, FIRE_READY, ON_THE_FLY
 		}
 		
-		private int cooldown;
+		private int cooldown, maxCooldown;
 		private MissileState state;
 		private EnemyTroop target;
 		private int targetX, targetY;
