@@ -6,6 +6,21 @@ import java.util.ArrayList;
 abstract public class Trap extends InjectionTarget{
 
 	ArrayList<StatusModifier> effects;
+	public Trap() {
+		super();
+		System.out.println("Trap() called");
+		System.out.println("Trap() returned");
+	}
+	public Trap(int manaCost) {
+		super(manaCost);
+		System.out.println("Trap(Int) called");
+		System.out.println("Trap(Int) returned");
+	}
+	public Trap(int x, int y) {
+		super(x, y);
+		System.out.println("Trap(Int, Int) called");
+		System.out.println("Trap(Int, Int) returned");
+	}
 	protected Trap(int x, int y, int manacost) {
 		super(x, y, manacost);
 		System.out.println("Trap(Int, Int, Int) called");

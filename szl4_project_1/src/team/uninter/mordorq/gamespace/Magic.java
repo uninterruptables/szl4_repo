@@ -5,14 +5,27 @@ import java.util.ArrayList;
 public abstract class Magic extends Casted{
 	int manaCost;
 	ArrayList<StatusModifier> effects;
-	
+	public Magic() {
+		super();
+		System.out.println("Magic() called");
+		System.out.println("Magic() returned");
+	}
 	public Magic(int manaCost) {
 		super(manaCost);
 		System.out.println("Magic(Int) called");
 		System.out.println("Magic(Int) returned");
 	}
-	
-	
+	public Magic(int x, int y) {
+		super(x, y);
+		System.out.println("Magic(Int, Int) called");
+		System.out.println("Magic(Int, Int) returned");
+	}
+	public Magic(int x, int y, int manaCost) {
+		super(x, y, manaCost);
+		System.out.println("Magic(Int, Int, Int) called");
+		System.out.println("Magic(Int, Int, Int) returned");
+	}
+
 	public int getManaCost()
 	{
 		System.out.println("Magic.getManaCost() : Int called");

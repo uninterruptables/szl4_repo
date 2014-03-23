@@ -1,9 +1,26 @@
 package team.uninter.mordorq.gamespace;
 
 public class FreezeTrapRune extends TrapRune{
+	public FreezeTrapRune() {
+		super();
+		System.out.println("FreezeTrapRune() called");
+		System.out.println("FreezeTrapRune() returned");
+	}
 	public FreezeTrapRune(int manaCost) {
 		super(manaCost);
-		// TODO Auto-generated constructor stub
+		System.out.println("FreezeTrapRune(Int) called");
+		System.out.println("FreezeTrapRune(Int) returned");
+	}
+	
+	public FreezeTrapRune(int x, int y) {
+		super(x, y);
+		System.out.println("FreezeTrapRune(Int, Int) called");
+		System.out.println("FreezeTrapRune(Int, Int) returned");
+	}
+	public FreezeTrapRune(int x, int y, int manacost) {
+		super(x, y, manacost);
+		System.out.println("FreezeTrapRune(Int, Int, Int) called");
+		System.out.println("FreezeTrapRune(Int, Int, Int) returned");
 	}
 
 	float slowAmount;
