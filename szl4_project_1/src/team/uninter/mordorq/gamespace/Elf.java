@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.gamespace.Tower.Missile;
+
 public class Elf extends EnemyTroop {
 
 	
@@ -19,6 +21,11 @@ public class Elf extends EnemyTroop {
 		System.out.println("EnemyTroop.getReward() called");
 		System.out.println("EnemyTroop.getReward() returned");
 		return mana;
+		
+	}
+	@Override
+	public void interactWith(Missile missile) {
+		// TODO Auto-generated method stub
 		
 	}
 }
