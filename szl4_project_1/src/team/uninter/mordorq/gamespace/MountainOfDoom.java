@@ -10,11 +10,16 @@ import team.uninter.mordorq.gamespace.EnemyTroop;
 public class MountainOfDoom extends DamageTaker{
 	private static MountainOfDoom instance = null;
  
-	private MountainOfDoom() {	}
+	private Scene owner;
+	
+	private MountainOfDoom(Scene owner) {
+		this.owner = owner;
+	}
+	private MountainOfDoom() {}
 	protected int health = 1;
-	public static synchronized MountainOfDoom getInstance() {
+	public static synchronized MountainOfDoom getInstance(Scene scene) {
 		if (instance == null) {
-                	instance = new MountainOfDoom ();
+                	instance = new MountainOfDoom (scene);
 		}
 		return instance;
 	}
@@ -27,12 +32,13 @@ public class MountainOfDoom extends DamageTaker{
 	public void interactWith(EnemyTroop troop)
 	{
 		System.out.println("MountainOfDoom.interactWith(EnemyTroop) called");
+		owner.endGame(false);
 		System.out.println("MountainOfDoom.interactWith(EnemyTroop) returned");
 	}
 
 	@Override
 	public void interactWith(Missile missile) {
-		// TODO Auto-generated method stub, ez marad üres is.
+		// TODO Auto-generated method stub, ez marad ï¿½res is.
 		
 	}
 }
