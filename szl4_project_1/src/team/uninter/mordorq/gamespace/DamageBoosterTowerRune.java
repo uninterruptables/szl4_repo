@@ -1,6 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
 public class DamageBoosterTowerRune extends TowerRune{
+	
+	float extraDamage;
+	
 	public DamageBoosterTowerRune() {
 		super();
 		System.out.println("DamageBoosterTowerRune() called");
@@ -22,8 +25,6 @@ public class DamageBoosterTowerRune extends TowerRune{
 		System.out.println("DamageBoosterTowerRune(Int, Int, Int) called");
 		System.out.println("DamageBoosterTowerRune(Int, Int, Int) returned");
 	}
-
-float extraDamage;
 	
 	public boolean canInjectOn(Tower tower)
 	{

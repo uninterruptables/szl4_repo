@@ -1,6 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
 public class DOTTrapRune extends TrapRune{
+	
+	float damagePerTick;
+	
 	public DOTTrapRune() {
 		super();
 		System.out.println("DOTTrapRune() called");
@@ -22,8 +25,6 @@ public class DOTTrapRune extends TrapRune{
 		System.out.println("DOTTrapRune(Int, Int, Int) called");
 		System.out.println("DOTTrapRune(Int, Int, Int) returned");
 	}
-
-	float damagePerTick;
 	
 	public boolean canInjectOn(Trap trap){
 		System.out.println("DOTTrapRune.canInjectOn(Trap) : boolean called");

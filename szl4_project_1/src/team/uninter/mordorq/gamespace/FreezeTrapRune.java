@@ -1,6 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
 public class FreezeTrapRune extends TrapRune{
+	
+	float slowAmount;
+	
 	public FreezeTrapRune() {
 		super();
 		System.out.println("FreezeTrapRune() called");
@@ -22,8 +25,6 @@ public class FreezeTrapRune extends TrapRune{
 		System.out.println("FreezeTrapRune(Int, Int, Int) called");
 		System.out.println("FreezeTrapRune(Int, Int, Int) returned");
 	}
-
-	float slowAmount;
 	
 	public boolean canInjectOn(Trap trap){
 		System.out.println("DamageBoostDwarvenTowerRune.canInjectOn(Trap) : boolean called");
