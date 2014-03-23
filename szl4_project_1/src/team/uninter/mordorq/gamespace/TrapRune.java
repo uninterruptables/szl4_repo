@@ -39,4 +39,9 @@ public abstract class TrapRune extends Rune{
 			return false;
 		}
 	}
+	final public void injectOn(Tower tower)
+	{
+		System.out.println("TrapRune.canInjectOn(Tower) : boolean called");
+		System.out.println("TrapRune.canInjectOn(Tower) : boolean returned");
+	}
 }
