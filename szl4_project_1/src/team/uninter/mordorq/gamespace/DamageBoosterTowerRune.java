@@ -1,9 +1,26 @@
 package team.uninter.mordorq.gamespace;
 
 public class DamageBoosterTowerRune extends TowerRune{
-public DamageBoosterTowerRune(int manaCost) {
+	public DamageBoosterTowerRune() {
+		super();
+		System.out.println("DamageBoosterTowerRune() called");
+		System.out.println("DamageBoosterTowerRune() returned");
+	}
+	public DamageBoosterTowerRune(int manaCost) {
 		super(manaCost);
-		// TODO Auto-generated constructor stub
+		System.out.println("DamageBoosterTowerRune(Int) called");
+		System.out.println("DamageBoosterTowerRune(Int) returned");
+	}
+	
+	public DamageBoosterTowerRune(int x, int y) {
+		super(x, y);
+		System.out.println("DamageBoosterTowerRune(Int, Int) called");
+		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
+	}
+	public DamageBoosterTowerRune(int x, int y, int manacost) {
+		super(x, y, manacost);
+		System.out.println("DamageBoosterTowerRune(Int, Int, Int) called");
+		System.out.println("DamageBoosterTowerRune(Int, Int, Int) returned");
 	}
 
 float extraDamage;

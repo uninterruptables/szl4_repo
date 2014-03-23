@@ -1,9 +1,26 @@
 package team.uninter.mordorq.gamespace;
 
 public class DamageBoostHobbitTowerRune extends TowerRune{
-public DamageBoostHobbitTowerRune(int manaCost) {
+	public DamageBoostHobbitTowerRune() {
+		super();
+		System.out.println("DamageBoostHobbitTowerRune() called");
+		System.out.println("DamageBoostHobbitTowerRune() returned");
+	}
+	public DamageBoostHobbitTowerRune(int manaCost) {
 		super(manaCost);
-		
+		System.out.println("DamageBoostHobbitTowerRune(Int) called");
+		System.out.println("DamageBoostHobbitTowerRune(Int) returned");
+	}
+	
+	public DamageBoostHobbitTowerRune(int x, int y) {
+		super(x, y);
+		System.out.println("DamageBoostHobbitTowerRune(Int, Int) called");
+		System.out.println("DamageBoostHobbitTowerRune(Int, Int) returned");
+	}
+	public DamageBoostHobbitTowerRune(int x, int y, int manacost) {
+		super(x, y, manacost);
+		System.out.println("DamageBoostHobbitTowerRune(Int, Int, Int) called");
+		System.out.println("DamageBoostHobbitTowerRune(Int, Int, Int) returned");
 	}
 
 float extraDamage;
