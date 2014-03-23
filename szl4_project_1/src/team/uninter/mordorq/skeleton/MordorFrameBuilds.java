@@ -37,7 +37,8 @@ public class MordorFrameBuilds implements Simulatable{
 	public void simulate() throws Exception{
 		//TODO:
 		System.out.println("MordorFrame builds the scene...");
-		MordorFrame.newInstance(SIMULATION_FILE_PATH);
+		//MordorFrame.newInstance(SIMULATION_FILE_PATH);
+		System.out.println("build finished...");
 	}
 	
 	/**
