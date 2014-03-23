@@ -39,7 +39,20 @@ abstract public class Trap extends InjectionTarget{
 		
 	}
 	
-	public boolean canInject(Injectable inj)
+	public final void injectOn(Injectable inj)
+	{
+		System.out.println("Trap.injectOn(Injectable) : bool called");
+		if(inj.canInjectOn(this))
+		{
+			System.out.println("Trap.injectOn(Injectable) : bool returned");
+		}
+		else
+		{
+			System.out.println("Trap.injectOn(Injectable) : bool returned");
+		}
+	}
+	
+	public final boolean canInject(Injectable inj)
 	{
 		System.out.println("Trap.canInject(Injectable) : bool called");
 		if(inj.canInjectOn(this))
@@ -52,6 +65,12 @@ abstract public class Trap extends InjectionTarget{
 			System.out.println("Trap.canInject(Injectable) : bool returned");
 			return false;
 		}
+	}
+	
+	public final void castOn(GameObject object)
+	{
+		System.out.println("Trap.castOn(GameObject) returned");
+		System.out.println("Trap.castOn(GameObject) returned");
 	}
 
 }
