@@ -60,7 +60,7 @@ public class MissileDamageSimulator implements Simulatable {
 	    frame.getScene().place(tower, grids.get(1));
 	    ((RoadGrid)grids.get(grids.size() - 1)).notifyAllWith(troop);
 	    
-	    while(troop.isActive()){
+	    while(tower.isActive()){
 	    	tower.controlIt();
 	    }
 	    frame.getScene().rewardUser(troop.getReward());
