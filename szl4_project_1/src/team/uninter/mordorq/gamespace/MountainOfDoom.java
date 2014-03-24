@@ -20,7 +20,7 @@ public class MountainOfDoom extends DamageTaker{
 	protected int health = 1; // If an enemy reach the MountainOfDoom, the game will be end. It is symbolic life.
 	public static synchronized MountainOfDoom getInstance(Scene scene) {
 		if (instance == null) {
-                	instance = new MountainOfDoom (scene);
+                	instance = new MountainOfDoom(scene);
 		}
 		return instance;
 	}
