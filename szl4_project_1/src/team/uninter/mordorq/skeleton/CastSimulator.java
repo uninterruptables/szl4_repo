@@ -6,6 +6,7 @@ package team.uninter.mordorq.skeleton;
 import team.uninter.mordorq.skeleton.signaling.*;
 import team.uninter.mordorq.gamespace.*;
 
+import java.io.IOException;
 import java.util.*;
 /**
  * This class is responsible for simulating all distinct aspects of 
@@ -75,8 +76,9 @@ public class CastSimulator extends ConfigurableSimulator{
 	 * the given version.
 	 * 
 	 *  @param version a <code>SimulationVersion</code> that indicates which API is used
+	 * @throws IOException 
 	 * */
-	private void simulate(SimulationVersion version){
+	private void simulate(SimulationVersion version) throws IOException{
 		if(version.equals(SimulationVersion.VERSION_1))			simulate1();
 		else if(version.equals(SimulationVersion.VERSION_2))	simulate2();
 	}
@@ -84,18 +86,19 @@ public class CastSimulator extends ConfigurableSimulator{
 	
 	/**
 	 * Uses the latest features of the gamespace package.
+	 * @throws IOException 
 	 * 
 	 * @see team.uninter.mordorq.gamespace
 	 * @see Scene
 	 * */
-	private void simulate2(){
+	private void simulate2() throws IOException{
 		//TODO:
 		System.out.println("in CastSimulator.simulate2");
 		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/emptyd.txt");
 		Casted activeObject;
 		TerrainGrid iniGrid = new RoadGrid(13);		
 		
-		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazghul();
+		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazgul();
 		else if(configuration.equals(CastAlias.TOWER_GROUND)){
 			iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(0);
 			activeObject = new BasicTower();
@@ -110,7 +113,7 @@ public class CastSimulator extends ConfigurableSimulator{
 			}
 		}
 		
-		if(activeObject.canCastOn(iniGrid)) {
+//		if(activeObject.canCastOn(iniGrid)) {
 			int mana = frame.getUserMana();
 			if(mana - activeObject.getCost() >= 0){
 				if(activeObject instanceof Magic){
@@ -119,7 +122,7 @@ public class CastSimulator extends ConfigurableSimulator{
 				else frame.getScene().place(activeObject, iniGrid);
 				frame.setUserMana(mana - activeObject.getCost());
 			}
-		}
+//		}
 	}
 	
 	/**

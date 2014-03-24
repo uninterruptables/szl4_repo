@@ -4,10 +4,15 @@
 package team.uninter.mordorq.utils;
 
 import team.uninter.mordorq.gamespace.*;
+
 import org.xml.sax.helpers.*;
+
 import javax.xml.parsers.*;
+
 import org.xml.sax.*;
+
 import javax.xml.*;
+
 import java.util.*;
 import java.io.*;
 /**
@@ -111,7 +116,13 @@ public class RoundInitiator {
 							enemies.add((EnemyTroop)activeClass.newInstance());
 						
 						activeName = null;
-					}catch(NumberFormatException ex){}
+					}catch(NumberFormatException ex){} catch (InstantiationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}

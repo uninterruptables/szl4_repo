@@ -5,6 +5,7 @@ package team.uninter.mordorq.skeleton;
 
 import team.uninter.mordorq.gamespace.*;
 
+import java.io.IOException;
 import java.util.*;
 /**
  * Responsible for simulating how the <code>Missile</code> truly operates on reaching
@@ -47,9 +48,10 @@ public class MissileDamageSimulator implements Simulatable {
 	/**
 	 * Constructs and conducts the simulation of the moving and damaging
 	 * of an instance of the <code>Missile</code> class.
+	 * @throws IOException 
 	 * */
 	@Override
-	public void simulate(){
+	public void simulate() throws IOException{
 		System.out.println("MissileDamageSimulator is simulating..");
 		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/missiledd.txt");
 		Tower tower = new BasicTower(10, 10);

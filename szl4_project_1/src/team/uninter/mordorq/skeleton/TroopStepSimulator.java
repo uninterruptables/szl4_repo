@@ -67,7 +67,7 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		initialGrid.set(Neighbour.EAST, grid2);
 		grid2.set(Neighbour.WEST, initialGrid);
 		
-		if(configuration.equals(TroopStepAlias.TRAP_AFFECTS)) 			grid2.setTrap(new PoisonousTrap());
+		if(configuration.equals(TroopStepAlias.TRAP_AFFECTS)) 			grid2.setTrap(new PoisonTrap());
 		else if(configuration.equals(TroopStepAlias.DAMAGES_MOUNTAIN)) 
 			grid2.setVulnerable(MountainOfDoom.getInstance(
 							MordorFrame.newInstance("resources/descriptors/emptyd.txt").getScene()));
