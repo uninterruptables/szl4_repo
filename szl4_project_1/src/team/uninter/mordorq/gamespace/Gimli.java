@@ -3,6 +3,11 @@ package team.uninter.mordorq.gamespace;
 import team.uninter.mordorq.skeleton.TroopStepSimulator;
 import team.uninter.mordorq.utils.GameConstants;
 
+/**
+ * @author Celestine
+ * Singleton class of the Dwarf race bosses, Gimli. It have special health and damage value not like the extended class
+ * troops. There is only one of this troop.
+ */
 @SuppressWarnings("serial")
 public class Gimli extends Dwarf{
 	//class representing one of the few bosses, that will show up once during the game.
