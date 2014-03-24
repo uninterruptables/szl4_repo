@@ -14,25 +14,26 @@ public class PathFinder {
 		int currentUtility = currentGrid.getUtility();
 		for(Neighbour direction : Neighbour.values()){
 			TerrainGrid targetGrid = currentGrid.get(direction);
-			int targetUtility = targetGrid.getUtility();
-			if(targetUtility >= currentUtility){
-				RoadGrid targetRoad = (RoadGrid)targetGrid;
-				Vulnerable vulnerable = targetRoad.getVulnerable();
-				if(vulnerable == null){
-					System.out.println("PathFinder findPathFrom(RoadGrid currentGrid) returned");
-					return targetRoad;
-				}
-				else{
-					if(vulnerable instanceof Barricade){
-						barricadeGrid = targetRoad;
+			if(targetGrid != null){
+				int targetUtility = targetGrid.getUtility();	
+				if(targetUtility >= currentUtility){
+					RoadGrid targetRoad = (RoadGrid)targetGrid;
+					Vulnerable vulnerable = targetRoad.getVulnerable();
+					if(vulnerable == null){
+						System.out.println("PathFinder findPathFrom(RoadGrid currentGrid) returned");
+						return targetRoad;
+					}
+					else{
+						if(vulnerable instanceof Barricade){
+							barricadeGrid = targetRoad;
+						}
 					}
 				}
 			}
-			
-			if(barricadeGrid != null){
-				System.out.println("PathFinder findPathFrom(RoadGrid currentGrid) returned");
-				return barricadeGrid;
-			}
+		}
+		if(barricadeGrid != null){
+			System.out.println("PathFinder findPathFrom(RoadGrid currentGrid) returned");
+			return barricadeGrid;
 		}
 		System.out.println("PathFinder findPathFrom(RoadGrid currentGrid) returned");
 		return currentGrid;
