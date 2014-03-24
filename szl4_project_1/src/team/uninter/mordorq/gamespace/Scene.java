@@ -42,13 +42,14 @@ public class Scene extends JPanel{
 	private int round;
 	
 	
-	protected Scene(){
+	protected Scene(MordorFrame owner){
 		super();
 		//TODO:
-		System.out.println("Scene.Scene() called");
+		this.owner = owner;
+		System.out.println("Scene.Scene(MordorFrame) called");
 		this.grids = new java.util.LinkedList<TerrainGrid>();
 		this.towers = new ArrayList<Controlable>();
-		System.out.println("Scene.Scene() returned");
+		System.out.println("Scene.Scene(MordorFrame) returned");
 	}
 	
 	/**
@@ -143,8 +144,10 @@ public class Scene extends JPanel{
 		super.repaint();
 		//TODO:
 		System.out.println("Scene.repaint(): void called");
-		for(TerrainGrid grid : grids){
-			grid.repaint();
+		if(grids != null){
+			for(TerrainGrid grid : grids){
+				grid.repaint();
+			}
 		}
 		System.out.println("Scene.repaint(): void returned");
 	}
@@ -211,6 +214,17 @@ public class Scene extends JPanel{
 		return grids;
 	}
 	
+	/**
+	 * Publishes the mechanism to set all grids contained by the <code>Scene</code>.
+	 * 
+	 * @param grids that are contained in the <code>Scene</code>.
+	 * @return the instance of the <code>Scene</code>.
+	 * */
+	public Scene setGrids(List<TerrainGrid> grids){
+		this.grids = grids;
+		return this;
+	}
+	
 	
 	
 	
@@ -259,9 +273,9 @@ public class Scene extends JPanel{
 			//TODO:
 			System.out.println("Scene.Builder.build(): Scene called");
             List<TerrainGrid> grids = buildScene();
-            System.out.println("Scene.Builder.build(): Scene returned");
             //TODO:
-			Scene scene = new Scene(owner, grids);
+			Scene scene = new Scene(owner).setGrids(grids);
+			System.out.println("Scene.Builder.build(): Scene returned");
             return scene;
 		}
 		
@@ -277,7 +291,7 @@ public class Scene extends JPanel{
 			System.out.println("Scene.Builder.buildScene(): List<TerrainGrids> called");
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
-			int width = 0, height = 0;
+			int height = 0;
 
 			BufferedReader reader = null;
 			try{
@@ -285,9 +299,7 @@ public class Scene extends JPanel{
 					  							new FileInputStream(filePath)));
 			  String line;
 			  while((line=reader.readLine()) != null){
-				  height++;
 				  String[] parts = line.split(" ");
-				  width += parts.length;
 				  for(String _util : parts){
 					  try{
 						  int util = Integer.parseInt(_util);
@@ -317,6 +329,7 @@ public class Scene extends JPanel{
 					  
 					  /* adding the entering space for newly spawn enemies */
 					  RoadGrid enterGrid = new RoadGrid(1);
+					  x++;
 					  if(y > 0) {
 						  enterGrid.set(Neighbour.NORTH, grids.get((y-1)*height + 0));
 						  grids.get((y-1)*height + 0).set(Neighbour.SOUTH, enterGrid);
