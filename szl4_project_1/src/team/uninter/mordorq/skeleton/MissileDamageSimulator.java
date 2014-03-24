@@ -57,7 +57,7 @@ public class MissileDamageSimulator implements Simulatable {
 		Tower tower = new BasicTower(10, 10);
 		EnemyTroop troop = new Elf(30, 30);
 		List<TerrainGrid> grids = frame.getScene().getGrids();
-	    frame.getScene().place(tower, grids.get(0));
+	    frame.getScene().place(tower, grids.get(1));
 	    ((RoadGrid)grids.get(grids.size() - 1)).notifyAllWith(troop);
 	    
 	    while(troop.isActive()){
