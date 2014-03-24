@@ -273,10 +273,8 @@ public class Scene extends JPanel{
 			//TODO:
 			System.out.println("Scene.Builder.build(): Scene called");
             List<TerrainGrid> grids = buildScene();
-            //TODO:
-			Scene scene = new Scene(owner).setGrids(grids);
-			System.out.println("Scene.Builder.build(): Scene returned");
-            return scene;
+            System.out.println("Scene.Builder.build(): Scene returned");
+            return new Scene(owner, grids);
 		}
 		
 		/**
