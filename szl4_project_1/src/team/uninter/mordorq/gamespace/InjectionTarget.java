@@ -20,6 +20,7 @@ abstract public class InjectionTarget extends Casted{
 	}
 	
 	abstract public void inject(Injectable injectable);
+	abstract public boolean canInject(Injectable injectable);
 	
 	public int getRunesRemained(){
 		// TODO remove sysout
