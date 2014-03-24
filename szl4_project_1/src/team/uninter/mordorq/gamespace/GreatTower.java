@@ -10,7 +10,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 
 public class GreatTower extends Tower {
-	
+	//One of the few descendants of the Tower class, with no special methods, but certain values.
 	public GreatTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout
@@ -28,7 +28,6 @@ public class GreatTower extends Tower {
 		roadGrids = new ArrayList<TargetPublisher>();
 		System.out.println("GreatTower.GreatTower() returned");
 	}
-	
 	public void notifyWith(EnemyTroop target){
 		//TODO remove sysout
 		System.out.println("GreatTower.notifyWith(EnemyTroop targer) called");

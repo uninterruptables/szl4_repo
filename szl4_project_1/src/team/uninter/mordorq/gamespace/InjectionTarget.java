@@ -1,5 +1,5 @@
 package team.uninter.mordorq.gamespace;
-
+//items, one can inject on, mainly towers, traps.
 @SuppressWarnings("serial")
 abstract public class InjectionTarget extends Casted{
 
@@ -18,8 +18,9 @@ abstract public class InjectionTarget extends Casted{
 		System.out.println("InjectionTarget.InjectionTarget(x,y) called");
 		System.out.println("InjectionTarget.InjectionTarget(x,y) returned");
 	}
-	
+	//method used to determine, what happens during an injection.
 	abstract public void inject(Injectable injectable);
+	//method used to determine whether an object can be injected on this or not.
 	abstract public boolean canInject(Injectable injectable);
 	
 	public int getRunesRemained(){

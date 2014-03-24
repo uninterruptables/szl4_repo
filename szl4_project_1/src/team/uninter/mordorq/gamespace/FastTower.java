@@ -11,7 +11,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
 
 public class FastTower extends Tower {
-	
+	//One of the few descendants of the Tower class, with no special methods, but certain values.
 	public FastTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout

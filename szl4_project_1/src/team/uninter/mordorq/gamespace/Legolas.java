@@ -5,7 +5,8 @@ import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Legolas extends Elf{
-
+	//class representing one of the few bosses, that will show up once during the game.
+	//An enemyTroop, an elf, exactly, with special values
 	 private static Legolas instance = null;
 
 	 private Legolas(int health, int damage){
