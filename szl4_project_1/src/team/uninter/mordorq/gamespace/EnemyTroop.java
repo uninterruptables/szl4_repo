@@ -8,7 +8,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 @SuppressWarnings("serial")
 abstract public class EnemyTroop extends DamageTaker implements Controlable{
 // Class used to make a basic enemies, which will be the parent of all kind of species,enemies
-//It is set all commom attribute for all species, and how they will act at the scene.
+//It is set all common attributes,roles for all species, and how they will act at the scene.
 	protected int cooldown;
 	protected int MaxCooldown;
 	protected float damage;

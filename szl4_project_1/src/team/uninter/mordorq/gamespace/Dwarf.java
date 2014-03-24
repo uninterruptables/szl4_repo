@@ -13,13 +13,13 @@ public class Dwarf extends EnemyTroop {
 	}
 	protected int mana;
 	public void setReward(int mana)
-	{
+	{// Set the amount of the reward
 		System.out.println("Dwarf.setReward() called");
 		
 		System.out.println("Dwarf.setReward() returned");
 	}
 	public int getReward()
-	{
+	{// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
 		System.out.println("Dwarf.getReward() called");
 		System.out.println("Dwarf.getReward() returned");
 		return mana;

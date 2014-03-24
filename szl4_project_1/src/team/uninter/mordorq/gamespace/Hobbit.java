@@ -13,13 +13,13 @@ public class Hobbit extends EnemyTroop {
 	}
 	protected int mana;
 	public void setReward(int mana)
-	{
+	{// Set the amount of the reward
 		System.out.println("Hobbit.setReward() called");
 		
 		System.out.println("Hobbit.setReward() returned");
 	}
 	public int getReward()
-	{
+	{// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
 		System.out.println("Hobbit.getReward() called");
 		System.out.println("Hobbit.getReward() returned");
 		return mana;

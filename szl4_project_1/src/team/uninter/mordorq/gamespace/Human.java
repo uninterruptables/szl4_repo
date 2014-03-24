@@ -14,13 +14,13 @@ public class Human extends EnemyTroop {
 	}
 	protected int mana;
 	public void setReward(int mana)
-	{
+	{// Set the amount of the reward
 		System.out.println("Human.setReward() called");
 		
 		System.out.println("Human.setReward() returned");
 	}
 	public int getReward()
-	{
+	{// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
 		System.out.println("Human.getReward() called");
 		System.out.println("Human.getReward() returned");
 		return mana;
