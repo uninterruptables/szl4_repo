@@ -14,20 +14,21 @@ public class Elf extends EnemyTroop {
 	protected int mana;
 	public void setReward(int mana)
 	{
-		System.out.println("EnemyTroop.setReward() called");
+		System.out.println("Elf.setReward() called");
 		
-		System.out.println("EnemyTroop.setReward() returned");
+		System.out.println("Elf.setReward() returned");
 	}
 	public int getReward()
 	{
-		System.out.println("EnemyTroop.getReward() called");
-		System.out.println("EnemyTroop.getReward() returned");
+		System.out.println("Elf.getReward() called");
+		System.out.println("Elf.getReward() returned");
 		return mana;
 		
 	}
 	@Override
 	public void interactWith(Missile missile) {
-		// TODO Auto-generated method stub
+		System.out.println("Elf.interactWith(Missile) called");
+		System.out.println("Elf.interactWith(Missile) returned");
 		
 	}
 }
