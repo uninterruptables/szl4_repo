@@ -47,14 +47,6 @@ public class FastTower extends Tower {
 		System.out.println("FastTower.createMissile() returned");
 		return fastMissile;
 	}
-
-	@Override
-	public void attach(TargetPublisher publisher) {
-		//TODO remove sysout
-		System.out.println("FastTower.attach() called");
-		this.roadGrids.add(publisher);
-		System.out.println("FastTower.attach() returned");
-	}
 	
 	
 public static class FastMissile extends Missile {

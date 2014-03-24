@@ -46,14 +46,6 @@ public class GreatTower extends Tower {
 		System.out.println("GreatTower.createMissile() returned");
 		return greatMissile;
 	}
-
-	@Override
-	public void attach(TargetPublisher publisher) {
-		//TODO remove sysout
-		System.out.println("GreatTower.attach() called");
-		this.roadGrids.add(publisher);
-		System.out.println("GreatTower.attach() returned");
-	}
 	
 	
 public static class GreatMissile extends Missile {

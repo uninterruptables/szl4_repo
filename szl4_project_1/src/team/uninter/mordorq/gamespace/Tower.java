@@ -73,6 +73,13 @@ abstract public class Tower extends InjectionTarget
 		}
 	}
 	
+	public final void attach(TargetPublisher publisher) {
+		//TODO remove sysout
+		System.out.println("Tower.attach() called");
+		this.roadGrids.add(publisher);
+		System.out.println("Tower.attach() returned");
+	}
+	
 	public final boolean canCastOn(TerrainGrid grid)
 	{
 		System.out.println("Tower.canCastOn(TerrainGrid) called");
@@ -197,6 +204,7 @@ abstract public class Tower extends InjectionTarget
 			racialDamages.put("ELF", 10);
 			racialDamages.put("HOBBIT", 10);
 			state = MissileState.WAITING;
+			deltaXY = 2;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
 		

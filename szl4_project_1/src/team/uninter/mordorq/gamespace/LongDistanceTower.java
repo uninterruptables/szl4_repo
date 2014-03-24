@@ -46,14 +46,6 @@ public class LongDistanceTower extends Tower {
 		System.out.println("LongDistanceTower.createMissile() returned");
 		return longDistanceMissile;
 	}
-
-	@Override
-	public void attach(TargetPublisher publisher) {
-		//TODO remove sysout
-		System.out.println("LongDistanceTower.attach() called");
-		this.roadGrids.add(publisher);
-		System.out.println("LongDistanceTower.attach() returned");
-	}
 	
 	
 public static class LongDistanceMissile extends Missile {
