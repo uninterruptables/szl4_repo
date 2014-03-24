@@ -77,8 +77,10 @@ public class Scene extends JPanel{
 	public void cast(Magic magic){
 		//TODO:
 		System.out.println("Scene.cast(Magic): void called");
-		for(Controlable enemy : enemies)
-			((EnemyTroop)enemy).addAll(magic.getStatusModifiers());
+		if(enemies != null) {
+			for(Controlable enemy : enemies)
+				((EnemyTroop)enemy).addAll(magic.getStatusModifiers());
+		}
 		System.out.println("Scene.cast(Magic): void returned");
 	}
 	

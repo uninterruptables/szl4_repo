@@ -178,7 +178,7 @@ public class Skeleton {
 		 +"  Missile-damages\t\t   6\n"
 		 +"  Troop-steps-tower-fires\t   7\n"
 		 +"  Cast-tower-ground\t\t   8\n"
-		 +"  Cast-tower-road\t\t   9\n"
+		 +"  Cast-trap-road\t\t   9\n"
 		 +"  Cast-magic\t\t\t   10\n"
 		 +"  Troop-damages-mountain\t   11\n"
 		 +"  terminate skeleton\t\t  exit\n";

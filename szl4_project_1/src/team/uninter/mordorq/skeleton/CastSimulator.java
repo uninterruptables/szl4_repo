@@ -70,7 +70,7 @@ public class CastSimulator extends ConfigurableSimulator{
 		
 		if(configuration.equals(CastAlias.MAGIC)) activeObject = new Nazgul();
 		else if(configuration.equals(CastAlias.TOWER_GROUND)){
-			iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(0);
+			iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(1);
 			activeObject = new BasicTower();
 		}
 		else if(configuration.equals(CastAlias.TRAP_ROAD))	activeObject = new SlowDownTrap();
@@ -78,7 +78,7 @@ public class CastSimulator extends ConfigurableSimulator{
 			activeObject = new PoisonTrapRune();
 			if(configuration.equals(CastAlias.TRAPRUNE_TRAP)) (new SlowDownTrap()).castOn(iniGrid);
 			else{
-				iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(0);
+				iniGrid = (frame = MordorFrame.newInstance("resources/descriptors/tower_groundd.txt")).getScene().getGrids().get(1);
 				(new BasicTower()).castOn(iniGrid);
 			}
 		}

@@ -3,13 +3,33 @@ package team.uninter.mordorq.gamespace;
 import java.util.List;
 import java.lang.Math;
 
+/**
+ * Responsible to ensure a place for enemy troops,
+ * traps and barricdes
+ * 
+ * @author Soma
+ *
+ */
 public class RoadGrid extends TerrainGrid implements TargetPublisher{
 
+	/**
+	 * trap - trap on the grid
+	 * 
+	 * vulnerable - barricade or enemy troop on the grid
+	 * 
+	 * subscribers - towers for those this grid is in range
+	 */
 	private Trap trap;
 	private Vulnerable vulnerable;
 	private List<TargetSubscriber> subscribers;
 	
 	
+	/**
+	 * Contructor with position parameters
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	public RoadGrid(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
@@ -17,6 +37,11 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid.RoadGrid(x,y) returned");
 	}
 	
+	/**
+	 * Contructor with utility parameter
+	 * 
+	 * @param utility
+	 */
 	public RoadGrid(int utility) {
 		super(utility);
 		//TODO remove sysout
@@ -24,6 +49,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid.RoadGrid(utility) returned");
 	}
 	
+	/**
+	 * Contructor without parameter  
+	 */
 	public RoadGrid(){
 		super();
 		//TODO remove sysout
@@ -31,6 +59,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid.RoadGrid() returned");
 	}
 
+	/**
+	 * Place the given tower to the subscibers list 
+	 */
 	@Override
 	public void attach(TargetSubscriber subscriber) {
 		// TODO remove sysout
@@ -40,6 +71,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		
 	}
 
+	/**
+	 * Remove the given tower from the subscribers list
+	 */
 	@Override
 	public void detach(TargetSubscriber subscriber) {
 		// TODO remove sysout
@@ -49,6 +83,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		
 	}
 
+	/**
+	 * Notify all tower from the subscriber list with the given enemy
+	 */
 	@Override
 	public void notifyAllWith(EnemyTroop troop) {
 		// TODO remove sysout
@@ -60,6 +97,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid notifyAllWith() returned");
 	}
 	
+	/**
+	 * Gives back that the grid contains the given troop or not 
+	 */
 	@Override
 	public boolean contains(EnemyTroop troop) {
 		// TODO remove sysout
@@ -68,6 +108,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return subscribers.contains(troop);
 	}
 	
+	/**
+	 * Remove the vulnerable reference from the grid
+	 */
 	public void remove(){
 		//TODO remove sysout
 		System.out.println("RoadGrid remove() called");
@@ -75,6 +118,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid remove() returned");
 	}
 	
+	/**
+	 * Gives back the grids availability for a trap 
+	 */
 	public boolean isAvailableFor(Trap trap){
 		//TODO remove sysout
 		System.out.println("RoadGrid isAvailableFor(Trap trap) called");
@@ -82,6 +128,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return true;
 	}
 	
+	/**
+	 * Gives back the grids availability for a tower 
+	 */
 	public boolean isAvailableFor(Tower tower){
 		//TODO remove sysout
 		System.out.println("RoadGrid isAvailableFor(Tower tower) called");
@@ -89,6 +138,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return false;
 	}
 	
+	/**
+	 * Repaint
+	 */
 	public void repaint(){
 		//TODO remove sysout
 		System.out.println("RoadGrid repaint() called");
@@ -96,6 +148,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid repaint() returned");
 	}
 	
+	/**
+	 * Gives back the enemy troop on the grid
+	 */
 	@Override
 	public EnemyTroop getTarget() {
 		// TODO remove sysout
@@ -108,14 +163,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return targetEnemy;
 	}
 	
-	@Override
-	public int getUtility() {
-		// TODO remove sysout
-		System.out.println("RoadGrid getUtility() called");
-		System.out.println("RoadGrid getUtility() returned");
-		return utility;
-	}
-	
+	/**
+	 * Gives back the trap on the grid
+	 */
 	public Trap getTrap(){
 		//TODO remove sysout
 		System.out.println("RoadGrid getTrap() called");
@@ -123,6 +173,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return trap;
 	}
 	
+	/**
+	 * Gives back the vulnerable on the grid
+	 */
 	public Vulnerable getVulnerable(){
 		//TODO remove sysout
 		System.out.println("RoadGrid getVulnerable() called");
@@ -130,6 +183,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return vulnerable;
 	}
 	
+	/**
+	 * Set the utility of the grid with the given parameter
+	 */
 	public void setUtility(int utility){
 		//TODO remove sysout
 		System.out.println("RoadGrid setUtility(int utility) called");
@@ -137,6 +193,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid setUtility(int utility) returned");
 	}
 	
+	/**
+	 * Set a trap on the grid with the given parameter
+	 */
 	public void setTrap(Trap trap){
 		//TODO remove sysout
 		System.out.println("RoadGrid setTrap called");
@@ -144,6 +203,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid setTrap returned");
 	}
 	
+	/**
+	 * Set a vulnerable on the grid with the given parameter
+	 */
 	public void setVulnerable(Vulnerable vulnerable){
 		//TODO remove sysout
 		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) called");
@@ -153,6 +215,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) returned");
 	}
 
+	/**
+	 * Gives back the trap on the grid
+	 */
 	@Override
 	public InjectionTarget getInjectionTarget() {
 		//TODO remove sysout
@@ -161,6 +226,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return trap;
 	}
 
+	/** 
+	 * Gives back the grids availability for a barricade
+	 */
 	@Override
 	public boolean isAvailableFor(Barricade barricade) {
 		//TODO remove sysout
