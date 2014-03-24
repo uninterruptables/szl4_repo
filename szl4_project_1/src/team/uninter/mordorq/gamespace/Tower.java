@@ -266,11 +266,6 @@ abstract public class Tower extends InjectionTarget
 			return !this.state.equals(MissileState.WAITING);
 		}
 		
-		public abstract int getElfDamage();
-		public abstract int getHumanDamage();
-		public abstract int getDwarfDamage();
-		public abstract int getHobbitDamage();
-		
 		public enum MissileState{
 			WAITING, DORMANT, FIRE_READY, ON_THE_FLY}
 		}

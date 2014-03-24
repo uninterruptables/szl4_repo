@@ -42,7 +42,7 @@ public class BasicTower extends Tower {
 		//TODO remove sysout
 		System.out.println("BasicTower.createMissile() called");
 		BasicMissile basicMissile = new BasicMissile(this.x,this.y);
-		System.out.println("Basic.createMissile() returned");
+		System.out.println("BasicTower.createMissile() returned");
 		return basicMissile;
 	}
 
@@ -70,38 +70,6 @@ public static class BasicMissile extends Missile {
 		//TODO remove sysout
 		System.out.println("BasicMissile.BasicMissile(x,y) called");
 		System.out.println("BasicMissile.BasicMissile(x,y) returned");
-	}
-
-	@Override
-	public int getElfDamage() {
-		//TODO remove sysout
-		System.out.println("BasicMissile.getElfDamage() called");
-		System.out.println("BasicMissile.getElfDamage() returned");
-		return GameConstants.BASIC_MISSILE_ELF_DAMAGE;
-	}
-
-	@Override
-	public int getHumanDamage() {
-		//TODO remove sysout
-		System.out.println("BasicMissile.getHumanDamage() called");
-		System.out.println("BasicMissile.getHumanDamage() returned");
-		return GameConstants.BASIC_MISSILE_HUMAN_DAMAGE;
-	}
-
-	@Override
-	public int getDwarfDamage() {
-		//TODO remove sysout
-		System.out.println("BasicMissile.getDwarfDamage() called");
-		System.out.println("BasicMissile.getDwarfDamage() returned");
-		return GameConstants.BASIC_MISSILE_DWARF_DAMAGE;
-	}
-
-	@Override
-	public int getHobbitDamage() {
-		//TODO remove sysout
-		System.out.println("BasicMissile.getHobbitDamage() called");
-		System.out.println("BasicMissile.getHobbitDamage() returned");
-		return GameConstants.BASIC_MISSILE_HOBBIT_DAMAGE;
 	}
 	
 }
