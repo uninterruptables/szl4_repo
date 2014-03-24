@@ -6,14 +6,14 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Hobbit extends EnemyTroop {
 	// Specific EnemyTroop, called Hobbit. Have little more life then other specific troop, less speed, and less damage.
 	
-	protected Hobbit() {
+	public Hobbit() {
 		super();
 		//TODO remove sysout
 		System.out.println("Hobbit.Hobbit() called");
 		System.out.println("Hobbit.Hobbit() returned");
 	}
 	
-	protected Hobbit(int x, int y) {
+	public Hobbit(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Hobbit.Hobbit(x,y) called");

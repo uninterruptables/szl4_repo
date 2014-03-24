@@ -6,14 +6,14 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Elf extends EnemyTroop {
 // Specific EnemyTroop, called Elf. Have less life then other specific troop, more speed, and a little more damage
 	
-	protected Elf() {
+	public Elf() {
 		super();
 		//TODO remove sysout
 		System.out.println("Elf.Elf() called");
 		System.out.println("Elf.Elf() returned");
 	}
 	
-	protected Elf(int x, int y) {
+	public Elf(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Elf.Elf(x,y) called");

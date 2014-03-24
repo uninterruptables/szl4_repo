@@ -6,14 +6,14 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Dwarf extends EnemyTroop {
 	// Specific EnemyTroop, called Dwarf. Have much more life then other specific troop, less speed, and a little more damage
 	
-	protected Dwarf() {
+	public Dwarf() {
 		super();
 		//TODO remove sysout
 		System.out.println("Dwarf.Dwarf() called");
 		System.out.println("Dwarf.Dwarf() returned");
 	}
 	
-	protected Dwarf(int x, int y) {
+	public Dwarf(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Dwarf.Dwarf(x,y) called");

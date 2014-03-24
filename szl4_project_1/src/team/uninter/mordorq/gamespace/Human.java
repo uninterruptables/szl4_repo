@@ -7,14 +7,14 @@ public class Human extends EnemyTroop {
 	// Specific EnemyTroop, called Human. It could be named "basic" troop, others will be compare to this.
 	//Have average life, speed and damage
 	
-	protected Human() {
+	public Human() {
 		super();
 		//TODO remove sysout
 		System.out.println("Human.Human() called");
 		System.out.println("Human.Human() returned");
 	}
 	
-	protected Human(int x, int y) {
+	public Human(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Human.Human(x,y) called");
