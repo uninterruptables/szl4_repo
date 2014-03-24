@@ -10,8 +10,7 @@ import team.uninter.mordorq.utils.GameConstants;
  */
 @SuppressWarnings("serial")
 public class Gimli extends Dwarf{
-	//class representing one of the few bosses, that will show up once during the game.
-	//An enemyTroop, a dwarf, exactly, with special values
+
 	 private static Gimli instance = null;
 
 	 private Gimli(int health, int damage){
