@@ -56,6 +56,12 @@ abstract public class Trap extends InjectionTarget{
 		System.out.println("Trap.castOn(TerrainGrid) returned");
 	}
 	
+	public final boolean canCastOn(TerrainGrid grid)
+	{
+		return false;
+		
+	}
+	
 	public final void inject(Injectable inject)
 	{
 		System.out.println("Trap.Inject(Injectable) returned");

@@ -43,5 +43,6 @@ abstract public class Casted extends GameObject {
 		System.out.println("RoadGrid setImageColor(Color color) called");
 		System.out.println("RoadGrid setImageColor(Color color) returned");
 	}
+	abstract public boolean canCastOn(TerrainGrid grid);
 
 }

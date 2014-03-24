@@ -73,6 +73,12 @@ abstract public class Tower extends InjectionTarget
 		}
 	}
 	
+	public final boolean canCastOn(TerrainGrid grid)
+	{
+		return false;
+		
+	}
+	
 	public final void inject(Injectable inject)
 	{
 		System.out.println("Tower.Inject(Injectable) returned");

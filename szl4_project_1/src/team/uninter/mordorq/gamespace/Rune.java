@@ -14,7 +14,7 @@ public abstract class Rune extends Casted implements Injectable {
 		System.out.println("Rune(Int, Int) returned");
 	}
 	
-	protected boolean canCastOn(TerrainGrid grid)
+	public boolean canCastOn(TerrainGrid grid)
 	{
 		System.out.println("Rune.canCastOn(TerrainGrid) called");
 		if(grid.getInjectionTarget()!=null)
