@@ -58,6 +58,8 @@ abstract public class TerrainGrid extends GameObject{
 	
 	abstract public boolean isAvailableFor(Tower tower);
 	
+	abstract public InjectionTarget getInjectionTarget();
+	
 	public TerrainGrid get(Neighbour neighbour){
 		//TODO remove sysout
 		System.out.println("TerrainGrid get(Neighbour neightbour) called");
