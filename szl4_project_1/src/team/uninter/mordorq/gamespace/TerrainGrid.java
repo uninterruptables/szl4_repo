@@ -58,6 +58,13 @@ abstract public class TerrainGrid extends GameObject{
 	
 	abstract public boolean isAvailableFor(Tower tower);
 	
+	public final boolean isAvailableFor(Magic tower){
+		//TODO remove sysout
+		System.out.println("TerrainGrid isAvailableFor(Magic) called");
+		System.out.println("TerrainGrid isAvailableFor(Magic) returned");
+		return true;
+	}
+	
 	abstract public InjectionTarget getInjectionTarget();
 	
 	public TerrainGrid get(Neighbour neighbour){
