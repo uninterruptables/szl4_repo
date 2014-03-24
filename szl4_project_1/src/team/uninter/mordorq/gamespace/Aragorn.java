@@ -1,18 +1,29 @@
 package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.skeleton.TroopStepSimulator;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Aragorn extends Human{
+	
+	  private static Aragorn instance = null;
 
-	  private static final Aragorn INSTANCE = new Aragorn();
-
-	  protected Aragorn(){
-		  super.health = 200;
-		  super.damage = 200;
+	  private Aragorn(int health, int damage){
+		  super();
+		  //TODO remove sysout
+		  System.out.println("Aragorn.Aragorn(health,damage) called");
+		  this.health = health;
+		  this.damage = damage;
+		  System.out.println("Aragorn.Aragorn(health,damage) returned");
 	  }
 
 	  public static Aragorn getInstance(){
-		  return INSTANCE;
+		  //TODO remove sysout
+		  System.out.println("Aragorn.getInstance() called");
+		  if(instance == null){
+			  instance = new Aragorn(GameConstants.ARAGORN_HEALTH, GameConstants.ARAGORN_DAMAGE);
+		  }
+		  System.out.println("Aragorn.getInstance() returned");
+		  return instance;
 	  }
 }

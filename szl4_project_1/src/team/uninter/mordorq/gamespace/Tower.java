@@ -5,16 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget 
 					implements TargetSubscriber, Controlable{
 
+	protected int cooldown;
 	protected int radius;
 	protected Missile missile;
 	protected List<TargetPublisher> roadGrids;
 	
-	protected Tower(int x, int y) {
+	public Tower(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Tower.Tower(x,y) called");
@@ -23,7 +25,7 @@ abstract public class Tower extends InjectionTarget
 		System.out.println("Tower.Tower(x,y) returned");
 	}
 	
-	protected Tower(){
+	public Tower(){
 		super();
 		//TODO remove sysout
 		System.out.println("Tower.Tower() called");
@@ -34,7 +36,7 @@ abstract public class Tower extends InjectionTarget
 	
 	protected abstract Missile createMissile();
 	
-	final public void controlIt(){
+	public final void controlIt(){
 		//TODO remove sysout
 		System.out.println("Tower controlIt() called");
 		missile.controlIt();
@@ -140,7 +142,7 @@ abstract public class Tower extends InjectionTarget
 		return missile.isActive();
 	}
 	
-	protected EnemyTroop getNewTarget(){
+	public EnemyTroop getNewTarget(){
 		//TODO remove sysout
 		System.out.println("Tower.getNewTarget() called");
 		EnemyTroop target = (EnemyTroop) roadGrids.get(0);
@@ -151,8 +153,8 @@ abstract public class Tower extends InjectionTarget
 	public abstract static class Missile extends GameObject implements Controlable{
 		
 		private int deltaXY;
-		private HashMap<String, Integer> racialDamages;
-		private int cooldown, maxCooldown;
+		protected HashMap<String, Integer> racialDamages;
+		protected int cooldown, maxCooldown;
 		private MissileState state;
 		private EnemyTroop target;
 		private int targetX, targetY;
@@ -161,11 +163,12 @@ abstract public class Tower extends InjectionTarget
 			super(x,y);
 			//TODO remove sysout
 			System.out.println("Missile.Missile(x,y) called");
+			racialDamages = new HashMap<String, Integer>();
 			state = MissileState.WAITING;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
 		
-		public void controlIt(){
+		public final void controlIt(){
 			//TODO remove sysout
 			System.out.println("Missile.controlIt() called");
 			if(cooldown > 0){
@@ -181,7 +184,14 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.controlIt() returned");
 		}
 		
-		public void set(MissileState state){
+		public final MissileState getState(){
+			//TODO remove sysout
+			System.out.println("Missile.getState called");
+			System.out.println("Missile.getState returned");
+			return state;
+		}
+		
+		public final void set(MissileState state){
 			//TODO remove sysout
 			System.out.println("Missile.set(MissileState) called");
 			if(state.equals(MissileState.WAITING)) setTarget(null);
@@ -189,36 +199,43 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.set(MissileState) returned");
 		}
 		
-		public EnemyTroop getTarget(){
+		public final void set(int cooldown){
+			//TODO remove sysout
+			System.out.println("Missile.set(int cooldown) called");
+			this.cooldown = cooldown;
+			System.out.println("Missile.set(int cooldown) returned");
+		}
+		
+		public final EnemyTroop getTarget(){
 			//TODO remove sysout
 			System.out.println("Missile.getTarget() called");
 			System.out.println("Missile.getTarget() returned");
 			return target;
 		}
 		
-		public void setTarget(EnemyTroop target){
+		public final void setTarget(EnemyTroop target){
 			//TODO remove sysout
 			System.out.println("Missile.setTarget(EnemyTroop) called");
 			this.target = target;
 			if(this.target != null){
 				int x = this.target.getX();
 				int y = this.target.getY();
-				int _x = x + 10/2; //TODO
-				int _y = y + 10/2;
+				int _x = x + GameConstants.GRID_SIZE/2;
+				int _y = y + GameConstants.GRID_SIZE/2;
 				this.setTargetPosition( _x,_y );
 				this.set(MissileState.ON_THE_FLY);
 			}
 			System.out.println("Missile.setTarget(EnemyTroop) returned");
 		}
 		
-		public void setDeltaXY(int deltaXY){
+		public final void setDeltaXY(int deltaXY){
 			//TODO remove sysout
 			System.out.println("Missile.setDeltaXY(int) called");
 			this.deltaXY = deltaXY;
 			System.out.println("Missile.setDeltaXY(int) returned");
 		}
 		
-		protected void moveAhead(){
+		public final void moveAhead(){
 			//TODO remove sysout
 			System.out.println("Missile.moveAhead() called");
 			this.x += deltaXY;
@@ -226,7 +243,7 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.moveAhead() returned");
 		}
 		
-		protected void setPosition(int x, int y){
+		public final void setPosition(int x, int y){
 			//TODO remove sysout
 			System.out.println("Missile.setPosition(x,y) called");
 			this.setX(x);
@@ -234,7 +251,7 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.setPosition(x,y) returned");
 		}
 		
-		public void setTargetPosition(int x, int y){
+		public final void setTargetPosition(int x, int y){
 			//TODO remove sysout
 			System.out.println("Missile.setTargetPosition(x,y) called");
 			this.targetX = x;
@@ -242,16 +259,44 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.setTargetPosition(x,y) returned");
 		}
 		
-		public boolean isActive(){
+		public final boolean isActive(){
 			//TODO remove sysout
 			System.out.println("Missile.isActive() called");
 			System.out.println("Missile.isActive() returned");
 			return !this.state.equals(MissileState.WAITING);
 		}
 		
+		public final int getElfDamage(){
+			//TODO remove sysout
+			System.out.println("Tower.getElfDamage() called");
+			System.out.println("Tower.getElfDamage() returned");
+			return this.racialDamages.get("Elf");
+		}
+		
+		public final int getHumanDamage(){
+			//TODO remove sysout
+			System.out.println("Tower.getHumanDamage() called");
+			System.out.println("Tower.getHumanDamage() returned");
+			return this.racialDamages.get("Human");
+		}
+		
+		public final int getDwarfDamage(){
+			//TODO remove sysout
+			System.out.println("Tower.getDwarfDamage() called");
+			System.out.println("Tower.getDwarfDamage() returned");
+			return this.racialDamages.get("Dwarf");
+		}
+		
+		public final int getHobbitDamage(){
+			//TODO remove sysout
+			System.out.println("Tower.getHobbitDamage() called");
+			System.out.println("Tower.getHobbitDamage() returned");
+			return this.racialDamages.get("Hobbit");
+		}
+		
 		public enum MissileState{
 			WAITING, DORMANT, FIRE_READY, ON_THE_FLY}
 		}
-	
+		
 	
 }
