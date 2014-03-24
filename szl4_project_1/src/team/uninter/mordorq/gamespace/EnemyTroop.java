@@ -103,6 +103,16 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		System.out.println("EnemyTroop.add(StatusModifier) returned");		
 	}
 	
+	public final void addAll(List<StatusModifier> sm)
+	{
+		//TODO remove sysout
+		System.out.println("EnemyTroop.addAll(List<StatusModifier>) called");
+		for(StatusModifier statusModifier : sm){
+			this.add(statusModifier);
+		}
+		System.out.println("EnemyTroop.addAll(List<StatusModifier>) returned");		
+	}
+	
 	public final int getDamage()
 	{
 		//TODO remove sysout

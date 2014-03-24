@@ -39,7 +39,7 @@ public class LongDistanceTower extends Tower {
 		System.out.println("LongDistanceTower.notifyWith(EnemyTroop targer) returned");
 	}
 	
-	public BasicMissile createMissile(){	
+	public LongDistanceMissile createMissile(){	
 		//TODO remove sysout
 		System.out.println("LongDistanceTower.createMissile() called");
 		LongDistanceMissile longDistanceMissile = new LongDistanceMissile(this.x,this.y);
