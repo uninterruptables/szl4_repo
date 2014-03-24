@@ -81,5 +81,13 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid getInjectionTarget() returned");
 		return tower;
 	}
+
+	@Override
+	public boolean isAvailableFor(Barricade barricade) {
+		// TODO remove sysout
+		System.out.println("GroundGrid isAvailableFor(Barricade) called");
+		System.out.println("GroundGrid isAvailableFor(Barricade) returned");
+		return false;
+	}
 	
 }
