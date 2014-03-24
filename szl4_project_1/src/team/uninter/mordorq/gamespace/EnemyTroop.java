@@ -190,6 +190,13 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		System.out.println("EnemyTroop.getHealth() returned");
 		return this.health;	
 	}
+	
+	public final void setHealth(int health)
+	{
+		//TODO remove sysout
+		System.out.println("EnemyTroop.setHealth() called");
+		System.out.println("EnemyTroop.setHealth() returned");
+	}
 
 	/** Return the current value of Cooldown.
 	 * @return

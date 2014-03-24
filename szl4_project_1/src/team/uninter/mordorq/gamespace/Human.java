@@ -49,7 +49,7 @@ public class Human extends EnemyTroop {
 	public void interactWith(Missile missile) {
 		//TODO remove sysout
 		System.out.println("Human.interactWith(Missile) called");
-		setDamage(missile.getHumanDamage());
+		this.setHealth(this.getHealth() - missile.getHumanDamage());
 		System.out.println("Human.interactWith(Missile) returned");
 		
 	}

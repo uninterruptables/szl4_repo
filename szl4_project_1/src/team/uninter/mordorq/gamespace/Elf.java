@@ -49,7 +49,7 @@ public class Elf extends EnemyTroop {
 	public void interactWith(Missile missile) {
 		//TODO remove sysout
 		System.out.println("Elf.interactWith(Missile) called");
-		setDamage(missile.getElfDamage());
+		this.setHealth(this.getHealth() - missile.getElfDamage());
 		System.out.println("Elf.interactWith(Missile) returned");
 	}
 }
