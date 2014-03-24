@@ -73,6 +73,13 @@ abstract public class Tower extends InjectionTarget
 		}
 	}
 	
+	public final void inject(Injectable inject)
+	{
+		System.out.println("Tower.Inject(Injectable) returned");
+		inject.injectOn(this);
+		System.out.println("Tower.Inject(Injectable) returned");
+	}
+	
 	public final int getSpeciesDamage(String type){
 		//TODO remove sysout
 		System.out.println("Tower.getSpeciesDamage(String) : int called");
