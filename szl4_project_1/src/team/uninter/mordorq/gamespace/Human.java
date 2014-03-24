@@ -4,7 +4,8 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 
 @SuppressWarnings("serial")
 public class Human extends EnemyTroop {
-
+	// Specific EnemyTroop, called Human. It could be named "basic" troop, others will be compare to this.
+	//Have average life, speed and damage
 	protected Human() {}
 	
 	protected Human(int x, int y) {

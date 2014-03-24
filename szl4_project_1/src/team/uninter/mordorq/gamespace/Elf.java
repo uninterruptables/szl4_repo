@@ -4,7 +4,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 
 @SuppressWarnings("serial")
 public class Elf extends EnemyTroop {
-
+// Specific EnemyTroop, called Elf. Have less life then other specific troop, more speed, and a little more damage
 	protected Elf() {}
 	
 	protected Elf(int x, int y) {

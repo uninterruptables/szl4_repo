@@ -4,7 +4,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 
 @SuppressWarnings("serial")
 public class Hobbit extends EnemyTroop {
-
+	// Specific EnemyTroop, called Hobbit. Have little more life then other specific troop, less speed, and less damage.
 	protected Hobbit() {}
 	
 	protected Hobbit(int x, int y) {

@@ -7,7 +7,8 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 
 @SuppressWarnings("serial")
 abstract public class EnemyTroop extends DamageTaker implements Controlable{
-
+// Class used to make a basic enemies, which will be the parent of all kind of species,enemies
+//It is set all commom attribute for all species, and how they will act at the scene.
 	protected int cooldown;
 	protected int MaxCooldown;
 	protected float damage;
@@ -21,12 +22,15 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	
 	protected EnemyTroop(int x, int y) {
 		super(x, y);
+		health=1;
+		damage=1;
 		// TODO Auto-generated constructor stub
 	}
 
 final public void controlIt()
 {
-		
+	System.out.println("EnemyTroop.controlIt()) called");
+	System.out.println("EnemyTroop.controlIt() returned");	
 }
 
 public void addAll(List<StatusModifier> modifiers){}

@@ -4,7 +4,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 
 @SuppressWarnings("serial")
 public class Dwarf extends EnemyTroop {
-
+	// Specific EnemyTroop, called Dwarf. Have much more life then other specific troop, less speed, and a little more damage
 	protected Dwarf() {}
 	
 	protected Dwarf(int x, int y) {
