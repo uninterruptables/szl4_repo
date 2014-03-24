@@ -138,6 +138,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	}
 	
 	public void setTrap(Trap trap){
+		//TODO remove sysout
 		System.out.println("RoadGrid setTrap called");
 		this.trap = trap;
 		System.out.println("RoadGrid setTrap returned");
@@ -151,5 +152,14 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		((GameObject)this.vulnerable).setY(this.y);
 		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) returned");
 	}
+
+	@Override
+	public InjectionTarget getInjectionTarget() {
+		//TODO remove sysout
+		System.out.println("RoadGrid getInjectionTarget() called");
+		System.out.println("RoadGrid getInjectionTarget() returned");
+		return trap;
+	}
+
 
 }
