@@ -8,7 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-
+//generic class used to handle all gameObjects. All of them have coordinates, and an image, that
+//will be rendered to them. 
 @SuppressWarnings("serial")
 public abstract class GameObject extends JPanel{
 

@@ -10,6 +10,7 @@ import team.uninter.mordorq.utils.GameConstants;
 
 public class BasicTower extends Tower {
 	
+	//One of the few descendants of the Tower class, with no special methods, but certain values.
 	public BasicTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout

@@ -5,6 +5,10 @@ import java.awt.Color;
 @SuppressWarnings("serial")
 abstract public class Casted extends GameObject {
 
+	//class used to hold together different objects the player will be able to cast on the map.
+	//All of them have manaCost. They two important methods are castOn (determines what happens once the object is
+	//casted) and canCastOn (returns, if the given object can be casted on a terrainGrid. Good, for user feedback mostly)
+	
 	protected int manaCost;
 	
 	protected Casted() {

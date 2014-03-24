@@ -4,13 +4,13 @@ import team.uninter.mordorq.skeleton.TroopStepSimulator;
 import team.uninter.mordorq.utils.GameConstants;
 
 /**
- * @author Celestine
+ * @author Danyik Dávid
  * Singleton class of the Elf race bosses, Legolas. It have special health and damage value not like the extended class
  * troops. There is only one of this troop.
  */
 @SuppressWarnings("serial")
 public class Legolas extends Elf{
-
+	
 	 private static Legolas instance = null;
 
 	 private Legolas(int health, int damage){
