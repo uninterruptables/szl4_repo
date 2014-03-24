@@ -141,8 +141,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void gameOver(){
 		//TODO: JOptionPane.showMessageDialog(...);
-		System.out.println("MordorFrame.win(): void called");
-		System.out.println("MordorFrame.win(): void returned");
+		System.out.println("MordorFrame.gameOver(): void called");
+		System.out.println("MordorFrame.gameOver(): void returned");
 	}
 	
 	/**
