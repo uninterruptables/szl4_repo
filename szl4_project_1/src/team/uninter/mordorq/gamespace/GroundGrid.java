@@ -136,5 +136,10 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid isAvailableFor(Barricade) returned");
 		return false;
 	}
+
+	@Override
+	public boolean isInRangeOf(Tower tower) {
+		return false;
+	}
 	
 }

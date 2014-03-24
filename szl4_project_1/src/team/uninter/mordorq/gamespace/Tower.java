@@ -73,6 +73,13 @@ abstract public class Tower extends InjectionTarget
 		}
 	}
 	
+	public final void attach(TargetPublisher publisher) {
+		//TODO remove sysout
+		System.out.println("Tower.attach() called");
+		this.roadGrids.add(publisher);
+		System.out.println("Tower.attach() returned");
+	}
+	
 	public final boolean canCastOn(TerrainGrid grid)
 	{
 		System.out.println("Tower.canCastOn(TerrainGrid) called");

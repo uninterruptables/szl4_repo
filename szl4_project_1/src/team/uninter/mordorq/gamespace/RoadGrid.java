@@ -1,5 +1,6 @@
 package team.uninter.mordorq.gamespace;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
 
@@ -34,6 +35,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("RoadGrid.RoadGrid(x,y) called");
+		subscribers = new ArrayList<TargetSubscriber>();
 		System.out.println("RoadGrid.RoadGrid(x,y) returned");
 	}
 	
@@ -46,6 +48,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		super(utility);
 		//TODO remove sysout
 		System.out.println("RoadGrid.RoadGrid(utility) called");
+		subscribers = new ArrayList<TargetSubscriber>();
 		System.out.println("RoadGrid.RoadGrid(utility) returned");
 	}
 	
@@ -56,6 +59,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		super();
 		//TODO remove sysout
 		System.out.println("RoadGrid.RoadGrid() called");
+		subscribers = new ArrayList<TargetSubscriber>();
 		System.out.println("RoadGrid.RoadGrid() returned");
 	}
 
@@ -235,6 +239,27 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid isAvailableFor(Barricade) called");
 		System.out.println("RoadGrid isAvailableFor(Barricade) returned");
 		return true;
+	}
+
+	@Override
+	public boolean isInRangeOf(Tower tower) {
+		//TODO remove sysout
+		System.out.println("TerrainGrid isInRangeOf(Tower) called");
+		int currentX = super.x;
+		int currentY = super.y;
+		int targetX = tower.getX();
+		int targetY = tower.getY();
+		int distanceX = targetX - currentX;
+		int distanceY = targetY - currentY;
+		int distance = (int) Math.sqrt(distanceX^2 + distanceY^2);
+		if(distance <= tower.getRadius()){
+			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned true");
+			return true;
+		}
+		else{
+			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned false");
+			return false;
+		}
 	}
 
 

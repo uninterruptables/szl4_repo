@@ -66,25 +66,7 @@ abstract public class TerrainGrid extends GameObject{
 	 * @param tower
 	 * @return
 	 */
-	public final boolean isInRangeOf(Tower tower){
-		//TODO remove sysout
-		System.out.println("TerrainGrid isInRangeOf(Tower) called");
-		int currentX = super.x;
-		int currentY = super.y;
-		int targetX = tower.getX();
-		int targetY = tower.getY();
-		int distanceX = targetX - currentX;
-		int distanceY = targetY - currentY;
-		int distance = (int) Math.sqrt(distanceX^2 + distanceY^2);
-		if(distance <= tower.getRadius()){
-			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned true");
-			return true;
-		}
-		else{
-			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned false");
-			return false;
-		}
-	}
+	abstract public boolean isInRangeOf(Tower tower);
 	
 	/**
 	 * Gives back the utility of the grid

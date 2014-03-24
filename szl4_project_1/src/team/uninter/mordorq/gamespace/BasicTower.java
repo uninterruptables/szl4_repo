@@ -45,14 +45,6 @@ public class BasicTower extends Tower {
 		System.out.println("BasicTower.createMissile() returned");
 		return basicMissile;
 	}
-
-	@Override
-	public void attach(TargetPublisher publisher) {
-		//TODO remove sysout
-		System.out.println("BasicTower.attach() called");
-		this.roadGrids.add(publisher);
-		System.out.println("BasicTower.attach() returned");
-	}
 	
 	
 public static class BasicMissile extends Missile {
