@@ -75,6 +75,7 @@ public class Elf extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Elf.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getElfDamage());
+		if(health <= 0) currentGrid.remove();
 		System.out.println("Elf.interactWith(Missile) returned");
 	}
 }

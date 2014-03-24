@@ -73,6 +73,7 @@ public class Hobbit extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Hobbit.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getHobbitDamage());
+		if(health <= 0) currentGrid.remove();
 		System.out.println("Hobbit.interactWith(Missile) returned");
 	}
 }

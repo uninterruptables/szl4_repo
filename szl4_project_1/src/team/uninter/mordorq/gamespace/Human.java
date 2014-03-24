@@ -74,6 +74,7 @@ public class Human extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Human.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getHumanDamage());
+		if(health <= 0) currentGrid.remove();
 		System.out.println("Human.interactWith(Missile) returned");
 		
 	}

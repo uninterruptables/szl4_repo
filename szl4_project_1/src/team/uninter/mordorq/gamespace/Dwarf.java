@@ -73,6 +73,7 @@ public class Dwarf extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Dwarf.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getDwarfDamage());
+		if(health <= 0) currentGrid.remove();
 		System.out.println("Dwarf.interactWith(Missile) returned");
 		
 	}
