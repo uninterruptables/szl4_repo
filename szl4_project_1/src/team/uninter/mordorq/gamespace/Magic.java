@@ -43,7 +43,9 @@ public abstract class Magic extends Casted{
 	
 	public final boolean canCastOn(TerrainGrid grid)
 	{
-		return false;
+		System.out.println("Magic.canCastOn(GameObject) returned");
+		System.out.println("Magic.canCastOn(GameObject) returned");
+		return true;
 		
 	}
 	

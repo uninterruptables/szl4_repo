@@ -61,8 +61,9 @@ public class Barricade extends Casted implements Vulnerable {
 
 	@Override
 	public boolean canCastOn(TerrainGrid grid) {
+		System.out.println("Barricade.canCastOn(GameObject) called");
+		System.out.println("Barricade.canCastOn(GameObject) returned");
 		return false;
-		// TODO Auto-generated method stub
 		
 	}
 }
