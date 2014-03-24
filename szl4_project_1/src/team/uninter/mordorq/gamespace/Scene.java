@@ -41,6 +41,16 @@ public class Scene extends JPanel{
 	private Thread animator;
 	private int round;
 	
+	
+	protected Scene(){
+		super();
+		//TODO:
+		System.out.println("Scene.Scene() called");
+		this.grids = new java.util.LinkedList<TerrainGrid>();
+		this.towers = new ArrayList<Controlable>();
+		System.out.println("Scene.Scene() returned");
+	}
+	
 	/**
 	 * The only constructor provided by this class is protected,
 	 * enforcing the usage of the public class Builder which
@@ -250,7 +260,9 @@ public class Scene extends JPanel{
 			System.out.println("Scene.Builder.build(): Scene called");
             List<TerrainGrid> grids = buildScene();
             System.out.println("Scene.Builder.build(): Scene returned");
-			return new Scene(owner, grids);
+            //TODO:
+			Scene scene = new Scene(owner, grids);
+            return scene;
 		}
 		
 		/**

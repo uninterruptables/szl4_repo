@@ -6,6 +6,11 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Dwarf extends EnemyTroop {
 	// Specific EnemyTroop, called Dwarf. Have much more life then other specific troop, less speed, and a little more damage
 	
+	private static int maxHealth = 300;
+	{
+		super.health = maxHealth;
+	}
+	
 	public Dwarf() {
 		super();
 		//TODO remove sysout

@@ -7,6 +7,11 @@ public class Human extends EnemyTroop {
 	// Specific EnemyTroop, called Human. It could be named "basic" troop, others will be compare to this.
 	//Have average life, speed and damage
 	
+	private static int maxHealth = 150;
+	{
+		super.health = maxHealth;
+	}
+	
 	public Human() {
 		super();
 		//TODO remove sysout

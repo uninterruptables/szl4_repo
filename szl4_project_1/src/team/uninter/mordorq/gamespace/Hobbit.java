@@ -6,6 +6,11 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Hobbit extends EnemyTroop {
 	// Specific EnemyTroop, called Hobbit. Have little more life then other specific troop, less speed, and less damage.
 	
+	private static int maxHealth = 90;
+	{
+		super.health = maxHealth;
+	}
+	
 	public Hobbit() {
 		super();
 		//TODO remove sysout
