@@ -203,6 +203,7 @@ abstract public class Tower extends InjectionTarget
 			racialDamages.put("ELF", 10);
 			racialDamages.put("HOBBIT", 10);
 			state = MissileState.WAITING;
+			deltaXY = 2;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
 		

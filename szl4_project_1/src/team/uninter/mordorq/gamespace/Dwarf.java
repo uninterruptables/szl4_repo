@@ -11,6 +11,9 @@ public class Dwarf extends EnemyTroop {
 		super.health = maxHealth;
 	}
 	
+	/**
+	 *  Dwarf with no parameter.
+	 */
 	public Dwarf() {
 		super();
 		//TODO remove sysout
@@ -18,6 +21,11 @@ public class Dwarf extends EnemyTroop {
 		System.out.println("Dwarf.Dwarf() returned");
 	}
 	
+	/**
+	 * Dwarf with two parameter
+	 * @param x
+	 * @param y
+	 */
 	public Dwarf(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
@@ -25,6 +33,14 @@ public class Dwarf extends EnemyTroop {
 		System.out.println("Dwarf.Dwarf(x,y) returned");
 	}
 
+	/**
+	 * Dwarf with five parameter, attributes .
+	 * @param x
+	 * @param y
+	 * @param health
+	 * @param damage
+	 * @param reward
+	 */
 	public Dwarf(int x, int y, int health, int damage, int reward) {
 		super(x, y);
 		//TODO remove sysout
@@ -35,6 +51,10 @@ public class Dwarf extends EnemyTroop {
 		System.out.println("Dwarf.Dwarf(x,y,health,damage,reward) returned");
 	}
 	
+	/* Return the amount of the reward for one dwarf killing.
+	 * (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
+	 */
 	public int getReward()
 	{
 		//TODO remove sysout
@@ -44,11 +64,15 @@ public class Dwarf extends EnemyTroop {
 		return rewardMana;
 		
 	}
+	/* Method how and how many damage get the dwarf.
+	 * (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
+	 */
 	@Override
 	public void interactWith(Missile missile) {
 		//TODO remove sysout
 		System.out.println("Dwarf.interactWith(Missile) called");
-		setDamage(missile.getDwarfDamage());
+		this.setHealth(this.getHealth() - missile.getDwarfDamage());
 		System.out.println("Dwarf.interactWith(Missile) returned");
 		
 	}

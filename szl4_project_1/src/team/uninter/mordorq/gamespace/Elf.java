@@ -11,6 +11,9 @@ public class Elf extends EnemyTroop {
 		super.health = maxHealth;
 	}
 	
+	/**
+	 * Elf with no parameter.
+	 */
 	public Elf() {
 		super();
 		//TODO remove sysout
@@ -18,6 +21,11 @@ public class Elf extends EnemyTroop {
 		System.out.println("Elf.Elf() returned");
 	}
 	
+	/**
+	 * Elf with two parameter.
+	 * @param x
+	 * @param y
+	 */
 	public Elf(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
@@ -25,6 +33,14 @@ public class Elf extends EnemyTroop {
 		System.out.println("Elf.Elf(x,y) returned");
 	}
 	
+	/**
+	 * Elf with five parameter, attributes.
+	 * @param x
+	 * @param y
+	 * @param health
+	 * @param damage
+	 * @param reward
+	 */
 	public Elf(int x, int y, int health, int damage, int reward) {
 		super(x, y);
 		//TODO remove sysout
@@ -35,6 +51,10 @@ public class Elf extends EnemyTroop {
 		System.out.println("Elf.Elf(x,y,health,damage,reward) returned");
 	}
 	
+	/* Return the amount of the reward for one elf killing.
+	 * (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
+	 */
 	public int getReward()
 	{
 		//TODO remove sysout
@@ -45,11 +65,16 @@ public class Elf extends EnemyTroop {
 		
 	}
 	
+	/* Method how and how many damage get the elf.
+	 * (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
+	 */
+
 	@Override
 	public void interactWith(Missile missile) {
 		//TODO remove sysout
 		System.out.println("Elf.interactWith(Missile) called");
-		setDamage(missile.getElfDamage());
+		this.setHealth(this.getHealth() - missile.getElfDamage());
 		System.out.println("Elf.interactWith(Missile) returned");
 	}
 }
