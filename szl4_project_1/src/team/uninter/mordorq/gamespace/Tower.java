@@ -76,9 +76,16 @@ abstract public class Tower extends InjectionTarget
 	public final boolean canCastOn(TerrainGrid grid)
 	{
 		System.out.println("Tower.canCastOn(TerrainGrid) called");
-		grid.isAvailableFor(this);
-		System.out.println("Tower.canCastOn(TerrainGrid) returned");
-		return false;
+		if(grid.isAvailableFor(this))
+		{
+			System.out.println("Tower.canCastOn(TerrainGrid) returned");
+			return true;
+		}
+		else
+		{
+			System.out.println("Tower.canCastOn(TerrainGrid) returned");
+			return false;
+		}
 		
 	}
 	
