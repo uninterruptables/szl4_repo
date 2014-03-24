@@ -12,11 +12,13 @@ public abstract class Magic extends Casted{
 	protected Magic() {
 		super();
 		System.out.println("Magic() called");
+		effects=new ArrayList<StatusModifier>();
 		System.out.println("Magic() returned");
 	}
 	protected Magic(int x, int y) {
 		super(x, y);
 		System.out.println("Magic(Int, Int) called");
+		effects=new ArrayList<StatusModifier>();
 		System.out.println("Magic(Int, Int) returned");
 	}
 
