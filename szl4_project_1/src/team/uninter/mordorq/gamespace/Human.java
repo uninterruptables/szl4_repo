@@ -12,6 +12,9 @@ public class Human extends EnemyTroop {
 		super.health = maxHealth;
 	}
 	
+	/**
+	 * Human with no parameter.
+	 */
 	public Human() {
 		super();
 		//TODO remove sysout
@@ -19,6 +22,11 @@ public class Human extends EnemyTroop {
 		System.out.println("Human.Human() returned");
 	}
 	
+	/**
+	 * Human with two parameter
+	 * @param x
+	 * @param y
+	 */
 	public Human(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
@@ -26,6 +34,14 @@ public class Human extends EnemyTroop {
 		System.out.println("Human.Human(x,y) returned");
 	}
 	
+	/**
+	 * Human with five parameter, attributes.
+	 * @param x
+	 * @param y
+	 * @param health
+	 * @param damage
+	 * @param reward
+	 */
 	public Human(int x, int y, int health, int damage, int reward) {
 		super(x, y);
 		//TODO remove sysout
@@ -36,6 +52,10 @@ public class Human extends EnemyTroop {
 		System.out.println("Human.Human(x,y,health,damage,reward) returned");
 	}
 	
+	/* Return the amount of the reward for one human killing.
+	 *  (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
+	 */
 	public int getReward()
 	{
 		//TODO remove sysout
@@ -45,6 +65,10 @@ public class Human extends EnemyTroop {
 		return rewardMana;
 		
 	}
+	/** Method how and how many damage get the human.
+	 *  (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
+	 */
 	@Override
 	public void interactWith(Missile missile) {
 		//TODO remove sysout

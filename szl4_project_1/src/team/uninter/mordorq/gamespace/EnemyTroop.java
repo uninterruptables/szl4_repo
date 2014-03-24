@@ -29,7 +29,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	ArrayList<StatusModifier> statusModifiers;
 	
 	/**
-	 * EnemyTroop no parameter
+	 * EnemyTroop no parameter (default)
 	 */
 	public EnemyTroop() {
 		
