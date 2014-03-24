@@ -9,7 +9,8 @@ import team.uninter.mordorq.gamespace.EnemyTroop;
 @SuppressWarnings("serial")
 public class MountainOfDoom extends DamageTaker{
 	private static MountainOfDoom instance = null;
- 
+ //Special class at the program, only role is to tell the player,
+ //he lost the game if any of the enemies reach this on the scene
 	private Scene owner;
 	
 	private MountainOfDoom(Scene owner) {
