@@ -69,8 +69,16 @@ public class GroundGrid extends TerrainGrid{
 
 	public Tower getTower(){
 		// TODO remove sysout
-		System.out.println("GroundGrid Tower getTower() called");
-		System.out.println("GroundGrid Tower getTower() returned");
+		System.out.println("GroundGrid getTower() called");
+		System.out.println("GroundGrid getTower() returned");
+		return tower;
+	}
+
+	@Override
+	public InjectionTarget getInjectionTarget() {
+		// TODO remove sysout
+		System.out.println("GroundGrid getInjectionTarget() called");
+		System.out.println("GroundGrid getInjectionTarget() returned");
 		return tower;
 	}
 	
