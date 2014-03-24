@@ -171,10 +171,22 @@ abstract public class Tower extends InjectionTarget
 		return missile.isActive();
 	}
 	
-	public EnemyTroop getNewTarget(){
+	private EnemyTroop getNewTarget(){
 		//TODO remove sysout
 		System.out.println("Tower.getNewTarget() called");
-		EnemyTroop target = (EnemyTroop) roadGrids.get(0);
+		for(TargetPublisher publisher : roadGrids) {
+			if(publisher.contains(missile.getTarget())) {
+				System.out.println("Tower.getNewTarget() returned");
+				return missile.getTarget();
+			}
+		}
+		for(TargetPublisher publisher : roadGrids){
+			EnemyTroop target = publisher.getTarget();
+			if(target != null) {
+				System.out.println("Tower.getNewTarget() returned");
+				return target;
+			}
+		}
 		System.out.println("Tower.getNewTarget() returned");
 		return null;
 	}
@@ -193,10 +205,10 @@ abstract public class Tower extends InjectionTarget
 			//TODO remove sysout
 			System.out.println("Missile.Missile(x,y) called");
 			racialDamages = new HashMap<String, Integer>();
-			racialDamages.put("dwarf", 10);
-			racialDamages.put("human", 10);
-			racialDamages.put("elf", 10);
-			racialDamages.put("hobbit", 10);
+			racialDamages.put("dwarf", 60);
+			racialDamages.put("human", 70);
+			racialDamages.put("elf", 40);
+			racialDamages.put("hobbit", 210);
 			state = MissileState.WAITING;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
@@ -210,11 +222,19 @@ abstract public class Tower extends InjectionTarget
 			}
 			else{
 				moveAhead();
-				if(this.getX()==targetX && this.getY()==targetY){
+				if(this.inRange()){
 					target.interactWith(this);
 				}
 			}
 			System.out.println("Missile.controlIt() returned");
+		}
+		
+		protected boolean inRange(){
+			//TODO:
+			System.out.println("Missile.inRange() called");
+			System.out.println("Missile.inRange() returned");
+			return ((targetX - 5) <= getX()) && (getX() <= (targetX + 5)) &&
+					((targetY - 5) <= getY()) && (getY() <= (targetY + 5));
 		}
 		
 		public final MissileState getState(){
