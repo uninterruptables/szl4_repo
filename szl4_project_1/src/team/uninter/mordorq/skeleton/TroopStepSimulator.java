@@ -63,7 +63,7 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 		initialGrid.setVulnerable(human);
 		human.setCurrentGrid(initialGrid);
 		
-		RoadGrid grid2 = new RoadGrid(8);
+		RoadGrid grid2 = new RoadGrid(100);
 		initialGrid.set(Neighbour.EAST, grid2);
 		grid2.set(Neighbour.WEST, initialGrid);
 		

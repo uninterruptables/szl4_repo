@@ -1,6 +1,6 @@
 package team.uninter.mordorq.utils;
 
-import team.uninter.mordorq.gamespace.Barricade;
+import team.uninter.mordorq.gamespace.*;
 import team.uninter.mordorq.gamespace.Neighbour;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.TerrainGrid;
@@ -24,7 +24,8 @@ public class PathFinder {
 						return targetRoad;
 					}
 					else{
-						if(vulnerable instanceof Barricade){
+						if(targetUtility - currentUtility - 50 > 0) return targetRoad;
+						if(!(vulnerable instanceof EnemyTroop)){
 							barricadeGrid = targetRoad;
 						}
 					}
