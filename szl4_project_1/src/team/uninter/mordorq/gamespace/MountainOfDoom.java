@@ -24,10 +24,6 @@ public class MountainOfDoom extends DamageTaker{
 		return instance;
 	}
 
-	public void setHealth(int healthDiff )
-	{
-	
-	}
 	@Override
 	public void interactWith(EnemyTroop troop)
 	{
