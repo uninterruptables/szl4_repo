@@ -6,6 +6,11 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Elf extends EnemyTroop {
 // Specific EnemyTroop, called Elf. Have less life then other specific troop, more speed, and a little more damage
 	
+	private static int maxHealth = 100;
+	{
+		super.health = maxHealth;
+	}
+	
 	public Elf() {
 		super();
 		//TODO remove sysout
