@@ -54,14 +54,6 @@ public class BasicTower extends Tower {
 		System.out.println("BasicTower.attach() returned");
 	}
 	
-	@Override
-	public void inject(Injectable injectable) {
-		//TODO remove sysout
-		System.out.println("BasicTower.inject() called");
-		injectable.injectOn(this);
-		System.out.println("BasicTower.inject() returned");
-		
-	}
 	
 public static class BasicMissile extends Missile {
 

@@ -55,14 +55,6 @@ public class LongDistanceTower extends Tower {
 		System.out.println("LongDistanceTower.attach() returned");
 	}
 	
-	@Override
-	public void inject(Injectable injectable) {
-		//TODO remove sysout
-		System.out.println("LongDistanceTower.inject() called");
-		injectable.injectOn(this);
-		System.out.println("LongDistanceTower.inject() returned");
-		
-	}
 	
 public static class LongDistanceMissile extends Missile {
 

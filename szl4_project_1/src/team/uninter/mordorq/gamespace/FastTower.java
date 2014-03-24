@@ -56,14 +56,6 @@ public class FastTower extends Tower {
 		System.out.println("FastTower.attach() returned");
 	}
 	
-	@Override
-	public void inject(Injectable injectable) {
-		//TODO remove sysout
-		System.out.println("FastTower.inject() called");
-		injectable.injectOn(this);
-		System.out.println("FastTower.inject() returned");
-		
-	}
 	
 public static class FastMissile extends Missile {
 

@@ -55,14 +55,6 @@ public class GreatTower extends Tower {
 		System.out.println("GreatTower.attach() returned");
 	}
 	
-	@Override
-	public void inject(Injectable injectable) {
-		//TODO remove sysout
-		System.out.println("GreatTower.inject() called");
-		injectable.injectOn(this);
-		System.out.println("GreatTower.inject() returned");
-		
-	}
 	
 public static class GreatMissile extends Missile {
 
