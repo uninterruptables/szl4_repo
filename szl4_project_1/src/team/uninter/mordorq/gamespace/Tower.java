@@ -11,7 +11,6 @@ import team.uninter.mordorq.utils.GameConstants;
 abstract public class Tower extends InjectionTarget 
 					implements TargetSubscriber, Controlable{
 
-	protected int cooldown;
 	protected int radius;
 	protected Missile missile;
 	protected List<TargetPublisher> roadGrids;
@@ -182,7 +181,7 @@ abstract public class Tower extends InjectionTarget
 	
 	public abstract static class Missile extends GameObject implements Controlable{
 		
-		private int deltaXY;
+		private int deltaX, deltaY;
 		protected HashMap<String, Integer> racialDamages;
 		protected int cooldown, maxCooldown;
 		private MissileState state;
@@ -198,7 +197,7 @@ abstract public class Tower extends InjectionTarget
 			racialDamages.put("human", 10);
 			racialDamages.put("elf", 10);
 			racialDamages.put("hobbit", 10);
-			//biztonság kedvéért...kiszedni
+			//biztonsï¿½g kedvï¿½ï¿½rt...kiszedni
 			racialDamages.put("DWARF", 10);
 			racialDamages.put("HUMAN", 10);
 			racialDamages.put("ELF", 10);
@@ -261,24 +260,33 @@ abstract public class Tower extends InjectionTarget
 				int y = this.target.getY();
 				int _x = x + GameConstants.GRID_SIZE/2;
 				int _y = y + GameConstants.GRID_SIZE/2;
+				this.deltaX = (_x - getX()) / 3;
+				this.deltaY = (_y - getY()) / 3;
 				this.setTargetPosition( _x,_y );
 				this.set(MissileState.ON_THE_FLY);
 			}
 			System.out.println("Missile.setTarget(EnemyTroop) returned");
 		}
 		
-		public final void setDeltaXY(int deltaXY){
+		public final void setDeltaX(int deltaX){
 			//TODO remove sysout
-			System.out.println("Missile.setDeltaXY(int) called");
-			this.deltaXY = deltaXY;
-			System.out.println("Missile.setDeltaXY(int) returned");
+			System.out.println("Missile.setDeltaX(int) called");
+			this.deltaX = deltaX;
+			System.out.println("Missile.setDeltaX(int) returned");
+		}
+		
+		public final void setDeltaY(int deltaY){
+			//TODO remove sysout
+			System.out.println("Missile.setDeltaY(int) called");
+			this.deltaY = deltaY;
+			System.out.println("Missile.setDeltaY(int) returned");
 		}
 		
 		public final void moveAhead(){
 			//TODO remove sysout
 			System.out.println("Missile.moveAhead() called");
-			this.x += deltaXY;
-			this.y += deltaXY;
+			this.x += deltaX;
+			this.y += deltaY;
 			System.out.println("Missile.moveAhead() returned");
 		}
 		
