@@ -180,6 +180,10 @@ abstract public class Tower extends InjectionTarget
 			//TODO remove sysout
 			System.out.println("Missile.Missile(x,y) called");
 			racialDamages = new HashMap<String, Integer>();
+			racialDamages.put("Dwarf", 10);
+			racialDamages.put("Human", 10);
+			racialDamages.put("Elf", 10);
+			racialDamages.put("Hobbit", 10);
 			state = MissileState.WAITING;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
