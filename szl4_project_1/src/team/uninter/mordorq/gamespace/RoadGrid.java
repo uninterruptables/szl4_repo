@@ -161,5 +161,13 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return trap;
 	}
 
+	@Override
+	public boolean isAvailableFor(Barricade barricade) {
+		//TODO remove sysout
+		System.out.println("RoadGrid isAvailableFor(Barricade) called");
+		System.out.println("RoadGrid isAvailableFor(Barricade) returned");
+		return true;
+	}
+
 
 }
