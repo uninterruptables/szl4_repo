@@ -30,7 +30,7 @@ import team.uninter.mordorq.gamespace.*;
  */
 public class CastSimulator extends ConfigurableSimulator{
 
-	private static CastSimulator instance = null;
+	private static volatile CastSimulator instance = null;
 	private static Object syncObject = new Object();
 	
 	/**

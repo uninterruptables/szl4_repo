@@ -18,7 +18,7 @@ import team.uninter.mordorq.gamespace.*;
 public class MordorFrameBuilds implements Simulatable{
 	
 	private static Object obj = new Object();
-	private static MordorFrameBuilds instance = null;
+	private static volatile MordorFrameBuilds instance = null;
 	private static final String SIMULATION_FILE_PATH = "resources/descriptors/simuframed.txt";
 	
 	/**

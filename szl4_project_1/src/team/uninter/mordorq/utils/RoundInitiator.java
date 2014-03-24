@@ -4,15 +4,9 @@
 package team.uninter.mordorq.utils;
 
 import team.uninter.mordorq.gamespace.*;
-
 import org.xml.sax.helpers.*;
-
 import javax.xml.parsers.*;
-
 import org.xml.sax.*;
-
-import javax.xml.*;
-
 import java.util.*;
 import java.io.*;
 /**
@@ -107,7 +101,6 @@ public class RoundInitiator {
 				else if(activeName.equals("aragorn")) enemies.add(Aragorn.getInstance());
 				else if(activeName.equals("gimli")) enemies.add(Gimli.getInstance());
 				else{
-					@SuppressWarnings("rawtypes")
 					Class activeClass = activeName.equals("human") ? Human.class : 
 											activeName.equals("hobbit") ? Hobbit.class : 
 												activeName.equals("elf") ? Elf.class  : Dwarf.class;
@@ -116,12 +109,9 @@ public class RoundInitiator {
 							enemies.add((EnemyTroop)activeClass.newInstance());
 						
 						activeName = null;
-					}catch(NumberFormatException ex){} catch (InstantiationException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					}catch(NumberFormatException ex){
+					} catch (InstantiationException e) {
 					} catch (IllegalAccessException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 			}

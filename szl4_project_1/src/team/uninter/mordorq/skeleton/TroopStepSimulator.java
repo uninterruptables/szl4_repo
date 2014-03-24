@@ -24,7 +24,7 @@ import team.uninter.mordorq.gamespace.*;
  */
 public class TroopStepSimulator extends  ConfigurableSimulator {
 
-	private static TroopStepSimulator instance = null;
+	private static volatile TroopStepSimulator instance = null;
 	private static Object syncObject = new Object();
 	
 	/**

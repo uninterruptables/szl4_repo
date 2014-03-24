@@ -21,7 +21,7 @@ import java.util.*;
  */
 public class MissileDamageSimulator implements Simulatable {
 
-	private static MissileDamageSimulator instance = null;
+	private static volatile MissileDamageSimulator instance = null;
 	private static Object syncObject = new Object();
 	
 	/**
