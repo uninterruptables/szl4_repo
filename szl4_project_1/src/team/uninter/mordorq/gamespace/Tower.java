@@ -197,11 +197,6 @@ abstract public class Tower extends InjectionTarget
 			racialDamages.put("human", 10);
 			racialDamages.put("elf", 10);
 			racialDamages.put("hobbit", 10);
-			//biztons�g kedv��rt...kiszedni
-			racialDamages.put("DWARF", 10);
-			racialDamages.put("HUMAN", 10);
-			racialDamages.put("ELF", 10);
-			racialDamages.put("HOBBIT", 10);
 			state = MissileState.WAITING;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
@@ -317,28 +312,28 @@ abstract public class Tower extends InjectionTarget
 			//TODO remove sysout
 			System.out.println("Tower.getElfDamage() called");
 			System.out.println("Tower.getElfDamage() returned");
-			return this.racialDamages.get("Elf");
+			return this.racialDamages.get("elf");
 		}
 		
 		public final int getHumanDamage(){
 			//TODO remove sysout
 			System.out.println("Tower.getHumanDamage() called");
 			System.out.println("Tower.getHumanDamage() returned");
-			return this.racialDamages.get("Human");
+			return this.racialDamages.get("human");
 		}
 		
 		public final int getDwarfDamage(){
 			//TODO remove sysout
 			System.out.println("Tower.getDwarfDamage() called");
 			System.out.println("Tower.getDwarfDamage() returned");
-			return this.racialDamages.get("Dwarf");
+			return this.racialDamages.get("dwarf");
 		}
 		
 		public final int getHobbitDamage(){
 			//TODO remove sysout
 			System.out.println("Tower.getHobbitDamage() called");
 			System.out.println("Tower.getHobbitDamage() returned");
-			return this.racialDamages.get("Hobbit");
+			return this.racialDamages.get("hobbit");
 		}
 		
 		public enum MissileState{
