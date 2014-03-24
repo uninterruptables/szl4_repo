@@ -10,7 +10,7 @@ import team.uninter.mordorq.utils.GameConstants;
  */
 @SuppressWarnings("serial")
 public class Legolas extends Elf{
-
+	
 	 private static Legolas instance = null;
 
 	 private Legolas(int health, int damage){

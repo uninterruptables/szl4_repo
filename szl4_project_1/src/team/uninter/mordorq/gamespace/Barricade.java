@@ -8,6 +8,10 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 public class Barricade extends Casted implements Vulnerable {
 	int health;
 	RoadGrid currentGrid;
+	
+	//Class representing objects, that the player can place on the road, in order to block the enemyTroops path.
+	//As a descendant of the vunerable, it has a certain amount of health, that is decreased by the amount of
+	//damage that certain enemy type deals on it, during the interractWith method.
 
 	public Barricade() {
 		super();

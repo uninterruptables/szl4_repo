@@ -10,7 +10,7 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 
 public class LongDistanceTower extends Tower {
-
+	//One of the few descendants of the Tower class, with no special methods, but certain values.
 	public LongDistanceTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout

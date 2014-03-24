@@ -3,6 +3,8 @@ package team.uninter.mordorq.gamespace;
 @SuppressWarnings("serial")
 abstract public class DamageTaker extends GameObject implements Vulnerable{
 
+	//abstract class used to handle most items in the game, that can take damage, meaning,
+	//they have a certain amount of health.
 	protected int health;
 	
 	protected DamageTaker() {
