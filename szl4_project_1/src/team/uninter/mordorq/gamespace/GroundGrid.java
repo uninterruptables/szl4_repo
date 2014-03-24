@@ -1,10 +1,28 @@
 package team.uninter.mordorq.gamespace;
 
+/**
+ * Responsible to ensure a place for towers
+ * 
+ * @author Soma
+ *
+ */
 public class GroundGrid extends TerrainGrid{
 
+	/**
+	 * available - availability of the grid, depends on a tower is 
+	 * on it or not
+	 * 
+	 * tower - tower on the grid
+	 */
 	private boolean available = true;
 	private Tower tower;
 	
+	/**
+	 * Contructor with position parameters
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	public GroundGrid(int x, int y) {
 		super(x, y);
 		//TODO remove sysout
@@ -12,6 +30,11 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid.GroundGrid(x,y) returned");
 	}
 	
+	/**
+	 * Contructor with utility parameter
+	 * 
+	 * @param utility
+	 */
 	public GroundGrid(int utility) {
 		super(utility);
 		//TODO remove sysout
@@ -19,6 +42,9 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid.GroundGrid(utility) returned");
 	}
 	
+	/**
+	 * Contructor without parameter  
+	 */
 	public GroundGrid() {
 		super(0);
 		//TODO remove sysout
@@ -26,6 +52,12 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid.GroundGrid() returned");
 	}
 	
+	/**
+	 * place the given tower to the grid and
+	 * change it's availability
+	 * 
+	 * @param tower
+	 */
 	public void reserve(Tower tower){
 		//TODO remove sysout
 		System.out.println("GroundGrid reserve(Tower tower) called");
@@ -36,6 +68,9 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid reserve(Tower tower) returned");
 	}
 	
+	 /** 
+	 * Gives back the grids availability for a trap
+	 */
 	@Override
 	public boolean isAvailableFor(Trap trap) {
 		//TODO remove sysout
@@ -44,6 +79,9 @@ public class GroundGrid extends TerrainGrid{
 		return false;
 	}
 
+	/** 
+	 * Gives back the grids availability for a tower
+	 */
 	@Override
 	public boolean isAvailableFor(Tower tower) {
 		//TODO remove sysout
@@ -52,6 +90,9 @@ public class GroundGrid extends TerrainGrid{
 		return true;
 	}
 	
+	/** 
+	 * Repaint
+	 */
 	public void repaint(){
 		//TODO remove sysout
 		System.out.println("GroundGrid repaint() called");
@@ -59,14 +100,12 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid repaint() returned");
 	}
 
-	@Override
-	public int getUtility() {
-		// TODO remove sysout
-		System.out.println("GroundGrid getUtility() called");
-		System.out.println("GroundGrid getUtility() returned");
-		return utility;
-	}
 
+	/**
+	 * Gives back the tower on the grid
+	 * 
+	 * @return
+	 */
 	public Tower getTower(){
 		// TODO remove sysout
 		System.out.println("GroundGrid getTower() called");
@@ -74,6 +113,10 @@ public class GroundGrid extends TerrainGrid{
 		return tower;
 	}
 
+	/**
+	 * Gives back the tower ont he grid
+	 * 
+	 */
 	@Override
 	public InjectionTarget getInjectionTarget() {
 		// TODO remove sysout
@@ -81,7 +124,11 @@ public class GroundGrid extends TerrainGrid{
 		System.out.println("GroundGrid getInjectionTarget() returned");
 		return tower;
 	}
-
+	
+	/**
+	 * Gives back the grids availability for a barricade
+	 * 
+	 */
 	@Override
 	public boolean isAvailableFor(Barricade barricade) {
 		// TODO remove sysout

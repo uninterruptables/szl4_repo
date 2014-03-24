@@ -108,14 +108,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		return targetEnemy;
 	}
 	
-	@Override
-	public int getUtility() {
-		// TODO remove sysout
-		System.out.println("RoadGrid getUtility() called");
-		System.out.println("RoadGrid getUtility() returned");
-		return utility;
-	}
-	
 	public Trap getTrap(){
 		//TODO remove sysout
 		System.out.println("RoadGrid getTrap() called");
