@@ -1,4 +1,6 @@
 package team.uninter.mordorq.gamespace;
+import java.io.IOException;
+
 import team.uninter.mordorq.skeleton.Skeleton;
 import team.uninter.mordorq.ApplicationContext;
 import team.uninter.mordorq.gamespace.Tower.Missile;
@@ -24,15 +26,21 @@ public class Barricade extends Casted implements Vulnerable {
 	public void interactWith(EnemyTroop troop)
 	{
 		System.out.println("Barricade.interactWith(EnemyTroop) called");
-		setHealth(-troop.getDamage(this));
+		try {
+		health=health-troop.getDamage();
 		String response="";
 		while(response.equals("y")||response.equals("n"))
 		{
-			response=((Skeleton)ApplicationContext.lookup("skeleton")).getInput("Is health below zero? (y, n)");
+				response=((Skeleton)ApplicationContext.lookup("skeleton")).getInput("Is health below zero? (y, n)");
 		}
 		if(response.equals("y")) health=0;
 		else health=1;
 		if(health<=0) currentGrid.remove(this);
+		} catch (IOException e) {
+			System.out.println("Barricade.interactWith(EnemyTroop) returned");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Barricade.interactWith(EnemyTroop) returned");
 	}
 
