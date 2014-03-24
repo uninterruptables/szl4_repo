@@ -5,30 +5,46 @@ import team.uninter.mordorq.gamespace.Tower.Missile;
 @SuppressWarnings("serial")
 public class Elf extends EnemyTroop {
 // Specific EnemyTroop, called Elf. Have less life then other specific troop, more speed, and a little more damage
-	protected Elf() {}
+	
+	protected Elf() {
+		super();
+		//TODO remove sysout
+		System.out.println("Elf.Elf() called");
+		System.out.println("Elf.Elf() returned");
+	}
 	
 	protected Elf(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		//TODO remove sysout
+		System.out.println("Elf.Elf(x,y) called");
+		System.out.println("Elf.Elf(x,y) returned");
 	}
-	protected int mana;
-	public void setReward(int mana)
-	{// Set the amount of the reward
-		System.out.println("Elf.setReward() called");
-		
-		System.out.println("Elf.setReward() returned");
+	
+	public Elf(int x, int y, int health, int damage, int reward) {
+		super(x, y);
+		//TODO remove sysout
+		this.health = health;
+		this.damage = damage;
+		this.rewardMana = reward;
+		System.out.println("Elf.Elf(x,y,health,damage,reward) called");
+		System.out.println("Elf.Elf(x,y,health,damage,reward) returned");
 	}
+	
 	public int getReward()
-	{// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
+	{
+		//TODO remove sysout
+		// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
 		System.out.println("Elf.getReward() called");
 		System.out.println("Elf.getReward() returned");
-		return mana;
+		return rewardMana;
 		
 	}
+	
 	@Override
 	public void interactWith(Missile missile) {
+		//TODO remove sysout
 		System.out.println("Elf.interactWith(Missile) called");
+		setDamage(missile.getElfDamage());
 		System.out.println("Elf.interactWith(Missile) returned");
-		
 	}
 }
