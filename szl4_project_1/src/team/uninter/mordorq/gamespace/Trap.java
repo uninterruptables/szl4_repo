@@ -35,19 +35,6 @@ abstract public class Trap extends InjectionTarget{
 		
 	}
 	
-	public final void injectOn(Injectable inj)
-	{
-		System.out.println("Trap.injectOn(Injectable) : bool called");
-		if(inj.canInjectOn(this))
-		{
-			System.out.println("Trap.injectOn(Injectable) : bool returned");
-		}
-		else
-		{
-			System.out.println("Trap.injectOn(Injectable) : bool returned");
-		}
-	}
-	
 	public final boolean canInject(Injectable inj)
 	{
 		System.out.println("Trap.canInject(Injectable) : bool called");
