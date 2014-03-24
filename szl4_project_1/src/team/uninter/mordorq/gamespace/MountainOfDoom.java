@@ -17,7 +17,7 @@ public class MountainOfDoom extends DamageTaker{
 		this.owner = owner;
 	}
 	private MountainOfDoom() {}
-	protected int health = 1;
+	protected int health = 1; // If an enemy reach the MountainOfDoom, the game will be end. It is symbolic life.
 	public static synchronized MountainOfDoom getInstance(Scene scene) {
 		if (instance == null) {
                 	instance = new MountainOfDoom (scene);
@@ -27,7 +27,7 @@ public class MountainOfDoom extends DamageTaker{
 
 	@Override
 	public void interactWith(EnemyTroop troop)
-	{
+	{// class tell to the player, the game is end and lost. Game will be stopped.
 		System.out.println("MountainOfDoom.interactWith(EnemyTroop) called");
 		owner.endGame(false);
 		System.out.println("MountainOfDoom.interactWith(EnemyTroop) returned");
