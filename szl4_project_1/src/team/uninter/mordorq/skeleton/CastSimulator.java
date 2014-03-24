@@ -82,14 +82,15 @@ public class CastSimulator extends ConfigurableSimulator{
 				(new BasicTower()).castOn(iniGrid);
 			}
 		}
-		
-		int mana = frame.getUserMana();
-		if(mana - activeObject.getCost() >= 0){
-			if(activeObject instanceof Magic){
-				frame.getScene().cast((Magic)activeObject);
+		if(activeObject.canCastOn(iniGrid)){
+			int mana = frame.getUserMana();
+			if(mana - activeObject.getCost() >= 0){
+				if(activeObject instanceof Magic){
+					frame.getScene().cast((Magic)activeObject);
+				}
+				else frame.getScene().place(activeObject, iniGrid);
+				frame.setUserMana(mana - activeObject.getCost());
 			}
-			else frame.getScene().place(activeObject, iniGrid);
-			frame.setUserMana(mana - activeObject.getCost());
 		}
 		System.out.println("Cast-"+configuration.toString()+" simulation finished...");
 	}
