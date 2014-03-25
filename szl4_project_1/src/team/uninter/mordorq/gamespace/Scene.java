@@ -338,13 +338,21 @@ public class Scene extends JPanel{
 					  
 					  for(String _util : parts){
 						  TerrainGrid grid = bucketHash.get(Integer.valueOf(_util)).get(0);
-						  if(x > 0){
-							  grid.set(Neighbour.WEST, grids.get(y*height + (x-1)));
-							  grid.get(Neighbour.WEST).set(Neighbour.EAST, grid);;
+						  if(x < 0) {
+							  grid.setX(0);
+							  grid.setX(0);
+						  }
+						  else if(x > 0){
+							  TerrainGrid west = grids.get(y*height + (x-1));
+							  grid.setX(west.getX() + 10);
+							  grid.set(Neighbour.WEST, west);
+							  west.set(Neighbour.EAST, grid);;
 						  }
 						  if(y > 0){
-							  grid.set(Neighbour.NORTH, grids.get((y-1)*height + x));
-							  grid.get(Neighbour.NORTH).set(Neighbour.SOUTH, grid);
+							  TerrainGrid north = grids.get((y-1)*height + x);
+							  grid.setY(north.getY() + 10);
+							  grid.set(Neighbour.NORTH, north);
+							  north.set(Neighbour.SOUTH, grid);
 						  }
 						  grids.add(grid);
 					      x++;

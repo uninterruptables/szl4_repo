@@ -222,7 +222,8 @@ abstract public class Tower extends InjectionTarget
 			}
 			else{
 				moveAhead();
-				if(this.inRange()){
+				// targetX == getX() && targetY == getY()
+				if(inRange()){
 					target.interactWith(this);
 				}
 			}
@@ -302,6 +303,8 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.moveAhead() called");
 			this.x += deltaX;
 			this.y += deltaY;
+			System.out.println("x: "+getX());
+			System.out.println("y: "+getY());
 			System.out.println("Missile.moveAhead() returned");
 		}
 		
