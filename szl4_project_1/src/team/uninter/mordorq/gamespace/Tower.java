@@ -222,7 +222,6 @@ abstract public class Tower extends InjectionTarget
 			}
 			else{
 				moveAhead();
-				// targetX == getX() && targetY == getY()
 				if(inRange()){
 					target.interactWith(this);
 				}
