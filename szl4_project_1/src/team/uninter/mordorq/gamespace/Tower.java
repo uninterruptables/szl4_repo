@@ -224,6 +224,8 @@ abstract public class Tower extends InjectionTarget
 				moveAhead();
 				if(inRange()){
 					target.interactWith(this);
+					this.set(maxCooldown);
+					this.set(MissileState.DORMANT);
 				}
 			}
 			System.out.println("Missile.controlIt() returned");
