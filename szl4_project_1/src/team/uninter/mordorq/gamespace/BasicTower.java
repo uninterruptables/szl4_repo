@@ -15,8 +15,7 @@ public class BasicTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 		System.out.println("BasicTower.Basictower(x,y) called");
-		missile = createMissile();
-		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.BASIC_TOWER_RADIUS;
 		System.out.println("BasicTower.Basictower(x,y) returned");
 	}
 	
@@ -24,8 +23,7 @@ public class BasicTower extends Tower {
 		super();
 		//TODO remove sysout
 		System.out.println("BasicTower.BasicTower() called");
-		missile = createMissile();
-		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.BASIC_TOWER_RADIUS;
 		System.out.println("BasicTower.BasicTower() returned");
 	}
 	
@@ -54,6 +52,11 @@ public static class BasicMissile extends Missile {
 		super( x, y);
 		//TODO remove sysout
 		System.out.println("BasicMissile.BasicMissile(x,y) called");
+		this.maxCooldown = GameConstants.BASIC_TOWER_MAXCOOLDOWN;
+		racialDamages.put("dwarf", GameConstants.BASIC_MISSILE_DWARF_DAMAGE);
+		racialDamages.put("human", GameConstants.BASIC_MISSILE_HUMAN_DAMAGE);
+		racialDamages.put("elf", GameConstants.BASIC_MISSILE_ELF_DAMAGE);
+		racialDamages.put("hobbit", GameConstants.BASIC_MISSILE_HOBBIT_DAMAGE);
 		System.out.println("BasicMissile.BasicMissile(x,y) returned");
 	}
 	

@@ -205,10 +205,6 @@ abstract public class Tower extends InjectionTarget
 			//TODO remove sysout
 			System.out.println("Missile.Missile(x,y) called");
 			racialDamages = new HashMap<String, Integer>();
-			racialDamages.put("dwarf", 60);
-			racialDamages.put("human", 70);
-			racialDamages.put("elf", 40);
-			racialDamages.put("hobbit", 210);
 			state = MissileState.WAITING;
 			System.out.println("Missile.Missile(x,y) returned");
 		}
@@ -234,9 +230,17 @@ abstract public class Tower extends InjectionTarget
 		protected boolean inRange(){
 			//TODO:
 			System.out.println("Missile.inRange() called");
-			System.out.println("Missile.inRange() returned");
-			return ((targetX - 5) <= getX()) && (getX() <= (targetX + 5)) &&
-					((targetY - 5) <= getY()) && (getY() <= (targetY + 5));
+			int xDistance = Math.abs(targetX - getX());
+			int yDistance = Math.abs(targetY - getY());
+			int distance = (int) Math.sqrt(xDistance^2 + yDistance^2);
+			if(distance <= GameConstants.MISSILE_VELOCITY){
+				System.out.println("Missile.inRange() returned true");
+				return true;
+			}
+			else{
+				System.out.println("Missile.inRange() returned false");
+				return false;
+			}
 		}
 		
 		public final MissileState getState(){
@@ -273,13 +277,6 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.setTarget(EnemyTroop) called");
 			this.target = target;
 			if(this.target != null){
-				int x = this.target.getX();
-				int y = this.target.getY();
-				int _x = x + GameConstants.GRID_SIZE/2;
-				int _y = y + GameConstants.GRID_SIZE/2;
-				this.deltaX = (_x - getX()) / 3;
-				this.deltaY = (_y - getY()) / 3;
-				this.setTargetPosition( _x,_y );
 				this.set(MissileState.ON_THE_FLY);
 			}
 			System.out.println("Missile.setTarget(EnemyTroop) returned");
@@ -302,6 +299,17 @@ abstract public class Tower extends InjectionTarget
 		public final void moveAhead(){
 			//TODO remove sysout
 			System.out.println("Missile.moveAhead() called");
+			setTargetPosition(target.getX()+GameConstants.GRID_SIZE/2, target.getY()+GameConstants.GRID_SIZE/2);
+			int xVector = targetX - getX();
+			int yVector = targetY - getY();
+//			int vectorLength = (int) Math.round(Math.sqrt(xVector^2 + yVector^2));
+			int vectorLength = (int) Math.sqrt(Math.pow(xVector, 2) + Math.pow(yVector, 2));
+			float xNormal = (xVector*(1/(float)vectorLength));
+			float yNormal = (yVector*(1/(float)vectorLength));
+			
+			this.deltaX = Math.round(xNormal*GameConstants.MISSILE_VELOCITY);
+			this.deltaY = Math.round(yNormal*GameConstants.MISSILE_VELOCITY);
+			
 			this.x += deltaX;
 			this.y += deltaY;
 			System.out.println("x: "+getX());

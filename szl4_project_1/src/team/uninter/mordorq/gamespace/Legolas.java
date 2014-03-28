@@ -13,12 +13,13 @@ public class Legolas extends Elf{
 	
 	 private static Legolas instance = null;
 
-	 private Legolas(int health, int damage){
+	 private Legolas(int health, int damage, int reward){
 		  super();
 		  //TODO remove sysout
 		  System.out.println("Legolas.Legolas(health,damage) called");
 		  this.health = health;
 		  this.damage = damage;
+		  this.rewardMana = reward;
 		  System.out.println("Legolas.Legolas(health,damage) returned");
 	  }
 
@@ -26,7 +27,7 @@ public class Legolas extends Elf{
 		  //TODO remove sysout
 		  System.out.println("Legolas.getInstance() called");
 		  if(instance == null){
-			  instance = new Legolas(GameConstants.LEGOLAS_HEALTH, GameConstants.LEGOLAS_DAMAGE);
+			  instance = new Legolas(GameConstants.LEGOLAS_HEALTH, GameConstants.LEGOLAS_DAMAGE, GameConstants.LEGOLAS_REWARD);
 		  }
 		  System.out.println("Legolas.getInstance() returned");
 		  return instance;

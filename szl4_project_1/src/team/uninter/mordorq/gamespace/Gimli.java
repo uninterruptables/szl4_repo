@@ -13,12 +13,13 @@ public class Gimli extends Dwarf{
 
 	 private static Gimli instance = null;
 
-	 private Gimli(int health, int damage){
+	 private Gimli(int health, int damage, int reward){
 		  super();
 		  //TODO remove sysout
 		  System.out.println("Gimli.Gimli(health,damage) called");
 		  this.health = health;
 		  this.damage = damage;
+		  this.rewardMana = reward;
 		  System.out.println("Gimli.Gimli(health,damage) returned");
 	  }
 
@@ -26,7 +27,7 @@ public class Gimli extends Dwarf{
 		  //TODO remove sysout
 		  System.out.println("Gimli.getInstance() called");
 		  if(instance == null){
-			  instance = new Gimli(GameConstants.GIMLI_HEALTH, GameConstants.GIMLI_DAMAGE);
+			  instance = new Gimli(GameConstants.GIMLI_HEALTH, GameConstants.GIMLI_DAMAGE, GameConstants.GIMLI_REWARD);
 		  }
 		  System.out.println("Gimli.getInstance() returned");
 		  return instance;

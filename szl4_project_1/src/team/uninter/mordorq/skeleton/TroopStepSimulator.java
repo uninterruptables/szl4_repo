@@ -59,6 +59,7 @@ public class TroopStepSimulator extends  ConfigurableSimulator {
 	public void simulate() throws Exception{
 		System.out.println("TroopStepSimulator configuration: "+configuration.toString()+" is simulating..");
 		EnemyTroop human = new Human();
+		System.out.println(human.getClass().getSimpleName());
 		RoadGrid initialGrid = new RoadGrid(7);
 		initialGrid.setVulnerable(human);
 		human.setCurrentGrid(initialGrid);

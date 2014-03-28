@@ -16,7 +16,6 @@ public class FastTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 		System.out.println("FastTower.FastTower(x,y) called");
-		missile = createMissile();
 		roadGrids = new ArrayList<TargetPublisher>();
 		System.out.println("FastTower.FastTower(x,y) returned");
 	}
@@ -25,7 +24,6 @@ public class FastTower extends Tower {
 		super();
 		//TODO remove sysout
 		System.out.println("FastTower.FastTower() called");
-		missile = createMissile();
 		roadGrids = new ArrayList<TargetPublisher>();
 		System.out.println("FastTower.FastTower() returned");
 	}
@@ -55,6 +53,11 @@ public static class FastMissile extends Missile {
 		super( x, y);
 		//TODO remove sysout
 		System.out.println("FastMissile.FastMissile(x,y) called");
+		this.maxCooldown = GameConstants.FAST_TOWER_MAXCOOLDOWN;
+		racialDamages.put("dwarf", GameConstants.FAST_MISSILE_DWARF_DAMAGE);
+		racialDamages.put("human", GameConstants.FAST_MISSILE_HUMAN_DAMAGE);
+		racialDamages.put("elf", GameConstants.FAST_MISSILE_ELF_DAMAGE);
+		racialDamages.put("hobbit", GameConstants.FAST_MISSILE_HOBBIT_DAMAGE);
 		System.out.println("FastMissile.FastMissile(x,y) returned");
 	}
 	

@@ -1,16 +1,12 @@
 package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Human extends EnemyTroop {
 	// Specific EnemyTroop, called Human. It could be named "basic" troop, others will be compare to this.
 	//Have average life, speed and damage
-	
-	private static int maxHealth = 150;
-	{
-		super.health = maxHealth;
-	}
 	
 	/**
 	 * Human with no parameter.
@@ -19,6 +15,9 @@ public class Human extends EnemyTroop {
 		super();
 		//TODO remove sysout
 		System.out.println("Human.Human() called");
+		health = GameConstants.HUMAN_HEALTH;
+		damage = GameConstants.HUMAN_DAMAGE;
+		rewardMana = GameConstants.HUMAN_REWARD;
 		System.out.println("Human.Human() returned");
 	}
 	
@@ -31,6 +30,9 @@ public class Human extends EnemyTroop {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Human.Human(x,y) called");
+		health = GameConstants.HUMAN_HEALTH;
+		damage = GameConstants.HUMAN_DAMAGE;
+		rewardMana = GameConstants.HUMAN_REWARD;
 		System.out.println("Human.Human(x,y) returned");
 	}
 	
@@ -74,7 +76,7 @@ public class Human extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Human.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getHumanDamage());
-		if(health <= 0) currentGrid.remove();
+		if(health <= 0 && currentGrid != null) currentGrid.remove();
 		System.out.println("Human.interactWith(Missile) returned");
 		
 	}

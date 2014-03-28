@@ -1,15 +1,11 @@
 package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Hobbit extends EnemyTroop {
 	// Specific EnemyTroop, called Hobbit. Have little less life then other specific troop, less speed, and less damage.
-	
-	private static int maxHealth = 90;
-	{
-		super.health = maxHealth;
-	}
 	
 	/**
 	 * Hobbit with no parameter.
@@ -18,6 +14,9 @@ public class Hobbit extends EnemyTroop {
 		super();
 		//TODO remove sysout
 		System.out.println("Hobbit.Hobbit() called");
+		health = GameConstants.HOBBIT_HEALTH;
+		damage = GameConstants.HOBBIT_DAMAGE;
+		rewardMana = GameConstants.HOBBIT_REWARD;
 		System.out.println("Hobbit.Hobbit() returned");
 	}
 	
@@ -30,6 +29,9 @@ public class Hobbit extends EnemyTroop {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Hobbit.Hobbit(x,y) called");
+		health = GameConstants.HOBBIT_HEALTH;
+		damage = GameConstants.HOBBIT_DAMAGE;
+		rewardMana = GameConstants.HOBBIT_REWARD;
 		System.out.println("Hobbit.Hobbit(x,y) returned");
 	}
 	
@@ -73,7 +75,7 @@ public class Hobbit extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Hobbit.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getHobbitDamage());
-		if(health <= 0) currentGrid.remove();
+		if(health <= 0 && currentGrid != null) currentGrid.remove();
 		System.out.println("Hobbit.interactWith(Missile) returned");
 	}
 }

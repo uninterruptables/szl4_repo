@@ -22,7 +22,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	protected int cooldown;
 	protected int MaxCooldown;
 	protected int damage;
-	protected int health;
 	protected int rewardMana;
 	protected RoadGrid currentGrid;
 	protected RoadGrid targetGrid;
@@ -179,22 +178,11 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		System.out.println("EnemyTroop.setDamage(damage) returned");	
 	}
 	
-	/* Return with the troop health 
-	 * (non-Javadoc)
-	 * @see team.uninter.mordorq.gamespace.DamageTaker#getHealth()
-	 */
-	public final int getHealth()
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.getHealth() called");
-		System.out.println("EnemyTroop.getHealth() returned");
-		return this.health;	
-	}
-	
 	public final void setHealth(int health)
 	{
 		//TODO remove sysout
 		System.out.println("EnemyTroop.setHealth() called");
+		this.health = health;
 		System.out.println("EnemyTroop.setHealth() returned");
 	}
 

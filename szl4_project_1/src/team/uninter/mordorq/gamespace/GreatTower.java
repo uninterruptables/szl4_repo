@@ -8,6 +8,7 @@ import java.util.Map;
 import team.uninter.mordorq.gamespace.BasicTower.BasicMissile;
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
+import team.uninter.mordorq.utils.GameConstants;
 
 public class GreatTower extends Tower {
 	//One of the few descendants of the Tower class, with no special methods, but certain values.
@@ -15,7 +16,6 @@ public class GreatTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 		System.out.println("GreatTower.GreatTower(x,y) called");
-		missile = createMissile();
 		roadGrids = new ArrayList<TargetPublisher>();
 		System.out.println("GreatTower.GreatTower(x,y) returned");
 	}
@@ -24,7 +24,6 @@ public class GreatTower extends Tower {
 		super();
 		//TODO remove sysout
 		System.out.println("GreatTower.GreatTower() called");
-		missile = createMissile();
 		roadGrids = new ArrayList<TargetPublisher>();
 		System.out.println("GreatTower.GreatTower() returned");
 	}
@@ -53,6 +52,11 @@ public static class GreatMissile extends Missile {
 		super( x, y);
 		//TODO remove sysout
 		System.out.println("GreatMissile.GreatMissile(x,y) called");
+		this.maxCooldown = GameConstants.GREAT_MAXCOOLDOWN;
+		racialDamages.put("dwarf", GameConstants.GREAT_MISSILE_DWARF_DAMAGE);
+		racialDamages.put("human", GameConstants.GREAT_MISSILE_HUMAN_DAMAGE);
+		racialDamages.put("elf", GameConstants.GREAT_MISSILE_ELF_DAMAGE);
+		racialDamages.put("hobbit", GameConstants.GREAT_MISSILE_HOBBIT_DAMAGE);
 		System.out.println("GreatMissile.GreatMissile(x,y) returned");
 	}
 	

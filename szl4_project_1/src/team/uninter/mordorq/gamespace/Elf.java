@@ -1,15 +1,11 @@
 package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Elf extends EnemyTroop {
 // Specific EnemyTroop, called Elf. Have less life then other specific troop, more speed, and a little more damage
-	
-	private static int maxHealth = 100;
-	{
-		super.health = maxHealth;
-	}
 	
 	/**
 	 * Elf with no parameter.
@@ -18,6 +14,9 @@ public class Elf extends EnemyTroop {
 		super();
 		//TODO remove sysout
 		System.out.println("Elf.Elf() called");
+		health = GameConstants.ELF_HEALTH;
+		damage = GameConstants.ELF_DAMAGE;
+		rewardMana = GameConstants.ELF_REWARD;
 		System.out.println("Elf.Elf() returned");
 	}
 	
@@ -30,6 +29,9 @@ public class Elf extends EnemyTroop {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Elf.Elf(x,y) called");
+		health = GameConstants.ELF_HEALTH;
+		damage = GameConstants.ELF_DAMAGE;
+		rewardMana = GameConstants.ELF_REWARD;
 		System.out.println("Elf.Elf(x,y) returned");
 	}
 	
@@ -75,7 +77,7 @@ public class Elf extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Elf.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getElfDamage());
-		if(health <= 0) currentGrid.remove();
+		if(health <= 0 && currentGrid != null) currentGrid.remove();
 		System.out.println("Elf.interactWith(Missile) returned");
 	}
 }

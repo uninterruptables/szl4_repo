@@ -4,6 +4,7 @@
 package team.uninter.mordorq.skeleton;
 
 import team.uninter.mordorq.gamespace.*;
+import team.uninter.mordorq.utils.GameConstants;
 
 import java.io.IOException;
 import java.util.*;
@@ -54,13 +55,14 @@ public class MissileDamageSimulator implements Simulatable {
 	public void simulate() throws IOException{
 		System.out.println("MissileDamageSimulator is simulating..");
 		MordorFrame frame = MordorFrame.newInstance("resources/descriptors/missiledd.txt");
-		Tower tower = new BasicTower(10, 10);
+		Tower tower = new BasicTower();
+		tower.setMaxCooldown(GameConstants.BASIC_TOWER_MAXCOOLDOWN);
 		EnemyTroop troop = new Elf(30, 30);
 		List<TerrainGrid> grids = frame.getScene().getGrids();
 	    frame.getScene().place(tower, grids.get(1));
 	    ((RoadGrid)grids.get(grids.size() - 1)).notifyAllWith(troop);
 	    
-	    while(tower.isActive()){
+	    while(troop.isActive()){
 	    	tower.controlIt();
 	    }
 	    frame.getScene().rewardUser(troop.getReward());

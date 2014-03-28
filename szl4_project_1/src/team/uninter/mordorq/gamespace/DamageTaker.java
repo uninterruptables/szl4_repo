@@ -20,7 +20,7 @@ abstract public class DamageTaker extends GameObject implements Vulnerable{
 		System.out.println("DamageTaker.DamageTaker(x,y) returned");
 	}
 	
-	public int getHealth(){
+	public final int getHealth(){
 		// TODO remove sysout
 		System.out.println("DamageTaker getHealth() called");
 		System.out.println("DamageTaker getHealth() returned");

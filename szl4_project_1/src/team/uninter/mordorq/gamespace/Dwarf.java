@@ -1,15 +1,11 @@
 package team.uninter.mordorq.gamespace;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
+import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Dwarf extends EnemyTroop {
 	// Specific EnemyTroop, called Dwarf. Have much more life then other specific troop, less speed, and a little more damage
-	
-	private static int maxHealth = 300;
-	{
-		super.health = maxHealth;
-	}
 	
 	/**
 	 *  Dwarf with no parameter.
@@ -18,6 +14,9 @@ public class Dwarf extends EnemyTroop {
 		super();
 		//TODO remove sysout
 		System.out.println("Dwarf.Dwarf() called");
+		health = GameConstants.DWARF_HEALTH;
+		damage = GameConstants.DWARF_DAMAGE;
+		rewardMana = GameConstants.DWARF_REWARD;
 		System.out.println("Dwarf.Dwarf() returned");
 	}
 	
@@ -30,6 +29,9 @@ public class Dwarf extends EnemyTroop {
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("Dwarf.Dwarf(x,y) called");
+		health = GameConstants.DWARF_HEALTH;
+		damage = GameConstants.DWARF_DAMAGE;
+		rewardMana = GameConstants.DWARF_REWARD;
 		System.out.println("Dwarf.Dwarf(x,y) returned");
 	}
 
@@ -73,7 +75,7 @@ public class Dwarf extends EnemyTroop {
 		//TODO remove sysout
 		System.out.println("Dwarf.interactWith(Missile) called");
 		this.setHealth(this.getHealth() - missile.getDwarfDamage());
-		if(health <= 0) currentGrid.remove();
+		if(health <= 0 && currentGrid != null) currentGrid.remove();
 		System.out.println("Dwarf.interactWith(Missile) returned");
 		
 	}
