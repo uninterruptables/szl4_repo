@@ -282,21 +282,21 @@ abstract public class Tower extends InjectionTarget
 			System.out.println("Missile.setTarget(EnemyTroop) returned");
 		}
 		
-		public final void setDeltaX(int deltaX){
+		protected final void setDeltaX(int deltaX){
 			//TODO remove sysout
 			System.out.println("Missile.setDeltaX(int) called");
 			this.deltaX = deltaX;
 			System.out.println("Missile.setDeltaX(int) returned");
 		}
 		
-		public final void setDeltaY(int deltaY){
+		protected final void setDeltaY(int deltaY){
 			//TODO remove sysout
 			System.out.println("Missile.setDeltaY(int) called");
 			this.deltaY = deltaY;
 			System.out.println("Missile.setDeltaY(int) returned");
 		}
 		
-		public final void moveAhead(){
+		protected final void moveAhead(){
 			//TODO remove sysout
 			System.out.println("Missile.moveAhead() called");
 			setTargetPosition(target.getX()+GameConstants.GRID_SIZE/2, target.getY()+GameConstants.GRID_SIZE/2);

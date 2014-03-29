@@ -188,16 +188,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	}
 	
 	/**
-	 * Set the utility of the grid with the given parameter
-	 */
-	public void setUtility(int utility){
-		//TODO remove sysout
-		System.out.println("RoadGrid setUtility(int utility) called");
-		this.utility = utility;
-		System.out.println("RoadGrid setUtility(int utility) returned");
-	}
-	
-	/**
 	 * Set a trap on the grid with the given parameter
 	 */
 	public void setTrap(Trap trap){

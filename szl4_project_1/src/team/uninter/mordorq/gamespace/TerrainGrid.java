@@ -79,6 +79,13 @@ abstract public class TerrainGrid extends GameObject{
 		System.out.println("TerrainGrid.getUtility() returned");
 		return this.utility;
 	}
+	
+	public final void setUtility(int utility){
+		//TODO remove sysout
+		System.out.println("TerrainGrid.setUtility(utility) called");	
+		this.utility = utility;
+		System.out.println("TerrainGrid.setUtility(utility) returned");
+	}
 
 	/**
 	 * Gives back the grids availability for a trap,
