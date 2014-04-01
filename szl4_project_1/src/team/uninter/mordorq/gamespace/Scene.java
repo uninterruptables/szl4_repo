@@ -41,7 +41,9 @@ public class Scene extends JPanel{
 	private Animator animator;
 	private int round;
 	
-	
+	/**
+	 * Constructor for building a simple/empty <code>Scene</code>.
+	 * */
 	protected Scene(MordorFrame owner){
 		super();
 		this.owner = owner;
@@ -57,14 +59,11 @@ public class Scene extends JPanel{
 	 * */
 	protected Scene(MordorFrame owner, List<TerrainGrid> grids){
 		super();
-		//TODO:
-		System.out.println("Scene.Scene(MordorFrame, List) called");
 		this.owner = owner;
 		this.grids = grids;
 		this.towers = new ArrayList<Controlable>();
 		this.round = 0;
 		animator = new Animator(this,towers,enemies);
-		System.out.println("Scene.Scene(MordorFrame, List) returned");
 	}
 	
 	public void start(){
@@ -82,13 +81,10 @@ public class Scene extends JPanel{
 	 * @param magic the magic instance casted to this scene object
 	 * */
 	public void cast(Magic magic){
-		//TODO:
-		System.out.println("Scene.cast(Magic): void called");
 		if(enemies != null) {
 			for(Controlable enemy : enemies)
 				((EnemyTroop)enemy).addAll(magic.getStatusModifiers());
 		}
-		System.out.println("Scene.cast(Magic): void returned");
 	}
 	
 	/**
@@ -98,8 +94,6 @@ public class Scene extends JPanel{
 	 * @param grid the TerrainGrid about to accept the <code>Casted</code> instance.
 	 * */
 	public void place(Casted casted, TerrainGrid grid){
-		//TODO:
-		System.out.println("Scene.place( Casted,TerrainGrid ): void called");
 		casted.castOn(grid);
 		if(casted instanceof Tower){
 			towers.add((Tower)casted);
@@ -110,17 +104,12 @@ public class Scene extends JPanel{
 				}
 			}
 		}
-		System.out.println("Scene.place( Casted,TerrainGrid ): void returned");
 	}
 	
 	/**
 	 * Notifies the <code>Scene</code> about that another round has ended.
 	 * */
-	public void endRound(){
-		//TODO: timer.stop();
-		System.out.println("Scene.endRound(): void called");
-		System.out.println("Scene.endRound(): void returned");
-	}
+	public void endRound(){}
 	
 	/**
 	 * Initiates a new round according to the previous number of round. If the
@@ -137,11 +126,8 @@ public class Scene extends JPanel{
 	 * @param wasWinning indicates how the game has ended: by winning or loosing it
 	 * */
 	public void endGame(boolean wasWinning){
-		//TODO:
-		System.out.println("Scene.endGame(boolean): void called");
 		if(wasWinning) owner.win();
 		else owner.gameOver();
-		System.out.println("Scene.endGame(boolean): void returned");
 	}
 	
 	
@@ -151,14 +137,11 @@ public class Scene extends JPanel{
 	@Override
 	public void repaint(){
 		super.repaint();
-		//TODO:
-		System.out.println("Scene.repaint(): void called");
 		if(grids != null){
 			for(TerrainGrid grid : grids){
 				grid.repaint();
 			}
 		}
-		System.out.println("Scene.repaint(): void returned");
 	}
 	
 	/**
@@ -167,10 +150,7 @@ public class Scene extends JPanel{
 	 * @param reward the mana measured in units the user gets for killing an enemy unit.
 	 * */
 	public void rewardUser(int reward){
-		//TODO:
-		System.out.println("Scene.rewardUser(reward): void called");
 		owner.setUserMana(owner.getUserMana() + reward);
-		System.out.println("Scene.rewardUser(reward): void returned");
 	}
 	
 	/**
@@ -191,11 +171,7 @@ public class Scene extends JPanel{
 	 * @return the mana measured in units left for the user to spend.
 	 * */
 	public int getUserMana(){
-		//TODO:
-		System.out.println("Scene.getUserMana(): int called");
-		int userMana = owner.getUserMana();
-		System.out.println("Scene.getUserMana(): int returned");
-		return userMana;
+		return owner.getUserMana();
 	}
 	
 	/**
@@ -205,10 +181,7 @@ public class Scene extends JPanel{
 	 * @param mana an integer value representing the new quantity of mana the user has.
 	 * */
 	public void setUserMana(int mana){
-		//TODO:
-		System.out.println("Scene.setUserMana(int): void called");
 		owner.setUserMana(mana);
-		System.out.println("Scene.setUserMana(int): void returned");
 	}
 	
 	/**
@@ -217,9 +190,6 @@ public class Scene extends JPanel{
 	 * @return the list of grids managed by the <code>Scene</code>.
 	 * */
 	public List<TerrainGrid> getGrids(){
-		//TODO:
-		System.out.println("Scene.getGrids(): List called");
-		System.out.println("Scene.getGrids(): List returned");
 		return grids;
 	}
 	
@@ -234,6 +204,32 @@ public class Scene extends JPanel{
 		return this;
 	}
 	
+	/**
+	 * Getter method for accessing the towers already casted to the <code>Scene</code>
+	 * 
+	 * @return the list of towers the scene contains
+	 * */
+	public List<Controlable> getTowers(){
+		return towers;
+	}
+	
+	/**
+	 * Getter method for accessing the enemies yet on the <code>Scene</code>
+	 * 
+	 * @return the list of enemies the scene contains
+	 * */
+	public List<Controlable> getEnemies(){
+		return enemies;
+	}
+	
+	/**
+	 * Gets the number of the round the user is currently in.
+	 * 
+	 * @return the number of the round the user is in
+	 * */
+	public int getRoundNumber(){
+		return round;
+	}
 	
 	
 	
@@ -251,10 +247,7 @@ public class Scene extends JPanel{
 		 * in which the <code>Scene</code> is going to take place.
 		 * */
 		public Builder(MordorFrame owner){
-			//TODO:
-			System.out.println("Scene.Builder.Builder(MordorFrame) called");
 			this.owner = owner;
-			System.out.println("Scene.Builder.Builder(MordorFrame) returned");
 		}
 		
 		/**
@@ -265,10 +258,7 @@ public class Scene extends JPanel{
 		 * @return the current <code>Builder</code> instance being configured
 		 * */
 		public Builder filePath(String filePath){
-			//TODO:
-			System.out.println("Scene.Builder.filePath(String): Builder called");
 			this.filePath=filePath;
-			System.out.println("Scene.Builder.filePath(String): Builder returned");
 			return this;
 		}
 		
@@ -279,11 +269,18 @@ public class Scene extends JPanel{
 		 * @return a new instance of <code>Sceen</code>
 		 * */
 		public Scene build() throws IOException {
-			//TODO:
-			System.out.println("Scene.Builder.build(): Scene called");
-            List<TerrainGrid> grids = buildScene();
-            System.out.println("Scene.Builder.build(): Scene returned");
+			List<TerrainGrid> grids = buildScene();
             return new Scene(owner, grids);
+		}
+		
+		
+		/**
+		 * Builds a simple <code>Scene</code> without the girds.
+		 * 
+		 * @return a simple/empty scene
+		 * */
+		public Scene buildSimple(){
+			return new Scene(owner);
 		}
 		
 		/**
@@ -294,8 +291,6 @@ public class Scene extends JPanel{
 		 * @return a list of <>TerrainGrid</code>
 		 * */
 		private List<TerrainGrid> buildScene() throws IOException {
-			//TODO:
-			System.out.println("Scene.Builder.buildScene(): List<TerrainGrids> called");
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
 			int height = 0;
@@ -376,8 +371,6 @@ public class Scene extends JPanel{
 						}catch(IOException e){}
 					}
 				}
-			//TODO:
-			System.out.println("Scene.Builder.buildScene(): List<TerrainGrids> returned");
 			return grids;
 		}
 	}

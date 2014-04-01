@@ -40,16 +40,13 @@ public class MordorFrame extends JFrame{
 	 * */
 	protected MordorFrame(String filePath) throws IOException {
 		super("Mordor Quest");
-		//TODO:
-		System.out.println("MordorFrame.MordorFrame(String) called");
 		scene = new Scene.Builder(this).filePath(filePath).build();
 		initWidgets();
-		System.out.println("MordorFrame.MordorFrame(String) returned");
 	}
 	
-	public MordorFrame() {
+	protected MordorFrame() {
 		super("Mordor Quest");
-		scene = new Scene(this);
+		scene = new Scene.Builder(this).buildSimple();
 		initWidgets();
 	}
 	
@@ -58,12 +55,9 @@ public class MordorFrame extends JFrame{
 	 * 
 	 * */
 	private void initWidgets(){
-		//TODO:
-		System.out.println("MordorFrame.initWidgets(): void called");
 		userManaField = new JTextField();
 		userManaField.setEditable(false);
 		userManaField.setText("1000");
-		System.out.println("MordorFrame.initWidgets(): void returned");
 	}
 	
 	/**
@@ -73,12 +67,8 @@ public class MordorFrame extends JFrame{
 	 * @throws IOException if the file does not exist anymore on the default file path
 	 * @return a new instance of the MordorFrame class
 	 * */
-	public static MordorFrame newInstance() throws IOException {
-		//TODO:
-		System.out.println("MordorFrame.newInstance(): MordorFrame called");
-		MordorFrame frame = new MordorFrame(DEFAULT_FILE_PATH);
-		System.out.println("MordorFrame.newInstance(): MordorFrame returned");
-		return frame;
+	public static MordorFrame newInstance() {
+		return new MordorFrame();
 	}
 	
 	/**

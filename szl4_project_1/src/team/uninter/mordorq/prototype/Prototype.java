@@ -11,7 +11,7 @@ public class Prototype {
 
 	private BufferedReader consoleIn;
 	private String[] stringArray;
-	MordorFrame frame = new MordorFrame();
+	MordorFrame frame = MordorFrame.newInstance();
 	
 	public Prototype(){
 		consoleIn = new BufferedReader(new InputStreamReader(System.in));
@@ -91,7 +91,7 @@ public class Prototype {
 	}
 	
 	private void help(){
-		//TODO szépen leírni mit hogyan kell használni
+		//TODO szï¿½pen leï¿½rni mit hogyan kell hasznï¿½lni
 		System.out.println("command and parameter lsit");
 	}
 	
