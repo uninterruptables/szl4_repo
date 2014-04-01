@@ -2,9 +2,7 @@ package team.uninter.mordorq.utils;
 
 public class GameConstants {
 	
-	public static boolean RANDOM_SPLITTER_MISSILE = true;
-	public static boolean RANDOM_PATHFINDER = true;
-	public static boolean RANDOM_FOG_EFFECT = true;
+	public static boolean RANDOMNESS = true;
 	
 	public static int GRID_SIZE = 16;
 	

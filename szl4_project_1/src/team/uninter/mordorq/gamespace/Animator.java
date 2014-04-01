@@ -6,10 +6,10 @@ import java.util.List;
 public class Animator implements Runnable{
 
 	private Scene scene;
-	private List<Controlable> towers;
-	private List<Controlable> enemies;
+	private List<? extends Controlable> towers;
+	private List<? extends Controlable> enemies;
 	
-	public Animator(Scene scene, List<Controlable> towers, List<Controlable> enemies){
+	public Animator(Scene scene, List<Tower> towers, List<EnemyTroop> enemies){
 		// TODO remove sysout
 		System.out.println("Animator.Animator(Scene, List<Controlable>, List<Controlable>) called");
 		this.scene = scene;
@@ -22,8 +22,8 @@ public class Animator implements Runnable{
 		// TODO remove sysout
 		System.out.println("Animator.Animator(Scene) called");
 		this.scene = scene;
-		towers = new ArrayList<Controlable>();
-		enemies = new ArrayList<Controlable>();
+		towers = scene.getTowers();
+		enemies = new ArrayList<EnemyTroop>();
 		System.out.println("Animator.Animator(Scene) returned");
 	}
 	
