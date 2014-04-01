@@ -6,12 +6,12 @@ import java.util.List;
 public class Animator implements Runnable{
 
 	private Scene scene;
-	private List<Tower> towers;
-	private List<EnemyTroop> enemies;
+	private List<Controlable> towers;
+	private List<Controlable> enemies;
 	
-	public Animator(Scene scene, List<Tower> towers, List<EnemyTroop> enemies){
+	public Animator(Scene scene, List<Controlable> towers, List<Controlable> enemies){
 		// TODO remove sysout
-		System.out.println("Animator.Animator(Scene, List<Tower>, List<EnemyTroop>) called");
+		System.out.println("Animator.Animator(Scene, List<Controlable>, List<Controlable>) called");
 		this.scene = scene;
 		this.towers = towers;
 		this.enemies = enemies;
@@ -22,8 +22,8 @@ public class Animator implements Runnable{
 		// TODO remove sysout
 		System.out.println("Animator.Animator(Scene) called");
 		this.scene = scene;
-		towers = new ArrayList<Tower>();
-		enemies = new ArrayList<EnemyTroop>();
+		towers = new ArrayList<Controlable>();
+		enemies = new ArrayList<Controlable>();
 		System.out.println("Animator.Animator(Scene) returned");
 	}
 	
@@ -31,7 +31,7 @@ public class Animator implements Runnable{
 	public void run() {
 		// TODO remove sysout
 		System.out.println("Animator run() called");
-		for(EnemyTroop enemy : enemies){
+		for(Controlable enemy : enemies){
 			if(enemy.isActive()){
 				enemy.controlIt();
 			}
@@ -42,13 +42,35 @@ public class Animator implements Runnable{
 		if(enemies.isEmpty()){
 			scene.endRound();
 		}
-		for(Tower tower : towers){
+		for(Controlable tower : towers){
 			if(tower.isActive()){
 				tower.controlIt();
 			}
 		}
 		scene.repaint();
 		System.out.println("Animator run() returned");
+	}
+	
+	public void run(int n) {
+		for(int i = 0; i < n; i++){
+			for(Controlable enemy : enemies){
+				if(enemy.isActive()){
+					enemy.controlIt();
+				}
+				else{
+					enemies.remove(enemy);
+				}
+			}
+			if(enemies.isEmpty()){
+				scene.endRound();
+			}
+			for(Controlable tower : towers){
+				if(tower.isActive()){
+					tower.controlIt();
+				}
+			}
+			scene.repaint();
+		}	
 	}
 	
 

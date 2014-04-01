@@ -47,6 +47,12 @@ public class MordorFrame extends JFrame{
 		System.out.println("MordorFrame.MordorFrame(String) returned");
 	}
 	
+	public MordorFrame() {
+		super("Mordor Quest");
+		scene = new Scene(this);
+		initWidgets();
+	}
+	
 	/**
 	 * Inner mechanism for building up the widgets displayed by this frame.
 	 * 

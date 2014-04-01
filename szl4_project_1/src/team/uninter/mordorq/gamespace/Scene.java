@@ -38,18 +38,16 @@ public class Scene extends JPanel{
 	private List<Controlable> enemies;
 	private MordorFrame owner;
 	private Casted activeObject;
-	private Thread animator;
+	private Animator animator;
 	private int round;
 	
 	
 	protected Scene(MordorFrame owner){
 		super();
-		//TODO:
 		this.owner = owner;
-		System.out.println("Scene.Scene(MordorFrame) called");
 		this.grids = new java.util.LinkedList<TerrainGrid>();
 		this.towers = new ArrayList<Controlable>();
-		System.out.println("Scene.Scene(MordorFrame) returned");
+		animator = new Animator(this,towers,enemies);
 	}
 	
 	/**
@@ -65,7 +63,16 @@ public class Scene extends JPanel{
 		this.grids = grids;
 		this.towers = new ArrayList<Controlable>();
 		this.round = 0;
+		animator = new Animator(this,towers,enemies);
 		System.out.println("Scene.Scene(MordorFrame, List) returned");
+	}
+	
+	public void start(){
+		animator.run();
+	}
+	
+	public void start(int tick){
+		animator.run(tick);
 	}
 	
 	/**
