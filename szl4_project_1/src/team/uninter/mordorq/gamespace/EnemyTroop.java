@@ -102,6 +102,11 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		this.currentGrid = grid;
 		System.out.println("EnemyTroop.setCurrentGrid(RoadGrid) returned");
 	}
+	
+	public final RoadGrid getCurrentGrid()
+	{
+		return this.currentGrid;
+	}
 
 	/*This class used to check if a troop have more health than 0. 
 	 * If not....the troop is not active more, means the trrop is dead.
@@ -154,6 +159,11 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 			this.add(statusModifier);
 		}
 		System.out.println("EnemyTroop.addAll(List<StatusModifier>) returned");		
+	}
+	
+	public final List<StatusModifier> getModifiers()
+	{
+		return this.statusModifiers;
 	}
 	
 	/** Return with the value of the troop damage

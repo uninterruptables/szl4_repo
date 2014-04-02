@@ -4,9 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 
+import team.uninter.mordorq.gamespace.Controlable;
+import team.uninter.mordorq.gamespace.EnemyTroop;
+import team.uninter.mordorq.gamespace.GroundGrid;
+import team.uninter.mordorq.gamespace.Human;
 import team.uninter.mordorq.gamespace.MordorFrame;
+import team.uninter.mordorq.gamespace.RoadGrid;
+import team.uninter.mordorq.gamespace.StatusModifier;
+import team.uninter.mordorq.gamespace.TerrainGrid;
 import team.uninter.mordorq.utils.GameConstants;
+import team.uninter.mordorq.utils.GameUtil;
 
 public class Prototype {
 
@@ -51,13 +60,13 @@ public class Prototype {
 //			loadCommands();
 		}
 		else if(stringArray[0].equals("getMapinfo")){
-//			getMapinfo();
+			getMapinfo();
 		}
 		else if(stringArray[0].equals("getEnemyinfo")){
-//			getEnemyinfo();
+			getEnemyinfo();
 		}
 		else if(stringArray[0].equals("build")){
-//			build();
+			build();
 		}
 		else if(stringArray[0].equals("set")){
 //			set();
@@ -82,6 +91,72 @@ public class Prototype {
 		}
 		else{
 			System.out.println("Incorrect Command!");
+		}
+	}
+	
+	private void getMapinfo(){
+		List<TerrainGrid> grids = frame.getScene().getGrids();
+		if(grids.size() > 0){
+			for(TerrainGrid g : grids){
+				System.out.println(g.getClass().getSimpleName() + " at x:" + g.getX() + " y:" + g.getY()+" with id:"+g.getId()+"\n");
+			}
+		}
+		else{
+			System.out.println("No existing grid");
+		}
+	}
+	
+	private void getEnemyinfo(){
+		List<Controlable> enemies = frame.getScene().getEnemies();
+		if(enemies.size() > 0){
+			for(int i = 0; i < enemies.size(); i++){
+				EnemyTroop troop = (EnemyTroop)enemies.get(i);
+				String output = troop.getClass().getSimpleName() + "Hp: "+troop.getHealth()+" Dmg: "+troop.getDamage()+" gridId: "+troop.getCurrentGrid().getId()+
+						" Pos: x:"+troop.getX()+" y: "+troop.getY()+" StatusModifier: ";
+				for(StatusModifier sm : troop.getModifiers()){
+					output += sm.getClass().getSimpleName()+",";
+				}
+				System.out.println(output);
+			}
+		}
+		else{
+			System.out.println("No existing enemy");
+		}
+	}
+	
+	private void build(){
+		String parameter;
+		try{
+			parameter = stringArray[1];
+			if(parameter.equals("roadgrid")){
+				buildRoad();
+			}
+			else if(parameter.equals("groundgrid")){
+//				buildGround();
+			}
+			else{
+				System.out.println("Wrong parameter, try: roadgrid, groundgrid");
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wrong parameter, try: roadgrid, groundgrid");
+		}
+	}
+	
+	private void buildRoad(){
+		int utility, id, xPos, yPos;
+		try{
+			utility = Integer.parseInt(stringArray[2]);
+			id = Integer.parseInt(stringArray[3]);
+			if(checkConjunction(4,"at")){
+				xPos = getPosParameter(stringArray[5],":");
+				yPos = getPosParameter(stringArray[6],":");
+				frame.getScene().getGrids().add(new RoadGrid(xPos,yPos,utility,id));
+				System.out.println("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wrong paramteres list try: number at x:number y:number");
 		}
 	}
 	
@@ -122,34 +197,49 @@ public class Prototype {
 			else if(parameter.equals("rune")){
 //				createRune();
 			}
+			else{
+				System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try enemy, tower, trap, rune");
+			System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
 		}
 	}
 	
 	private void createEnemy(){
 		if(checkConjunction(2,"at")){
-			
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					List<Controlable> enemies = frame.getScene().getEnemies();
+					Human enemy = new Human(xPos,yPos);
+					enemies.add(enemy);
+//					frame.getScene().getEnemies().add(new Human(xPos,yPos));
+					if(targetGrid instanceof GroundGrid){
+						System.out.println("Can't create enemy on GroundGrid");
+					}
+					else if(targetGrid instanceof RoadGrid){
+						((RoadGrid)targetGrid).setVulnerable(new Human(xPos,yPos));
+						System.out.println("Created enemy on x:"+xPos+" y:"+yPos);
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
 		}
 	}
 	
-	private HashMap<String,Integer> getPosParameters(String[] stringArray){
-		String xPosParameter, yPosParameter;
-		try{
-			xPosParameter = stringArray[3];
-			yPosParameter = stringArray[4];
-			String[] xPos = xPosParameter.split(":");
-			String[] yPos = yPosParameter.split(":");
-			HashMap<String,Integer> coords = new HashMap<String,Integer>();
-			coords.put(xPos[0], Integer.parseInt(xPos[1]));
-			coords.put(yPos[0], Integer.parseInt(yPos[1]));
-			return coords;
-		}
-		catch(Exception e){
-			System.out.println("Wrong position parameters, try x:number y:number");
-		}
-		return null;
+	private int getPosParameter(String text, String separation){
+		String[] splittedText = text.split(separation);
+		return Integer.parseInt(splittedText[1]);
 	}
 	
 	private boolean checkConjunction(int paramNumber, String conj){
@@ -158,12 +248,12 @@ public class Prototype {
 				return true;
 			}
 			else {
-				System.out.println("Wrong "+paramNumber+". parameter, try "+conj);
+				System.out.println("Wrong "+paramNumber+". parameter, try: "+conj);
 				return false;
 			}
 		}
 		catch(Exception e){
-			System.out.println("Missing "+paramNumber+". parameter, try "+conj);
+			System.out.println("Missing "+paramNumber+". parameter, try: "+conj);
 		}
 		return false;
 	}

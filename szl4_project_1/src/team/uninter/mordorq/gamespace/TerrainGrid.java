@@ -21,6 +21,7 @@ abstract public class TerrainGrid extends GameObject{
 	 */
 	protected int utility;
 	protected Map<Neighbour,TerrainGrid> neighbours;
+	protected int id;
 	
 	/**
 	 * Contrructor with position parameters
@@ -34,6 +35,13 @@ abstract public class TerrainGrid extends GameObject{
 		System.out.println("TerrainGrid.TerrainGrid(x,y) called");		
 		neighbours = new HashMap<Neighbour,TerrainGrid>();
 		System.out.println("TerrainGrid.TerrainGrid(x,y) returned");
+	}
+	
+	public TerrainGrid(int x, int y, int utility, int id) {
+		super(x, y);
+		this.utility = utility;
+		this.id = id;
+		neighbours = new HashMap<Neighbour,TerrainGrid>();
 	}
 	
 	/**
@@ -78,6 +86,10 @@ abstract public class TerrainGrid extends GameObject{
 		System.out.println("TerrainGrid.getUtility() called");	
 		System.out.println("TerrainGrid.getUtility() returned");
 		return this.utility;
+	}
+	
+	public final int getId(){
+		return this.id;
 	}
 	
 	public final void setUtility(int utility){

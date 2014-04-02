@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.util.HashMap;
+
 /**
  * Responsible to ensure a place for towers
  * 
@@ -28,6 +30,10 @@ public class GroundGrid extends TerrainGrid{
 		//TODO remove sysout
 		System.out.println("GroundGrid.GroundGrid(x,y) called");
 		System.out.println("GroundGrid.GroundGrid(x,y) returned");
+	}
+	
+	public GroundGrid(int x, int y, int utility, int id) {
+		super(x, y, utility, id);
 	}
 	
 	/**

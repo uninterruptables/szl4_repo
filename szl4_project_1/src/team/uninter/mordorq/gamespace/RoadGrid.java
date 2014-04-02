@@ -1,6 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.lang.Math;
 
@@ -37,6 +38,11 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		System.out.println("RoadGrid.RoadGrid(x,y) called");
 		subscribers = new ArrayList<TargetSubscriber>();
 		System.out.println("RoadGrid.RoadGrid(x,y) returned");
+	}
+	
+	public RoadGrid(int x, int y, int utility, int id) {
+		super(x, y, utility, id);
+		subscribers = new ArrayList<TargetSubscriber>();
 	}
 	
 	/**

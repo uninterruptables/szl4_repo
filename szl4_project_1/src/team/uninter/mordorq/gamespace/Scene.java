@@ -49,6 +49,7 @@ public class Scene extends JPanel{
 		this.owner = owner;
 		this.grids = new java.util.LinkedList<TerrainGrid>();
 		this.towers = new ArrayList<Controlable>();
+		this.enemies = new ArrayList<Controlable>();
 		animator = new Animator(this);
 	}
 	
@@ -62,6 +63,7 @@ public class Scene extends JPanel{
 		this.owner = owner;
 		this.grids = grids;
 		this.towers = new ArrayList<Controlable>();
+		this.enemies = new ArrayList<Controlable>();
 		this.round = 0;
 		animator = new Animator(this);
 	}
