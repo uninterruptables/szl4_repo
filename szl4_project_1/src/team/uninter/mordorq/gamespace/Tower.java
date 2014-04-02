@@ -212,6 +212,7 @@ abstract public class Tower extends InjectionTarget
 		public final void controlIt(){
 			//TODO remove sysout
 			System.out.println("Missile.controlIt() called");
+			System.out.println("cd:"+cooldown+" x:"+this.getX()+" y:"+this.getY());
 			if(cooldown > 0){
 				cooldown--;
 				if(cooldown <= 0) state = MissileState.FIRE_READY;

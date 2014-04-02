@@ -31,7 +31,7 @@ public class Animator implements Runnable{
 	public void run() {
 		// TODO remove sysout
 		System.out.println("Animator run() called");
-		for(Controlable enemy : enemies){
+		for(Controlable enemy : scene.getEnemies()){
 			if(enemy.isActive()){
 				enemy.controlIt();
 			}
@@ -42,7 +42,7 @@ public class Animator implements Runnable{
 		if(enemies.isEmpty()){
 			scene.endRound();
 		}
-		for(Controlable tower : towers){
+		for(Controlable tower : scene.getTowers()){
 			if(tower.isActive()){
 				tower.controlIt();
 			}
@@ -53,18 +53,18 @@ public class Animator implements Runnable{
 	
 	public void run(int n) {
 		for(int i = 0; i < n; i++){
-			for(Controlable enemy : enemies){
+			for(Controlable enemy : scene.getEnemies()){
 				if(enemy.isActive()){
 					enemy.controlIt();
 				}
 				else{
-					enemies.remove(enemy);
+					scene.getEnemies().remove(enemy);
 				}
 			}
 			if(enemies.isEmpty()){
 				scene.endRound();
 			}
-			for(Controlable tower : towers){
+			for(Controlable tower : scene.getTowers()){
 				if(tower.isActive()){
 					tower.controlIt();
 				}

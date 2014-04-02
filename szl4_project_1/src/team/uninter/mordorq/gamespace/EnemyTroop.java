@@ -20,7 +20,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 * 
 	 */
 	protected int cooldown;
-	protected int MaxCooldown;
+	protected int maxCooldown;
 	protected int damage;
 	protected int rewardMana;
 	protected RoadGrid currentGrid;
@@ -76,21 +76,30 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	public final void controlIt()
 	{
 		//TODO remove sysout
-		System.out.println("EnemyTroop.controlIt()) called");
-		targetGrid = PathFinder.findPathFrom(this.currentGrid);
-		Vulnerable targetVulnerable = targetGrid.getVulnerable();
-		if(targetVulnerable == null){
-			targetGrid.setVulnerable(this);
-		}
-		else{
-			targetVulnerable.interactWith(this);
+//		System.out.println("EnemyTroop.controlIt()) called");
+		if(cooldown > 0){
+			cooldown--;
+			if(cooldown <= 0){
+				targetGrid = PathFinder.findPathFrom(this.currentGrid);
+				Vulnerable targetVulnerable = targetGrid.getVulnerable();
+				if(targetVulnerable == null){
+					currentGrid.remove();
+					targetGrid.notifyAllWith(this);
+				}
+				else{
+					targetVulnerable.interactWith(this);
+				}
+				
+				Trap targetTrap = targetGrid.getTrap();
+				if(targetTrap != null){
+					targetTrap.affect(this);
+				}
+				
+				cooldown = maxCooldown;
+			}
 		}
 		
-		Trap targetTrap = targetGrid.getTrap();
-		if(targetTrap != null){
-			targetTrap.affect(this);
-		}
-		System.out.println("EnemyTroop.controlIt() returned");	
+//		System.out.println("EnemyTroop.controlIt() returned");	
 	}
 
 	/**

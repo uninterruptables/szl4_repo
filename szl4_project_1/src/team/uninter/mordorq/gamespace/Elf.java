@@ -17,6 +17,7 @@ public class Elf extends EnemyTroop {
 		health = GameConstants.ELF_HEALTH;
 		damage = GameConstants.ELF_DAMAGE;
 		rewardMana = GameConstants.ELF_REWARD;
+		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
 		System.out.println("Elf.Elf() returned");
 	}
 	
@@ -32,6 +33,7 @@ public class Elf extends EnemyTroop {
 		health = GameConstants.ELF_HEALTH;
 		damage = GameConstants.ELF_DAMAGE;
 		rewardMana = GameConstants.ELF_REWARD;
+		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
 		System.out.println("Elf.Elf(x,y) returned");
 	}
 	
@@ -49,6 +51,7 @@ public class Elf extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
+		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
 		System.out.println("Elf.Elf(x,y,health,damage,reward) called");
 		System.out.println("Elf.Elf(x,y,health,damage,reward) returned");
 	}

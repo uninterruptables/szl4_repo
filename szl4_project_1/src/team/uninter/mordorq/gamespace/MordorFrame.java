@@ -80,9 +80,9 @@ public class MordorFrame extends JFrame{
 	 * */
 	public static MordorFrame newInstance(String filePath) throws IOException{
 		//TODO:
-		System.out.println("MordorFrame.newInstance(String): MordorFrame called");
+//		System.out.println("MordorFrame.newInstance(String): MordorFrame called");
 		MordorFrame frame = new MordorFrame(filePath);
-		System.out.println("MordorFrame.newInstance(String): MordorFrame returned");
+//		System.out.println("MordorFrame.newInstance(String): MordorFrame returned");
 		return frame;
 	}
 	
@@ -94,8 +94,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public Scene getScene(){
 		//TODO:
-		System.out.println("MordorFrame.getScene(): Scene called");
-		System.out.println("MordorFrame.getScene(): Scene returned");
+//		System.out.println("MordorFrame.getScene(): Scene called");
+//		System.out.println("MordorFrame.getScene(): Scene returned");
 		return scene;
 	}
 	
@@ -106,8 +106,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public int getUserMana(){
 		//TODO:
-		System.out.println("MordorFrame.getUserMana(): int called");
-		System.out.println("MordorFrame.getUserMana(): int returned");
+//		System.out.println("MordorFrame.getUserMana(): int called");
+//		System.out.println("MordorFrame.getUserMana(): int returned");
 		return Integer.parseInt(userManaField.getText());
 	}
 	
@@ -118,9 +118,9 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void setUserMana(int mana){
 		//TODO:
-		System.out.println("MordorFrame.setUserMana(int): void called");
+//		System.out.println("MordorFrame.setUserMana(int): void called");
 		userManaField.setText(Integer.toString(mana));
-		System.out.println("MordorFrame.setUserMana(int): void returned");
+//		System.out.println("MordorFrame.setUserMana(int): void returned");
 	}
 	
 	/**
@@ -128,8 +128,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void win(){
 		//TODO: JOptionPane.showMessageDialog(...);
-		System.out.println("MordorFrame.win(): void called");
-		System.out.println("MordorFrame.win(): void returned");
+//		System.out.println("MordorFrame.win(): void called");
+//		System.out.println("MordorFrame.win(): void returned");
 	}
 	
 	/**
@@ -137,8 +137,8 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void gameOver(){
 		//TODO: JOptionPane.showMessageDialog(...);
-		System.out.println("MordorFrame.gameOver(): void called");
-		System.out.println("MordorFrame.gameOver(): void returned");
+//		System.out.println("MordorFrame.gameOver(): void called");
+//		System.out.println("MordorFrame.gameOver(): void returned");
 	}
 	
 	/**
@@ -147,7 +147,7 @@ public class MordorFrame extends JFrame{
 	public void reset(){
 		//TODO: scene = new Scene.Builder()...build()
 		// contentPane .add(scene)
-		System.out.println("MordorFrame.reset(): void called");
-		System.out.println("MordorFrame.reset(): void returned");
+//		System.out.println("MordorFrame.reset(): void called");
+//		System.out.println("MordorFrame.reset(): void returned");
 	}
 }

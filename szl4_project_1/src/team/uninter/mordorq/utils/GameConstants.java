@@ -11,7 +11,7 @@ public class GameConstants {
 	public static int MIN_MISSILE_COOLDOWN = 30;
 	
 	public static int BASIC_MISSILE_ELF_DAMAGE = 10;
-	public static int BASIC_MISSILE_HUMAN_DAMAGE = 10;
+	public static int BASIC_MISSILE_HUMAN_DAMAGE = 5;
 	public static int BASIC_MISSILE_DWARF_DAMAGE = 10;
 	public static int BASIC_MISSILE_HOBBIT_DAMAGE = 10;
 	
@@ -56,6 +56,11 @@ public class GameConstants {
 	public static int HUMAN_REWARD = 10;
 	public static int DWARF_REWARD = 10;
 	public static int HOBBIT_REWARD = 10;
+	
+	public static int ELF_COOLDOWN = 35;
+	public static int HUMAN_COOLDOWN = 35;
+	public static int DWARF_COOLDOWN = 35;
+	public static int HOBBIT_COOLDOWN = 35;
 	
 	public static int ARAGORN_HEALTH = 100;
 	public static int ARAGORN_DAMAGE = 10;

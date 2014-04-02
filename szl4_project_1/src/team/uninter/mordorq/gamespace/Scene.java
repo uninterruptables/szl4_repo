@@ -162,8 +162,8 @@ public class Scene extends JPanel{
 	 * */
 	public void setActiveObject(String objectName){
 		//TODO:
-		System.out.println("Scene.setActiveObject(String): void called");
-		System.out.println("Scene.setActiveObject(String): void returned");
+//		System.out.println("Scene.setActiveObject(String): void called");
+//		System.out.println("Scene.setActiveObject(String): void returned");
 	}
 	
 	/**

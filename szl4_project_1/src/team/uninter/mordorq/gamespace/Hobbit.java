@@ -17,6 +17,7 @@ public class Hobbit extends EnemyTroop {
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
 		rewardMana = GameConstants.HOBBIT_REWARD;
+		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 		System.out.println("Hobbit.Hobbit() returned");
 	}
 	
@@ -32,6 +33,7 @@ public class Hobbit extends EnemyTroop {
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
 		rewardMana = GameConstants.HOBBIT_REWARD;
+		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 		System.out.println("Hobbit.Hobbit(x,y) returned");
 	}
 	
@@ -49,6 +51,7 @@ public class Hobbit extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
+		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 		System.out.println("Hobbit.Hobbit(x,y,health,damage,reward) called");
 		System.out.println("Hobbit.Hobbit(x,y,health,damage,reward) returned");
 	}

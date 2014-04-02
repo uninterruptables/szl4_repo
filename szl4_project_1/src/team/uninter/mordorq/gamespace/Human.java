@@ -18,6 +18,7 @@ public class Human extends EnemyTroop {
 		health = GameConstants.HUMAN_HEALTH;
 		damage = GameConstants.HUMAN_DAMAGE;
 		rewardMana = GameConstants.HUMAN_REWARD;
+		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
 		System.out.println("Human.Human() returned");
 	}
 	
@@ -33,6 +34,7 @@ public class Human extends EnemyTroop {
 		health = GameConstants.HUMAN_HEALTH;
 		damage = GameConstants.HUMAN_DAMAGE;
 		rewardMana = GameConstants.HUMAN_REWARD;
+		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
 		System.out.println("Human.Human(x,y) returned");
 	}
 	
@@ -50,6 +52,7 @@ public class Human extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
+		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
 		System.out.println("Human.Human(x,y,health,damage,reward) called");
 		System.out.println("Human.Human(x,y,health,damage,reward) returned");
 	}

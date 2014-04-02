@@ -12,6 +12,7 @@ import team.uninter.mordorq.gamespace.EnemyTroop;
 import team.uninter.mordorq.gamespace.GroundGrid;
 import team.uninter.mordorq.gamespace.Human;
 import team.uninter.mordorq.gamespace.MordorFrame;
+import team.uninter.mordorq.gamespace.Neighbour;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.StatusModifier;
 import team.uninter.mordorq.gamespace.TerrainGrid;
@@ -70,7 +71,7 @@ public class Prototype {
 			build();
 		}
 		else if(stringArray[0].equals("set")){
-//			set();
+			set();
 		}
 		else if(stringArray[0].equals("handleMana")){
 //			handleMana();
@@ -95,11 +96,44 @@ public class Prototype {
 		}
 	}
 	
+	private void set(){
+		int currentId, targetId;
+		String direction;
+		try{
+			currentId = Integer.parseInt(stringArray[1]);
+			targetId = Integer.parseInt(stringArray[3]);
+			direction = stringArray[2];
+			if(direction.equals("north")){
+				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.NORTH, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
+				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+			}
+			else if(direction.equals("east")){
+				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.EAST, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
+				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+			}
+			else if(direction.equals("south")){
+				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.SOUTH, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
+				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+			}
+			else if(direction.equals("west")){
+				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.WEST, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
+				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+			}
+			else{
+				System.out.println("Wrong direction parameter, try: north, east, south, west");
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wrong parameters, try: idNumber direction idNumber");
+		}
+	}
+	
 	private void getMapinfo(){
 		List<TerrainGrid> grids = frame.getScene().getGrids();
 		if(grids.size() > 0){
+			String output = "------Map info------\n";
 			for(TerrainGrid g : grids){
-				String output = g.getClass().getSimpleName() + " at x:" + g.getX() + " y:" + g.getY()+" with id:"+g.getId();
+				output += g.getClass().getSimpleName() + " at x:" + g.getX() + " y:" + g.getY()+" with id:"+g.getId();
 				if(g instanceof GroundGrid){
 					if(((GroundGrid) g).getTower() != null){
 						output += " inside: "+((GroundGrid) g).getTower().getClass().getSimpleName()+",";
@@ -113,8 +147,10 @@ public class Prototype {
 						output += " inside: "+((RoadGrid) g).getTarget().getClass().getSimpleName()+",";
 					}
 				}
-				System.out.println(output);
+				output += "\n";
 			}
+			output += "\n----------------------";
+			System.out.println(output);
 		}
 		else{
 			System.out.println("No existing grid");
@@ -124,15 +160,18 @@ public class Prototype {
 	private void getEnemyinfo(){
 		List<Controlable> enemies = frame.getScene().getEnemies();
 		if(enemies.size() > 0){
+			String output = "------Enemy info------\n";
 			for(int i = 0; i < enemies.size(); i++){
 				EnemyTroop troop = (EnemyTroop)enemies.get(i);
-				String output = troop.getClass().getSimpleName() + " Hp: "+troop.getHealth()+" Dmg: "+troop.getDamage()+" gridId: "+troop.getCurrentGrid().getId()+
+				output += troop.getClass().getSimpleName() + " Hp: "+troop.getHealth()+" Dmg: "+troop.getDamage()+" gridId: "+troop.getCurrentGrid().getId()+
 						" Pos: x:"+troop.getX()+" y: "+troop.getY()+" StatusModifier: ";
 				for(StatusModifier sm : troop.getModifiers()){
 					output += sm.getClass().getSimpleName()+",";
 				}
-				System.out.println(output);
+				output += "\n";
 			}
+			output += "----------------------";
+			System.out.println(output);
 		}
 		else{
 			System.out.println("No existing enemy");
@@ -274,8 +313,10 @@ public class Prototype {
 				if(targetGrid != null){
 					if(targetGrid instanceof GroundGrid){
 						if(((GroundGrid) targetGrid).getTower() == null){
-							frame.getScene().place(new BasicTower(xPos, yPos),targetGrid);
-							System.out.println("Created tower on x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							BasicTower tower = new BasicTower(xPos, yPos);
+							tower.setMaxCooldown(GameConstants.BASIC_TOWER_MAXCOOLDOWN);
+							frame.getScene().place(tower,targetGrid);
+							System.out.println("Tower created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
 							System.out.println("There is already a tower on the given grid");
@@ -311,8 +352,8 @@ public class Prototype {
 						List<Controlable> enemies = frame.getScene().getEnemies();
 						Human enemy = new Human(xPos,yPos);
 						enemies.add(enemy);
-						((RoadGrid)targetGrid).setVulnerable(enemy);
-						System.out.println("Created enemy on x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						((RoadGrid)targetGrid).notifyAllWith(enemy);
+						System.out.println("Enemy created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 					}
 				}
 				else{

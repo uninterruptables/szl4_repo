@@ -44,7 +44,7 @@ public class RoundInitiator {
 	 * */
 	public static List<Controlable> initRound(int round){
 		//TODO:
-		System.out.println("RoundInitiator.initRound(int): List called");
+//		System.out.println("RoundInitiator.initRound(int): List called");
 		List<Controlable> enemies = new ArrayList<Controlable>();
 		XMLReader reader = null;
 		try{
@@ -59,7 +59,7 @@ public class RoundInitiator {
 		} catch (IOException exc) {
 			System.out.println("io error: "+exc.getMessage());
 		}
-		System.out.println("RoundInitiator.initRound(int): List returned");
+//		System.out.println("RoundInitiator.initRound(int): List returned");
 		return enemies;
 	}
 	

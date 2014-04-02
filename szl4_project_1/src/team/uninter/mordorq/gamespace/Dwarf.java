@@ -17,6 +17,7 @@ public class Dwarf extends EnemyTroop {
 		health = GameConstants.DWARF_HEALTH;
 		damage = GameConstants.DWARF_DAMAGE;
 		rewardMana = GameConstants.DWARF_REWARD;
+		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
 		System.out.println("Dwarf.Dwarf() returned");
 	}
 	
@@ -32,6 +33,7 @@ public class Dwarf extends EnemyTroop {
 		health = GameConstants.DWARF_HEALTH;
 		damage = GameConstants.DWARF_DAMAGE;
 		rewardMana = GameConstants.DWARF_REWARD;
+		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
 		System.out.println("Dwarf.Dwarf(x,y) returned");
 	}
 
@@ -49,6 +51,7 @@ public class Dwarf extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
+		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
 		System.out.println("Dwarf.Dwarf(x,y,health,damage,reward) called");
 		System.out.println("Dwarf.Dwarf(x,y,health,damage,reward) returned");
 	}
