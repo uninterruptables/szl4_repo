@@ -35,6 +35,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		super();
 		//TODO remove sysout
 		System.out.println("EnemyTroop.EnemyTroop() called");
+		statusModifiers = new ArrayList<StatusModifier>();
 		System.out.println("EnemyTroop.EnemyTroop() returned");
 	} 
 	
@@ -47,6 +48,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		super(x, y);
 		//TODO remove sysout
 		System.out.println("EnemyTroop.EnemyTroop(x,y) called");
+		statusModifiers = new ArrayList<StatusModifier>();
 		System.out.println("EnemyTroop.EnemyTroop(x,y) returned");
 	}
 	

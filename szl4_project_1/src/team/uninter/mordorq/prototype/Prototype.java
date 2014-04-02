@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 
+import team.uninter.mordorq.gamespace.BasicTower;
 import team.uninter.mordorq.gamespace.Controlable;
 import team.uninter.mordorq.gamespace.EnemyTroop;
 import team.uninter.mordorq.gamespace.GroundGrid;
@@ -98,7 +99,21 @@ public class Prototype {
 		List<TerrainGrid> grids = frame.getScene().getGrids();
 		if(grids.size() > 0){
 			for(TerrainGrid g : grids){
-				System.out.println(g.getClass().getSimpleName() + " at x:" + g.getX() + " y:" + g.getY()+" with id:"+g.getId()+"\n");
+				String output = g.getClass().getSimpleName() + " at x:" + g.getX() + " y:" + g.getY()+" with id:"+g.getId();
+				if(g instanceof GroundGrid){
+					if(((GroundGrid) g).getTower() != null){
+						output += " inside: "+((GroundGrid) g).getTower().getClass().getSimpleName()+",";
+					}
+				}
+				else if(g instanceof RoadGrid){
+					if(g.getInjectionTarget() != null){
+						output += " inside: "+((RoadGrid) g).getInjectionTarget().getClass().getSimpleName()+",";
+					}
+					if(((RoadGrid) g).getTarget() != null){
+						output += " inside: "+((RoadGrid) g).getTarget().getClass().getSimpleName()+",";
+					}
+				}
+				System.out.println(output);
 			}
 		}
 		else{
@@ -111,7 +126,7 @@ public class Prototype {
 		if(enemies.size() > 0){
 			for(int i = 0; i < enemies.size(); i++){
 				EnemyTroop troop = (EnemyTroop)enemies.get(i);
-				String output = troop.getClass().getSimpleName() + "Hp: "+troop.getHealth()+" Dmg: "+troop.getDamage()+" gridId: "+troop.getCurrentGrid().getId()+
+				String output = troop.getClass().getSimpleName() + " Hp: "+troop.getHealth()+" Dmg: "+troop.getDamage()+" gridId: "+troop.getCurrentGrid().getId()+
 						" Pos: x:"+troop.getX()+" y: "+troop.getY()+" StatusModifier: ";
 				for(StatusModifier sm : troop.getModifiers()){
 					output += sm.getClass().getSimpleName()+",";
@@ -132,7 +147,7 @@ public class Prototype {
 				buildRoad();
 			}
 			else if(parameter.equals("groundgrid")){
-//				buildGround();
+				buildGround();
 			}
 			else{
 				System.out.println("Wrong parameter, try: roadgrid, groundgrid");
@@ -151,8 +166,51 @@ public class Prototype {
 			if(checkConjunction(4,"at")){
 				xPos = getPosParameter(stringArray[5],":");
 				yPos = getPosParameter(stringArray[6],":");
-				frame.getScene().getGrids().add(new RoadGrid(xPos,yPos,utility,id));
-				System.out.println("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
+				
+				boolean contains = false;
+				for(TerrainGrid g : frame.getScene().getGrids()){
+					if(g.getId() == id){
+						contains = true;
+					}
+				}
+				
+				if(!contains){
+					frame.getScene().getGrids().add(new RoadGrid(xPos,yPos,utility,id));
+					System.out.println("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
+				}
+				else{
+					System.out.println("Grid already exist with id:"+id);
+				}
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wrong paramteres list try: number at x:number y:number");
+		}
+	}
+	
+	private void buildGround(){
+		int utility, id, xPos, yPos;
+		try{
+			utility = Integer.parseInt(stringArray[2]);
+			id = Integer.parseInt(stringArray[3]);
+			if(checkConjunction(4,"at")){
+				xPos = getPosParameter(stringArray[5],":");
+				yPos = getPosParameter(stringArray[6],":");
+				
+				boolean contains = false;
+				for(TerrainGrid g : frame.getScene().getGrids()){
+					if(g.getId() == id){
+						contains = true;
+					}
+				}
+				
+				if(!contains){
+					frame.getScene().getGrids().add(new GroundGrid(xPos,yPos,utility,id));
+					System.out.println("Ground created at x:"+xPos+" y:"+yPos+" with id:"+id);
+				}
+				else{
+					System.out.println("Grid already exist with id:"+id);
+				}
 			}
 		}
 		catch(Exception e){
@@ -189,7 +247,7 @@ public class Prototype {
 				createEnemy();
 			}
 			else if(parameter.equals("tower")){
-//				createTower();
+				createTower();
 			}
 			else if(parameter.equals("trap")){
 //				createTrap();
@@ -206,6 +264,38 @@ public class Prototype {
 		}
 	}
 	
+	private void createTower(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof GroundGrid){
+						if(((GroundGrid) targetGrid).getTower() == null){
+							frame.getScene().place(new BasicTower(xPos, yPos),targetGrid);
+							System.out.println("Created tower on x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("There is already a tower on the given grid");
+						}
+					}
+					else if(targetGrid instanceof RoadGrid){
+						System.out.println("Can't create tower on RoadGrid");		
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
+		}
+	}
+	
 	private void createEnemy(){
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -214,16 +304,15 @@ public class Prototype {
 				yPos = getPosParameter(stringArray[4],":");
 				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
 				if(targetGrid != null){
-					List<Controlable> enemies = frame.getScene().getEnemies();
-					Human enemy = new Human(xPos,yPos);
-					enemies.add(enemy);
-//					frame.getScene().getEnemies().add(new Human(xPos,yPos));
 					if(targetGrid instanceof GroundGrid){
 						System.out.println("Can't create enemy on GroundGrid");
 					}
 					else if(targetGrid instanceof RoadGrid){
-						((RoadGrid)targetGrid).setVulnerable(new Human(xPos,yPos));
-						System.out.println("Created enemy on x:"+xPos+" y:"+yPos);
+						List<Controlable> enemies = frame.getScene().getEnemies();
+						Human enemy = new Human(xPos,yPos);
+						enemies.add(enemy);
+						((RoadGrid)targetGrid).setVulnerable(enemy);
+						System.out.println("Created enemy on x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 					}
 				}
 				else{
