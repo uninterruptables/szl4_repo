@@ -1,7 +1,9 @@
 package team.uninter.mordorq.prototype;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +13,11 @@ import team.uninter.mordorq.gamespace.Controlable;
 import team.uninter.mordorq.gamespace.EnemyTroop;
 import team.uninter.mordorq.gamespace.GroundGrid;
 import team.uninter.mordorq.gamespace.Human;
+import team.uninter.mordorq.gamespace.IceWindMagic;
 import team.uninter.mordorq.gamespace.MordorFrame;
+import team.uninter.mordorq.gamespace.Nazgul;
 import team.uninter.mordorq.gamespace.Neighbour;
+import team.uninter.mordorq.gamespace.PoisonFogMagic;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.StatusModifier;
 import team.uninter.mordorq.gamespace.TerrainGrid;
@@ -56,10 +61,10 @@ public class Prototype {
 //			canCreate();
 		}
 		else if(stringArray[0].equals("cast")){
-//			cast();
+			cast();
 		}
 		else if(stringArray[0].equals("loadCommands")){
-//			loadCommands();
+			loadCommands();
 		}
 		else if(stringArray[0].equals("getMapinfo")){
 			getMapinfo();
@@ -74,7 +79,7 @@ public class Prototype {
 			set();
 		}
 		else if(stringArray[0].equals("handleMana")){
-//			handleMana();
+			handleMana();
 		}
 		else if(stringArray[0].equals("startFileWrite")){
 //			startFileWrite();
@@ -83,16 +88,92 @@ public class Prototype {
 //			endFileWrite();
 		}
 		else if(stringArray[0].equals("restart")){
-//			restart();
+			restart();
 		}
 		else if(stringArray[0].equals("help")){
 			help();
 		}
-		else if(stringArray[0].equals("toggleRandomness")){
-//			exit();
-		}
 		else{
 			System.out.println("Incorrect Command!");
+		}
+	}
+	
+	private void loadCommands(){
+		try{
+			if(stringArray.length > 2){
+				for(int i = 2; i < stringArray.length; i++){
+					stringArray[1] += " "+stringArray[i];
+				}
+			}
+			String filePath = stringArray[1];
+			
+			InputStream fis;
+			BufferedReader br;
+			String line;
+
+			fis = new FileInputStream(filePath);
+			br = new BufferedReader(new InputStreamReader(fis));
+			while ((line = br.readLine()) != null) {
+				stringArray = line.split(" ");
+				parseCommand();
+			}
+
+			br.close();
+			br = null;
+			fis = null;
+		}
+		catch(Exception e){
+			System.out.println("Wrong parameter, try: filepath");
+		}
+	}
+	
+	private void handleMana(){
+		String manaAmountText;
+		int manaAmount;
+		try{
+			manaAmountText = stringArray[1];
+			try{
+				manaAmount = Integer.parseInt(manaAmountText);
+				frame.getScene().setUserMana(manaAmount);
+				System.out.println("New mana amount is: "+manaAmount);
+			}
+			catch(Exception e){
+				System.out.println("Wrong parameter, try: number");
+			}
+		}
+		catch(Exception e){
+			manaAmount = frame.getUserMana();
+			System.out.println("Mana amount is: "+manaAmount);
+		}
+	}
+	
+	private void restart(){
+		frame = MordorFrame.newInstance();
+		System.out.println("Restarted succesfully");
+	}
+	
+	private void cast(){
+		try{
+			String param = stringArray[1];
+			if(param.equals("nazgul")){
+				frame.getScene().cast(new Nazgul());
+				System.out.println("Nazgul casted");
+			}
+			else if(param.equals("icewind")){
+				frame.getScene().cast(new IceWindMagic());
+				System.out.println("IceWindMagic casted");
+			}
+			else if(param.equals("poisonfog")){
+				frame.getScene().cast(new PoisonFogMagic());
+				System.out.println("PoisonFogMagic casted");
+			}
+			else{
+				System.out.println("Wrong parameter, try: nazgul, icewind, poisonfog");
+			}
+			
+		}
+		catch(Exception e){
+			System.out.println("Wrong parameter, try: nazgul, icewind, poisonfog");
 		}
 	}
 	
@@ -208,7 +289,7 @@ public class Prototype {
 				
 				boolean contains = false;
 				for(TerrainGrid g : frame.getScene().getGrids()){
-					if(g.getId() == id){
+					if(g.getId() == id || (g.getX() == xPos && g.getY() == yPos)){
 						contains = true;
 					}
 				}
@@ -218,7 +299,7 @@ public class Prototype {
 					System.out.println("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
 				}
 				else{
-					System.out.println("Grid already exist with id:"+id);
+					System.out.println("Grid already exist with the given id or coordinates");
 				}
 			}
 		}
@@ -238,7 +319,7 @@ public class Prototype {
 				
 				boolean contains = false;
 				for(TerrainGrid g : frame.getScene().getGrids()){
-					if(g.getId() == id){
+					if(g.getId() == id || (g.getX() == xPos && g.getY() == yPos)){
 						contains = true;
 					}
 				}
@@ -248,7 +329,7 @@ public class Prototype {
 					System.out.println("Ground created at x:"+xPos+" y:"+yPos+" with id:"+id);
 				}
 				else{
-					System.out.println("Grid already exist with id:"+id);
+					System.out.println("Grid already exist with the given id or coordinates");
 				}
 			}
 		}
