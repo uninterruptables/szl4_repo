@@ -417,7 +417,7 @@ public class Prototype {
 		}
 	}
 	
-	private void createRune(){
+	private void createTrap(){
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -450,7 +450,7 @@ public class Prototype {
 		}
 	}
 	
-	private void createTrap(){
+	private void createRune(){
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{

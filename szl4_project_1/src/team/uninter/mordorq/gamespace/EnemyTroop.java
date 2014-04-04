@@ -98,6 +98,13 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 				cooldown = maxCooldown;
 			}
 		}
+		for(StatusModifier sm : statusModifiers){
+			sm.setDuration(sm.getDuration() - 1);
+			if(sm.getDuration() <= 0){
+				sm.reverseAffect(this);
+				statusModifiers.remove(sm);
+			}
+		}
 		
 //		System.out.println("EnemyTroop.controlIt() returned");	
 	}

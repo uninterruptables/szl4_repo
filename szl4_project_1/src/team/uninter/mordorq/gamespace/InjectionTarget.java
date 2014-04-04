@@ -1,9 +1,12 @@
 package team.uninter.mordorq.gamespace;
+
+import team.uninter.mordorq.utils.GameConstants;
+
 //items, one can inject on, mainly towers, traps.
 @SuppressWarnings("serial")
 abstract public class InjectionTarget extends Casted{
 
-	private int remainingRunePlace;
+	protected int remainingRunePlace = GameConstants.PLACEABLE_RUNES;
 	
 	protected InjectionTarget() {
 		super();

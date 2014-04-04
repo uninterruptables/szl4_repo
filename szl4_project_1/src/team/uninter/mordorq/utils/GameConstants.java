@@ -4,6 +4,8 @@ public class GameConstants {
 	
 	public static boolean RANDOMNESS = true;
 	
+	public static int STATUS_MODIFIER_ID = 1;
+	
 	public static int GRID_SIZE = 16;
 	
 	public static int MISSILE_VELOCITY = 10;
@@ -58,7 +60,7 @@ public class GameConstants {
 	public static int HOBBIT_REWARD = 10;
 	
 	public static int ELF_COOLDOWN = 35;
-	public static int HUMAN_COOLDOWN = 35;
+	public static int HUMAN_COOLDOWN = 3;
 	public static int DWARF_COOLDOWN = 35;
 	public static int HOBBIT_COOLDOWN = 35;
 	
@@ -73,6 +75,16 @@ public class GameConstants {
 	public static int LEGOLAS_HEALTH = 100;
 	public static int LEGOLAS_DAMAGE = 10;
 	public static int LEGOLAS_REWARD = 20;
+	
+	public static int WEAKEN_STATUS_DURATION = 6;
+	
+	public static int DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT = 5;
+	
+	public static int WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT = 5;
+	
+	public static int PLACEABLE_RUNES = 1;
+	
+	public static int DAMAGE_BOOST_TOWER_RUNE = 3;
 	
 	
 }

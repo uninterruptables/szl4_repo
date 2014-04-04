@@ -1,30 +1,50 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public abstract class StatusModifier extends GameObject{
 	
 	//Generic class used to handle different status modifiing effects. It has an affected 
 	//entity, as an enemy troop, and a duration. Each status modifier must create they own 
 	//affect method to simulate their effects.
-	protected EnemyTroop affectedEntity;
+//	protected EnemyTroop affectedEntity;
 	protected int duration;
+	protected int id;
 	
-	abstract public void affect();
-	public void apply(EnemyTroop enemy, int duration)
-	{
-		System.out.println("StatusModifier.apply(EnemyTroop, Int) called");
-		System.out.println("StatusModifier.apply(EnemyTroop, Int) returned");
+	abstract public void affect(EnemyTroop enemy);
+	
+	abstract public void reverseAffect(EnemyTroop enemy);
+	
+	abstract public void apply(EnemyTroop enemy);
+	
+	public final int getId(){
+		return id;
 	}
 	
-	public EnemyTroop getAffectedEntity()
-	{
-		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop called");
-		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop returned");
-		return affectedEntity;
-	}
-	public int getDuration(){
+//	public final EnemyTroop getAffectedEntity()
+//	{
+//		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop called");
+//		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop returned");
+//		return affectedEntity;
+//	}
+	
+//	public final void setAffectedEntity(EnemyTroop troop)
+//	{
+////		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop called");
+////		System.out.println("StatusModifier.getAffectedEntity : EnemyTroop returned");
+//		this.affectedEntity = troop;
+//	}
+	
+	public final int getDuration(){
 		System.out.println("StatusModifier.getDuration() : int called");
 		System.out.println("StatusModifier.getDuration() : int returned");
 		return duration;
+	}
+	
+	public final void setDuration(int duration){
+//		System.out.println("StatusModifier.getDuration() : int called");
+//		System.out.println("StatusModifier.getDuration() : int returned");
+		this.duration = duration;
 	}
 
 }

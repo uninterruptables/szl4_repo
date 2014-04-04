@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class DamageBoosterTowerRune extends TowerRune{
 	
 	//Class used to increase damage versus everything. On inject on, it calls the tower-s
@@ -21,7 +23,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
-		tower.addAllDamage(10);
+		tower.addAllDamage(GameConstants.DAMAGE_BOOST_TOWER_RUNE);
 		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
 	}
 
