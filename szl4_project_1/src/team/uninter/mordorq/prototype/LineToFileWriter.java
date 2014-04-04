@@ -54,7 +54,8 @@ public class LineToFileWriter {
 	 * */
 	public void write(String[] parts, String separator) throws IOException {
 		StringBuffer buffer = new StringBuffer();
-		for(String e : parts) buffer.append(e+separator);
+		buffer.append(parts[0]);
+		for(int i = 1; i < parts.length; i++) buffer.append(separator+parts[i]);
 		write(buffer.toString().trim());
 	}
 	
