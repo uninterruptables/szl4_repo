@@ -26,6 +26,7 @@ import team.uninter.mordorq.utils.GameUtil;
 
 public class Prototype {
 
+	private LineToFileWriter writer;
 	private BufferedReader consoleIn;
 	private String[] stringArray;
 	MordorFrame frame = MordorFrame.newInstance();
@@ -47,55 +48,83 @@ public class Prototype {
 		
 	}
 	
-	private void parseCommand(){
-		if(stringArray[0].equals("toggleRandomness")){
-			toggleRandomness();
+	private void parseCommand() throws Exception {
+		if(stringArray[0].equals("endFileWrite")){
+			endFileWrite();
 		}
-		else if(stringArray[0].equals("animate")){
-			animate();
-		}
-		else if(stringArray[0].equals("create")){
-			create();
-		}
-		else if(stringArray[0].equals("canCreate")){
-//			canCreate();
-		}
-		else if(stringArray[0].equals("cast")){
-			cast();
-		}
-		else if(stringArray[0].equals("loadCommands")){
-			loadCommands();
-		}
-		else if(stringArray[0].equals("getMapinfo")){
-			getMapinfo();
-		}
-		else if(stringArray[0].equals("getEnemyinfo")){
-			getEnemyinfo();
-		}
-		else if(stringArray[0].equals("build")){
-			build();
-		}
-		else if(stringArray[0].equals("set")){
-			set();
-		}
-		else if(stringArray[0].equals("handleMana")){
-			handleMana();
-		}
-		else if(stringArray[0].equals("startFileWrite")){
-//			startFileWrite();
-		}
-		else if(stringArray[0].equals("endFileWrite")){
-//			endFileWrite();
-		}
-		else if(stringArray[0].equals("restart")){
-			restart();
-		}
-		else if(stringArray[0].equals("help")){
-			help();
+		else if(writer != null && writer.isOpen()){
+			writer.write(stringArray, " ");
 		}
 		else{
-			System.out.println("Incorrect Command!");
+			if(stringArray[0].equals("toggleRandomness")){
+				toggleRandomness();
+			}
+			else if(stringArray[0].equals("animate")){
+				animate();
+			}
+			else if(stringArray[0].equals("create")){
+				create();
+			}
+			else if(stringArray[0].equals("canCreate")){
+	//			canCreate();
+			}
+			else if(stringArray[0].equals("cast")){
+				cast();
+			}
+			else if(stringArray[0].equals("loadCommands")){
+				loadCommands();
+			}
+			else if(stringArray[0].equals("getMapinfo")){
+				getMapinfo();
+			}
+			else if(stringArray[0].equals("getEnemyinfo")){
+				getEnemyinfo();
+			}
+			else if(stringArray[0].equals("build")){
+				build();
+			}
+			else if(stringArray[0].equals("set")){
+				set();
+			}
+			else if(stringArray[0].equals("handleMana")){
+				handleMana();
+			}
+			else if(stringArray[0].equals("startFileWrite")){
+				startFileWrite(stringArray[1]);
+			}
+			else if(stringArray[0].equals("restart")){
+				restart();
+			}
+			else if(stringArray[0].equals("help")){
+				help();
+			}
+			else{
+				System.out.println("Incorrect Command!");
+			}
 		}
+	}
+	
+	/**
+	 * Starts a writing session of all the commands typed into the console
+	 * gets printed out to the specified file.
+	 * 
+	 * @param filePath
+	 * @throws IOException if the given file does not exist or a current writing session does
+	 * */
+	private void startFileWrite(String filePath) throws IOException {
+		if(writer == null || !writer.isOpen())	writer = new LineToFileWriter(filePath);
+		else throw new IOException("Writing to file is already in action! End the current session of writing.");
+	}
+	
+	/**
+	 * Closes the current writing session if it is already in progress,
+	 * signals the missing of it otherwise.
+	 * 
+	 * @throws IOException if there is no current writing session to close
+	 * */
+	private void endFileWrite() throws IOException {
+		if(writer != null && writer.isOpen()) writer.close();
+		else throw new IOException("No session of writing has been started yet! Start a writing session.");
 	}
 	
 	private void loadCommands(){
