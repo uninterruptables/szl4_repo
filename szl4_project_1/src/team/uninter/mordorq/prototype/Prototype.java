@@ -10,6 +10,8 @@ import java.util.List;
 
 import team.uninter.mordorq.gamespace.BasicTower;
 import team.uninter.mordorq.gamespace.Controlable;
+import team.uninter.mordorq.gamespace.DamageBoosterTowerRune;
+import team.uninter.mordorq.gamespace.DecreaseDamageTrap;
 import team.uninter.mordorq.gamespace.EnemyTroop;
 import team.uninter.mordorq.gamespace.GroundGrid;
 import team.uninter.mordorq.gamespace.Human;
@@ -21,6 +23,7 @@ import team.uninter.mordorq.gamespace.PoisonFogMagic;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.StatusModifier;
 import team.uninter.mordorq.gamespace.TerrainGrid;
+import team.uninter.mordorq.gamespace.WeakenTrapRune;
 import team.uninter.mordorq.utils.GameConstants;
 import team.uninter.mordorq.utils.GameUtil;
 
@@ -250,11 +253,12 @@ public class Prototype {
 					}
 				}
 				else if(g instanceof RoadGrid){
+					output += " Inside: ";
 					if(g.getInjectionTarget() != null){
-						output += " inside: "+((RoadGrid) g).getInjectionTarget().getClass().getSimpleName()+",";
+						output += ((RoadGrid) g).getInjectionTarget().getClass().getSimpleName()+",";
 					}
 					if(((RoadGrid) g).getTarget() != null){
-						output += " inside: "+((RoadGrid) g).getTarget().getClass().getSimpleName()+",";
+						output += ((RoadGrid) g).getTarget().getClass().getSimpleName()+",";
 					}
 				}
 				output += "\n";
@@ -399,10 +403,10 @@ public class Prototype {
 				createTower();
 			}
 			else if(parameter.equals("trap")){
-//				createTrap();
+				createTrap();
 			}
 			else if(parameter.equals("rune")){
-//				createRune();
+				createRune();
 			}
 			else{
 				System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
@@ -410,6 +414,79 @@ public class Prototype {
 		}
 		catch(Exception e){
 			System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+		}
+	}
+	
+	private void createRune(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getTrap() == null){
+							DecreaseDamageTrap trap = new DecreaseDamageTrap(xPos,yPos);
+							((RoadGrid) targetGrid).setTrap(trap);
+							System.out.println("Trap created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("There is already a trap on the given grid");
+						}
+					}
+					else if(targetGrid instanceof RoadGrid){
+						System.out.println("Can't create Trap on GroundGrid");		
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
+		}
+	}
+	
+	private void createTrap(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getTrap() != null){
+							WeakenTrapRune rune = new WeakenTrapRune(xPos,yPos);
+							rune.castOn(targetGrid);
+							System.out.println("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("There is no Trap on this RoadGrid");
+						}
+					}
+					else if(targetGrid instanceof GroundGrid){
+						if(((GroundGrid) targetGrid).getTower() != null){
+							DamageBoosterTowerRune rune = new DamageBoosterTowerRune(xPos,yPos);
+							rune.castOn(targetGrid);
+							System.out.println("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("There is no Tower on this GroundGrid");
+						}
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
 		}
 	}
 	
