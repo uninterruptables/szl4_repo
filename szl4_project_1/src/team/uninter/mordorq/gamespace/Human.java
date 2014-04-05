@@ -13,13 +13,10 @@ public class Human extends EnemyTroop {
 	 */
 	public Human() {
 		super();
-		//TODO remove sysout
-		System.out.println("Human.Human() called");
 		health = GameConstants.HUMAN_HEALTH;
 		damage = GameConstants.HUMAN_DAMAGE;
 		rewardMana = GameConstants.HUMAN_REWARD;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
-		System.out.println("Human.Human() returned");
 	}
 	
 	/**
@@ -29,13 +26,10 @@ public class Human extends EnemyTroop {
 	 */
 	public Human(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-		System.out.println("Human.Human(x,y) called");
 		health = GameConstants.HUMAN_HEALTH;
 		damage = GameConstants.HUMAN_DAMAGE;
 		rewardMana = GameConstants.HUMAN_REWARD;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
-		System.out.println("Human.Human(x,y) returned");
 	}
 	
 	/**
@@ -48,39 +42,31 @@ public class Human extends EnemyTroop {
 	 */
 	public Human(int x, int y, int health, int damage, int reward) {
 		super(x, y);
-		//TODO remove sysout
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
-		System.out.println("Human.Human(x,y,health,damage,reward) called");
-		System.out.println("Human.Human(x,y,health,damage,reward) returned");
+	}
+	
+	protected EnemyTroop createClone(int health){
+		return new Human(x, y, health, damage, rewardMana);
 	}
 	
 	/* Return the amount of the reward for one human killing.
 	 *  (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-	public int getReward()
-	{
-		//TODO remove sysout
-		// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
-		System.out.println("Human.getReward() called");
-		System.out.println("Human.getReward() returned");
-		return rewardMana;
-		
+	public int getReward() {
+		return rewardMana;		
 	}
+	
 	/** Method how and how many damage get the human.
 	 *  (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
 	 */
 	@Override
-	public void interactWith(Missile missile) {
-		//TODO remove sysout
-		System.out.println("Human.interactWith(Missile) called");
+	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getHumanDamage());
 		if(health <= 0 && currentGrid != null) currentGrid.remove();
-		System.out.println("Human.interactWith(Missile) returned");
-		
 	}
 }

@@ -12,13 +12,10 @@ public class Dwarf extends EnemyTroop {
 	 */
 	public Dwarf() {
 		super();
-		//TODO remove sysout
-		System.out.println("Dwarf.Dwarf() called");
 		health = GameConstants.DWARF_HEALTH;
 		damage = GameConstants.DWARF_DAMAGE;
 		rewardMana = GameConstants.DWARF_REWARD;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
-		System.out.println("Dwarf.Dwarf() returned");
 	}
 	
 	/**
@@ -28,13 +25,10 @@ public class Dwarf extends EnemyTroop {
 	 */
 	public Dwarf(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-		System.out.println("Dwarf.Dwarf(x,y) called");
 		health = GameConstants.DWARF_HEALTH;
 		damage = GameConstants.DWARF_DAMAGE;
 		rewardMana = GameConstants.DWARF_REWARD;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
-		System.out.println("Dwarf.Dwarf(x,y) returned");
 	}
 
 	/**
@@ -47,39 +41,31 @@ public class Dwarf extends EnemyTroop {
 	 */
 	public Dwarf(int x, int y, int health, int damage, int reward) {
 		super(x, y);
-		//TODO remove sysout
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
-		System.out.println("Dwarf.Dwarf(x,y,health,damage,reward) called");
-		System.out.println("Dwarf.Dwarf(x,y,health,damage,reward) returned");
+	}
+	
+	protected EnemyTroop createClone(int health){
+		return new Dwarf(x, y, health, damage, rewardMana);
 	}
 	
 	/* Return the amount of the reward for one dwarf killing.
 	 * (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-	public int getReward()
-	{
-		//TODO remove sysout
-		// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
-		System.out.println("Dwarf.getReward() called");
-		System.out.println("Dwarf.getReward() returned");
-		return rewardMana;
-		
+	public int getReward() {
+		return rewardMana;		
 	}
+	
 	/* Method how and how many damage get the dwarf.
 	 * (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
 	 */
 	@Override
-	public void interactWith(Missile missile) {
-		//TODO remove sysout
-		System.out.println("Dwarf.interactWith(Missile) called");
+	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getDwarfDamage());
 		if(health <= 0 && currentGrid != null) currentGrid.remove();
-		System.out.println("Dwarf.interactWith(Missile) returned");
-		
 	}
 }

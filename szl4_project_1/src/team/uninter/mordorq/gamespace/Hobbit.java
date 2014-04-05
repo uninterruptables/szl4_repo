@@ -12,13 +12,10 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit() {
 		super();
-		//TODO remove sysout
-		System.out.println("Hobbit.Hobbit() called");
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
 		rewardMana = GameConstants.HOBBIT_REWARD;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
-		System.out.println("Hobbit.Hobbit() returned");
 	}
 	
 	/**
@@ -28,13 +25,10 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-		System.out.println("Hobbit.Hobbit(x,y) called");
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
 		rewardMana = GameConstants.HOBBIT_REWARD;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
-		System.out.println("Hobbit.Hobbit(x,y) returned");
 	}
 	
 	/**
@@ -47,25 +41,21 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit(int x, int y, int health, int damage, int reward) {
 		super(x, y);
-		//TODO remove sysout
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
-		System.out.println("Hobbit.Hobbit(x,y,health,damage,reward) called");
-		System.out.println("Hobbit.Hobbit(x,y,health,damage,reward) returned");
+	}
+	
+	protected EnemyTroop createClone(int health){
+		return new Hobbit(x, y, health, damage, rewardMana);
 	}
 
 	/* Return the amount of the reward for one hobbit killing.
 	 * (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-	public int getReward()
-	{
-		//TODO remove sysout
-		// If the player kill an enemy from this kind, get the proper reward(mana) for each enemy of thespecific type(species)
-		System.out.println("Hobbit.getReward() called");
-		System.out.println("Hobbit.getReward() returned");
+	public int getReward()	{
 		return rewardMana;
 	}
 	
@@ -74,11 +64,8 @@ public class Hobbit extends EnemyTroop {
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
 	 */
 	@Override
-	public void interactWith(Missile missile) {
-		//TODO remove sysout
-		System.out.println("Hobbit.interactWith(Missile) called");
+	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getHobbitDamage());
 		if(health <= 0 && currentGrid != null) currentGrid.remove();
-		System.out.println("Hobbit.interactWith(Missile) returned");
 	}
 }

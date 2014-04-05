@@ -135,8 +135,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		this.currentGrid = grid;
 	}
 	
-	public final RoadGrid getCurrentGrid()
-	{
+	public final RoadGrid getCurrentGrid() {
 		return this.currentGrid;
 	}
 
@@ -145,101 +144,87 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 *  (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.Controlable#isActive()
 	 */
-	public final boolean isActive()
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.isActive() called");
-		if(health > 0){
-			System.out.println("EnemyTroop.isActive() returned true");
-			return true;
-		}
-		else{
-			System.out.println("EnemyTroop.isActive() returned false");
-			return false;
-		}
+	public final boolean isActive() {
+		return health > 0;
 	}
 
-	public final void interactWith(EnemyTroop troop)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.interactWith(EnemyTroop) called");
-		//do nothing
-		System.out.println("EnemyTroop.interactWith(EnemyTroop) returned");	
+	public final void interactWith(EnemyTroop troop)	{}
+	
+	public final void interactWith(Missile missile){
+		if(Math.random()*1000 - 2 <= 0) split(currentGrid);
+		speciesInteractWith(missile);
 	}
 	
-	public abstract void interactWith(Missile missile);
+	protected abstract EnemyTroop createClone(int health);
+	
+	/**
+	 * Recursive method for cloning this instance and finding the first
+	 * free grid for it.
+	 * 
+	 * @param grid onto which we want to place the clone or from which the search starts
+	 * @return true only if the clone could be placed
+	 * */
+	private boolean split(RoadGrid grid){
+		if(grid.getVulnerable() == null){
+			int h;
+			this.setHealth((h = this.getHealth()/2));
+			grid.notifyAllWith(createClone(h));
+			return true;
+		}
+		for(Neighbour n : Neighbour.values())
+			if(grid.get(n).getUtility() > 0 && split((RoadGrid)grid.get(n)))
+				return true;
+		return false;
+	}
+	
+	protected abstract void speciesInteractWith(Missile missile);
 	
 	/** Troop get a modifier for their status from a magic or trap.
 	 * @param sm
 	 */
-	public final void add(StatusModifier sm)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.add(StatusModifier) called");
+	public final void add(StatusModifier sm)	{
 		this.statusModifiers.add(sm);
-		System.out.println("EnemyTroop.add(StatusModifier) returned");		
 	}
 	
 	/**Modifier all troop status.
 	 * @param sm
 	 */
-	public final void addAll(List<StatusModifier> sm)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.addAll(List<StatusModifier>) called");
+	public final void addAll(List<StatusModifier> sm) {
 		for(StatusModifier statusModifier : sm){
 			this.add(statusModifier);
 		}
-		System.out.println("EnemyTroop.addAll(List<StatusModifier>) returned");		
 	}
 	
-	public final List<StatusModifier> getModifiers()
-	{
+	public final List<StatusModifier> getModifiers() {
 		return this.statusModifiers;
 	}
 	
 	/** Return with the value of the troop damage
 	 * @return
 	 */
-	public final int getDamage()
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.getDamage() called");
-		System.out.println("EnemyTroop.getDamage() returned");
+	public final int getDamage() {
 		return this.damage;		
 	}
 	
 	/** This method set the value of the troop damage.
 	 * @param damage
 	 */
-	public final void setDamage(int damage)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.setDamage(damage) called");
+	public final void setDamage(int damage) {
 		this.damage = damage;
-		System.out.println("EnemyTroop.setDamage(damage) returned");	
 	}
 
 	/** Return the current value of Cooldown.
 	 * @return
 	 */
-	public final int getCooldown()
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.getCooldown() called");
-		System.out.println("EnemyTroop.getCooldown() returned");
+	public final int getCooldown() {
 		return cooldown;	
 	}
 	
 	/** This method can set the value of the cooldown
 	 * @param cooldown
 	 */
-	public final void setCooldown(int cooldown)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.setCooldown(cooldown) called");
+	public final void setCooldown(int cooldown) {
 		this.cooldown = cooldown;
-		System.out.println("EnemyTroop.setCooldown(cooldown) returned");	
 	}
 	
 	public abstract int getReward();
