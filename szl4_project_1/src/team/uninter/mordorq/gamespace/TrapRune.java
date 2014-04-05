@@ -10,38 +10,23 @@ public abstract class TrapRune extends Rune{
 	//every descendant of this class.
 	protected TrapRune() {
 		super();
-		System.out.println("TrapRune() called");
-		System.out.println("TrapRune() returned");
 	}
 	
 	protected TrapRune(int x, int y) {
 		super(x, y);
-		System.out.println("TrapRune(Int, Int) called");
-		System.out.println("TrapRune(Int, Int) returned");
 	}
 	
-	final public boolean canInjectOn(Tower tower)
-	{
-		System.out.println("TrapRune.canInjectOn(Tower) : boolean called");
-		System.out.println("TrapRune.canInjectOn(Tower) : boolean returned");
+	final public boolean canCastOn(TerrainGrid grid){
+		return grid.isAvailableFor(this);
+	}
+	
+	final public boolean canInjectOn(Tower tower) {
 		return false;
 	}
+	
 	final public boolean canInjectOn(Trap trap){
-		System.out.println("TrapRune.canInjectOn(Trap) : boolean called");
-		if(trap.getRunesRemained()>0)
-		{
-			System.out.println("TrapRune.canInjectOn(Trap) : boolean returned true");
-			return true;
-		}
-		else
-		{
-			System.out.println("TrapRune.canInjectOn(Trap) : boolean returned false");
-			return false;
-		}
+		return trap.getRunesRemained() > 0;
 	}
-	final public void injectOn(Tower tower)
-	{
-		System.out.println("TrapRune.canInjectOn(Tower) : boolean called");
-		System.out.println("TrapRune.canInjectOn(Tower) : boolean returned");
-	}
+
+	final public void injectOn(Tower tower) {}
 }

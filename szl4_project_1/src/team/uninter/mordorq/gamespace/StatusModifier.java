@@ -36,14 +36,10 @@ public abstract class StatusModifier extends GameObject{
 //	}
 	
 	public final int getDuration(){
-		System.out.println("StatusModifier.getDuration() : int called");
-		System.out.println("StatusModifier.getDuration() : int returned");
 		return duration;
 	}
 	
-	public final void setDuration(int duration){
-//		System.out.println("StatusModifier.getDuration() : int called");
-//		System.out.println("StatusModifier.getDuration() : int returned");
+	public void setDuration(int duration){
 		this.duration = duration;
 	}
 

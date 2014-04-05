@@ -42,42 +42,20 @@ abstract public class Trap extends InjectionTarget{
 		
 	}
 	//method that helps to determine whether a certain injectable can be injected on it, or not
-	public final boolean canInject(Injectable inj)
-	{
-		System.out.println("Trap.canInject(Injectable) : bool called");
-		if(inj.canInjectOn(this))
-		{
-			System.out.println("Trap.canInject(Injectable) : bool returned true");
-			return true;
-		}
-		else
-		{
-			System.out.println("Trap.canInject(Injectable) : bool returned false ");
-			return false;
-		}
+	public final boolean canInject(Injectable injectable) {
+		return injectable.canInjectOn(this);
 	}
+	
 	//during the cast of a terrainGrid
-	public final void castOn(TerrainGrid grid)
-	{
-		System.out.println("Trap.castOn(TerrainGrid) returned");
-		System.out.println("Trap.castOn(TerrainGrid) returned");
+	public final void castOn(TerrainGrid grid) {
+		//TODO:
 	}
+	
 	//checks, wheter it can be casted on a grid or not
-	public final boolean canCastOn(TerrainGrid grid)
-	{
-		System.out.println("Trap.canCastOn(TerrainGrid) called");
-		if(grid.isAvailableFor(this))
-		{
-			System.out.println("Trap.canCastOn(TerrainGrid) returned");
-			return true;
-		}
-		else
-		{
-			System.out.println("Trap.canCastOn(TerrainGrid) returned");
-			return false;
-		}
-		
+	public final boolean canCastOn(TerrainGrid grid) {
+		return grid.isAvailableFor(this);
 	}
+	
 	//injects an injectable
 	public final void inject(Injectable inject)
 	{

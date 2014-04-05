@@ -7,27 +7,43 @@ public class SlowStatus extends StatusModifier{
 	//the enemy troop by increasing it's cooldown. If it already affects it, it does not
 	//do anything.
 	
-	float slowAmount;
+	private static int slowDuration;
+	private static int slowAmount;
+	
+	static{
+		slowDuration = 10;
+		slowAmount = 5;
+	}
 
-	public SlowStatus()
-	{
-		System.out.println("SlowStatus() called");
-		System.out.println("SlowStatus() returned");
+	public SlowStatus() {
+		super();
+		super.duration = slowDuration;
 	}
-	public SlowStatus(float slowAmount)
-	{
-		System.out.println("SlowStatus(float) called");
-		this.slowAmount=slowAmount;
-		System.out.println("SlowStatus(float) returned");
+
+
+	/* (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.StatusModifier#affect(team.uninter.mordorq.gamespace.EnemyTroop)
+	 */
+	@Override
+	public void affect(EnemyTroop enemy) {
+		enemy.setMaxCooldown(enemy.getMaxCooldown() + slowAmount);
 	}
-	public SlowStatus(float slowAmount, int duration)
-	{
-		System.out.println("SlowStatus(float, EnemyTroop) called");
-		System.out.println("SlowStatus(float, EnemyTroop) returned");
+
+	/* (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.StatusModifier#reverseAffect(team.uninter.mordorq.gamespace.EnemyTroop)
+	 */
+	@Override
+	public void reverseAffect(EnemyTroop enemy) {
+		enemy.setMaxCooldown(enemy.getMaxCooldown() - slowAmount);
 	}
-	public void affect()
-	{
-		System.out.println("SlowStatus.affect() called");
-		System.out.println("SlowStatus.affect() returned");
+
+	/** (non-Javadoc)
+	 * @see team.uninter.mordorq.gamespace.StatusModifier#apply(team.uninter.mordorq.gamespace.EnemyTroop)
+	 */
+	@Override
+	public void apply(EnemyTroop enemy) {
+		enemy.add(this);
 	}
+	
+	
 }

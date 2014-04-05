@@ -4,26 +4,17 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 	
 	//Class used to increase damage versus dwarves. On inject on, it calls the tower-s
 	//setSpecies function, to increase it's damage
-	float extraDamage;
+	int extraDamage;
 	
 	public DamageBoostDwarvenTowerRune() {
 		super();
-		System.out.println("DamageBoostDwarvenTowerRune() called");
-		System.out.println("DamageBoostDwarvenTowerRune() returned");
 	}
 	
 	public DamageBoostDwarvenTowerRune(int x, int y) {
 		super(x, y);
-		System.out.println("DamageBoostDwarvenTowerRune(Int, Int) called");
-		System.out.println("DamageBoostDwarvenTowerRune(Int, Int) returned");
 	}
 	
-	public void injectOn(Tower tower)
-	{
-		System.out.println("DamageBoostDwarvenTowerRune.injectOn(Tower) called");
+	public void injectOn(Tower tower)	{
 		tower.setSpeciesDamage("dwarf", tower.getSpeciesDamage("dwarf")+10);
-		System.out.println("DamageBoostDwarvenTowerRune.injectOn(Tower) returned");
-	}
-
-	
+	}	
 }

@@ -129,6 +129,16 @@ abstract public class TerrainGrid extends GameObject{
 	abstract public boolean isAvailableFor(Barricade barricade);
 	
 	/**
+	 * Gives back the grids availability for a <code>Rune</code>,
+	 * depends on what kind of grid this is. The subclasses specify the value.
+	 * 
+	 * @param rune
+	 * @return
+	 */
+	abstract public boolean isAvailableFor(Rune rune);
+	
+	
+	/**
 	 * Gives back the grids availability for a magic, but it's
 	 * always true.
 	 * 
@@ -136,9 +146,6 @@ abstract public class TerrainGrid extends GameObject{
 	 * @return
 	 */
 	public final boolean isAvailableFor(Magic magic){
-		//TODO remove sysout
-		System.out.println("TerrainGrid isAvailableFor(Magic) called");
-		System.out.println("TerrainGrid isAvailableFor(Magic) returned");
 		return true;
 	}
 	

@@ -160,9 +160,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 * Gives back the trap on the grid
 	 */
 	public Trap getTrap(){
-		//TODO remove sysout
-		System.out.println("RoadGrid getTrap() called");
-		System.out.println("RoadGrid getTrap() returned");
 		return trap;
 	}
 	
@@ -180,23 +177,17 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 * Set a trap on the grid with the given parameter
 	 */
 	public void setTrap(Trap trap){
-		//TODO remove sysout
-		System.out.println("RoadGrid setTrap called");
 		this.trap = trap;
-		System.out.println("RoadGrid setTrap returned");
 	}
 	
 	/**
 	 * Set a vulnerable on the grid with the given parameter
 	 */
 	public void setVulnerable(Vulnerable vulnerable){
-		//TODO remove sysout
-		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) called");
 		this.vulnerable = vulnerable;
 		((EnemyTroop)this.vulnerable).setCurrentGrid(this);
 		((GameObject)this.vulnerable).setX(this.x);
 		((GameObject)this.vulnerable).setY(this.y);
-		System.out.println("RoadGrid setVulnerable(Vulnerable vulnerable) returned");
 	}
 
 	/**
@@ -204,9 +195,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	@Override
 	public InjectionTarget getInjectionTarget() {
-		//TODO remove sysout
-		System.out.println("RoadGrid getInjectionTarget() called");
-		System.out.println("RoadGrid getInjectionTarget() returned");
 		return trap;
 	}
 
@@ -215,16 +203,22 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	@Override
 	public boolean isAvailableFor(Barricade barricade) {
-		//TODO remove sysout
-		System.out.println("RoadGrid isAvailableFor(Barricade) called");
-		System.out.println("RoadGrid isAvailableFor(Barricade) returned");
 		return true;
+	}
+	
+	/** Checks if the trap is able to inject the given <code>Rune</code>.
+	 * 
+	 * @param rune the rune in question about injection.
+	 * @return true only if the trap can inject this kind of rune
+	 * @see team.uninter.mordorq.gamespace.TerrainGrid#isAvailableFor(team.uninter.mordorq.gamespace.Rune)
+	 */
+	@Override
+	public boolean isAvailableFor(Rune rune) {
+		return trap.canInject(rune);
 	}
 
 	@Override
 	public boolean isInRangeOf(Tower tower) {
-		//TODO remove sysout
-		System.out.println("TerrainGrid isInRangeOf(Tower) called");
 		int currentX = super.x;
 		int currentY = super.y;
 		int targetX = tower.getX();
@@ -232,15 +226,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 		int distanceX = targetX - currentX;
 		int distanceY = targetY - currentY;
 		int distance = (int) Math.sqrt(distanceX^2 + distanceY^2);
-		if(distance <= tower.getRadius()){
-			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned true");
-			return true;
-		}
-		else{
-			System.out.println("TerrainGrid isInRangeOf(Tower tower) returned false");
-			return false;
-		}
+		return distance <= tower.getRadius();
 	}
-
-
 }

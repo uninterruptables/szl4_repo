@@ -19,10 +19,12 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 * If they fall at the storm of the battle, how many mana (reward) will go to the player.
 	 * 
 	 */
+	protected static int speciesCooldown;
+	protected static int rewardMana;
+	
 	protected int cooldown;
 	protected int maxCooldown;
 	protected int damage;
-	protected int rewardMana;
 	protected RoadGrid currentGrid;
 	protected RoadGrid targetGrid;
 	ArrayList<StatusModifier> statusModifiers;
@@ -30,13 +32,9 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	/**
 	 * EnemyTroop no parameter (default)
 	 */
-	public EnemyTroop() {
-		
+	public EnemyTroop() {		
 		super();
-		//TODO remove sysout
-		System.out.println("EnemyTroop.EnemyTroop() called");
 		statusModifiers = new ArrayList<StatusModifier>();
-		System.out.println("EnemyTroop.EnemyTroop() returned");
 	} 
 	
 	/**
@@ -46,10 +44,9 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 */
 	public EnemyTroop(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-		System.out.println("EnemyTroop.EnemyTroop(x,y) called");
 		statusModifiers = new ArrayList<StatusModifier>();
-		System.out.println("EnemyTroop.EnemyTroop(x,y) returned");
+		this.maxCooldown = speciesCooldown;
+		this.cooldown = this.maxCooldown;
 	}
 	
 	/**EnemyTroop with five parameter, attributes.
@@ -60,23 +57,18 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 * @param reward
 	 */
 	public EnemyTroop(int x, int y, int health, int damage, int reward) {
-		super(x, y);
-		//TODO remove sysout
+		this(x, y);
 		this.health = health;
 		this.damage = damage;
 		this.rewardMana = reward;
-		System.out.println("EnemyTroop.EnemyTroop(x,y,health,damage,reward) called");
-		System.out.println("EnemyTroop.EnemyTroop(x,y,health,damage,reward) returned");
 	}
 
-	/* This class used to EnemyTroop act at scene, at grids.
+	/** This class used to EnemyTroop act at scene, at grids.
 	 * (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.Controlable#controlIt()
 	 */
 	public final void controlIt()
 	{
-		//TODO remove sysout
-//		System.out.println("EnemyTroop.controlIt()) called");
 		if(cooldown > 0){
 			cooldown--;
 			if(cooldown <= 0){
@@ -105,20 +97,42 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 				statusModifiers.remove(sm);
 			}
 		}
-		
-//		System.out.println("EnemyTroop.controlIt() returned");	
+	}
+	
+	/**
+	 * @return the maxCooldown
+	 */
+	public int getMaxCooldown() {
+		return maxCooldown;
+	}
+	
+	/**
+	 * @param maxCooldown the maxCooldown to set
+	 */
+	public void setMaxCooldown(int maxCooldown) {
+		this.maxCooldown = maxCooldown;
+	}
+	
+	/**
+	 * @return the rewardMana
+	 */
+	public int getRewardMana() {
+		return rewardMana;
+	}
+	
+	/**
+	 * @param rewardMana the rewardMana to set
+	 */
+	public void setRewardMana(int rewardMana) {
+		this.rewardMana = rewardMana;
 	}
 
 	/**
 	 * THis class set the troops current grids.
 	 * @param grid
 	 */
-	public final void setCurrentGrid(RoadGrid grid)
-	{
-		//TODO remove sysout
-		System.out.println("EnemyTroop.setCurrentGrid(RoadGrid) called");
+	public final void setCurrentGrid(RoadGrid grid){
 		this.currentGrid = grid;
-		System.out.println("EnemyTroop.setCurrentGrid(RoadGrid) returned");
 	}
 	
 	public final RoadGrid getCurrentGrid()
