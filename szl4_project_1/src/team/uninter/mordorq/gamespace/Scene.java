@@ -6,7 +6,7 @@ package team.uninter.mordorq.gamespace;
 import javax.swing.*;
 
 import team.uninter.mordorq.utils.RoundInitiator;
-
+import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
 
@@ -34,7 +34,7 @@ import java.io.*;
 public class Scene extends JPanel{
 
 	private List<TerrainGrid> grids;
-	private List<Controlable> towers;
+	private List<Tower> towers;
 	private List<Controlable> enemies;
 	private MordorFrame owner;
 	private Casted activeObject;
@@ -45,12 +45,9 @@ public class Scene extends JPanel{
 	 * Constructor for building a simple/empty <code>Scene</code>.
 	 * */
 	protected Scene(MordorFrame owner){
-		super();
+		this();
 		this.owner = owner;
 		this.grids = new java.util.LinkedList<TerrainGrid>();
-		this.towers = new ArrayList<Controlable>();
-		this.enemies = new ArrayList<Controlable>();
-		animator = new Animator(this);
 	}
 	
 	/**
@@ -59,10 +56,18 @@ public class Scene extends JPanel{
 	 * constructs the initial <code>Scene</code>.
 	 * */
 	protected Scene(MordorFrame owner, List<TerrainGrid> grids){
-		super();
+		this();
 		this.owner = owner;
 		this.grids = grids;
-		this.towers = new ArrayList<Controlable>();
+		
+	}
+	
+	/**
+	 * Constructor for initializing common fields.	 * 
+	 * */
+	protected Scene(){
+		super();
+		this.towers = new CopyOnWriteArrayList<Tower>();
 		this.enemies = new ArrayList<Controlable>();
 		this.round = 0;
 		animator = new Animator(this);
@@ -99,6 +104,7 @@ public class Scene extends JPanel{
 		casted.castOn(grid);
 		if(casted instanceof Tower){
 			towers.add((Tower)casted);
+			animator.add((Tower)casted);
 			for(TerrainGrid _grid : grids) {
 				if(_grid.isInRangeOf((Tower)casted)){
 					((Tower)casted).attach((RoadGrid)_grid);
@@ -162,8 +168,6 @@ public class Scene extends JPanel{
 	 * */
 	public void setActiveObject(String objectName){
 		//TODO:
-//		System.out.println("Scene.setActiveObject(String): void called");
-//		System.out.println("Scene.setActiveObject(String): void returned");
 	}
 	
 	/**
@@ -211,7 +215,7 @@ public class Scene extends JPanel{
 	 * 
 	 * @return the list of towers the scene contains
 	 * */
-	public List<Controlable> getTowers(){
+	public List<Tower> getTowers(){
 		return towers;
 	}
 	

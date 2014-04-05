@@ -2,53 +2,30 @@ package team.uninter.mordorq.gamespace;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.math.*;
 
+@SuppressWarnings("all")
 public class Animator implements Runnable{
 
 	private Scene scene;
-	private List<? extends Controlable> towers;
+	private List<Tower> towers;
 	private List<? extends Controlable> enemies;
 	
 	public Animator(Scene scene, List<Tower> towers, List<EnemyTroop> enemies){
-		// TODO remove sysout
-		System.out.println("Animator.Animator(Scene, List<Controlable>, List<Controlable>) called");
 		this.scene = scene;
 		this.towers = towers;
 		this.enemies = enemies;
-		System.out.println("Animator.Animator(Scene, List<Tower>, List<EnemyTroop>) returned");
 	}
 	
 	public Animator(Scene scene){
-		// TODO remove sysout
-		System.out.println("Animator.Animator(Scene) called");
 		this.scene = scene;
 		towers = scene.getTowers();
-		enemies = new ArrayList<EnemyTroop>();
-		System.out.println("Animator.Animator(Scene) returned");
+		enemies = scene.getEnemies();
 	}
 	
 	@Override
 	public void run() {
-		// TODO remove sysout
-		System.out.println("Animator run() called");
-		for(Controlable enemy : scene.getEnemies()){
-			if(enemy.isActive()){
-				enemy.controlIt();
-			}
-			else{
-				enemies.remove(enemy);
-			}
-		}
-		if(enemies.isEmpty()){
-			scene.endRound();
-		}
-		for(Controlable tower : scene.getTowers()){
-			if(tower.isActive()){
-				tower.controlIt();
-			}
-		}
-		scene.repaint();
-		System.out.println("Animator run() returned");
+		run(1);
 	}
 	
 	public void run(int n) {
@@ -64,6 +41,7 @@ public class Animator implements Runnable{
 			if(enemies.isEmpty()){
 				scene.endRound();
 			}
+			if(Math.random()*100 - 2.0 <= 0) fog();
 			for(Controlable tower : scene.getTowers()){
 				if(tower.isActive()){
 					tower.controlIt();
@@ -73,6 +51,13 @@ public class Animator implements Runnable{
 		}	
 	}
 	
-
+	private void fog(){
+		for(Tower tower : (List<Tower>)towers)
+			new FogStatus().apply(tower);
+	}
+	
+	public void add(Tower tower){
+		this.towers.add(tower);
+	}
 
 }

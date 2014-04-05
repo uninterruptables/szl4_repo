@@ -6,4 +6,6 @@ public interface TargetPublisher {
 	void notifyAllWith(EnemyTroop troop);
 	boolean contains(EnemyTroop troop);
 	EnemyTroop getTarget();
+	
+	boolean isInRangeOf(Tower subscriber);
 }

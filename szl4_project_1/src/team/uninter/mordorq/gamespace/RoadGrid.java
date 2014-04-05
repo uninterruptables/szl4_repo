@@ -34,10 +34,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public RoadGrid(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-		System.out.println("RoadGrid.RoadGrid(x,y) called");
 		subscribers = new ArrayList<TargetSubscriber>();
-		System.out.println("RoadGrid.RoadGrid(x,y) returned");
 	}
 	
 	public RoadGrid(int x, int y, int utility, int id) {
@@ -52,10 +49,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public RoadGrid(int utility) {
 		super(utility);
-		//TODO remove sysout
-		System.out.println("RoadGrid.RoadGrid(utility) called");
 		subscribers = new ArrayList<TargetSubscriber>();
-		System.out.println("RoadGrid.RoadGrid(utility) returned");
 	}
 	
 	/**
@@ -63,10 +57,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public RoadGrid(){
 		super();
-		//TODO remove sysout
-		System.out.println("RoadGrid.RoadGrid() called");
 		subscribers = new ArrayList<TargetSubscriber>();
-		System.out.println("RoadGrid.RoadGrid() returned");
 	}
 
 	/**
@@ -74,11 +65,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	@Override
 	public void attach(TargetSubscriber subscriber) {
-		// TODO remove sysout
-		System.out.println("RoadGrid attach(TargetSubscriber subscriber) called");
 		subscribers.add(subscriber);
-		System.out.println("RoadGrid attach(TargetSubscriber subscriber) returned");
-		
 	}
 
 	/**
@@ -86,11 +73,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	@Override
 	public void detach(TargetSubscriber subscriber) {
-		// TODO remove sysout
-		System.out.println("RoadGrid detach(TargetSubscriber subscriber) called");
-		subscribers.remove(subscribers.indexOf(subscriber));
-		System.out.println("RoadGrid detach(TargetSubscriber subscriber) returned");
-		
+		subscribers.remove(subscribers.indexOf(subscriber));		
 	}
 
 	/**
