@@ -70,7 +70,7 @@ public class Prototype {
 				create();
 			}
 			else if(stringArray[0].equals("canCreate")){
-	//			canCreate();
+				canCreate();
 			}
 			else if(stringArray[0].equals("cast")){
 				cast();
@@ -104,6 +104,160 @@ public class Prototype {
 			}
 			else{
 				System.out.println("Incorrect Command!");
+			}
+		}
+	}
+	
+	private void canCreate(){
+		String parameter;
+		try{
+			parameter = stringArray[1];
+			if(parameter.equals("enemy")){
+				canCreateEnemy();
+			}
+			else if(parameter.equals("tower")){
+				canCreateTower();
+			}
+			else if(parameter.equals("trap")){
+				canCreateTrap();
+			}
+			else if(parameter.equals("rune")){
+				canCreateRune();
+			}
+			else{
+				System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+		}
+	}
+	
+	private void canCreateEnemy(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof GroundGrid){
+						System.out.println("Can't create enemy on GroundGrid");
+					}
+					else if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid)targetGrid).getTarget() == null){
+							System.out.println("Can create enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("Can't create. There is already an enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
+		}
+	}
+	
+	private void canCreateTower(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof GroundGrid){
+						if(((GroundGrid) targetGrid).getTower() == null){
+							System.out.println("Can create tower at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("Can't create. There is already a tower on the given grid");
+						}
+					}
+					else if(targetGrid instanceof RoadGrid){
+						System.out.println("Can't create tower on RoadGrid");		
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
+		}
+	}
+	
+	private void canCreateTrap(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getTrap() == null){
+							System.out.println("Can create trap at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("Can't create. There is already a trap on the given grid");
+						}
+					}
+					else if(targetGrid instanceof RoadGrid){
+						System.out.println("Can't create Trap on GroundGrid");		
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
+			}
+		}
+	}
+	
+	private void canCreateRune(){
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getTrap() != null){
+							System.out.println("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("Can't create. There is no Trap on this RoadGrid");
+						}
+					}
+					else if(targetGrid instanceof GroundGrid){
+						if(((GroundGrid) targetGrid).getTower() != null){
+							System.out.println("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							System.out.println("Can't create. There is no Tower on this GroundGrid");
+						}
+					}
+				}
+				else{
+					System.out.println("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				System.out.println("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
@@ -383,7 +537,7 @@ public class Prototype {
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong paramteres list try: number at x:number y:number");
+			System.out.println("Wrong parameter list try: number number at x:number y:number");
 		}
 	}
 	
