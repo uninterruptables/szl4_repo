@@ -1,6 +1,7 @@
 package team.uninter.mordorq.prototype;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -115,7 +116,10 @@ public class Prototype {
 	 * @throws IOException if the given file does not exist or a current writing session does
 	 * */
 	private void startFileWrite(String filePath) throws IOException {
-		if(writer == null || !writer.isOpen())	writer = new LineToFileWriter(filePath);
+		if(writer == null || !writer.isOpen()){
+			writer = new LineToFileWriter(filePath);
+			System.out.println("Write into file is started.");
+		}
 		else throw new IOException("Writing to file is already in action! End the current session of writing.");
 	}
 	
@@ -126,7 +130,10 @@ public class Prototype {
 	 * @throws IOException if there is no current writing session to close
 	 * */
 	private void endFileWrite() throws IOException {
-		if(writer != null && writer.isOpen()) writer.close();
+		if(writer != null && writer.isOpen()){
+			writer.close();
+			System.out.println("Write into file is ended.");
+		}
 		else throw new IOException("No session of writing has been started yet! Start a writing session.");
 	}
 	
@@ -137,7 +144,14 @@ public class Prototype {
 					stringArray[1] += " "+stringArray[i];
 				}
 			}
+			
 			String filePath = stringArray[1];
+			String fileName = "";
+
+			int i = filePath.lastIndexOf('\\');
+			if (i > 0) {
+				fileName = filePath.substring(i+1);
+			}
 			
 			InputStream fis;
 			BufferedReader br;
@@ -149,6 +163,8 @@ public class Prototype {
 				stringArray = line.split(" ");
 				parseCommand();
 			}
+			
+			System.out.println("Loaded "+fileName);
 
 			br.close();
 			br = null;
@@ -373,11 +389,32 @@ public class Prototype {
 	
 	private void toggleRandomness(){
 		GameConstants.RANDOMNESS =!GameConstants.RANDOMNESS;
+		if(GameConstants.RANDOMNESS){
+			System.out.println("Randomness on");
+		}
+		else{
+			System.out.println("Randomness off");
+		}
 	}
 	
 	private void help(){
 		//TODO szepen leirni h kell hasznalni
-		System.out.println("command and parameter lsit");
+		System.out.println("Command and parameter list:");
+		System.out.println("---------------------------");
+		System.out.println("toggleRandomness  -  toggles the random functions");
+		System.out.println("animate 'number'  -  animates as much time tick as the given number is | 'number' is an integer");
+		System.out.println("create 'object' at x:'xPos' y:'yPos'  -  creates the given object at the given parameter | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
+		System.out.println("canCreate 'object' at x:'xPos' y:'yPos'  -  can the given object create at the given parameter? | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
+		System.out.println("cast 'magic'  -  cast the given magic | 'magic' types: nazgul,icewind,poisonfog");
+		System.out.println("loadCommands 'filepath'  -  load the command from a file | 'filepath' is a full file path");
+		System.out.println("getMapinfo  -  list informations about the map");
+		System.out.println("getEnemyinfo  -  list informations about the enemies");
+		System.out.println("build 'object' at x:'xPos' y:'yPos'  -  build the given object at the given parameter | 'object' types: roadgrid,groundgrid; 'xPos' and 'yPos' are integers");
+		System.out.println("set 'currentId' 'direction' 'targetId'  -  set the neighbour of the 'currentId' grid to the 'targetId' grid | 'currentId' is a grid id; 'direction' types: north,east,south,west; 'targetId' is a grid id");
+		System.out.println("handleMana 'number'  -  gives back, or set the user's mana amount | 'number' is an integer (optional)");
+		System.out.println("startFileWrite 'filePath'  -  writes the feedbacks to the given file instead of the console | 'filePath' is a full file path");
+		System.out.println("restart  -  creates a clear gamespace");
+		System.out.println("help  -  show helps for commands");
 	}
 	
 	private void animate(){
