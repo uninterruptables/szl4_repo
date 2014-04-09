@@ -100,12 +100,12 @@ public class Prototype {
 				help();
 			}
 			else{
-				System.out.println("Incorrect Command!");
+				printLine("Incorrect Command!");
 			}
 		}
 	}
 	
-	private void canCreate(){
+	private void canCreate() throws IOException {
 		String parameter;
 		try{
 			parameter = stringArray[1];
@@ -122,15 +122,16 @@ public class Prototype {
 				canCreateRune();
 			}
 			else{
-				System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+				printLine("Wrong parameter, try: enemy, tower, trap, rune");
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter, try: enemy, tower, trap, rune");
 		}
 	}
 	
-	private void canCreateEnemy(){
+	private void canCreateEnemy() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -139,29 +140,30 @@ public class Prototype {
 				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
 				if(targetGrid != null){
 					if(targetGrid instanceof GroundGrid){
-						System.out.println("Can't create enemy on GroundGrid");
+						printLine("Can't create enemy on GroundGrid");
 					}
 					else if(targetGrid instanceof RoadGrid){
 						if(((RoadGrid)targetGrid).getTarget() == null){
-							System.out.println("Can create enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can create enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("Can't create. There is already an enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can't create. There is already an enemy at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void canCreateTower(){
+	private void canCreateTower() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -171,28 +173,29 @@ public class Prototype {
 				if(targetGrid != null){
 					if(targetGrid instanceof GroundGrid){
 						if(((GroundGrid) targetGrid).getTower() == null){
-							System.out.println("Can create tower at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can create tower at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("Can't create. There is already a tower on the given grid");
+							printLine("Can't create. There is already a tower on the given grid");
 						}
 					}
 					else if(targetGrid instanceof RoadGrid){
-						System.out.println("Can't create tower on RoadGrid");		
+						printLine("Can't create tower on RoadGrid");		
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void canCreateTrap(){
+	private void canCreateTrap() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -202,28 +205,29 @@ public class Prototype {
 				if(targetGrid != null){
 					if(targetGrid instanceof RoadGrid){
 						if(((RoadGrid) targetGrid).getTrap() == null){
-							System.out.println("Can create trap at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can create trap at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("Can't create. There is already a trap on the given grid");
+							printLine("Can't create. There is already a trap on the given grid");
 						}
 					}
 					else if(targetGrid instanceof RoadGrid){
-						System.out.println("Can't create Trap on GroundGrid");		
+						printLine("Can't create Trap on GroundGrid");		
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void canCreateRune(){
+	private void canCreateRune() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -233,30 +237,36 @@ public class Prototype {
 				if(targetGrid != null){
 					if(targetGrid instanceof RoadGrid){
 						if(((RoadGrid) targetGrid).getTrap() != null){
-							System.out.println("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("Can't create. There is no Trap on this RoadGrid");
+							printLine("Can't create. There is no Trap on this RoadGrid");
 						}
 					}
 					else if(targetGrid instanceof GroundGrid){
 						if(((GroundGrid) targetGrid).getTower() != null){
-							System.out.println("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Can create rune at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("Can't create. There is no Tower on this GroundGrid");
+							printLine("Can't create. There is no Tower on this GroundGrid");
 						}
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
+	}
+	
+	protected void printLine(String message) throws IOException {
+		if(writer != null || writer.isOpen()) writer.write(message);
+		else System.out.println(message);
 	}
 	
 	/**
@@ -269,7 +279,7 @@ public class Prototype {
 	private void startFileWrite(String filePath) throws IOException {
 		if(writer == null || !writer.isOpen()){
 			writer = new LineToFileWriter(filePath);
-			System.out.println("Write into file is started.");
+			printLine("Write into file is started.");
 		}
 		else throw new IOException("Writing to file is already in action! End the current session of writing.");
 	}
@@ -283,12 +293,12 @@ public class Prototype {
 	private void endFileWrite() throws IOException {
 		if(writer != null && writer.isOpen()){
 			writer.close();
-			System.out.println("Write into file is ended.");
+			printLine("Write into file is ended.");
 		}
 		else throw new IOException("No session of writing has been started yet! Start a writing session.");
 	}
 	
-	private void loadCommands(){
+	private void loadCommands() throws IOException {
 		try{
 			if(stringArray.length > 2){
 				for(int i = 2; i < stringArray.length; i++){
@@ -315,18 +325,19 @@ public class Prototype {
 				parseCommand();
 			}
 			
-			System.out.println("Loaded "+fileName);
+			printLine("Loaded "+fileName);
 
 			br.close();
 			br = null;
 			fis = null;
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try: filepath");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter, try: filepath");
 		}
 	}
 	
-	private void handleMana(){
+	private void handleMana() throws IOException {
 		String manaAmountText;
 		int manaAmount;
 		try{
@@ -334,49 +345,52 @@ public class Prototype {
 			try{
 				manaAmount = Integer.parseInt(manaAmountText);
 				frame.getScene().setUserMana(manaAmount);
-				System.out.println("New mana amount is: "+manaAmount);
+				printLine("New mana amount is: "+manaAmount);
 			}
 			catch(Exception e){
-				System.out.println("Wrong parameter, try: number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong parameter, try: number");
 			}
 		}
 		catch(Exception e){
+			if(e instanceof IOException) throw (IOException)e;
 			manaAmount = frame.getUserMana();
-			System.out.println("Mana amount is: "+manaAmount);
+			printLine("Mana amount is: "+manaAmount);
 		}
 	}
 	
-	private void restart(){
+	private void restart() throws IOException {
 		frame = MordorFrame.newInstance();
-		System.out.println("Restarted succesfully");
+		printLine("Restarted succesfully");
 	}
 	
-	private void cast(){
+	private void cast() throws IOException {
 		try{
 			String param = stringArray[1];
 			if(param.equals("nazgul")){
 				frame.getScene().cast(new Nazgul());
-				System.out.println("Nazgul casted");
+				printLine("Nazgul casted");
 			}
 			else if(param.equals("icewind")){
 				frame.getScene().cast(new IceWindMagic());
-				System.out.println("IceWindMagic casted");
+				printLine("IceWindMagic casted");
 			}
 			else if(param.equals("poisonfog")){
 				frame.getScene().cast(new PoisonFogMagic());
-				System.out.println("PoisonFogMagic casted");
+				printLine("PoisonFogMagic casted");
 			}
 			else{
-				System.out.println("Wrong parameter, try: nazgul, icewind, poisonfog");
+				printLine("Wrong parameter, try: nazgul, icewind, poisonfog");
 			}
 			
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try: nazgul, icewind, poisonfog");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter, try: nazgul, icewind, poisonfog");
 		}
 	}
 	
-	private void set(){
+	private void set() throws IOException {
 		int currentId, targetId;
 		String direction;
 		try{
@@ -385,30 +399,31 @@ public class Prototype {
 			direction = stringArray[2];
 			if(direction.equals("north")){
 				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.NORTH, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
-				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+				printLine("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
 			}
 			else if(direction.equals("east")){
 				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.EAST, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
-				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+				printLine("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
 			}
 			else if(direction.equals("south")){
 				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.SOUTH, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
-				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+				printLine("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
 			}
 			else if(direction.equals("west")){
 				GameUtil.getGridById(frame.getScene().getGrids(), currentId).set(Neighbour.WEST, GameUtil.getGridById(frame.getScene().getGrids(), targetId));
-				System.out.println("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
+				printLine("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
 			}
 			else{
-				System.out.println("Wrong direction parameter, try: north, east, south, west");
+				printLine("Wrong direction parameter, try: north, east, south, west");
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameters, try: idNumber direction idNumber");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameters, try: idNumber direction idNumber");
 		}
 	}
 	
-	private void getMapinfo(){
+	private void getMapinfo() throws IOException {
 		List<TerrainGrid> grids = frame.getScene().getGrids();
 		if(grids.size() > 0){
 			String output = "------Map info------\n";
@@ -431,14 +446,14 @@ public class Prototype {
 				output += "\n";
 			}
 			output += "\n----------------------";
-			System.out.println(output);
+			printLine(output);
 		}
 		else{
-			System.out.println("No existing grid");
+			printLine("No existing grid");
 		}
 	}
 	
-	private void getEnemyinfo(){
+	private void getEnemyinfo() throws IOException {
 		List<Controlable> enemies = frame.getScene().getEnemies();
 		if(enemies.size() > 0){
 			String output = "------Enemy info------\n";
@@ -452,14 +467,14 @@ public class Prototype {
 				output += "\n";
 			}
 			output += "----------------------";
-			System.out.println(output);
+			printLine(output);
 		}
 		else{
-			System.out.println("No existing enemy");
+			printLine("No existing enemy");
 		}
 	}
 	
-	private void build(){
+	private void build() throws IOException {
 		String parameter;
 		try{
 			parameter = stringArray[1];
@@ -470,15 +485,16 @@ public class Prototype {
 				buildGround();
 			}
 			else{
-				System.out.println("Wrong parameter, try: roadgrid, groundgrid");
+				printLine("Wrong parameter, try: roadgrid, groundgrid");
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try: roadgrid, groundgrid");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter, try: roadgrid, groundgrid");
 		}
 	}
 	
-	private void buildRoad(){
+	private void buildRoad() throws IOException {
 		int utility, id, xPos, yPos;
 		try{
 			utility = Integer.parseInt(stringArray[2]);
@@ -496,19 +512,20 @@ public class Prototype {
 				
 				if(!contains){
 					frame.getScene().getGrids().add(new RoadGrid(xPos,yPos,utility,id));
-					System.out.println("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
+					printLine("Road created at x:"+xPos+" y:"+yPos+" with id:"+id);
 				}
 				else{
-					System.out.println("Grid already exist with the given id or coordinates");
+					printLine("Grid already exist with the given id or coordinates");
 				}
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong paramteres list try: number at x:number y:number");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong paramteres list try: number at x:number y:number");
 		}
 	}
 	
-	private void buildGround(){
+	private void buildGround() throws IOException {
 		int utility, id, xPos, yPos;
 		try{
 			utility = Integer.parseInt(stringArray[2]);
@@ -526,61 +543,63 @@ public class Prototype {
 				
 				if(!contains){
 					frame.getScene().getGrids().add(new GroundGrid(xPos,yPos,utility,id));
-					System.out.println("Ground created at x:"+xPos+" y:"+yPos+" with id:"+id);
+					printLine("Ground created at x:"+xPos+" y:"+yPos+" with id:"+id);
 				}
 				else{
-					System.out.println("Grid already exist with the given id or coordinates");
+					printLine("Grid already exist with the given id or coordinates");
 				}
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter list try: number number at x:number y:number");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter list try: number number at x:number y:number");
 		}
 	}
 	
-	private void toggleRandomness(){
+	private void toggleRandomness() throws IOException {
 		GameConstants.RANDOMNESS =!GameConstants.RANDOMNESS;
 		if(GameConstants.RANDOMNESS){
-			System.out.println("Randomness on");
+			printLine("Randomness on");
 		}
 		else{
-			System.out.println("Randomness off");
+			printLine("Randomness off");
 		}
 	}
 	
-	private void help(){
+	private void help() throws IOException{
 		//TODO szepen leirni h kell hasznalni
-		System.out.println("Command and parameter list:");
-		System.out.println("---------------------------");
-		System.out.println("toggleRandomness  -  toggles the random functions");
-		System.out.println("animate 'number'  -  animates as much time tick as the given number is | 'number' is an integer");
-		System.out.println("create 'object' at x:'xPos' y:'yPos'  -  creates the given object at the given parameter | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
-		System.out.println("canCreate 'object' at x:'xPos' y:'yPos'  -  can the given object create at the given parameter? | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
-		System.out.println("cast 'magic'  -  cast the given magic | 'magic' types: nazgul,icewind,poisonfog");
-		System.out.println("loadCommands 'filepath'  -  load the command from a file | 'filepath' is a full file path");
-		System.out.println("getMapinfo  -  list informations about the map");
-		System.out.println("getEnemyinfo  -  list informations about the enemies");
-		System.out.println("build 'object' at x:'xPos' y:'yPos'  -  build the given object at the given parameter | 'object' types: roadgrid,groundgrid; 'xPos' and 'yPos' are integers");
-		System.out.println("set 'currentId' 'direction' 'targetId'  -  set the neighbour of the 'currentId' grid to the 'targetId' grid | 'currentId' is a grid id; 'direction' types: north,east,south,west; 'targetId' is a grid id");
-		System.out.println("handleMana 'number'  -  gives back, or set the user's mana amount | 'number' is an integer (optional)");
-		System.out.println("startFileWrite 'filePath'  -  writes the feedbacks to the given file instead of the console | 'filePath' is a full file path");
-		System.out.println("restart  -  creates a clear gamespace");
-		System.out.println("help  -  show helps for commands");
+		printLine("Command and parameter list:");
+		printLine("---------------------------");
+		printLine("toggleRandomness  -  toggles the random functions");
+		printLine("animate 'number'  -  animates as much time tick as the given number is | 'number' is an integer");
+		printLine("create 'object' at x:'xPos' y:'yPos'  -  creates the given object at the given parameter | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
+		printLine("canCreate 'object' at x:'xPos' y:'yPos'  -  can the given object create at the given parameter? | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
+		printLine("cast 'magic'  -  cast the given magic | 'magic' types: nazgul,icewind,poisonfog");
+		printLine("loadCommands 'filepath'  -  load the command from a file | 'filepath' is a full file path");
+		printLine("getMapinfo  -  list informations about the map");
+		printLine("getEnemyinfo  -  list informations about the enemies");
+		printLine("build 'object' at x:'xPos' y:'yPos'  -  build the given object at the given parameter | 'object' types: roadgrid,groundgrid; 'xPos' and 'yPos' are integers");
+		printLine("set 'currentId' 'direction' 'targetId'  -  set the neighbour of the 'currentId' grid to the 'targetId' grid | 'currentId' is a grid id; 'direction' types: north,east,south,west; 'targetId' is a grid id");
+		printLine("handleMana 'number'  -  gives back, or set the user's mana amount | 'number' is an integer (optional)");
+		printLine("startFileWrite 'filePath'  -  writes the feedbacks to the given file instead of the console | 'filePath' is a full file path");
+		printLine("restart  -  creates a clear gamespace");
+		printLine("help  -  show helps for commands");
 	}
 	
-	private void animate(){
+	private void animate() throws IOException{
 		int tick;
 		try{
 			tick = Integer.parseInt(stringArray[1]);
 			frame.getScene().start(tick);
-			System.out.println("Animated "+tick+" time segment(s)");
+			printLine("Animated "+tick+" time segment(s)");
 		}
 		catch(Exception e){
-			System.out.println("Wrong argument, enter a number!");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong argument, enter a number!");
 		}
 	}
 	
-	private void create(){
+	private void create() throws IOException{
 		String parameter;
 		try{
 			parameter = stringArray[1];
@@ -597,15 +616,16 @@ public class Prototype {
 				createRune();
 			}
 			else{
-				System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+				printLine("Wrong parameter, try: enemy, tower, trap, rune");
 			}
 		}
 		catch(Exception e){
-			System.out.println("Wrong parameter, try: enemy, tower, trap, rune");
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Wrong parameter, try: enemy, tower, trap, rune");
 		}
 	}
 	
-	private void createTrap(){
+	private void createTrap() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -617,28 +637,29 @@ public class Prototype {
 						if(((RoadGrid) targetGrid).getTrap() == null){
 							DecreaseDamageTrap trap = new DecreaseDamageTrap(xPos,yPos);
 							((RoadGrid) targetGrid).setTrap(trap);
-							System.out.println("Trap created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Trap created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("There is already a trap on the given grid");
+							printLine("There is already a trap on the given grid");
 						}
 					}
 					else if(targetGrid instanceof RoadGrid){
-						System.out.println("Can't create Trap on GroundGrid");		
+						printLine("Can't create Trap on GroundGrid");		
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void createRune(){
+	private void createRune() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -650,35 +671,36 @@ public class Prototype {
 						if(((RoadGrid) targetGrid).getTrap() != null){
 							WeakenTrapRune rune = new WeakenTrapRune(xPos,yPos);
 							rune.castOn(targetGrid);
-							System.out.println("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("There is no Trap on this RoadGrid");
+							printLine("There is no Trap on this RoadGrid");
 						}
 					}
 					else if(targetGrid instanceof GroundGrid){
 						if(((GroundGrid) targetGrid).getTower() != null){
 							DamageBoosterTowerRune rune = new DamageBoosterTowerRune(xPos,yPos);
 							rune.castOn(targetGrid);
-							System.out.println("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Rune created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("There is no Tower on this GroundGrid");
+							printLine("There is no Tower on this GroundGrid");
 						}
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void createTower(){
+	private void createTower() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -691,28 +713,29 @@ public class Prototype {
 							BasicTower tower = new BasicTower(xPos, yPos);
 							tower.setMaxCooldown(GameConstants.BASIC_TOWER_MAXCOOLDOWN);
 							frame.getScene().place(tower,targetGrid);
-							System.out.println("Tower created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+							printLine("Tower created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 						}
 						else{
-							System.out.println("There is already a tower on the given grid");
+							printLine("There is already a tower on the given grid");
 						}
 					}
 					else if(targetGrid instanceof RoadGrid){
-						System.out.println("Can't create tower on RoadGrid");		
+						printLine("Can't create tower on RoadGrid");		
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
 	
-	private void createEnemy(){
+	private void createEnemy() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
 			try{
@@ -721,23 +744,24 @@ public class Prototype {
 				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
 				if(targetGrid != null){
 					if(targetGrid instanceof GroundGrid){
-						System.out.println("Can't create enemy on GroundGrid");
+						printLine("Can't create enemy on GroundGrid");
 					}
 					else if(targetGrid instanceof RoadGrid){
 						List<Controlable> enemies = frame.getScene().getEnemies();
 						Human enemy = new Human(xPos,yPos);
 						enemies.add(enemy);
 						((RoadGrid)targetGrid).notifyAllWith(enemy);
-						System.out.println("Enemy created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						printLine("Enemy created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
 					}
 				}
 				else{
-					System.out.println("No grid exist on the given coordinates");
+					printLine("No grid exist on the given coordinates");
 				}
 				
 			}
 			catch(Exception e){
-				System.out.println("Wrong position parameter try: x:number y:number");
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
 			}
 		}
 	}
@@ -747,18 +771,19 @@ public class Prototype {
 		return Integer.parseInt(splittedText[1]);
 	}
 	
-	private boolean checkConjunction(int paramNumber, String conj){
+	private boolean checkConjunction(int paramNumber, String conj) throws IOException{
 		try{
 			if(stringArray[paramNumber].equals(conj)){
 				return true;
 			}
 			else {
-				System.out.println("Wrong "+paramNumber+". parameter, try: "+conj);
+				printLine("Wrong "+paramNumber+". parameter, try: "+conj);
 				return false;
 			}
 		}
 		catch(Exception e){
-			System.out.println("Missing "+paramNumber+". parameter, try: "+conj);
+			if(e instanceof IOException) throw (IOException)e;
+			printLine("Missing "+paramNumber+". parameter, try: "+conj);
 		}
 		return false;
 	}
