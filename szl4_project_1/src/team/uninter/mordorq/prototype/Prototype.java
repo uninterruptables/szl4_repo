@@ -46,7 +46,7 @@ public class Prototype {
 				stringArray = command.split(" ");
 				parseCommand();
 			}catch(Exception ex){
-				System.out.println("exception in main thread: "+ex.getClass()+": "+ex.getMessage());
+				System.out.println("Invalid command, try 'help' for more information");
 			}
 		}
 		
@@ -122,12 +122,12 @@ public class Prototype {
 				canCreateRune();
 			}
 			else{
-				printLine("Wrong parameter, try: enemy, tower, trap, rune");
+				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
 			}
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
-			printLine("Wrong parameter, try: enemy, tower, trap, rune");
+			printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
 		}
 	}
 	
@@ -333,7 +333,7 @@ public class Prototype {
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
-			printLine("Wrong parameter, try: filepath");
+			printLine("Wrong parameter, try: a valid filepath");
 		}
 	}
 	
@@ -349,7 +349,7 @@ public class Prototype {
 			}
 			catch(Exception e){
 				if(e instanceof IOException) throw (IOException)e;
-				printLine("Wrong parameter, try: number");
+				printLine("Wrong parameter, try: a number");
 			}
 		}
 		catch(Exception e){
@@ -380,13 +380,13 @@ public class Prototype {
 				printLine("PoisonFogMagic casted");
 			}
 			else{
-				printLine("Wrong parameter, try: nazgul, icewind, poisonfog");
+				printLine("Wrong parameter, try: 'nazgul', 'icewind', 'poisonfog'");
 			}
 			
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
-			printLine("Wrong parameter, try: nazgul, icewind, poisonfog");
+			printLine("Wrong parameter, try: 'nazgul', 'icewind', 'poisonfog'");
 		}
 	}
 	
@@ -414,7 +414,7 @@ public class Prototype {
 				printLine("Set gridId:"+currentId+" "+direction+" neighbour to gridId:"+targetId+" is done");
 			}
 			else{
-				printLine("Wrong direction parameter, try: north, east, south, west");
+				printLine("Wrong direction parameter, try: 'north', 'east', 'south', 'west'");
 			}
 		}
 		catch(Exception e){
@@ -485,12 +485,12 @@ public class Prototype {
 				buildGround();
 			}
 			else{
-				printLine("Wrong parameter, try: roadgrid, groundgrid");
+				printLine("Wrong parameter, try: 'roadgrid', 'groundgrid'");
 			}
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
-			printLine("Wrong parameter, try: roadgrid, groundgrid");
+			printLine("Wrong parameter, try: 'roadgrid', 'groundgrid'");
 		}
 	}
 	
@@ -616,12 +616,12 @@ public class Prototype {
 				createRune();
 			}
 			else{
-				printLine("Wrong parameter, try: enemy, tower, trap, rune");
+				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
 			}
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
-			printLine("Wrong parameter, try: enemy, tower, trap, rune");
+			printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
 		}
 	}
 	
