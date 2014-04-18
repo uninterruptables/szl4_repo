@@ -265,7 +265,7 @@ public class Prototype {
 	}
 	
 	protected void printLine(String message) throws IOException {
-		if(writer != null || writer.isOpen()) writer.write(message);
+		if(writer != null && writer.isOpen()) writer.write(message);
 		else System.out.println(message);
 	}
 	

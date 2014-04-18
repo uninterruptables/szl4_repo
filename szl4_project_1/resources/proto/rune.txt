@@ -1,0 +1,7 @@
+Write into file is started.
+Incorrect Command!
+Incorrect Command!
+Wrong parameter, try: enemy, tower, trap, rune
+Wrong parameter, try: enemy, tower, trap, rune
+Wrong parameter, try: enemy, tower, trap, rune
+Incorrect Command!
