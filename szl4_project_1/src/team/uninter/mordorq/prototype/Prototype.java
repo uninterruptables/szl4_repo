@@ -43,8 +43,7 @@ public class Prototype {
 		String command;
 		while(!(command = consoleIn.readLine()).trim().equals("exit")){
 			try{	
-				stringArray = command.split(" ");
-				parseCommand();
+				parseCommand(command.split(" "));
 			}catch(Exception ex){
 				System.out.println("Invalid command, try 'help' for more information");
 			}
@@ -52,7 +51,8 @@ public class Prototype {
 		
 	}
 	
-	private void parseCommand() throws Exception {
+	public void parseCommand(String[] stringArray) throws Exception {
+		this.stringArray = stringArray;
 		if(stringArray[0].equals("endFileWrite")){
 			endFileWrite();
 		}
@@ -279,7 +279,7 @@ public class Prototype {
 	private void startFileWrite(String filePath) throws IOException {
 		if(writer == null || !writer.isOpen()){
 			writer = new LineToFileWriter(filePath);
-			printLine("Write into file is started.");
+			printLine("Write into file started");
 		}
 		else throw new IOException("Writing to file is already in action! End the current session of writing.");
 	}
@@ -293,7 +293,7 @@ public class Prototype {
 	private void endFileWrite() throws IOException {
 		if(writer != null && writer.isOpen()){
 			writer.close();
-			printLine("Write into file is ended.");
+			printLine("Write into file ended");
 		}
 		else throw new IOException("No session of writing has been started yet! Start a writing session.");
 	}
@@ -321,8 +321,7 @@ public class Prototype {
 			fis = new FileInputStream(filePath);
 			br = new BufferedReader(new InputStreamReader(fis));
 			while ((line = br.readLine()) != null) {
-				stringArray = line.split(" ");
-				parseCommand();
+				parseCommand(line.split(" "));
 			}
 			
 			printLine("Loaded "+fileName);

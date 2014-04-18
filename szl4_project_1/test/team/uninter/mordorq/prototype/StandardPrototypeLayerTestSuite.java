@@ -14,13 +14,18 @@ import org.junit.*;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	LineToFileTestSuite.class
+	LineToFileTestSuite.class,
+	PrototypeCommandTest.class
 })
 @SuppressWarnings("all")
 public class StandardPrototypeLayerTestSuite {
 
+	public static final String PROJECT_HOME = 
+					"/media/CloudShell/mymedia/repositories/git/szl4_repo/szl4_project_1";
+	
 	@BeforeClass
 	public static void configureLoggers(){
+		System.setProperty("project_home", PROJECT_HOME);
 		BasicConfigurator.configure();
 	}
 }
