@@ -1,11 +1,11 @@
+startFileWrite resources/test/protocomm/outs/test4_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-
-
-create BasicTower at x:3 y:2
-create Barricade at x:4 y:2
+create tower at x:3 y:2
+create trap at x:4 y:2
 getMapinfo prerunemap.txt
-canCreate DamageBoosterTowerRune at x:3 y:2
-create DamageBoosterTowerRune at x:3 y:2
-canCreate WeakenTrapRune at x:4 y:2
-create WeakenTrapRune at x:4 y:2
+canCreate rune at x:3 y:2
+create rune at x:3 y:2
+canCreate rune at x:4 y:2
+create rune at x:4 y:2
 getMapinfo postrunemap.txt
+endFileWrite
