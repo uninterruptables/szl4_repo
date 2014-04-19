@@ -1,8 +1,11 @@
+startFileWrite resources/test/protocomm/outs/test3_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 getMapinfo   resources/test/protocomm/ins/premap.txt
+create enemy at x:1 y:1
 getEnemyinfo resources/test/protocomm/ins/preenemy.txt
 cast nazgul
 cast icewind
 cast poisonfog
 getMapinfo   resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+endFileWrite
