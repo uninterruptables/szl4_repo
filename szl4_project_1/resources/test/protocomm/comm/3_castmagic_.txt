@@ -1,0 +1,8 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+getMapinfo   resources/test/protocomm/ins/premap.txt
+getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+cast nazgul
+cast icewind
+cast poisonfog
+getMapinfo   resources/test/protocomm/ins/postmap.txt
+getEnemyinfo resources/test/protocomm/ins/postenemy.txt

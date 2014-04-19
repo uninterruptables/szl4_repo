@@ -1,0 +1,6 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+create Human at x:1 y:1
+getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+create DecreaseDamageTrap at x:2 y:2
+animate 4
+getEnemyinfo resources/test/protocomm/ins/postenemy.txt

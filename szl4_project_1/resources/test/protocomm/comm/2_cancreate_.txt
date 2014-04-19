@@ -1,0 +1,7 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+canCreate BasicTower x: x1 y:y1
+canCreate BasicTower x:x12 y:12
+canCreate Barricade at x:x2 y:y2
+canCreate Barricade at x:x21 y:y21
+canCreate DecreaseDamageTrap at x:x3 y:y3
+canCreate DecreaseDamageTrap at x:x31 y:y31

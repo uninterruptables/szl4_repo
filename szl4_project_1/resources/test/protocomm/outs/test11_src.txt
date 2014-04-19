@@ -17,8 +17,7 @@ Wrong paramteres list try: number at x:number y:number
 Wrong paramteres list try: number at x:number y:number
 Loaded 
 Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
+No existing grid
+Wrong parameter, try: 'nazgul', 'icewind', 'poisonfog'
+Animated 4 time segment(s)
+No existing grid

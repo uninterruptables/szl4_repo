@@ -25,7 +25,6 @@ public class StandardPrototypeLayerTestSuite {
 	
 	@BeforeClass
 	public static void configureLoggers(){
-		System.setProperty("project_home", PROJECT_HOME);
 		BasicConfigurator.configure();
 	}
 }

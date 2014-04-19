@@ -1,0 +1,11 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+create BasicTower at x:x1 y:y1
+create Human at x:x2 y:y2
+getMapinfo   resources/test/protocomm/ins/premap.txt
+getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+toggleRandomness
+animate 2
+toggleRandomness
+animate 1
+getMapinfo   resources/test/protocomm/ins/postmap.txt
+getEnemyinfo resources/test/protocomm/ins/postenemy.txt

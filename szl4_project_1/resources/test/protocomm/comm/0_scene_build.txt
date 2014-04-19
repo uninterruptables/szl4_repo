@@ -1,0 +1,2 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+getMapinfo

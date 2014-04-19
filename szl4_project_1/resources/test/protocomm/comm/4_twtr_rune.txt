@@ -1,0 +1,8 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+
+getMapinfo prerunemap.txt
+canCreate DamageBoosterTowerRune at x:x1 y:y1
+create DamageBoosterTowerRune at x:x1 y:y1
+canCreate WeakenTrapRune at x:x2 y:y2
+create WeakenTrapRune at x:x2 y:y2
+getMapinfo postrunemap.txt

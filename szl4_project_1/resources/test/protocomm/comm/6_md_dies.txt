@@ -1,0 +1,6 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+getMapinfo   resources/test/protocomm/ins/premap.txt
+create Human at x:x1 y:y1
+create mountainofdoom at x:2 y:2
+animate 2
+getMapinfo   resources/test/protocomm/ins/postmap.txt

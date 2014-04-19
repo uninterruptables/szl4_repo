@@ -28,6 +28,7 @@ import team.uninter.mordorq.gamespace.WeakenTrapRune;
 import team.uninter.mordorq.utils.GameConstants;
 import team.uninter.mordorq.utils.GameUtil;
 
+@SuppressWarnings("all")
 public class Prototype {
 
 	private LineToFileWriter writer;
@@ -40,19 +41,27 @@ public class Prototype {
 	}
 	
 	public void run() throws IOException{
+		promptUp();
 		String command;
 		while(!(command = consoleIn.readLine()).trim().equals("exit")){
 			try{	
 				parseCommand(command.split(" "));
 			}catch(Exception ex){
 				System.out.println("Invalid command, try 'help' for more information");
+			}finally{
+				promptUp();
 			}
 		}
 		
 	}
 	
+	protected void promptUp(){
+		System.out.print(">> ");
+	}
+	
 	public void parseCommand(String[] stringArray) throws Exception {
 		this.stringArray = stringArray;
+		if(stringArray[0].trim().isEmpty()) return;
 		if(stringArray[0].equals("endFileWrite")){
 			endFileWrite();
 		}

@@ -1,0 +1,6 @@
+loadCommands resources/test/protocomm/ins/basiscene.txt
+create Human at x:1 y:1
+togglerandomness
+getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+animate 2
+getEnemyinfo resources/test/protocomm/ins/postenemy.txt
