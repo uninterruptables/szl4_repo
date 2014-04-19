@@ -1,7 +1,7 @@
+startFileWrite resources/test/protocomm/outs/test2_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-canCreate BasicTower x: 2 y:2
-canCreate BasicTower x:4 y:2
-canCreate Barricade at x:2 y:4
-canCreate Barricade at x:4 y:3
-canCreate DecreaseDamageTrap at x:2 y:3
-canCreate DecreaseDamageTrap at x:4 y:2
+canCreate tower at x:2 y:2
+canCreate tower at x:1 y:1
+canCreate trap at x:2 y:3
+canCreate trap at x:4 y:2
+endFileWrite
