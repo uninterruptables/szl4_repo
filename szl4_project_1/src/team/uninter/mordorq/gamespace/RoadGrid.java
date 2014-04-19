@@ -185,7 +185,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public void setVulnerable(Vulnerable vulnerable){
 		this.vulnerable = vulnerable;
-		((EnemyTroop)this.vulnerable).setCurrentGrid(this);
+		if(vulnerable instanceof EnemyTroop){
+			((EnemyTroop)this.vulnerable).setCurrentGrid(this);
+		}
 		((GameObject)this.vulnerable).setX(this.x);
 		((GameObject)this.vulnerable).setY(this.y);
 	}

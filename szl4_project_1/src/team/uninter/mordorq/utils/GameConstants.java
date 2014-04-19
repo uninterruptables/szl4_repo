@@ -8,6 +8,8 @@ public class GameConstants {
 	
 	public static int GRID_SIZE = 16;
 	
+	public static int MOUNTAIN_UTILITY = 1000;
+	
 	public static int MISSILE_VELOCITY = 10;
 	public static int MAX_TOWER_RADIUS = 300;
 	public static int MIN_MISSILE_COOLDOWN = 30;

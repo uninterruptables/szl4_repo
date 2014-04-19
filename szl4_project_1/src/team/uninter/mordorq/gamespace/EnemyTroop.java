@@ -88,6 +88,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 				}
 				
 				cooldown = maxCooldown;
+				return;
 			}
 		}
 		for(StatusModifier sm : statusModifiers){
@@ -95,6 +96,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 			if(sm.getDuration() <= 0){
 				sm.reverseAffect(this);
 				statusModifiers.remove(sm);
+				return;
 			}
 		}
 	}

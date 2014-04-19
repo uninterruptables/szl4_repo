@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 
+import team.uninter.mordorq.gamespace.Barricade;
 import team.uninter.mordorq.gamespace.BasicTower;
 import team.uninter.mordorq.gamespace.Controlable;
 import team.uninter.mordorq.gamespace.DamageBoosterTowerRune;
@@ -447,8 +448,8 @@ public class Prototype {
 					if(g.getInjectionTarget() != null){
 						output += ((RoadGrid) g).getInjectionTarget().getClass().getSimpleName()+",";
 					}
-					if(((RoadGrid) g).getTarget() != null){
-						output += ((RoadGrid) g).getTarget().getClass().getSimpleName()+",";
+					if(((RoadGrid) g).getVulnerable() != null){
+						output += ((RoadGrid) g).getVulnerable().getClass().getSimpleName()+",";
 					}
 				}
 				output += "\n";
@@ -623,13 +624,50 @@ public class Prototype {
 			else if(parameter.equals("rune")){
 				createRune();
 			}
+			else if(parameter.equals("barricade")){
+				createBarricade();
+			}
 			else{
-				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
+				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune', 'barricade'");
 			}
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
 			printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
+		}
+	}
+	
+	private void createBarricade() throws IOException{
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getVulnerable() == null){
+							Barricade barricade = new Barricade(xPos,yPos);
+							((RoadGrid) targetGrid).setVulnerable(barricade);
+							printLine("Barricade created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							printLine("There is already a barricade/enemy on the given grid");
+						}
+					}
+					else if(targetGrid instanceof GroundGrid){
+						printLine("Can't create Barricade on GroundGrid");		
+					}
+				}
+				else{
+					printLine("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
+			}
 		}
 	}
 	
@@ -651,7 +689,7 @@ public class Prototype {
 							printLine("There is already a trap on the given grid");
 						}
 					}
-					else if(targetGrid instanceof RoadGrid){
+					else if(targetGrid instanceof GroundGrid){
 						printLine("Can't create Trap on GroundGrid");		
 					}
 				}
