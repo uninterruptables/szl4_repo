@@ -1,7 +1,7 @@
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create BasicTower at x:x1 y:y1
-create BasicTower at x:x12 y:y12
-create Barricade at x:x2 y:y2
-create Barricade at x:x21 y:y21
-create DecreaseDamageTrap at x:x3 y:y3
-create DecreaseDamageTrap at x:x31 y:y31
+create BasicTower at x:2 y:2
+create BasicTower at x:4 y:2
+create Barricade at x:4 y:2
+create Barricade at x:4 y:2
+create DecreaseDamageTrap at x:4 y:3
+create DecreaseDamageTrap at x:3 y:2
