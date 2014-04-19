@@ -85,7 +85,7 @@ RoadGrid at x:4 y:4 with id:15 Inside:
 ----------------------
 Enemy created at x:4 y:2 gridId: 13
 Mountain created at x:4 y:4 gridId: 15
-Animated 4 time segment(s)
+Animated 10 time segment(s)
 ------Map info------
 RoadGrid at x:1 y:1 with id:0 Inside: 
 GroundGrid at x:1 y:2 with id:1
