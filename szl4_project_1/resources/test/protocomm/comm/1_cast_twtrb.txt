@@ -1,7 +1,8 @@
+startFileWrite resources/test/protocomm/outs/test1_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create BasicTower at x:2 y:2
-create BasicTower at x:4 y:2
-create Barricade at x:4 y:2
-create Barricade at x:4 y:2
-create DecreaseDamageTrap at x:4 y:3
-create DecreaseDamageTrap at x:3 y:2
+create tower at x:2 y:2
+create tower at x:4 y:2
+create trap at x:4 y:3
+create trap at x:2 y:3
+getMapinfo
+endFileWrite
