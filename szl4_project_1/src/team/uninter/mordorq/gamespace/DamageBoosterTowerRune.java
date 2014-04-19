@@ -10,21 +10,21 @@ public class DamageBoosterTowerRune extends TowerRune{
 	
 	public DamageBoosterTowerRune() {
 		super();
-		System.out.println("DamageBoosterTowerRune() called");
-		System.out.println("DamageBoosterTowerRune() returned");
+//		System.out.println("DamageBoosterTowerRune() called");
+//		System.out.println("DamageBoosterTowerRune() returned");
 	}
 	
 	public DamageBoosterTowerRune(int x, int y) {
 		super(x, y);
-		System.out.println("DamageBoosterTowerRune(Int, Int) called");
-		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
+//		System.out.println("DamageBoosterTowerRune(Int, Int) called");
+//		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
 	}
 	
 	public void injectOn(Tower tower)
 	{
-		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
+//		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
 		tower.addAllDamage(GameConstants.DAMAGE_BOOST_TOWER_RUNE);
-		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
+//		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
 	}
 
 	

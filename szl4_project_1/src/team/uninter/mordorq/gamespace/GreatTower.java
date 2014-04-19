@@ -15,33 +15,33 @@ public class GreatTower extends Tower {
 	public GreatTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout
-		System.out.println("GreatTower.GreatTower(x,y) called");
+//		System.out.println("GreatTower.GreatTower(x,y) called");
 		roadGrids = new ArrayList<TargetPublisher>();
-		System.out.println("GreatTower.GreatTower(x,y) returned");
+//		System.out.println("GreatTower.GreatTower(x,y) returned");
 	}
 	
 	public GreatTower(){
 		super();
 		//TODO remove sysout
-		System.out.println("GreatTower.GreatTower() called");
+//		System.out.println("GreatTower.GreatTower() called");
 		roadGrids = new ArrayList<TargetPublisher>();
-		System.out.println("GreatTower.GreatTower() returned");
+//		System.out.println("GreatTower.GreatTower() returned");
 	}
 	public void notifyWith(EnemyTroop target){
 		//TODO remove sysout
-		System.out.println("GreatTower.notifyWith(EnemyTroop targer) called");
+//		System.out.println("GreatTower.notifyWith(EnemyTroop targer) called");
 		MissileState actualState = this.missile.getState();
 		if(actualState.equals(MissileState.WAITING)){
 			fire(target);
 		}
-		System.out.println("GreatTower.notifyWith(EnemyTroop targer) returned");
+//		System.out.println("GreatTower.notifyWith(EnemyTroop targer) returned");
 	}
 	
 	public GreatMissile createMissile(){	
 		//TODO remove sysout
-		System.out.println("GreatTower.createMissile() called");
+//		System.out.println("GreatTower.createMissile() called");
 		GreatMissile greatMissile = new GreatMissile(this.x,this.y);
-		System.out.println("GreatTower.createMissile() returned");
+//		System.out.println("GreatTower.createMissile() returned");
 		return greatMissile;
 	}
 	
@@ -51,13 +51,13 @@ public static class GreatMissile extends Missile {
 	public GreatMissile(int x, int y){
 		super( x, y);
 		//TODO remove sysout
-		System.out.println("GreatMissile.GreatMissile(x,y) called");
+//		System.out.println("GreatMissile.GreatMissile(x,y) called");
 		this.maxCooldown = GameConstants.GREAT_MAXCOOLDOWN;
 		racialDamages.put("dwarf", GameConstants.GREAT_MISSILE_DWARF_DAMAGE);
 		racialDamages.put("human", GameConstants.GREAT_MISSILE_HUMAN_DAMAGE);
 		racialDamages.put("elf", GameConstants.GREAT_MISSILE_ELF_DAMAGE);
 		racialDamages.put("hobbit", GameConstants.GREAT_MISSILE_HOBBIT_DAMAGE);
-		System.out.println("GreatMissile.GreatMissile(x,y) returned");
+//		System.out.println("GreatMissile.GreatMissile(x,y) returned");
 	}
 	
 }

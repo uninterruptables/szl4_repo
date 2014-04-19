@@ -16,20 +16,20 @@ public class Gimli extends Dwarf{
 	 private Gimli(int health, int damage, int reward){
 		  super();
 		  //TODO remove sysout
-		  System.out.println("Gimli.Gimli(health,damage) called");
+//		  System.out.println("Gimli.Gimli(health,damage) called");
 		  this.health = health;
 		  this.damage = damage;
 		  this.rewardMana = reward;
-		  System.out.println("Gimli.Gimli(health,damage) returned");
+//		  System.out.println("Gimli.Gimli(health,damage) returned");
 	  }
 
 	 public static Gimli getInstance(){
 		  //TODO remove sysout
-		  System.out.println("Gimli.getInstance() called");
+//		  System.out.println("Gimli.getInstance() called");
 		  if(instance == null){
 			  instance = new Gimli(GameConstants.GIMLI_HEALTH, GameConstants.GIMLI_DAMAGE, GameConstants.GIMLI_REWARD);
 		  }
-		  System.out.println("Gimli.getInstance() returned");
+//		  System.out.println("Gimli.getInstance() returned");
 		  return instance;
 	  }
 }

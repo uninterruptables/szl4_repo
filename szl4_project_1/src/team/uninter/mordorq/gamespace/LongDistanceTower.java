@@ -15,34 +15,34 @@ public class LongDistanceTower extends Tower {
 	public LongDistanceTower( int x,int y){
 		super (x, y);
 		//TODO remove sysout
-		System.out.println("LongDistanceTower.LongDistanceTower(x,y) called");
+//		System.out.println("LongDistanceTower.LongDistanceTower(x,y) called");
 		roadGrids = new ArrayList<TargetPublisher>();
-		System.out.println("LongDistanceTower.LongDistanceTower(x,y) returned");
+//		System.out.println("LongDistanceTower.LongDistanceTower(x,y) returned");
 	}
 	
 	public LongDistanceTower(){
 		super();
 		//TODO remove sysout
-		System.out.println("LongDistanceTower.LongDistanceTower() called");
+//		System.out.println("LongDistanceTower.LongDistanceTower() called");
 		roadGrids = new ArrayList<TargetPublisher>();
-		System.out.println("LongDistanceTower.LongDistanceTower() returned");
+//		System.out.println("LongDistanceTower.LongDistanceTower() returned");
 	}
 	
 	public void notifyWith(EnemyTroop target){
 		//TODO remove sysout
-		System.out.println("LongDistanceTower.notifyWith(EnemyTroop targer) called");
+//		System.out.println("LongDistanceTower.notifyWith(EnemyTroop targer) called");
 		MissileState actualState = this.missile.getState();
 		if(actualState.equals(MissileState.WAITING)){
 			fire(target);
 		}
-		System.out.println("LongDistanceTower.notifyWith(EnemyTroop targer) returned");
+//		System.out.println("LongDistanceTower.notifyWith(EnemyTroop targer) returned");
 	}
 	
 	public LongDistanceMissile createMissile(){	
 		//TODO remove sysout
-		System.out.println("LongDistanceTower.createMissile() called");
+//		System.out.println("LongDistanceTower.createMissile() called");
 		LongDistanceMissile longDistanceMissile = new LongDistanceMissile(this.x,this.y);
-		System.out.println("LongDistanceTower.createMissile() returned");
+//		System.out.println("LongDistanceTower.createMissile() returned");
 		return longDistanceMissile;
 	}
 	
@@ -52,13 +52,13 @@ public static class LongDistanceMissile extends Missile {
 	public LongDistanceMissile(int x, int y){
 		super( x, y);
 		//TODO remove sysout
-		System.out.println("LongDistanceMissile.LongDistanceMissile(x,y) called");
+//		System.out.println("LongDistanceMissile.LongDistanceMissile(x,y) called");
 		this.maxCooldown = GameConstants.LONG_DISTANCE_MAXCOOLDOWN;
 		racialDamages.put("dwarf", GameConstants.LONG_DISTANCE_MISSILE_DWARF_DAMAGE);
 		racialDamages.put("human", GameConstants.LONG_DISTANCE_MISSILE_HUMAN_DAMAGE);
 		racialDamages.put("elf", GameConstants.LONG_DISTANCE_MISSILE_ELF_DAMAGE);
 		racialDamages.put("hobbit", GameConstants.LONG_DISTANCE_MISSILE_HOBBIT_DAMAGE);
-		System.out.println("LongDistanceMissile.LongDistanceMissile(x,y) returned");
+//		System.out.println("LongDistanceMissile.LongDistanceMissile(x,y) returned");
 	}
 	
 }

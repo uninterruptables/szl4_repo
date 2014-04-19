@@ -8,16 +8,16 @@ public class DecreaseDamageTrap extends Trap{
 	//WeakenStatus statusmodifier
 	public DecreaseDamageTrap() {
 		super();
-		System.out.println("DecreaseDamageTrap() called");
+//		System.out.println("DecreaseDamageTrap() called");
 		WeakenStatus statMod = new WeakenStatus(GameConstants.DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT, GameConstants.WEAKEN_STATUS_DURATION);
 		addEffect(statMod);
-		System.out.println("DecreaseDamageTrap() returned");
+//		System.out.println("DecreaseDamageTrap() returned");
 	}
 	public DecreaseDamageTrap(int x, int y) {
 		super(x, y);
-		System.out.println("DecreaseDamageTrap(Int, Int) called");
+//		System.out.println("DecreaseDamageTrap(Int, Int) called");
 		WeakenStatus statMod = new WeakenStatus(GameConstants.DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT, GameConstants.WEAKEN_STATUS_DURATION);
 		addEffect(statMod);
-		System.out.println("DecreaseDamageTrap(Int, Int) returned");
+//		System.out.println("DecreaseDamageTrap(Int, Int) returned");
 	}
 }

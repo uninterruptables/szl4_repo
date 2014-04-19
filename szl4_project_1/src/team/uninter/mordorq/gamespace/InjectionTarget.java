@@ -11,15 +11,15 @@ abstract public class InjectionTarget extends Casted{
 	protected InjectionTarget() {
 		super();
 		// TODO remove sysout
-		System.out.println("InjectionTarget.InjectionTarget() called");
-		System.out.println("InjectionTarget.InjectionTarget() returned");
+//		System.out.println("InjectionTarget.InjectionTarget() called");
+//		System.out.println("InjectionTarget.InjectionTarget() returned");
 	}
 	
 	protected InjectionTarget(int x, int y) {
 		super(x, y);
 		// TODO remove sysout
-		System.out.println("InjectionTarget.InjectionTarget(x,y) called");
-		System.out.println("InjectionTarget.InjectionTarget(x,y) returned");
+//		System.out.println("InjectionTarget.InjectionTarget(x,y) called");
+//		System.out.println("InjectionTarget.InjectionTarget(x,y) returned");
 	}
 	//method used to determine, what happens during an injection.
 	abstract public void inject(Injectable injectable);
@@ -28,8 +28,8 @@ abstract public class InjectionTarget extends Casted{
 	
 	public int getRunesRemained(){
 		// TODO remove sysout
-		System.out.println("InjectionTarget getRunesRemained() called");
-		System.out.println("InjectionTarget getRunesRemained() returned");
+//		System.out.println("InjectionTarget getRunesRemained() called");
+//		System.out.println("InjectionTarget getRunesRemained() returned");
 		return remainingRunePlace;
 	}
 

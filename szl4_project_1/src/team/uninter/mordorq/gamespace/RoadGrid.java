@@ -82,12 +82,12 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	@Override
 	public void notifyAllWith(EnemyTroop troop) {
 		// TODO remove sysout
-		System.out.println("RoadGrid notifyAllWith() called");
+//		System.out.println("RoadGrid notifyAllWith() called");
 		setVulnerable(troop);
 		for(TargetSubscriber t : subscribers){
 			t.notifyWith(troop);
 		}
-		System.out.println("RoadGrid notifyAllWith() returned");
+//		System.out.println("RoadGrid notifyAllWith() returned");
 	}
 	
 	/**
@@ -96,8 +96,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	@Override
 	public boolean contains(EnemyTroop troop) {
 		// TODO remove sysout
-		System.out.println("RoadGrid notifyAllWith() called");
-		System.out.println("RoadGrid notifyAllWith() returned");
+//		System.out.println("RoadGrid notifyAllWith() called");
+//		System.out.println("RoadGrid notifyAllWith() returned");
 		return subscribers.contains(troop);
 	}
 	
@@ -106,9 +106,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public void remove(){
 		//TODO remove sysout
-		System.out.println("RoadGrid remove() called");
+//		System.out.println("RoadGrid remove() called");
 		vulnerable = null;
-		System.out.println("RoadGrid remove() returned");
+//		System.out.println("RoadGrid remove() returned");
 	}
 	
 	/**
@@ -116,8 +116,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public boolean isAvailableFor(Trap trap){
 		//TODO remove sysout
-		System.out.println("RoadGrid isAvailableFor(Trap trap) called");
-		System.out.println("RoadGrid isAvailableFor(Trap trap) returned true");
+//		System.out.println("RoadGrid isAvailableFor(Trap trap) called");
+//		System.out.println("RoadGrid isAvailableFor(Trap trap) returned true");
 		return true;
 	}
 	
@@ -126,8 +126,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public boolean isAvailableFor(Tower tower){
 		//TODO remove sysout
-		System.out.println("RoadGrid isAvailableFor(Tower tower) called");
-		System.out.println("RoadGrid isAvailableFor(Tower tower) returned false");
+//		System.out.println("RoadGrid isAvailableFor(Tower tower) called");
+//		System.out.println("RoadGrid isAvailableFor(Tower tower) returned false");
 		return false;
 	}
 	
@@ -136,9 +136,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public void repaint(){
 		//TODO remove sysout
-		System.out.println("RoadGrid repaint() called");
+//		System.out.println("RoadGrid repaint() called");
 		//TODO not implemented yet
-		System.out.println("RoadGrid repaint() returned");
+//		System.out.println("RoadGrid repaint() returned");
 	}
 	
 	/**
@@ -147,12 +147,12 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	@Override
 	public EnemyTroop getTarget() {
 		// TODO remove sysout
-		System.out.println("RoadGrid getTarget() called");
+//		System.out.println("RoadGrid getTarget() called");
 		EnemyTroop targetEnemy = null;
 		if(vulnerable instanceof EnemyTroop){
 			targetEnemy = (EnemyTroop)vulnerable;
 		}
-		System.out.println("RoadGrid getTarget() returned");
+//		System.out.println("RoadGrid getTarget() returned");
 		return targetEnemy;
 	}
 	
@@ -168,8 +168,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher{
 	 */
 	public Vulnerable getVulnerable(){
 		//TODO remove sysout
-		System.out.println("RoadGrid getVulnerable() called");
-		System.out.println("RoadGrid getVulnerable() returned");
+//		System.out.println("RoadGrid getVulnerable() called");
+//		System.out.println("RoadGrid getVulnerable() returned");
 		return vulnerable;
 	}
 	

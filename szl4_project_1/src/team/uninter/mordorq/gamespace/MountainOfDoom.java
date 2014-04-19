@@ -28,9 +28,9 @@ public class MountainOfDoom extends DamageTaker{
 	@Override
 	public void interactWith(EnemyTroop troop)
 	{// class tell to the player, the game is end and lost. Game will be stopped.
-		System.out.println("MountainOfDoom.interactWith(EnemyTroop) called");
+//		System.out.println("MountainOfDoom.interactWith(EnemyTroop) called");
 		owner.endGame(false);
-		System.out.println("MountainOfDoom.interactWith(EnemyTroop) returned");
+//		System.out.println("MountainOfDoom.interactWith(EnemyTroop) returned");
 	}
 
 	@Override

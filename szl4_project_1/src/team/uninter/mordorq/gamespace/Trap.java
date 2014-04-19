@@ -12,23 +12,23 @@ abstract public class Trap extends InjectionTarget{
 	StatusModifier effects;
 	protected Trap() {
 		super();
-		System.out.println("Trap() called");
+//		System.out.println("Trap() called");
 //		effects=new ArrayList<>();
-		System.out.println("Trap() returned");
+//		System.out.println("Trap() returned");
 	}
 	protected Trap(int x, int y) {
 		super(x, y);
-		System.out.println("Trap(Int, Int) called");
+//		System.out.println("Trap(Int, Int) called");
 //		effects=new ArrayList<>();
-		System.out.println("Trap(Int, Int) returned");
+//		System.out.println("Trap(Int, Int) returned");
 	}
 
 	//method used to add additional effects to the trap (mainly via runes)
 	public void addEffect(StatusModifier newStatus) {
-		System.out.println("Trap.addEffect(StatusModifier) called");
+//		System.out.println("Trap.addEffect(StatusModifier) called");
 //		effects.add(newStatus);
 		this.effects = newStatus;
-		System.out.println("Trap.addEffect(StatusModifier) returned");
+//		System.out.println("Trap.addEffect(StatusModifier) returned");
 	}
 	//method called, when it affects an enemy
 	public void affect(EnemyTroop enemyTroop)
@@ -59,10 +59,10 @@ abstract public class Trap extends InjectionTarget{
 	//injects an injectable
 	public final void inject(Injectable inject)
 	{
-		System.out.println("Trap.Inject(Injectable) returned");
+//		System.out.println("Trap.Inject(Injectable) returned");
 		inject.injectOn(this);
 		this.remainingRunePlace--;
-		System.out.println("Trap.Inject(Injectable) returned");
+//		System.out.println("Trap.Inject(Injectable) returned");
 	}
 	
 	public StatusModifier getEffect(){

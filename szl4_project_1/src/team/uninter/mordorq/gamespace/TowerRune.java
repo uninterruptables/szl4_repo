@@ -11,14 +11,14 @@ public abstract class TowerRune extends Rune{
 	//every descendant of this class.
 	protected TowerRune() {
 		super();
-		System.out.println("TowerRune() called");
-		System.out.println("TowerRune() returned");
+//		System.out.println("TowerRune() called");
+//		System.out.println("TowerRune() returned");
 	}
 	
 	protected TowerRune(int x, int y) {
 		super(x, y);
-		System.out.println("TowerRune(Int, Int) called");
-		System.out.println("TowerRune(Int, Int) returned");
+//		System.out.println("TowerRune(Int, Int) called");
+//		System.out.println("TowerRune(Int, Int) returned");
 	}
 	
 	final public boolean canInjectOn(Tower tower) {

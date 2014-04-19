@@ -9,29 +9,29 @@ abstract public class DamageTaker extends GameObject implements Vulnerable{
 	
 	protected DamageTaker() {
 		// TODO remove sysout
-		System.out.println("DamageTaker.DamageTaker() called");
-		System.out.println("DamageTaker.DamageTaker() returned");
+//		System.out.println("DamageTaker.DamageTaker() called");
+//		System.out.println("DamageTaker.DamageTaker() returned");
 	}
 	
 	public DamageTaker(int x, int y) {
 		super(x, y);
 		// TODO remove sysout
-		System.out.println("DamageTaker.DamageTaker(x,y) called");
-		System.out.println("DamageTaker.DamageTaker(x,y) returned");
+//		System.out.println("DamageTaker.DamageTaker(x,y) called");
+//		System.out.println("DamageTaker.DamageTaker(x,y) returned");
 	}
 	
 	public final int getHealth(){
 		// TODO remove sysout
-		System.out.println("DamageTaker getHealth() called");
-		System.out.println("DamageTaker getHealth() returned");
+//		System.out.println("DamageTaker getHealth() called");
+//		System.out.println("DamageTaker getHealth() returned");
 		return health;
 	}
 	
 	public final void setHealth(int health){
 		// TODO remove sysout
-		System.out.println("DamageTaker setHealth() called");
+//		System.out.println("DamageTaker setHealth() called");
 		this.health = health;
-		System.out.println("DamageTaker setHealth() returned");
+//		System.out.println("DamageTaker setHealth() returned");
 	}
 
 }

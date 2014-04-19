@@ -6,21 +6,21 @@ public class RadiusIncTowerRune extends TowerRune{
 	int extraRadius;
 	public RadiusIncTowerRune() {
 		super();
-		System.out.println("RadiusIncRune() called");
-		System.out.println("RadiusIncRune() returned");
+//		System.out.println("RadiusIncRune() called");
+//		System.out.println("RadiusIncRune() returned");
 	}
 	
 	public RadiusIncTowerRune(int x, int y) {
 		super(x, y);
-		System.out.println("RadiusIncRune(Int, Int) called");
-		System.out.println("RadiusIncRune(Int, Int) returned");
+//		System.out.println("RadiusIncRune(Int, Int) called");
+//		System.out.println("RadiusIncRune(Int, Int) returned");
 	}
 
 	public void injectOn(Tower tower)
 	{
-		System.out.println("RadiusIncRune.injectOn(Tower) called");
+//		System.out.println("RadiusIncRune.injectOn(Tower) called");
 		tower.setRadius(tower.getRadius()+10);
-		System.out.println("RadiusIncRune.injectOn(Tower) returned");
+//		System.out.println("RadiusIncRune.injectOn(Tower) returned");
 	}
 	
 }

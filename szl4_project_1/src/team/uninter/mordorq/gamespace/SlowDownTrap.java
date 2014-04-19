@@ -7,16 +7,16 @@ public class SlowDownTrap extends Trap {
 	
 	public SlowDownTrap() {
 		super();
-		System.out.println("SlowDownTrap() called");
+//		System.out.println("SlowDownTrap() called");
 		SlowStatus statMod=new SlowStatus();
 		addEffect(statMod);
-		System.out.println("SlowDownTrap() returned");
+//		System.out.println("SlowDownTrap() returned");
 	}
 	public SlowDownTrap(int x, int y) {
 		super(x, y);
-		System.out.println("SlowDownTrap(Int, Int) called");
+//		System.out.println("SlowDownTrap(Int, Int) called");
 		SlowStatus statMod=new SlowStatus();
 		addEffect(statMod);
-		System.out.println("SlowDownTrap(Int, Int) returned");
+//		System.out.println("SlowDownTrap(Int, Int) returned");
 	}
 }

@@ -17,15 +17,15 @@ public class Barricade extends Casted implements Vulnerable {
 	public Barricade() {
 		super();
 		health = GameConstants.BARRICADE_HEALTH;
-		System.out.println("Barricade() called");
-		System.out.println("Barricade() returned");
+//		System.out.println("Barricade() called");
+//		System.out.println("Barricade() returned");
 	}
 	
 	public Barricade(int x, int y) {
 		super(x, y);
 		health = GameConstants.BARRICADE_HEALTH;
-		System.out.println("Barricade(Int, Int) called");
-		System.out.println("Barricade(Int, Int) returned");
+//		System.out.println("Barricade(Int, Int) called");
+//		System.out.println("Barricade(Int, Int) returned");
 	}
 	@Override
 	public void interactWith(EnemyTroop troop)
@@ -70,22 +70,22 @@ public class Barricade extends Casted implements Vulnerable {
 	
 	@Override
 	public void castOn(TerrainGrid grid) {
-		System.out.println("Barricade.castOn(GameObject) called");
-		System.out.println("Barricade.castOn(GameObject) returned");
+//		System.out.println("Barricade.castOn(GameObject) called");
+//		System.out.println("Barricade.castOn(GameObject) returned");
 	}
 
 	@Override
 	public final boolean canCastOn(TerrainGrid grid)
 	{
-		System.out.println("Barricade.canCastOn(TerrainGrid) called");
+//		System.out.println("Barricade.canCastOn(TerrainGrid) called");
 		if(grid.isAvailableFor(this))
 		{
-			System.out.println("Barricade.canCastOn(TerrainGrid) returned");
+//			System.out.println("Barricade.canCastOn(TerrainGrid) returned");
 			return true;
 		}
 		else
 		{
-			System.out.println("Barricade.canCastOn(TerrainGrid) returned");
+//			System.out.println("Barricade.canCastOn(TerrainGrid) returned");
 			return false;
 		}
 		
