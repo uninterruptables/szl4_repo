@@ -4,5 +4,7 @@ create tower at x:2 y:2
 create tower at x:4 y:2
 create trap at x:4 y:3
 create trap at x:2 y:3
+create barricade at x:4 y:1
+create barricade at x:3 y:4
 getMapinfo
 endFileWrite
