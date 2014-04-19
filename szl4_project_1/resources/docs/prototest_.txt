@@ -1,0 +1,132 @@
+#                     PROTOTYPE TEST KORNYEZET DOKSI
+
+
+!!!!A Doksi team olvassa el a !!!NEKTEK FONTOS!!! reszt!!!!
+
+
+
+${user.dir}/test
+└── team
+    └── uninter
+        └── mordorq
+            └── prototype
+                ├── LineToFileTestSuite.java
+                ├── package-info.java
+                ├── PrototypeCommandTest.java
+                └── StandardPrototypeLayerTestSuite.java
+
+
+${user.dir}/resurces/test/protocomm
+├── comm
+│   ├── 0_scene_build.txt
+│   ├── 10_findpath_av.txt
+│   ├── 11_fog_.txt
+│   ├── 1_cast_twtrb.txt
+│   ├── 2_cancreate_.txt
+│   ├── 3_castmagic_.txt
+│   ├── 4_twtr_rune.txt
+│   ├── 5_troopsteps_.txt
+│   ├── 6_md_dies.txt
+│   ├── 7_enemy_tr.txt
+│   ├── 8_enemy_b.txt
+│   └── 9_findpath_.txt
+├── etals
+│   ├── test0_etal.txt
+│   ├── test10_etal.txt
+│   ├── test11_etal.txt
+│   ├── test1_etal.txt
+│   ├── test2_etal.txt
+│   ├── test3_etal.txt
+│   ├── test4_etal.txt
+│   ├── test5_etal.txt
+│   ├── test6_etal.txt
+│   ├── test7_etal.txt
+│   ├── test8_etal.txt
+│   └── test9_etal.txt
+├── ins
+│   ├── basiscene.txt
+│   ├── postenemy.txt
+│   ├── postmap.txt
+│   ├── preenemy.txt
+│   └── premap.txt
+├── outs
+│   ├── test0_src.txt
+│   ├── test10_src.txt
+│   ├── test11_src.txt
+│   ├── test1_src.txt
+│   ├── test2_src.txt
+│   ├── test3_src.txt
+│   ├── test4_src.txt
+│   ├── test5_src.txt
+│   ├── test6_src.txt
+│   ├── test7_src.txt
+│   ├── test8_src.txt
+│   └── test9_src.txt
+└── shc
+
+1.1.1. abra: a tesztkornyezet relevans strukturaja
+
+A tesztkornyezet alapveto osztalyai:
+                ├── PrototypeCommandTest.java
+                └── StandardPrototypeLayerTestSuite.java
+
+Ahol a StandardPrototypeLayerTestSuite.java batch jelleggel lefuttatja a meghelolt teszt osztalyokat.
+
+Maga a PrototypeCommandTest.java felelos a Proto teszteleseert. Tevekenysege soran felhasznalja a JUnit keretrendszer azon szolgaltatasat, hogy egyetlen osztaly logikajat tobb kulonbozo parameterrel futtassa, ahol a parametereink most harom file eleresi utja es egy szam.
+
+A PrototypeCommandTest.java EGY futasa:
+      *parameterul kapja a tesztparancsokat tartalmazo file utjat 
+       (relative a teszthez)
+      *megkapja a celfile-t, amibe beleir a proto,
+      *megkapja az etalon file-t, amivel osszehasonlit maga a teszt
+      *megkapja a tesz/futas sorszamat (loggolashoz kell)
+    
+    Ezutan -> IO beloves:
+      *peldanyositja a BufferedReader-eket
+    
+    Ezutan -> teszt:
+      *a Proto-t beallitja a arra, h a megadott file-ba irjon
+      *megtamadja a command file-bol soronkent kiolvasott parancsokkal
+      *leallitja a file-ba irast
+      *ujra elkezdi olvasni mind az eddigi celpont, mind az etalon file-t
+      *soronkent osszehasonlit
+      *ha elter -> teszt megbukott
+      *ennyi
+      (kozben mindenhol naplozza a lepeseket kulonbozo szinten..)
+      
+    Ezutan -> close():
+      *bezarja a Stream-eket
+
+
+!!!NEKTEK FONTOS!!!:
+  
+  /resurces/test/protocomm/comm: az egyes tesztesetekhez megnevezett
+                  parancsokat tartalmazo file-ok, innen veszi a tesztprogi
+  
+  /resurces/test/protocomm/etals: az etalon file-ok / teszteset
+  
+  /resurces/test/protocomm/ins: azon file-ok, amiket a comm-ban levo 
+                  file-ok dependency-ken felhasznalnak
+  
+  /resurces/test/protocomm/outs: ahova a teszt alatt a Proto ir es ahonnan
+                  a teszt ovas es osszehasonlit majd
+  
+  shc: tartalmazza a felepitendo palya terveit, eloszlasat, az altalam
+       leggyakrabban hasznalt parancsok listajat.
+  
+  
+  !TODO: A basiscene.txt olyan megirasa, hogy ertelmes palyat epitsen fel,
+         valamint a comm/-ban levo parancsokban az (x,y) -ra teveskor
+         ertelmes (x,y)-k beallitasa
+         
+        EZTUTAN az uj file-t beloadolni a proto-ba, h futtassa elotte
+          persze irjon file-ba, amely vmelyik testX_src.txt,
+         MAJD az ertelmes kimenetet bemasolni a neki megfelelo 
+           testX_etal.txt -be
+         MAJD lefuttatni a StandardPrototypeLayerTestSuite.java ugy, h
+            Run as > JUnit test
+         
+         AMENNYIBEN elszall a teszt, akkor vmit nem masoltatok at jol,
+          amennyiben a testX_src.txt butasagokat tartalmaz, akkor a neki
+          megfelelo, comm/ alatt levo file-ban lesz a hiba.
+         
