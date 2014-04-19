@@ -55,7 +55,7 @@ set 11 north 15
 set 12 south 8
 set 12 east 13
 set 13 west 12
-ser 13 south 9
+set 13 south 9
 set 13 east 14
 set 14 west 13
 set 14 south 10
