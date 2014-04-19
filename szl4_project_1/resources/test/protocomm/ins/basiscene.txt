@@ -1,16 +1,16 @@
-build roadgrid   1 0
-build groundgrid 0 1
-build groundgrid 0 2
-build groundgrid 0 3
-build roadgrid   1 4
-build groundgrid 0 5
-build groundgrid 0 6
-build groundgrid 0 7
-build roadgrid   2 8
-build groundgrid 0 9
-build groundgrid 0 10
-build groundgrid 0 11
-build roadgrid   2 12
-build roadgrid   3 13
-build roadgrid   3 14
-build roadgrid   4 15
+build roadgrid   1 0 at x:1 y:1 
+build groundgrid 0 1 at x:1 y:2 
+build groundgrid 0 2 at x:1 y:3 
+build groundgrid 0 3 at x:1 y:4 
+build roadgrid   1 4 at x:2 y:1 
+build groundgrid 0 5 at x:2 y:2 
+build groundgrid 0 6 at x:2 y:3 
+build groundgrid 0 7 at x:2 y:4 
+build roadgrid   2 8 at x:3 y:1 
+build groundgrid 0 9 at x:3 y:2 
+build groundgrid 0 10 at x:3 y:3 
+build groundgrid 0 11 at x:3 y:4
+build roadgrid   2 12 at x:4 y:1 
+build roadgrid   3 13 at x:4 y:2
+build roadgrid   3 14 at x:4 y:3 
+build roadgrid   4 15 at x:4 y:4
