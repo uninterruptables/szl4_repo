@@ -1,6 +1,6 @@
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create BasicTower at x:x1 y:y1
-create Human at x:x2 y:y2
+create BasicTower at x:3 y:2
+create Human at x:1 y:2
 getMapinfo   resources/test/protocomm/ins/premap.txt
 getEnemyinfo resources/test/protocomm/ins/preenemy.txt
 toggleRandomness
