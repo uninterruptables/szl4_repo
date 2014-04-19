@@ -582,7 +582,7 @@ public class Prototype {
 		printLine("---------------------------");
 		printLine("toggleRandomness  -  toggles the random functions");
 		printLine("animate 'number'  -  animates as much time tick as the given number is | 'number' is an integer");
-		printLine("create 'object' at x:'xPos' y:'yPos'  -  creates the given object at the given parameter | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
+		printLine("create 'object' at x:'xPos' y:'yPos'  -  creates the given object at the given parameter | 'object' types: enemy,tower,trap,rune,barricade,mountain; 'xPos' and 'yPos' are integers");
 		printLine("canCreate 'object' at x:'xPos' y:'yPos'  -  can the given object create at the given parameter? | 'object' types: enemy,tower,trap,rune; 'xPos' and 'yPos' are integers");
 		printLine("cast 'magic'  -  cast the given magic | 'magic' types: nazgul,icewind,poisonfog");
 		printLine("loadCommands 'filepath'  -  load the command from a file | 'filepath' is a full file path");
