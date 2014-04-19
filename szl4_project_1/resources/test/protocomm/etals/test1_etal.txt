@@ -68,9 +68,10 @@ Tower created at x:2 y:2 gridId: 5
 Can't create tower on RoadGrid
 Trap created at x:4 y:3 gridId: 14
 Can't create Trap on GroundGrid
-Barricade created at x:1 y:1 gridId: 0
+Barricade created at x:4 y:1 gridId: 12
+Can't create Barricade on GroundGrid
 ------Map info------
-RoadGrid at x:1 y:1 with id:0 Inside: Barricade,
+RoadGrid at x:1 y:1 with id:0 Inside: 
 GroundGrid at x:1 y:2 with id:1
 GroundGrid at x:1 y:3 with id:2
 GroundGrid at x:1 y:4 with id:3
@@ -82,7 +83,7 @@ RoadGrid at x:3 y:1 with id:8 Inside:
 GroundGrid at x:3 y:2 with id:9
 GroundGrid at x:3 y:3 with id:10
 GroundGrid at x:3 y:4 with id:11
-RoadGrid at x:4 y:1 with id:12 Inside: 
+RoadGrid at x:4 y:1 with id:12 Inside: Barricade,
 RoadGrid at x:4 y:2 with id:13 Inside: 
 RoadGrid at x:4 y:3 with id:14 Inside: DecreaseDamageTrap,
 RoadGrid at x:4 y:4 with id:15 Inside: 
