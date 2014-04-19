@@ -1,5 +1,5 @@
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create Tower at x:2 y:2
+create Tower at x:3 y:2
 getMapinfo   resources/test/protocomm/ins/premap.txt
 cast fog
 animate 4
