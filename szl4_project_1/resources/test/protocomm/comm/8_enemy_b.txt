@@ -1,8 +1,8 @@
-startFileWrite resourves/test/protocomm/outs/test8_src.txt
+startFileWrite resources/test/protocomm/outs/test8_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create enemy at x:3 y:1
-create barricade at x:4 y:1
+create enemy at x:4 y:1
+create barricade at x:4 y:2
 getMapinfo resources/test/protocomm/ins/premap.txt
-animate 4
+animate 2
 getMapinfo resources/test/protocomm/ins/postmap.txt
 endFileWrite
