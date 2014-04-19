@@ -1,6 +1,8 @@
+startFileWrite resources/test/protocomm/outs/test9_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create Human at x:1 y:1
-togglerandomness
+create enemy at x:1 y:1
+toggleRandomness
 getEnemyinfo resources/test/protocomm/ins/preenemy.txt
-animate 2
+animate 4
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+endFileWrite
