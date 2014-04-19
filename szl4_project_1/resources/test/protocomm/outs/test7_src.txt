@@ -1,23 +1,71 @@
 Write into file started
 Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
 Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
 Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Wrong paramteres list try: number at x:number y:number
-Wrong paramteres list try: number at x:number y:number
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
+Grid already exist with the given id or coordinates
 Wrong paramteres list try: number at x:number y:number
 Wrong paramteres list try: number at x:number y:number
+Wrong paramteres list try: number at x:number y:number
+Wrong paramteres list try: number at x:number y:number
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Set gridId:1 west neighbour to gridId:0 is done
+Set gridId:1 east neighbour to gridId:2 is done
+Set gridId:1 north neighbour to gridId:5 is done
+Set gridId:2 west neighbour to gridId:1 is done
+Set gridId:2 east neighbour to gridId:3 is done
+Set gridId:2 north neighbour to gridId:6 is done
+Set gridId:3 west neighbour to gridId:2 is done
+Set gridId:3 north neighbour to gridId:7 is done
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Set gridId:5 west neighbour to gridId:4 is done
+Set gridId:5 south neighbour to gridId:1 is done
+Set gridId:5 north neighbour to gridId:9 is done
+Set gridId:5 east neighbour to gridId:6 is done
+Set gridId:6 west neighbour to gridId:5 is done
+Set gridId:6 south neighbour to gridId:2 is done
+Set gridId:6 east neighbour to gridId:7 is done
+Set gridId:6 north neighbour to gridId:10 is done
+Set gridId:7 west neighbour to gridId:6 is done
+Set gridId:7 south neighbour to gridId:3 is done
+Set gridId:7 north neighbour to gridId:11 is done
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Set gridId:9 west neighbour to gridId:8 is done
+Set gridId:9 south neighbour to gridId:5 is done
+Set gridId:9 east neighbour to gridId:10 is done
+Set gridId:9 north neighbour to gridId:13 is done
+Set gridId:10 west neighbour to gridId:9 is done
+Set gridId:10 south neighbour to gridId:6 is done
+Set gridId:10 east neighbour to gridId:11 is done
+Set gridId:10 north neighbour to gridId:14 is done
+Set gridId:11 west neighbour to gridId:10 is done
+Set gridId:11 south neighbour to gridId:7 is done
+Set gridId:11 north neighbour to gridId:15 is done
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Incorrect Command!
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
+Wrong parameters, try: idNumber direction idNumber
 Loaded 
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
+Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune', 'barricade', 'mountain'
 No existing enemy
-Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'
+Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune', 'barricade', 'mountain'
 Animated 4 time segment(s)
 No existing enemy
