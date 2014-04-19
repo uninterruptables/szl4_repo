@@ -1,26 +1,114 @@
 Write into file started
-Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Wrong paramteres list try: number at x:number y:number
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Missing 4. parameter, try: at
-Wrong paramteres list try: number at x:number y:number
-Wrong paramteres list try: number at x:number y:number
-Wrong paramteres list try: number at x:number y:number
-Wrong paramteres list try: number at x:number y:number
+Road created at x:1 y:1 with id:0
+Ground created at x:1 y:2 with id:1
+Ground created at x:1 y:3 with id:2
+Ground created at x:1 y:4 with id:3
+Road created at x:2 y:1 with id:4
+Ground created at x:2 y:2 with id:5
+Ground created at x:2 y:3 with id:6
+Ground created at x:2 y:4 with id:7
+Road created at x:3 y:1 with id:8
+Ground created at x:3 y:2 with id:9
+Ground created at x:3 y:3 with id:10
+Ground created at x:3 y:4 with id:11
+Road created at x:4 y:1 with id:12
+Road created at x:4 y:2 with id:13
+Road created at x:4 y:3 with id:14
+Road created at x:4 y:4 with id:15
+Set gridId:0 east neighbour to gridId:1 is done
+Set gridId:0 north neighbour to gridId:4 is done
+Set gridId:1 west neighbour to gridId:0 is done
+Set gridId:1 east neighbour to gridId:2 is done
+Set gridId:1 north neighbour to gridId:5 is done
+Set gridId:2 west neighbour to gridId:1 is done
+Set gridId:2 east neighbour to gridId:3 is done
+Set gridId:2 north neighbour to gridId:6 is done
+Set gridId:3 west neighbour to gridId:2 is done
+Set gridId:3 north neighbour to gridId:7 is done
+Set gridId:4 south neighbour to gridId:0 is done
+Set gridId:4 east neighbour to gridId:5 is done
+Set gridId:4 north neighbour to gridId:8 is done
+Set gridId:5 west neighbour to gridId:4 is done
+Set gridId:5 south neighbour to gridId:1 is done
+Set gridId:5 north neighbour to gridId:9 is done
+Set gridId:5 east neighbour to gridId:6 is done
+Set gridId:6 west neighbour to gridId:5 is done
+Set gridId:6 south neighbour to gridId:2 is done
+Set gridId:6 east neighbour to gridId:7 is done
+Set gridId:6 north neighbour to gridId:10 is done
+Set gridId:7 west neighbour to gridId:6 is done
+Set gridId:7 south neighbour to gridId:3 is done
+Set gridId:7 north neighbour to gridId:11 is done
+Set gridId:8 south neighbour to gridId:4 is done
+Set gridId:8 east neighbour to gridId:9 is done
+Set gridId:8 north neighbour to gridId:12 is done
+Set gridId:9 west neighbour to gridId:8 is done
+Set gridId:9 south neighbour to gridId:5 is done
+Set gridId:9 east neighbour to gridId:10 is done
+Set gridId:9 north neighbour to gridId:13 is done
+Set gridId:10 west neighbour to gridId:9 is done
+Set gridId:10 south neighbour to gridId:6 is done
+Set gridId:10 east neighbour to gridId:11 is done
+Set gridId:10 north neighbour to gridId:14 is done
+Set gridId:11 west neighbour to gridId:10 is done
+Set gridId:11 south neighbour to gridId:7 is done
+Set gridId:11 north neighbour to gridId:15 is done
+Set gridId:12 south neighbour to gridId:8 is done
+Set gridId:12 east neighbour to gridId:13 is done
+Set gridId:13 west neighbour to gridId:12 is done
+Set gridId:13 south neighbour to gridId:9 is done
+Set gridId:13 east neighbour to gridId:14 is done
+Set gridId:14 west neighbour to gridId:13 is done
+Set gridId:14 south neighbour to gridId:10 is done
+Set gridId:14 east neighbour to gridId:15 is done
+Set gridId:15 west neighbour to gridId:14 is done
+Set gridId:15 south neighbour to gridId:11 is done
 Loaded 
-No existing grid
-No existing enemy
+------Map info------
+RoadGrid at x:1 y:1 with id:0 Inside: 
+GroundGrid at x:1 y:2 with id:1
+GroundGrid at x:1 y:3 with id:2
+GroundGrid at x:1 y:4 with id:3
+RoadGrid at x:2 y:1 with id:4 Inside: 
+GroundGrid at x:2 y:2 with id:5
+GroundGrid at x:2 y:3 with id:6
+GroundGrid at x:2 y:4 with id:7
+RoadGrid at x:3 y:1 with id:8 Inside: 
+GroundGrid at x:3 y:2 with id:9
+GroundGrid at x:3 y:3 with id:10
+GroundGrid at x:3 y:4 with id:11
+RoadGrid at x:4 y:1 with id:12 Inside: 
+RoadGrid at x:4 y:2 with id:13 Inside: 
+RoadGrid at x:4 y:3 with id:14 Inside: 
+RoadGrid at x:4 y:4 with id:15 Inside: 
+
+----------------------
+Enemy created at x:1 y:1 gridId: 0
+------Enemy info------
+Human Hp: 10 Dmg: 10 gridId: 0 Pos: x:1 y: 1 StatusModifier: 
+----------------------
 Nazgul casted
 IceWindMagic casted
 PoisonFogMagic casted
-No existing grid
-No existing enemy
-Loaded 
+------Map info------
+RoadGrid at x:1 y:1 with id:0 Inside: Human,
+GroundGrid at x:1 y:2 with id:1
+GroundGrid at x:1 y:3 with id:2
+GroundGrid at x:1 y:4 with id:3
+RoadGrid at x:2 y:1 with id:4 Inside: 
+GroundGrid at x:2 y:2 with id:5
+GroundGrid at x:2 y:3 with id:6
+GroundGrid at x:2 y:4 with id:7
+RoadGrid at x:3 y:1 with id:8 Inside: 
+GroundGrid at x:3 y:2 with id:9
+GroundGrid at x:3 y:3 with id:10
+GroundGrid at x:3 y:4 with id:11
+RoadGrid at x:4 y:1 with id:12 Inside: 
+RoadGrid at x:4 y:2 with id:13 Inside: 
+RoadGrid at x:4 y:3 with id:14 Inside: 
+RoadGrid at x:4 y:4 with id:15 Inside: 
+
+----------------------
+------Enemy info------
+Human Hp: 10 Dmg: 10 gridId: 0 Pos: x:1 y: 1 StatusModifier: WeakenStatus,SlowStatus,PoisonStatus,
+----------------------
