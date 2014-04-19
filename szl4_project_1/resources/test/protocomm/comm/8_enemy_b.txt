@@ -1,6 +1,6 @@
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create Human at x:x1 y:y1
-create Barricade at x:2 y:2
+create Human at x:2 y:1
+create Barricade at x:4 y:2
 getMapinfo   resources/test/protocomm/ins/premap.txt
 animate 4
 getMapinfo   resources/test/protocomm/ins/postmap.txt
