@@ -51,6 +51,8 @@ public class GameConstants {
 	public static int DWARF_HEALTH = 10;
 	public static int HOBBIT_HEALTH = 10;
 	
+	public static int BARRICADE_HEALTH = 10;
+	
 	public static int ELF_DAMAGE = 10;
 	public static int HUMAN_DAMAGE = 10;
 	public static int DWARF_DAMAGE = 10;
