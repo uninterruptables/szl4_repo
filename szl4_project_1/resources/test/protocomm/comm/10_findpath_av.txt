@@ -1,7 +1,10 @@
+startFileWrite resources/test/protocomm/outs/test10_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create Human at x:1 y:1
-create Barricade at x:4 y:2
-getMapinfo   resources/test/protocomm/ins/premap.txt
-animate 4
-getMapinfo   resources/test/protocomm/ins/postmap.txt
+create enemy at x:4 y:2
+create trap at x:4 y:3
+getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+getMapinfo resources/test/protocomm/ins/premap.txt
+animate 2
+getMapinfo resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+endFileWrite
