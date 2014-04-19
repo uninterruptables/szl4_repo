@@ -1,11 +1,12 @@
+startFileWrite resources/test/protocomm/outs/test5_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create BasicTower at x:3 y:2
-create Human at x:1 y:2
+create tower at x:3 y:2
+create enemy at x:1 y:1
 getMapinfo   resources/test/protocomm/ins/premap.txt
 getEnemyinfo resources/test/protocomm/ins/preenemy.txt
 toggleRandomness
 animate 2
-toggleRandomness
 animate 1
 getMapinfo   resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+endFileWrite
