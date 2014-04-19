@@ -19,6 +19,7 @@ import team.uninter.mordorq.gamespace.GroundGrid;
 import team.uninter.mordorq.gamespace.Human;
 import team.uninter.mordorq.gamespace.IceWindMagic;
 import team.uninter.mordorq.gamespace.MordorFrame;
+import team.uninter.mordorq.gamespace.MountainOfDoom;
 import team.uninter.mordorq.gamespace.Nazgul;
 import team.uninter.mordorq.gamespace.Neighbour;
 import team.uninter.mordorq.gamespace.PoisonFogMagic;
@@ -627,13 +628,49 @@ public class Prototype {
 			else if(parameter.equals("barricade")){
 				createBarricade();
 			}
+			else if(parameter.equals("mountain")){
+				createMountain();
+			}
 			else{
-				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune', 'barricade'");
+				printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune', 'barricade', 'mountain'");
 			}
 		}
 		catch(Exception e){
 			if(e instanceof IOException) throw (IOException)e;
 			printLine("Wrong parameter, try: 'enemy', 'tower', 'trap', 'rune'");
+		}
+	}
+	
+	private void createMountain() throws IOException{
+		if(checkConjunction(2,"at")){
+			int xPos, yPos;
+			try{
+				xPos = getPosParameter(stringArray[3],":");
+				yPos = getPosParameter(stringArray[4],":");
+				TerrainGrid targetGrid = GameUtil.getGridByXY(frame.getScene().getGrids(), xPos, yPos);
+				if(targetGrid != null){
+					if(targetGrid instanceof RoadGrid){
+						if(((RoadGrid) targetGrid).getVulnerable() == null){
+							((RoadGrid) targetGrid).setVulnerable(MountainOfDoom.getInstance(this.frame.getScene()));
+							printLine("Mountain created at x:"+xPos+" y:"+yPos+" gridId: "+targetGrid.getId());
+						}
+						else{
+							printLine("There is already a barricade/enemy on the given grid");
+						}
+					}
+					else if(targetGrid instanceof GroundGrid){
+						printLine("Can't create Mountain on GroundGrid");		
+					}
+				}
+				else{
+					printLine("No grid exist on the given coordinates");
+				}
+				
+			}
+			catch(Exception e){
+				if(e instanceof IOException) throw (IOException)e;
+				printLine("Wrong position parameter try: x:number y:number");
+			}
 		}
 	}
 	
