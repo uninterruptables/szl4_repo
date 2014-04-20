@@ -1,4 +1,5 @@
 Write into file started
+Restarted succesfully
 Road created at x:1 y:1 with id:0
 Ground created at x:2 y:1 with id:1
 Ground created at x:3 y:1 with id:2

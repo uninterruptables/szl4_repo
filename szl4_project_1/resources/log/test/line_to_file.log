@@ -22,3 +22,27 @@ INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - outBuffer: make;m
 INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - inBuffer: make;me;happy;please
 
 INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: end...
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: begin
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - outBuffer: build-tree as animation
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - inBuffer: build-tree as animation
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: end...
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: begin
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - outBuffer: make;me;happy;please
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - inBuffer: make;me;happy;please
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: end...
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: begin
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - outBuffer: build-tree as animation
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - inBuffer: build-tree as animation
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: end...
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: begin
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - outBuffer: make;me;happy;please
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - inBuffer: make;me;happy;please
+
+INFO main team.uninter.mordorq.prototype.LineToFileTestSuite - line-to-file test-case1: end...

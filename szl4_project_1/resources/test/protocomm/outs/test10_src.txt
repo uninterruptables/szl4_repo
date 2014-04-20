@@ -1,19 +1,20 @@
 Write into file started
+Restarted succesfully
 Road created at x:1 y:1 with id:0
-Ground created at x:1 y:2 with id:1
-Ground created at x:1 y:3 with id:2
-Ground created at x:1 y:4 with id:3
-Road created at x:2 y:1 with id:4
+Ground created at x:2 y:1 with id:1
+Ground created at x:3 y:1 with id:2
+Ground created at x:4 y:1 with id:3
+Road created at x:1 y:2 with id:4
 Ground created at x:2 y:2 with id:5
-Ground created at x:2 y:3 with id:6
-Ground created at x:2 y:4 with id:7
-Road created at x:3 y:1 with id:8
-Ground created at x:3 y:2 with id:9
+Ground created at x:3 y:2 with id:6
+Ground created at x:4 y:2 with id:7
+Road created at x:1 y:3 with id:8
+Ground created at x:2 y:3 with id:9
 Ground created at x:3 y:3 with id:10
-Ground created at x:3 y:4 with id:11
-Road created at x:4 y:1 with id:12
-Road created at x:4 y:2 with id:13
-Road created at x:4 y:3 with id:14
+Ground created at x:4 y:3 with id:11
+Road created at x:1 y:4 with id:12
+Road created at x:2 y:4 with id:13
+Road created at x:3 y:4 with id:14
 Road created at x:4 y:4 with id:15
 Set gridId:0 east neighbour to gridId:1 is done
 Set gridId:0 north neighbour to gridId:4 is done
@@ -64,50 +65,50 @@ Set gridId:14 east neighbour to gridId:15 is done
 Set gridId:15 west neighbour to gridId:14 is done
 Set gridId:15 south neighbour to gridId:11 is done
 Loaded 
-Enemy created at x:4 y:2 gridId: 13
-Trap created at x:4 y:3 gridId: 14
+Enemy created at x:1 y:4 gridId: 12
+Trap created at x:2 y:4 gridId: 13
 ------Enemy info------
-Human Hp: 10 Dmg: 10 gridId: 13 Pos: x:4 y: 2 StatusModifier: 
+Human Hp: 10 Dmg: 10 gridId: 12 Pos: x:1 y: 4 StatusModifier: 
 ----------------------
 ------Map info------
 RoadGrid at x:1 y:1 with id:0 Inside: 
-GroundGrid at x:1 y:2 with id:1
-GroundGrid at x:1 y:3 with id:2
-GroundGrid at x:1 y:4 with id:3
-RoadGrid at x:2 y:1 with id:4 Inside: 
+GroundGrid at x:2 y:1 with id:1
+GroundGrid at x:3 y:1 with id:2
+GroundGrid at x:4 y:1 with id:3
+RoadGrid at x:1 y:2 with id:4 Inside: 
 GroundGrid at x:2 y:2 with id:5
-GroundGrid at x:2 y:3 with id:6
-GroundGrid at x:2 y:4 with id:7
-RoadGrid at x:3 y:1 with id:8 Inside: 
-GroundGrid at x:3 y:2 with id:9
+GroundGrid at x:3 y:2 with id:6
+GroundGrid at x:4 y:2 with id:7
+RoadGrid at x:1 y:3 with id:8 Inside: 
+GroundGrid at x:2 y:3 with id:9
 GroundGrid at x:3 y:3 with id:10
-GroundGrid at x:3 y:4 with id:11
-RoadGrid at x:4 y:1 with id:12 Inside: 
-RoadGrid at x:4 y:2 with id:13 Inside: Human,
-RoadGrid at x:4 y:3 with id:14 Inside: DecreaseDamageTrap,
+GroundGrid at x:4 y:3 with id:11
+RoadGrid at x:1 y:4 with id:12 Inside: Human,
+RoadGrid at x:2 y:4 with id:13 Inside: DecreaseDamageTrap,
+RoadGrid at x:3 y:4 with id:14 Inside: 
 RoadGrid at x:4 y:4 with id:15 Inside: 
 
 ----------------------
-Animated 2 time segment(s)
+Animated 3 time segment(s)
 ------Map info------
 RoadGrid at x:1 y:1 with id:0 Inside: 
-GroundGrid at x:1 y:2 with id:1
-GroundGrid at x:1 y:3 with id:2
-GroundGrid at x:1 y:4 with id:3
-RoadGrid at x:2 y:1 with id:4 Inside: 
+GroundGrid at x:2 y:1 with id:1
+GroundGrid at x:3 y:1 with id:2
+GroundGrid at x:4 y:1 with id:3
+RoadGrid at x:1 y:2 with id:4 Inside: 
 GroundGrid at x:2 y:2 with id:5
-GroundGrid at x:2 y:3 with id:6
-GroundGrid at x:2 y:4 with id:7
-RoadGrid at x:3 y:1 with id:8 Inside: 
-GroundGrid at x:3 y:2 with id:9
+GroundGrid at x:3 y:2 with id:6
+GroundGrid at x:4 y:2 with id:7
+RoadGrid at x:1 y:3 with id:8 Inside: 
+GroundGrid at x:2 y:3 with id:9
 GroundGrid at x:3 y:3 with id:10
-GroundGrid at x:3 y:4 with id:11
-RoadGrid at x:4 y:1 with id:12 Inside: 
-RoadGrid at x:4 y:2 with id:13 Inside: Human,
-RoadGrid at x:4 y:3 with id:14 Inside: DecreaseDamageTrap,
+GroundGrid at x:4 y:3 with id:11
+RoadGrid at x:1 y:4 with id:12 Inside: 
+RoadGrid at x:2 y:4 with id:13 Inside: DecreaseDamageTrap,Human,
+RoadGrid at x:3 y:4 with id:14 Inside: 
 RoadGrid at x:4 y:4 with id:15 Inside: 
 
 ----------------------
 ------Enemy info------
-Human Hp: 10 Dmg: 10 gridId: 13 Pos: x:4 y: 2 StatusModifier: 
+Human Hp: 10 Dmg: 5 gridId: 13 Pos: x:2 y: 4 StatusModifier: WeakenStatus,
 ----------------------
