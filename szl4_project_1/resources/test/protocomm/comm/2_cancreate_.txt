@@ -1,3 +1,4 @@
+restart
 loadCommands resources/test/protocomm/ins/basiscene.txt
 canCreate tower at x:2 y:2
 canCreate tower at x:1 y:1
