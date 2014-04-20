@@ -1,5 +1,3 @@
-restart
-startFileWrite resources/test/protocomm/outs/test10_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 create enemy at x:1 y:4
 create trap at x:2 y:4
@@ -8,4 +6,3 @@ getMapinfo resources/test/protocomm/ins/premap.txt
 animate 3
 getMapinfo resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
-endFileWrite
