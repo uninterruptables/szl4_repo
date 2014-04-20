@@ -139,7 +139,7 @@ public class MordorFrame extends JFrame{
 		//TODO: JOptionPane.showMessageDialog(...);
 //		System.out.println("MordorFrame.gameOver(): void called");
 //		System.out.println("MordorFrame.gameOver(): void returned");
-		System.out.println("Game Over");
+//		System.out.println("Game Over");
 	}
 	
 	/**
