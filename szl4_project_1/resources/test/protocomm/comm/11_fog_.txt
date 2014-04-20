@@ -1,7 +1,8 @@
+restart
 startFileWrite resources/test/protocomm/outs/test11_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create tower at x:3 y:2
+create tower at x:3 y:3
 getMapinfo resources/test/protocomm/ins/premap.txt
-animate 50
+animate 100
 getMapinfo resources/test/protocomm/ins/postmap.txt
 endFileWrite
