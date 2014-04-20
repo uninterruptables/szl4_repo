@@ -1,3 +1,4 @@
+restart
 build roadgrid 0 1 at x:1 y:1
 build groundgrid 0 2 at x:2 y:1
 build groundgrid 0 3 at x:3 y:1
