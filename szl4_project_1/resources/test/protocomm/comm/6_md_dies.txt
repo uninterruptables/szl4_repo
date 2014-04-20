@@ -1,9 +1,6 @@
-restart
-startFileWrite resources/test/protocomm/outs/test6_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 getMapinfo resources/test/protocomm/ins/premap.txt
 create enemy at x:2 y:4
 create mountain at x:4 y:4
 animate 10
 getMapinfo resources/test/protocomm/ins/postmap.txt
-endFileWrite
