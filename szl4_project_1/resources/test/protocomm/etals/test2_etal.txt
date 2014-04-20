@@ -1,19 +1,19 @@
 Write into file started
 Road created at x:1 y:1 with id:0
-Ground created at x:1 y:2 with id:1
-Ground created at x:1 y:3 with id:2
-Ground created at x:1 y:4 with id:3
-Road created at x:2 y:1 with id:4
+Ground created at x:2 y:1 with id:1
+Ground created at x:3 y:1 with id:2
+Ground created at x:4 y:1 with id:3
+Road created at x:1 y:2 with id:4
 Ground created at x:2 y:2 with id:5
-Ground created at x:2 y:3 with id:6
-Ground created at x:2 y:4 with id:7
-Road created at x:3 y:1 with id:8
-Ground created at x:3 y:2 with id:9
+Ground created at x:3 y:2 with id:6
+Ground created at x:4 y:2 with id:7
+Road created at x:1 y:3 with id:8
+Ground created at x:2 y:3 with id:9
 Ground created at x:3 y:3 with id:10
-Ground created at x:3 y:4 with id:11
-Road created at x:4 y:1 with id:12
-Road created at x:4 y:2 with id:13
-Road created at x:4 y:3 with id:14
+Ground created at x:4 y:3 with id:11
+Road created at x:1 y:4 with id:12
+Road created at x:2 y:4 with id:13
+Road created at x:3 y:4 with id:14
 Road created at x:4 y:4 with id:15
 Set gridId:0 east neighbour to gridId:1 is done
 Set gridId:0 north neighbour to gridId:4 is done
@@ -66,4 +66,4 @@ Set gridId:15 south neighbour to gridId:11 is done
 Loaded 
 Can create tower at x:2 y:2 gridId: 5
 Can't create tower on RoadGrid
-Can create trap at x:4 y:2 gridId: 13
+Can create trap at x:2 y:4 gridId: 13
