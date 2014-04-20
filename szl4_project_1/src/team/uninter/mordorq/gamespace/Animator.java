@@ -36,6 +36,14 @@ public class Animator implements Runnable{
 				}
 				else{
 					scene.getEnemies().remove(enemy);
+					return;
+				}
+			}
+			//remove enemy in a new loop
+			//to prevent inconsistent states
+			for(Controlable enemy : scene.getEnemies()){
+				if(!enemy.isActive()){
+					scene.getEnemies().remove(enemy);
 				}
 			}
 			if(enemies.isEmpty()){

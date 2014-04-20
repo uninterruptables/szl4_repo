@@ -1,5 +1,5 @@
 restart
-build roadgrid 0 1 at x:1 y:1
+build roadgrid 1 1 at x:1 y:1
 build groundgrid 0 2 at x:2 y:1
 build groundgrid 0 3 at x:3 y:1
 build groundgrid 0 4 at x:4 y:1
@@ -13,9 +13,8 @@ create tower at x:3 y:1
 create enemy at x:1 y:1 
 getMapinfo resources/test/protocomm/ins/premap.txt
 getEnemyinfo
-animate 2
+animate 3
 getEnemyinfo
-animate 12
-animate 12
+animate 22
 getEnemyinfo
 getMapinfo resources/test/protocomm/ins/postmap.txt

@@ -1,6 +1,6 @@
 Write into file started
 Restarted succesfully
-Road created at x:1 y:1 with id:0
+Road created at x:1 y:1 with id:1
 Ground created at x:2 y:1 with id:2
 Ground created at x:3 y:1 with id:3
 Ground created at x:4 y:1 with id:4
@@ -22,17 +22,14 @@ GroundGrid at x:4 y:1 with id:4
 ------Enemy info------
 Human Hp: 10 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: 
 ----------------------
-Animated 2 time segment(s)
+Animated 3 time segment(s)
 ------Enemy info------
 Human Hp: 5 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: 
 ----------------------
-Wrong argument, enter a number!
-Animated 12 time segment(s)
-------Enemy info------
-Human Hp: 5 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: 
-----------------------
+Animated 22 time segment(s)
+No existing enemy
 ------Map info------
-RoadGrid at x:1 y:1 with id:1 Inside: Human,
+RoadGrid at x:1 y:1 with id:1 Inside: 
 GroundGrid at x:2 y:1 with id:2
 GroundGrid at x:3 y:1 with id:3 inside: BasicTower,
 GroundGrid at x:4 y:1 with id:4
