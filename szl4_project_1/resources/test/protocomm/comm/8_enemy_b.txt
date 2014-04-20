@@ -1,8 +1,22 @@
+restart
 startFileWrite resources/test/protocomm/outs/test8_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
-create enemy at x:4 y:1
-create barricade at x:4 y:2
+build roadgrid 3 16 at x:1 y:5
+build roadgrid 3 17 at x:2 y:5
+build roadgrid 3 18 at x:3 y:5
+set 16 south 12
+set 12 north 16
+set 16 east 17
+set 17 south 13
+set 13 north 17
+set 17 east 18
+set 17 west 16
+set 18 west 17
+set 18 south 14
+set 14 north 18
+create enemy at x:1 y:4
+create barricade at x:2 y:4
 getMapinfo resources/test/protocomm/ins/premap.txt
-animate 2
+animate 12
 getMapinfo resources/test/protocomm/ins/postmap.txt
 endFileWrite
