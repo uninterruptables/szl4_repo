@@ -1,8 +1,5 @@
-restart
-startFileWrite resources/test/protocomm/outs/test2_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 canCreate tower at x:2 y:2
 canCreate tower at x:1 y:1
 canCreate trap at x:2 y:4
 canCreate trap at x:3 y:3
-endFileWrite
