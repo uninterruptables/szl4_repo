@@ -1,5 +1,3 @@
-restart
-startFileWrite resources/test/protocomm/outs/test4_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 create tower at x:3 y:2
 create trap at x:2 y:4
@@ -9,4 +7,3 @@ create rune at x:3 y:2
 canCreate rune at x:2 y:4
 create rune at x:2 y:4
 getMapinfo postrunemap.txt
-endFileWrite
