@@ -66,24 +66,49 @@ Set gridId:15 west neighbour to gridId:14 is done
 Set gridId:15 south neighbour to gridId:11 is done
 Loaded 
 Road created at x:1 y:5 with id:16
-Road created at x:2 y:5 with id:17
-Road created at x:3 y:5 with id:18
 Set gridId:16 south neighbour to gridId:12 is done
 Set gridId:12 north neighbour to gridId:16 is done
-Set gridId:16 east neighbour to gridId:17 is done
-Set gridId:17 south neighbour to gridId:13 is done
-Set gridId:13 north neighbour to gridId:17 is done
-Set gridId:17 east neighbour to gridId:18 is done
-Set gridId:17 west neighbour to gridId:16 is done
-Set gridId:18 west neighbour to gridId:17 is done
-Set gridId:18 south neighbour to gridId:14 is done
-Set gridId:14 north neighbour to gridId:18 is done
 Enemy created at x:1 y:1 gridId: 0
-Randomness on
-------Enemy info------
-Human Hp: 10 Dmg: 10 gridId: 0 Pos: x:1 y: 1 StatusModifier: 
+Randomness off
+------Map info------
+RoadGrid at x:1 y:1 with id:0 Inside: Human,
+GroundGrid at x:2 y:1 with id:1
+GroundGrid at x:3 y:1 with id:2
+GroundGrid at x:4 y:1 with id:3
+RoadGrid at x:1 y:2 with id:4 Inside: 
+GroundGrid at x:2 y:2 with id:5
+GroundGrid at x:3 y:2 with id:6
+GroundGrid at x:4 y:2 with id:7
+RoadGrid at x:1 y:3 with id:8 Inside: 
+GroundGrid at x:2 y:3 with id:9
+GroundGrid at x:3 y:3 with id:10
+GroundGrid at x:4 y:3 with id:11
+RoadGrid at x:1 y:4 with id:12 Inside: 
+RoadGrid at x:2 y:4 with id:13 Inside: 
+RoadGrid at x:3 y:4 with id:14 Inside: 
+RoadGrid at x:4 y:4 with id:15 Inside: 
+RoadGrid at x:1 y:5 with id:16 Inside: 
+
 ----------------------
 Animated 20 time segment(s)
-------Enemy info------
-Human Hp: 10 Dmg: 10 gridId: 13 Pos: x:2 y: 4 StatusModifier: 
+Randomness on
+------Map info------
+RoadGrid at x:1 y:1 with id:0 Inside: 
+GroundGrid at x:2 y:1 with id:1
+GroundGrid at x:3 y:1 with id:2
+GroundGrid at x:4 y:1 with id:3
+RoadGrid at x:1 y:2 with id:4 Inside: 
+GroundGrid at x:2 y:2 with id:5
+GroundGrid at x:3 y:2 with id:6
+GroundGrid at x:4 y:2 with id:7
+RoadGrid at x:1 y:3 with id:8 Inside: 
+GroundGrid at x:2 y:3 with id:9
+GroundGrid at x:3 y:3 with id:10
+GroundGrid at x:4 y:3 with id:11
+RoadGrid at x:1 y:4 with id:12 Inside: 
+RoadGrid at x:2 y:4 with id:13 Inside: 
+RoadGrid at x:3 y:4 with id:14 Inside: 
+RoadGrid at x:4 y:4 with id:15 Inside: 
+RoadGrid at x:1 y:5 with id:16 Inside: Human,
+
 ----------------------

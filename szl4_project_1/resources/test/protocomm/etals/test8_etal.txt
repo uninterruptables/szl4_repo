@@ -117,11 +117,12 @@ GroundGrid at x:2 y:3 with id:9
 GroundGrid at x:3 y:3 with id:10
 GroundGrid at x:4 y:3 with id:11
 RoadGrid at x:1 y:4 with id:12 Inside: 
-RoadGrid at x:2 y:4 with id:13 Inside: Barricade,
-RoadGrid at x:3 y:4 with id:14 Inside: Human,
-RoadGrid at x:4 y:4 with id:15 Inside: 
+RoadGrid at x:2 y:4 with id:13 Inside: 
+RoadGrid at x:3 y:4 with id:14 Inside: 
+RoadGrid at x:4 y:4 with id:15 Inside: Human,
 RoadGrid at x:1 y:5 with id:16 Inside: 
 RoadGrid at x:2 y:5 with id:17 Inside: 
 RoadGrid at x:3 y:5 with id:18 Inside: 
 
 ----------------------
+

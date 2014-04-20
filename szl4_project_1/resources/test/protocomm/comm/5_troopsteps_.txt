@@ -9,3 +9,4 @@ animate 2
 animate 1
 getMapinfo   resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+toggleRandomness
