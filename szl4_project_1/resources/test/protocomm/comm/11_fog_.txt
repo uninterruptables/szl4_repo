@@ -1,8 +1,23 @@
 restart
 startFileWrite resources/test/protocomm/outs/test11_src.txt
-loadCommands resources/test/protocomm/ins/basiscene.txt
-create tower at x:3 y:3
+build roadgrid 0 1 at x:1 y:1
+build groundgrid 0 2 at x:2 y:1
+build groundgrid 0 3 at x:3 y:1
+build groundgrid 0 4 at x:4 y:1
+set 1 east 2
+set 2 west 1
+set 2 east 3
+set 3 west 2
+set 3 east 4
+set 4 west 3
+create tower at x:3 y:1
+create enemy at x:1 y:1 
 getMapinfo resources/test/protocomm/ins/premap.txt
-animate 100
+getEnemyinfo
+animate 2
+getEnemyinfo
+animate 12
+animate 12
+getEnemyinfo
 getMapinfo resources/test/protocomm/ins/postmap.txt
 endFileWrite
