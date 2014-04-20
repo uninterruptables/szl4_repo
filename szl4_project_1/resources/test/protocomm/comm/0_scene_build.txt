@@ -1,5 +1,3 @@
-restart
-startFileWrite resources/test/protocomm/outs/test0_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 getMapinfo
-endFileWrite
+
