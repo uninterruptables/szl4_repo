@@ -1,5 +1,3 @@
-restart
-startFileWrite resources/test/protocomm/outs/test5_src.txt
 loadCommands resources/test/protocomm/ins/basiscene.txt
 create tower at x:3 y:2
 create enemy at x:1 y:1
@@ -10,4 +8,3 @@ animate 2
 animate 1
 getMapinfo   resources/test/protocomm/ins/postmap.txt
 getEnemyinfo resources/test/protocomm/ins/postenemy.txt
-endFileWrite
