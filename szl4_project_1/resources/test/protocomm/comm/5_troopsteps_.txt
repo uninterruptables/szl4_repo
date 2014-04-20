@@ -1,3 +1,4 @@
+restart
 loadCommands resources/test/protocomm/ins/basiscene.txt
 create tower at x:3 y:2
 create enemy at x:1 y:1
