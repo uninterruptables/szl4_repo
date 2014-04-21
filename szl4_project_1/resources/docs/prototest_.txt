@@ -1,10 +1,6 @@
 #                     PROTOTYPE TEST KORNYEZET DOKSI
 
 
-!!!!A Doksi team olvassa el a !!!NEKTEK FONTOS!!! reszt!!!!
-
-
-
 ${user.dir}/test
 └── team
     └── uninter
@@ -70,7 +66,7 @@ A tesztkornyezet alapveto osztalyai:
                 ├── PrototypeCommandTest.java
                 └── StandardPrototypeLayerTestSuite.java
 
-Ahol a StandardPrototypeLayerTestSuite.java batch jelleggel lefuttatja a meghelolt teszt osztalyokat.
+Ahol a StandardPrototypeLayerTestSuite.java batch jelleggel lefuttatja a megjelolt teszt osztalyokat.
 
 Maga a PrototypeCommandTest.java felelos a Proto teszteleseert. Tevekenysege soran felhasznalja a JUnit keretrendszer azon szolgaltatasat, hogy egyetlen osztaly logikajat tobb kulonbozo parameterrel futtassa, ahol a parametereink most harom file eleresi utja es egy szam.
 
@@ -112,21 +108,4 @@ A PrototypeCommandTest.java EGY futasa:
                   a teszt ovas es osszehasonlit majd
   
   shc: tartalmazza a felepitendo palya terveit, eloszlasat, az altalam
-       leggyakrabban hasznalt parancsok listajat.
-  
-  
-  !TODO: A basiscene.txt olyan megirasa, hogy ertelmes palyat epitsen fel,
-         valamint a comm/-ban levo parancsokban az (x,y) -ra teveskor
-         ertelmes (x,y)-k beallitasa
-         
-        EZTUTAN az uj file-t beloadolni a proto-ba, h futtassa elotte
-          persze irjon file-ba, amely vmelyik testX_src.txt,
-         MAJD az ertelmes kimenetet bemasolni a neki megfelelo 
-           testX_etal.txt -be
-         MAJD lefuttatni a StandardPrototypeLayerTestSuite.java ugy, h
-            Run as > JUnit test
-         
-         AMENNYIBEN elszall a teszt, akkor vmit nem masoltatok at jol,
-          amennyiben a testX_src.txt butasagokat tartalmaz, akkor a neki
-          megfelelo, comm/ alatt levo file-ban lesz a hiba.
-         
+       leggyakrabban hasznalt parancsok listajat.        
