@@ -1,0 +1,581 @@
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Write into file started> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Restarted succesfully> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:1 with id:0> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:2 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:3 with id:8> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:4 with id:12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:2 y:4 with id:13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:3 y:4 with id:14> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:4 y:4 with id:15> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 east neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 north neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 west neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 east neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 north neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 west neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 east neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 north neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 west neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 north neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 south neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 east neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 north neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 west neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 south neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 north neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 east neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 west neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 south neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 east neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 north neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 west neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 south neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 north neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 south neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 east neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 north neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 west neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 south neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 east neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 north neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 west neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 south neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 east neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 north neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 west neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 south neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 north neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 south neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 east neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 west neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 south neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 east neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 west neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 south neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 east neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 west neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 south neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Loaded > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Enemy created at x:1 y:3 gridId: 8> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 10 Dmg: 10 gridId: 8 Pos: x:1 y: 3 StatusModifier: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Trap created at x:2 y:4 gridId: 13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 6 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 10 Dmg: 5 gridId: 13 Pos: x:2 y: 4 StatusModifier: WeakenStatus,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: DecreaseDamageTrap,Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of diff-against..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case7 succeded..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - sourceFile: resources/test/protocomm/outs/test8_src.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - etalonFile: resources/test/protocomm/etals/test8_etal.txt
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case8 started..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - writing to resources/test/protocomm/outs/test8_src.txt..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: restart
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: loadCommands resources/test/protocomm/ins/basiscene.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build roadgrid 3 16 at x:1 y:5
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build roadgrid 3 17 at x:2 y:5
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build roadgrid 3 18 at x:3 y:5
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 16 south 12
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 12 north 16
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 16 east 17
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 17 south 13
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 13 north 17
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 17 east 18
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 17 west 16
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 18 west 17
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 18 south 14
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 14 north 18
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create enemy at x:1 y:4
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create barricade at x:2 y:4
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/premap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: animate 12
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/postmap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of file-write..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - starting diff-against in test-case8
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Write into file started> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Restarted succesfully> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:1 with id:0> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:2 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:3 with id:8> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:4 with id:12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:2 y:4 with id:13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:3 y:4 with id:14> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:4 y:4 with id:15> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 east neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 north neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 west neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 east neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 north neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 west neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 east neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 north neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 west neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 north neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 south neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 east neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 north neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 west neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 south neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 north neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 east neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 west neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 south neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 east neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 north neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 west neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 south neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 north neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 south neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 east neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 north neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 west neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 south neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 east neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 north neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 west neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 south neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 east neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 north neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 west neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 south neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 north neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 south neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 east neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 west neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 south neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 east neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 west neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 south neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 east neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 west neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 south neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Loaded > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:5 with id:16> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:2 y:5 with id:17> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:3 y:5 with id:18> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:16 south neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 north neighbour to gridId:16 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:16 east neighbour to gridId:17 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:17 south neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 north neighbour to gridId:17 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:17 east neighbour to gridId:18 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:17 west neighbour to gridId:16 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:18 west neighbour to gridId:17 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:18 south neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 north neighbour to gridId:18 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Enemy created at x:1 y:4 gridId: 12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Barricade created at x:2 y:4 gridId: 13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: Barricade,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:5 with id:16 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:5 with id:17 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:5 with id:18 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 12 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:5 with id:16 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:5 with id:17 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:5 with id:18 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of diff-against..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case8 succeded..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - sourceFile: resources/test/protocomm/outs/test9_src.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - etalonFile: resources/test/protocomm/etals/test9_etal.txt
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case9 started..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - writing to resources/test/protocomm/outs/test9_src.txt..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: restart
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: loadCommands resources/test/protocomm/ins/basiscene.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build roadgrid 5 16 at x:1 y:5
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 16 south 12
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 12 north 16
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create enemy at x:1 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: toggleRandomness
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/preenemy.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: animate 20
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: toggleRandomness
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/postenemy.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of file-write..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - starting diff-against in test-case9
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Write into file started> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Restarted succesfully> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:1 with id:0> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:2 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:3 with id:8> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:4 with id:12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:2 y:4 with id:13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:3 y:4 with id:14> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:4 y:4 with id:15> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 east neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 north neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 west neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 east neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 north neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 west neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 east neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 north neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 west neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 north neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 south neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 east neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 north neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 west neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 south neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 north neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 east neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 west neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 south neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 east neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 north neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 west neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 south neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 north neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 south neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 east neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 north neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 west neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 south neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 east neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 north neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 west neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 south neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 east neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 north neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 west neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 south neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 north neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 south neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 east neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 west neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 south neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 east neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 west neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 south neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 east neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 west neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 south neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Loaded > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:5 with id:16> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:16 south neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 north neighbour to gridId:16 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Enemy created at x:1 y:1 gridId: 0> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Randomness off> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:5 with id:16 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 20 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Randomness on> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:5 with id:16 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of diff-against..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case9 succeded..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - sourceFile: resources/test/protocomm/outs/test10_src.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - etalonFile: resources/test/protocomm/etals/test10_etal.txt
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case10 started..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - writing to resources/test/protocomm/outs/test10_src.txt..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: restart
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: loadCommands resources/test/protocomm/ins/basiscene.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create enemy at x:1 y:4
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create trap at x:2 y:4
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getEnemyinfo resources/test/protocomm/ins/preenemy.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/premap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: animate 3
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/postmap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getEnemyinfo resources/test/protocomm/ins/postenemy.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of file-write..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - starting diff-against in test-case10
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Write into file started> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Restarted succesfully> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:1 with id:0> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:2 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:3 with id:8> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:4 with id:12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:2 y:4 with id:13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:3 y:4 with id:14> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:4 y:4 with id:15> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 east neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:0 north neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 west neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 east neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 north neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 west neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 east neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 north neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 west neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 north neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 south neighbour to gridId:0 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 east neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 north neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 west neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 south neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 north neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:5 east neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 west neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 south neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 east neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:6 north neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 west neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 south neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:7 north neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 south neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 east neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:8 north neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 west neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 south neighbour to gridId:5 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 east neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:9 north neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 west neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 south neighbour to gridId:6 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 east neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:10 north neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 west neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 south neighbour to gridId:7 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:11 north neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 south neighbour to gridId:8 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:12 east neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 west neighbour to gridId:12 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 south neighbour to gridId:9 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:13 east neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 west neighbour to gridId:13 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 south neighbour to gridId:10 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:14 east neighbour to gridId:15 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 west neighbour to gridId:14 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:15 south neighbour to gridId:11 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Loaded > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Enemy created at x:1 y:4 gridId: 12> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Trap created at x:2 y:4 gridId: 13> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 10 Dmg: 10 gridId: 12 Pos: x:1 y: 4 StatusModifier: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: DecreaseDamageTrap,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 3 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:0 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:2 with id:4 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:2 with id:5> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:2 with id:6> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:2 with id:7> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:3 with id:8 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:3 with id:9> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:3 with id:10> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:3 with id:11> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:4 with id:12 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:2 y:4 with id:13 Inside: DecreaseDamageTrap,Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:3 y:4 with id:14 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:4 y:4 with id:15 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 10 Dmg: 5 gridId: 13 Pos: x:2 y: 4 StatusModifier: WeakenStatus,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of diff-against..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case10 succeded..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - sourceFile: resources/test/protocomm/outs/test11_src.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - etalonFile: resources/test/protocomm/etals/test11_etal.txt
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case11 started..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - writing to resources/test/protocomm/outs/test11_src.txt..
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: restart
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build roadgrid 1 1 at x:1 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build groundgrid 0 2 at x:2 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build groundgrid 0 3 at x:3 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: build groundgrid 0 4 at x:4 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 1 east 2
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 2 west 1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 2 east 3
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 3 west 2
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 3 east 4
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: set 4 west 3
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create tower at x:3 y:1
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: create enemy at x:1 y:1 
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/premap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getEnemyinfo
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: animate 3
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getEnemyinfo
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: animate 22
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getEnemyinfo
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - executing: getMapinfo resources/test/protocomm/ins/postmap.txt
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of file-write..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - starting diff-against in test-case11
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Write into file started> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Restarted succesfully> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Road created at x:1 y:1 with id:1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:2 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:3 y:1 with id:3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Ground created at x:4 y:1 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:1 east neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 west neighbour to gridId:1 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:2 east neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 west neighbour to gridId:2 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:3 east neighbour to gridId:4 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Set gridId:4 west neighbour to gridId:3 is done> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Tower created at x:3 y:1 gridId: 3> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Enemy created at x:1 y:1 gridId: 1> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:1 Inside: Human,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:3 inside: BasicTower,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 10 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 3 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Enemy info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Human Hp: 5 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: Animated 22 time segment(s)> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: No existing enemy> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ------Map info------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: RoadGrid at x:1 y:1 with id:1 Inside: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:2 y:1 with id:2> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:3 y:1 with id:3 inside: BasicTower,> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: GroundGrid at x:4 y:1 with id:4> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: > considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - <output: ----------------------> considered OK!
+DEBUG main team.uninter.mordorq.prototype.PrototypeCommandTest - end of diff-against..
+INFO main team.uninter.mordorq.prototype.PrototypeCommandTest - test-case11 succeded..
