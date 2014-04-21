@@ -87,4 +87,22 @@ RoadGrid at x:4 y:4 with id:15 Inside:
 Enemy created at x:2 y:4 gridId: 13
 Mountain created at x:4 y:4 gridId: 15
 Animated 10 time segment(s)
-No existing grid
+------Map info------
+RoadGrid at x:1 y:1 with id:0 Inside: 
+GroundGrid at x:2 y:1 with id:1
+GroundGrid at x:3 y:1 with id:2
+GroundGrid at x:4 y:1 with id:3
+RoadGrid at x:1 y:2 with id:4 Inside: 
+GroundGrid at x:2 y:2 with id:5
+GroundGrid at x:3 y:2 with id:6
+GroundGrid at x:4 y:2 with id:7
+RoadGrid at x:1 y:3 with id:8 Inside: 
+GroundGrid at x:2 y:3 with id:9
+GroundGrid at x:3 y:3 with id:10
+GroundGrid at x:4 y:3 with id:11
+RoadGrid at x:1 y:4 with id:12 Inside: 
+RoadGrid at x:2 y:4 with id:13 Inside: 
+RoadGrid at x:3 y:4 with id:14 Inside: Human,
+RoadGrid at x:4 y:4 with id:15 Inside: MountainOfDoom,
+
+----------------------

@@ -20,6 +20,7 @@ import org.junit.*;
 @SuppressWarnings("all")
 public class StandardPrototypeLayerTestSuite {
 
+	public static final String CONFIG_HOME = "src/log4j.properties";
 	public static final String PROJECT_HOME = 
 					"/media/CloudShell/mymedia/repositories/git/szl4_repo/szl4_project_1";
 	

@@ -27,6 +27,10 @@ import java.util.Collection;
 import java.util.Arrays;
 
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Appender;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.RollingFileAppender;
 /**
  * 
  * @author Imre Szekeres
@@ -36,7 +40,7 @@ import java.util.Arrays;
 @SuppressWarnings("all")
 public class PrototypeCommandTest {
 
-	public static final String LOGFILE  = System.getProperty("user.dir")+"/resources/log/test/proto_command.log";
+	public static final String LOGFILE  = "/resources/log/test/proto_.log";
 	public static final String RSC_HOME = "resources/test/protocomm"; 
 	
 	private static Prototype proto;
@@ -70,7 +74,19 @@ public class PrototypeCommandTest {
 	@BeforeClass
 	public static void setup(){
 		logger = Logger.getLogger(PrototypeCommandTest.class);
-		/*((FileAppender)logger.getAppender("proto_comm")).setFile(LOGFILE);*/
+		try{
+			RollingFileAppender appender = new RollingFileAppender();
+			appender.setName("proto");
+			appender.setFile(LOGFILE);
+			appender.setLayout(new PatternLayout("%p %t %c - %m%n"));
+			appender.setThreshold(Level.DEBUG);
+			appender.setAppend(true);
+			
+			logger.addAppender(appender);
+		}catch(Exception e){
+			System.out.println("logger configuration failed: "+e.getMessage());
+		}
+		
 		proto = new Prototype();
 		logger.debug("setup completed");
 		ApplicationContext.bind("proto:/test/commands/log/CommandsLogger", logger);

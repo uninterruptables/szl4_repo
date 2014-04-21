@@ -26,7 +26,7 @@ Animated 3 time segment(s)
 ------Enemy info------
 Human Hp: 5 Dmg: 10 gridId: 1 Pos: x:1 y: 1 StatusModifier: 
 ----------------------
-Animated 22 time segment(s)
+Wrong argument, enter a number!
 No existing enemy
 ------Map info------
 RoadGrid at x:1 y:1 with id:1 Inside: 
