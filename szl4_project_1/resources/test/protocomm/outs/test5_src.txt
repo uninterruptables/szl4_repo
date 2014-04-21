@@ -114,3 +114,4 @@ RoadGrid at x:4 y:4 with id:15 Inside:
 ------Enemy info------
 Human Hp: 5 Dmg: 10 gridId: 4 Pos: x:1 y: 2 StatusModifier: 
 ----------------------
+Randomness on

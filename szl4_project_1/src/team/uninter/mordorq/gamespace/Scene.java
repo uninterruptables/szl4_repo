@@ -135,7 +135,14 @@ public class Scene extends JPanel{
 	 * */
 	public void endGame(boolean wasWinning){
 		if(wasWinning) owner.win();
-		else owner.gameOver();
+		else {
+			//clear collections
+			grids = new ArrayList<TerrainGrid>();
+			towers = new ArrayList<Tower>();
+			enemies = new ArrayList<Controlable>();
+			owner.gameOver();
+			
+		}
 	}
 	
 	

@@ -30,6 +30,10 @@ import team.uninter.mordorq.gamespace.WeakenTrapRune;
 import team.uninter.mordorq.utils.GameConstants;
 import team.uninter.mordorq.utils.GameUtil;
 
+/**
+ * @author Soma
+ *
+ */
 @SuppressWarnings("all")
 public class Prototype {
 
@@ -42,6 +46,12 @@ public class Prototype {
 		consoleIn = new BufferedReader(new InputStreamReader(System.in));
 	}
 	
+	
+	/**
+	 * Entrance method of the prototype
+	 * 
+	 * @throws IOException
+	 */
 	public void run() throws IOException{
 		promptUp();
 		String command;
@@ -61,6 +71,15 @@ public class Prototype {
 		System.out.print(">> ");
 	}
 	
+	/**Parse the input into commands
+	 * and parameters
+	 * The commands call the 'hub' methods,
+	 * which call more methods depending 
+	 * on the parameters, like a tree
+	 * 
+	 * @param stringArray
+	 * @throws Exception
+	 */
 	public void parseCommand(String[] stringArray) throws Exception {
 		this.stringArray = stringArray;
 		if(stringArray[0].trim().isEmpty()) return;
@@ -116,6 +135,12 @@ public class Prototype {
 		}
 	}
 	
+	/**The canCreate 'hub'
+	 * Call the canCreate methods for
+	 * enemy, tower, trap, rune
+	 * 
+	 * @throws IOException
+	 */
 	private void canCreate() throws IOException {
 		String parameter;
 		try{
@@ -142,6 +167,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for check that an enemy
+	 * can create on the given grid or not
+	 * 
+	 * @throws IOException
+	 */
 	private void canCreateEnemy() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -174,6 +205,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for check that a tower
+	 * can create on the given grid or not
+	 * 
+	 * @throws IOException
+	 */
 	private void canCreateTower() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -206,6 +243,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for check that a trap
+	 * can create on the given grid or not
+	 * 
+	 * @throws IOException
+	 */
 	private void canCreateTrap() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -238,6 +281,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for check that a rune
+	 * can create on the given grid or not
+	 * 
+	 * @throws IOException
+	 */
 	private void canCreateRune() throws IOException {
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -309,6 +358,14 @@ public class Prototype {
 		else throw new IOException("No session of writing has been started yet! Start a writing session.");
 	}
 	
+	
+	/**
+	 * load the commands from the
+	 * given file and execute tham
+	 * one by one
+	 * 
+	 * @throws IOException
+	 */
 	private void loadCommands() throws IOException {
 		try{
 			if(stringArray.length > 2){
@@ -347,6 +404,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Command for get or set
+	 * the mana of the user
+	 * 
+	 * @throws IOException
+	 */
 	private void handleMana() throws IOException {
 		String manaAmountText;
 		int manaAmount;
@@ -369,11 +433,23 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Restart the game
+	 * delete all grids and enemies
+	 * 
+	 * @throws IOException
+	 */
 	private void restart() throws IOException {
 		frame = MordorFrame.newInstance();
 		printLine("Restarted succesfully");
 	}
 	
+	
+	/**
+	 * Command for cast a magic
+	 * 
+	 * @throws IOException
+	 */
 	private void cast() throws IOException {
 		try{
 			String param = stringArray[1];
@@ -400,6 +476,12 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 *Command for set a grid's neightbour
+	 *
+	 * @throws IOException
+	 */
 	private void set() throws IOException {
 		int currentId, targetId;
 		String direction;
@@ -433,6 +515,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Command that gives back the grids 
+	 * information on the map
+	 * 
+	 * @throws IOException
+	 */
 	private void getMapinfo() throws IOException {
 		List<TerrainGrid> grids = frame.getScene().getGrids();
 		if(grids.size() > 0){
@@ -463,6 +552,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Command that gives back the
+	 * enemies information on the map
+	 * 
+	 * @throws IOException
+	 */
 	private void getEnemyinfo() throws IOException {
 		List<Controlable> enemies = frame.getScene().getEnemies();
 		if(enemies.size() > 0){
@@ -484,6 +580,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Command for create grids on 
+	 * the map
+	 * 
+	 * @throws IOException
+	 */
 	private void build() throws IOException {
 		String parameter;
 		try{
@@ -504,6 +607,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for create road grid
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void buildRoad() throws IOException {
 		int utility, id, xPos, yPos;
 		try{
@@ -535,6 +644,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for create ground grid
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void buildGround() throws IOException {
 		int utility, id, xPos, yPos;
 		try{
@@ -566,6 +682,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Command for enable/disable
+	 * the randomness of the game
+	 * 
+	 * @throws IOException
+	 */
 	private void toggleRandomness() throws IOException {
 		GameConstants.RANDOMNESS =!GameConstants.RANDOMNESS;
 		if(GameConstants.RANDOMNESS){
@@ -576,6 +698,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Command for help that list 
+	 * how to use commands and parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void help() throws IOException{
 		//TODO szepen leirni h kell hasznalni
 		printLine("Command and parameter list:");
@@ -596,6 +724,11 @@ public class Prototype {
 		printLine("help  -  show helps for commands");
 	}
 	
+	/**
+	 * Command to animate the word
+	 * 
+	 * @throws IOException
+	 */
 	private void animate() throws IOException{
 		int tick;
 		try{
@@ -609,6 +742,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Command for creating object like:
+	 * tower,trap,rune,barricade,mountain
+	 * 
+	 * @throws IOException
+	 */
 	private void create() throws IOException{
 		String parameter;
 		try{
@@ -641,6 +781,12 @@ public class Prototype {
 		}
 	}
 	
+	/**
+	 * Method for creating the mountain
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createMountain() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -674,6 +820,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for creating a barricate
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createBarricade() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -708,6 +861,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for creating a trap
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createTrap() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -742,6 +902,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for creating a rune
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createRune() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -783,6 +950,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for creating a tower
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createTower() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -818,6 +992,13 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for creating an enemy
+	 * with the given parameters
+	 * 
+	 * @throws IOException
+	 */
 	private void createEnemy() throws IOException{
 		if(checkConjunction(2,"at")){
 			int xPos, yPos;
@@ -849,11 +1030,27 @@ public class Prototype {
 		}
 	}
 	
+	
+	/**
+	 * Method for the parser
+	 * 
+	 * @param text
+	 * @param separation
+	 * @return
+	 */
 	private int getPosParameter(String text, String separation){
 		String[] splittedText = text.split(separation);
 		return Integer.parseInt(splittedText[1]);
 	}
 	
+	/**
+	 * Method for the parser
+	 * 
+	 * @param paramNumber
+	 * @param conj
+	 * @return
+	 * @throws IOException
+	 */
 	private boolean checkConjunction(int paramNumber, String conj) throws IOException{
 		try{
 			if(stringArray[paramNumber].equals(conj)){
