@@ -4,8 +4,11 @@
 package team.uninter.mordorq.gamespace;
 
 import javax.swing.event.*;
+
 import java.awt.*;
+
 import javax.swing.*;
+
 import java.awt.*;
 import java.io.*;
 /**
@@ -29,7 +32,28 @@ public class MordorFrame extends JFrame{
 	
 	private static final String DEFAULT_FILE_PATH = "resources/descriptors/scened.txt";
 	private JTextField userManaField;
+	private JTextField userManaFieldPrefix;
+	private JTextField towerTitle;
+	private JTextField trapTitle;
+	private JTextField towerRuneTitle;
+	private JTextField trapRuneTitle;
 	private Scene scene;
+	
+	private JPanel gamePanel;
+	private JPanel actionPanel;
+	private JPanel manaPanel;
+	private JPanel towerPanel;
+	private JPanel trapPanel;
+	private JPanel towerRunePanel;
+	private JPanel trapRunePanel;
+	private JPanel upperLogicalPanel;
+	private JPanel lowerLogicalPanel;
+	
+	private JSplitPane splitHorizontal;
+	private JSplitPane manaSplitter;
+	private JSplitPane towerTrapSplitter;
+	private JSplitPane runeSplitter;
+	private JSplitPane logicalSplitter;
 	
 	/**
 	 * Builds the <code>Scene</code> object from the source of the given
@@ -42,12 +66,16 @@ public class MordorFrame extends JFrame{
 		super("Mordor Quest");
 		scene = new Scene.Builder(this).filePath(filePath).build();
 		initWidgets();
+		
+		super.setVisible(true);
 	}
 	
 	protected MordorFrame() {
 		super("Mordor Quest");
 		scene = new Scene.Builder(this).buildSimple();
 		initWidgets();
+		
+		super.setVisible(true);
 	}
 	
 	/**
@@ -55,9 +83,117 @@ public class MordorFrame extends JFrame{
 	 * 
 	 * */
 	private void initWidgets(){
+		Font font1 = new Font("SansSerif", Font.BOLD, 20);
 		userManaField = new JTextField();
 		userManaField.setEditable(false);
 		userManaField.setText("1000");
+		userManaField.setFont(font1);
+		
+		userManaFieldPrefix = new JTextField();
+		userManaFieldPrefix.setEditable(false);
+		userManaFieldPrefix.setText("Mana: ");
+		userManaFieldPrefix.setFont(font1);
+		
+		towerTitle  = new JTextField();
+		towerTitle.setEditable(false);
+		towerTitle.setText("Towers");
+		
+		trapTitle  = new JTextField();
+		trapTitle.setEditable(false);
+		trapTitle.setText("Traps");
+		
+		towerRuneTitle  = new JTextField();
+		towerRuneTitle.setEditable(false);
+		towerRuneTitle.setText("Tower Runes");
+		
+		trapRuneTitle  = new JTextField();
+		trapRuneTitle.setEditable(false);
+		trapRuneTitle.setText("Trap Runes");
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setMinimumSize(new Dimension(800, 600));
+		setResizable( false );
+		
+		gamePanel = new JPanel();
+		actionPanel = new JPanel();
+		manaPanel = new JPanel();
+		towerPanel = new JPanel();
+		trapPanel = new JPanel();
+		towerRunePanel = new JPanel();
+		trapRunePanel = new JPanel();
+		upperLogicalPanel = new JPanel();
+		lowerLogicalPanel = new JPanel();
+		
+		splitHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+		manaSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		towerTrapSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		runeSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		logicalSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		
+		this.setLayout(new BorderLayout());
+		
+		//window setup
+		this.add(splitHorizontal, new BorderLayout().CENTER);
+		splitHorizontal.add(gamePanel);
+		splitHorizontal.add(actionPanel);
+		
+		//actionPanel setup
+		actionPanel.setLayout(new BorderLayout());
+		actionPanel.add(manaSplitter, new BorderLayout().CENTER);
+		
+		manaSplitter.add(manaPanel);
+		manaSplitter.add(logicalSplitter);
+		
+		//manaPanel setup
+		manaPanel.setLayout(new FlowLayout());
+		manaPanel.add(userManaFieldPrefix);
+		manaPanel.add(userManaField);
+		
+		//logical separation setup
+		logicalSplitter.add(upperLogicalPanel);
+		logicalSplitter.add(lowerLogicalPanel);
+	
+		//upper logical separation (tower,trap) setup
+		upperLogicalPanel.setLayout(new BorderLayout());
+		upperLogicalPanel.add(towerTrapSplitter, new BorderLayout().CENTER);
+
+		towerTrapSplitter.add(towerPanel);
+		towerTrapSplitter.add(trapPanel);
+
+		towerPanel.setLayout(new BorderLayout());
+		towerPanel.add(towerTitle, new BorderLayout().NORTH);
+		
+		trapPanel.setLayout(new BorderLayout());
+		trapPanel.add(trapTitle, new BorderLayout().NORTH);
+		
+		//lower logical separation (runes) setup
+		lowerLogicalPanel.setLayout(new BorderLayout());
+		lowerLogicalPanel.add(runeSplitter, new BorderLayout().CENTER);
+		
+		runeSplitter.add(towerRunePanel);
+		runeSplitter.add(trapRunePanel);
+		
+		towerRunePanel.setLayout(new BorderLayout());
+		towerRunePanel.add(towerRuneTitle, new BorderLayout().NORTH);
+		
+		trapRunePanel.setLayout(new BorderLayout());
+		trapRunePanel.add(trapRuneTitle, new BorderLayout().NORTH);
+		
+//		//make dividers to unmoveable
+		splitHorizontal.setDividerLocation(600);
+		manaSplitter.setDividerLocation(50);
+		logicalSplitter.setDividerLocation(250);
+		towerTrapSplitter.setDividerLocation(125);
+		runeSplitter.setDividerLocation(125);
+		
+		splitHorizontal.setEnabled( false );
+		manaSplitter.setEnabled( false );
+		logicalSplitter.setEnabled( false );
+		towerTrapSplitter.setEnabled( false );
+		runeSplitter.setEnabled( false );
+		
+		gamePanel.setBackground(Color.WHITE);
+		
 	}
 	
 	/**
