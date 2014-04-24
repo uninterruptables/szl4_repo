@@ -31,29 +31,66 @@ import java.io.*;
 public class MordorFrame extends JFrame{
 	
 	private static final String DEFAULT_FILE_PATH = "resources/descriptors/scened.txt";
-	private JTextField userManaField;
-	private JTextField userManaFieldPrefix;
-	private JTextField towerTitle;
-	private JTextField trapTitle;
-	private JTextField towerRuneTitle;
-	private JTextField trapRuneTitle;
+	private JLabel userManaField;
+	private JLabel userManaFieldPrefix;
+	private JLabel towerTitle;
+	private JLabel trapTitle;
+	private JLabel towerRuneTitle;
+	private JLabel trapRuneTitle;
+	private JLabel infoTitle;
 	private Scene scene;
 	
 	private JPanel gamePanel;
 	private JPanel actionPanel;
 	private JPanel manaPanel;
 	private JPanel towerPanel;
+	private JPanel innerTowerPanel;
 	private JPanel trapPanel;
+	private JPanel innerTrapPanel;
 	private JPanel towerRunePanel;
+	private JPanel innerTowerRunePanel;
 	private JPanel trapRunePanel;
+	private JPanel innerTrapRunePanel;
 	private JPanel upperLogicalPanel;
 	private JPanel lowerLogicalPanel;
+	private JPanel infoPanel;
+	private JPanel infoSeparatorPanel;
 	
 	private JSplitPane splitHorizontal;
 	private JSplitPane manaSplitter;
 	private JSplitPane towerTrapSplitter;
 	private JSplitPane runeSplitter;
 	private JSplitPane logicalSplitter;
+	private JSplitPane infoSplitter;
+	
+	private JMenuBar menubar;
+	private JMenu gameMenu;
+	private JMenuItem startMenuItem;
+	private JMenuItem pauseMenuItem;
+	private JMenuItem restartMenuItem;
+	private JMenuItem exitMenuItem;
+	
+	private JButton basicTower;
+	private JButton rangeTower;
+	private JButton greatTower;
+	private JButton fastTower;
+	
+	private JButton dmgDecreaseTrap;
+	private JButton speedDecreaseTrap;
+	private JButton poisonTrap;
+	
+	private JButton plusSpeedTowerRune;
+	private JButton plusDmdTowerTune;
+	private JButton plusRangeTowerRune;
+	private JButton plusElfDmdTowerTune;
+	private JButton plusDwarfDmdTowerTune;
+	private JButton plusHobbitTowerTune;
+	
+	private JButton plusSpeedDecreaseTrapRune;
+	private JButton plusDmgDecreaseTrapRune;
+	private JButton plusPoisonTrapRune;
+	
+	
 	
 	/**
 	 * Builds the <code>Scene</code> object from the source of the given
@@ -84,51 +121,65 @@ public class MordorFrame extends JFrame{
 	 * */
 	private void initWidgets(){
 		Font font1 = new Font("SansSerif", Font.BOLD, 20);
-		userManaField = new JTextField();
-		userManaField.setEditable(false);
-		userManaField.setText("1000");
+		userManaField = new JLabel("1000");
 		userManaField.setFont(font1);
 		
-		userManaFieldPrefix = new JTextField();
-		userManaFieldPrefix.setEditable(false);
-		userManaFieldPrefix.setText("Mana: ");
+		userManaFieldPrefix = new JLabel("Mana: ");
 		userManaFieldPrefix.setFont(font1);
 		
-		towerTitle  = new JTextField();
-		towerTitle.setEditable(false);
-		towerTitle.setText("Towers");
-		
-		trapTitle  = new JTextField();
-		trapTitle.setEditable(false);
-		trapTitle.setText("Traps");
-		
-		towerRuneTitle  = new JTextField();
-		towerRuneTitle.setEditable(false);
-		towerRuneTitle.setText("Tower Runes");
-		
-		trapRuneTitle  = new JTextField();
-		trapRuneTitle.setEditable(false);
-		trapRuneTitle.setText("Trap Runes");
+		towerTitle  = new JLabel("Towers");
+		trapTitle  = new JLabel("Traps");
+		towerRuneTitle  = new JLabel("Tower Runes");
+		trapRuneTitle  = new JLabel("Trap Runes");
+		infoTitle = new JLabel("Info");
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(800, 600));
+		setMinimumSize(new Dimension(875, 600));
 		setResizable( false );
 		
 		gamePanel = new JPanel();
 		actionPanel = new JPanel();
 		manaPanel = new JPanel();
 		towerPanel = new JPanel();
+		innerTowerPanel = new JPanel();
 		trapPanel = new JPanel();
+		innerTrapPanel = new JPanel();
 		towerRunePanel = new JPanel();
+		innerTowerRunePanel = new JPanel();
 		trapRunePanel = new JPanel();
+		innerTrapRunePanel = new JPanel();
 		upperLogicalPanel = new JPanel();
 		lowerLogicalPanel = new JPanel();
+		infoSeparatorPanel = new JPanel();
+		infoPanel = new JPanel();
 		
 		splitHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		manaSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		towerTrapSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		runeSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		logicalSplitter  = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		towerTrapSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		runeSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		logicalSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		infoSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		
+		basicTower = new JButton("Basic");
+		rangeTower = new JButton("Long Range");
+		greatTower = new JButton("High Damage");
+		fastTower = new JButton("Fast");
+		
+		dmgDecreaseTrap = new JButton("Weakening");
+		speedDecreaseTrap = new JButton("Slower");
+		poisonTrap = new JButton("Poisonous");
+		
+		plusSpeedTowerRune = new JButton("+Speed");
+		plusDmdTowerTune = new JButton("+Damage");
+		plusRangeTowerRune  = new JButton("+Range");
+		plusElfDmdTowerTune  = new JButton("+Elf dmg");
+		plusDwarfDmdTowerTune  = new JButton("+Dwarf dmg");
+		plusHobbitTowerTune  = new JButton("+Hobbit dmg");
+		
+		plusSpeedDecreaseTrapRune = new JButton("+Weakening");
+		plusDmgDecreaseTrapRune = new JButton("+Slower");
+		plusPoisonTrapRune = new JButton("+Poisonous");
+		
 		
 		this.setLayout(new BorderLayout());
 		
@@ -162,37 +213,93 @@ public class MordorFrame extends JFrame{
 
 		towerPanel.setLayout(new BorderLayout());
 		towerPanel.add(towerTitle, new BorderLayout().NORTH);
+		towerPanel.add(innerTowerPanel, new BorderLayout().CENTER);
+		innerTowerPanel.setLayout(new GridLayout(2,2));
 		
 		trapPanel.setLayout(new BorderLayout());
 		trapPanel.add(trapTitle, new BorderLayout().NORTH);
+		trapPanel.add(innerTrapPanel, new BorderLayout().CENTER);
+		innerTrapPanel.setLayout(new GridLayout(2,2));
 		
 		//lower logical separation (runes) setup
 		lowerLogicalPanel.setLayout(new BorderLayout());
 		lowerLogicalPanel.add(runeSplitter, new BorderLayout().CENTER);
 		
 		runeSplitter.add(towerRunePanel);
-		runeSplitter.add(trapRunePanel);
+		runeSplitter.add(infoSeparatorPanel);
 		
 		towerRunePanel.setLayout(new BorderLayout());
 		towerRunePanel.add(towerRuneTitle, new BorderLayout().NORTH);
+		towerRunePanel.add(innerTowerRunePanel, new BorderLayout().CENTER);
+		innerTowerRunePanel.setLayout(new GridLayout(3,2));		
+		
+		infoSeparatorPanel.setLayout(new BorderLayout());
+		infoSeparatorPanel.add(infoSplitter, new BorderLayout().CENTER);
+		
+		infoSplitter.add(trapRunePanel);
+		infoSplitter.add(infoPanel);
 		
 		trapRunePanel.setLayout(new BorderLayout());
 		trapRunePanel.add(trapRuneTitle, new BorderLayout().NORTH);
+		trapRunePanel.add(innerTrapRunePanel, new BorderLayout().CENTER);
+		innerTrapRunePanel.setLayout(new GridLayout(2,2));
 		
-//		//make dividers to unmoveable
+		infoPanel.setLayout(new BorderLayout());
+		infoPanel.add(infoTitle, new BorderLayout().NORTH);
+		
+		//make dividers to unmoveable
 		splitHorizontal.setDividerLocation(600);
-		manaSplitter.setDividerLocation(50);
-		logicalSplitter.setDividerLocation(250);
-		towerTrapSplitter.setDividerLocation(125);
-		runeSplitter.setDividerLocation(125);
+//		manaSplitter.setDividerLocation(35);
+//		logicalSplitter.setDividerLocation(165);
+//		towerTrapSplitter.setDividerLocation(75);
+//		runeSplitter.setDividerLocation(100);
 		
 		splitHorizontal.setEnabled( false );
 		manaSplitter.setEnabled( false );
 		logicalSplitter.setEnabled( false );
 		towerTrapSplitter.setEnabled( false );
 		runeSplitter.setEnabled( false );
+		infoSplitter.setEnabled( false );
 		
 		gamePanel.setBackground(Color.WHITE);
+		
+		//menu setup
+		menubar = new JMenuBar();
+		gameMenu = new JMenu("Game");
+		startMenuItem = new JMenuItem("Start Game");
+		pauseMenuItem = new JMenuItem("Pause Game");
+		restartMenuItem = new JMenuItem("Restart Game");
+		exitMenuItem = new JMenuItem("Exit");
+		
+		menubar.add(gameMenu);
+		gameMenu.add(startMenuItem);
+		gameMenu.add(pauseMenuItem);
+		gameMenu.add(restartMenuItem);
+		gameMenu.addSeparator();
+		gameMenu.add(exitMenuItem);
+		
+		super.setJMenuBar(menubar);
+		
+		
+		innerTowerPanel.add(rangeTower);
+		innerTowerPanel.add(basicTower);
+		innerTowerPanel.add(greatTower);
+		innerTowerPanel.add(fastTower);
+		
+		innerTrapPanel.add(dmgDecreaseTrap);
+		innerTrapPanel.add(speedDecreaseTrap);
+		innerTrapPanel.add(poisonTrap);
+		
+		innerTowerRunePanel.add(plusDmdTowerTune);
+		innerTowerRunePanel.add(plusRangeTowerRune);
+		innerTowerRunePanel.add(plusSpeedTowerRune);
+		innerTowerRunePanel.add(plusElfDmdTowerTune);
+		innerTowerRunePanel.add(plusDwarfDmdTowerTune);
+		innerTowerRunePanel.add(plusHobbitTowerTune);
+		
+		innerTrapRunePanel.add(plusDmgDecreaseTrapRune);
+		innerTrapRunePanel.add(plusSpeedDecreaseTrapRune);
+		innerTrapRunePanel.add(plusPoisonTrapRune);
 		
 	}
 	
