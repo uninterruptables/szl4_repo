@@ -52,7 +52,7 @@ public static class GreatMissile extends Missile {
 		super( x, y);
 		//TODO remove sysout
 //		System.out.println("GreatMissile.GreatMissile(x,y) called");
-		this.maxCooldown = GameConstants.GREAT_MAXCOOLDOWN;
+		this.maxCooldown = GameConstants.GREAT_TOWER_MAXCOOLDOWN;
 		racialDamages.put("dwarf", GameConstants.GREAT_MISSILE_DWARF_DAMAGE);
 		racialDamages.put("human", GameConstants.GREAT_MISSILE_HUMAN_DAMAGE);
 		racialDamages.put("elf", GameConstants.GREAT_MISSILE_ELF_DAMAGE);

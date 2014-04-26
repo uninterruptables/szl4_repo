@@ -9,6 +9,8 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import team.uninter.mordorq.utils.StringResources;
+
 import java.awt.*;
 import java.io.*;
 /**
@@ -38,6 +40,8 @@ public class MordorFrame extends JFrame{
 	private JLabel towerRuneTitle;
 	private JLabel trapRuneTitle;
 	private JLabel infoTitle;
+//	private JLabel infoDescription;
+	private JTextArea infoDescription;
 	private Scene scene;
 	
 	private JPanel gamePanel;
@@ -121,6 +125,7 @@ public class MordorFrame extends JFrame{
 	 * */
 	private void initWidgets(){
 		Font font1 = new Font("SansSerif", Font.BOLD, 20);
+		Font font2 = new Font("SansSerif", Font.BOLD, 12);
 		userManaField = new JLabel("1000");
 		userManaField.setFont(font1);
 		
@@ -132,6 +137,9 @@ public class MordorFrame extends JFrame{
 		towerRuneTitle  = new JLabel("Tower Runes");
 		trapRuneTitle  = new JLabel("Trap Runes");
 		infoTitle = new JLabel("Info");
+//		infoDescription = new JLabel();
+		infoDescription = new JTextArea();
+		infoDescription.setFont(font2);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setMinimumSize(new Dimension(875, 600));
@@ -176,8 +184,8 @@ public class MordorFrame extends JFrame{
 		plusDwarfDmdTowerTune  = new JButton("+Dwarf dmg");
 		plusHobbitTowerTune  = new JButton("+Hobbit dmg");
 		
-		plusSpeedDecreaseTrapRune = new JButton("+Weakening");
-		plusDmgDecreaseTrapRune = new JButton("+Slower");
+		plusSpeedDecreaseTrapRune = new JButton("+Slower");
+		plusDmgDecreaseTrapRune = new JButton("+Weakening");
 		plusPoisonTrapRune = new JButton("+Poisonous");
 		
 		
@@ -246,13 +254,31 @@ public class MordorFrame extends JFrame{
 		
 		infoPanel.setLayout(new BorderLayout());
 		infoPanel.add(infoTitle, new BorderLayout().NORTH);
+		infoPanel.add(infoDescription, new BorderLayout().CENTER);
+		
+		//add buttons to panels
+		innerTowerPanel.add(basicTower);
+		innerTowerPanel.add(rangeTower);
+		innerTowerPanel.add(greatTower);
+		innerTowerPanel.add(fastTower);
+		
+		innerTrapPanel.add(dmgDecreaseTrap);
+		innerTrapPanel.add(speedDecreaseTrap);
+		innerTrapPanel.add(poisonTrap);
+		
+		innerTowerRunePanel.add(plusDmdTowerTune);
+		innerTowerRunePanel.add(plusRangeTowerRune);
+		innerTowerRunePanel.add(plusSpeedTowerRune);
+		innerTowerRunePanel.add(plusElfDmdTowerTune);
+		innerTowerRunePanel.add(plusDwarfDmdTowerTune);
+		innerTowerRunePanel.add(plusHobbitTowerTune);
+		
+		innerTrapRunePanel.add(plusDmgDecreaseTrapRune);
+		innerTrapRunePanel.add(plusSpeedDecreaseTrapRune);
+		innerTrapRunePanel.add(plusPoisonTrapRune);
 		
 		//make dividers to unmoveable
 		splitHorizontal.setDividerLocation(600);
-//		manaSplitter.setDividerLocation(35);
-//		logicalSplitter.setDividerLocation(165);
-//		towerTrapSplitter.setDividerLocation(75);
-//		runeSplitter.setDividerLocation(100);
 		
 		splitHorizontal.setEnabled( false );
 		manaSplitter.setEnabled( false );
@@ -280,27 +306,167 @@ public class MordorFrame extends JFrame{
 		
 		super.setJMenuBar(menubar);
 		
+		//set textarea background color
+		//and upper border
+		infoDescription.setBackground(infoPanel.getBackground());
+		infoDescription.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.BLACK));
 		
-		innerTowerPanel.add(rangeTower);
-		innerTowerPanel.add(basicTower);
-		innerTowerPanel.add(greatTower);
-		innerTowerPanel.add(fastTower);
 		
-		innerTrapPanel.add(dmgDecreaseTrap);
-		innerTrapPanel.add(speedDecreaseTrap);
-		innerTrapPanel.add(poisonTrap);
+		initEventListeners();
 		
-		innerTowerRunePanel.add(plusDmdTowerTune);
-		innerTowerRunePanel.add(plusRangeTowerRune);
-		innerTowerRunePanel.add(plusSpeedTowerRune);
-		innerTowerRunePanel.add(plusElfDmdTowerTune);
-		innerTowerRunePanel.add(plusDwarfDmdTowerTune);
-		innerTowerRunePanel.add(plusHobbitTowerTune);
 		
-		innerTrapRunePanel.add(plusDmgDecreaseTrapRune);
-		innerTrapRunePanel.add(plusSpeedDecreaseTrapRune);
-		innerTrapRunePanel.add(plusPoisonTrapRune);
+	}
+	
+	private void initEventListeners(){
+		//hover event on buttons for info show
 		
+		//for towers
+		basicTower.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.BASIC_TOWER_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		greatTower.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.GREAT_TOWER_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		fastTower.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.FAST_TOWER_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		rangeTower.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.LONG_RANGE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		//for traps
+		dmgDecreaseTrap.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.WEAKENING_TRAP_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		speedDecreaseTrap.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.SLOWER_TRAP_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		poisonTrap.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.POISONOUS_TRAP_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		//for tower runes
+		plusDmdTowerTune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_DAMAGE_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusDwarfDmdTowerTune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_DWARF_DAMAGE_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusElfDmdTowerTune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_ELF_DAMAGE_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusHobbitTowerTune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_HOBBIT_DAMAGE_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusRangeTowerRune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_RANGE_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusSpeedTowerRune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_SPEED_TOWER_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		//for trap runes
+		plusDmgDecreaseTrapRune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_WEAKENING_TRAP_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusSpeedDecreaseTrapRune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_SLOWER_TRAP_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		plusPoisonTrapRune.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.PLUS_POISONOUS_TRAP_RUNE_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
 	}
 	
 	/**

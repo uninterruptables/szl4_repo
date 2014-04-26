@@ -53,7 +53,7 @@ public static class LongDistanceMissile extends Missile {
 		super( x, y);
 		//TODO remove sysout
 //		System.out.println("LongDistanceMissile.LongDistanceMissile(x,y) called");
-		this.maxCooldown = GameConstants.LONG_DISTANCE_MAXCOOLDOWN;
+		this.maxCooldown = GameConstants.LONG_DISTANCE_TOWER_MAXCOOLDOWN;
 		racialDamages.put("dwarf", GameConstants.LONG_DISTANCE_MISSILE_DWARF_DAMAGE);
 		racialDamages.put("human", GameConstants.LONG_DISTANCE_MISSILE_HUMAN_DAMAGE);
 		racialDamages.put("elf", GameConstants.LONG_DISTANCE_MISSILE_ELF_DAMAGE);
