@@ -12,7 +12,10 @@ import javax.swing.*;
 import team.uninter.mordorq.utils.StringResources;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.TimerTask;
 /**
  * Represents the frame for the application, that contains and
  * manages the actual <code>Scene</code> for the game. Provides a GUI, handles and
@@ -33,6 +36,7 @@ import java.io.*;
 public class MordorFrame extends JFrame{
 	
 	private static final String DEFAULT_FILE_PATH = "resources/descriptors/scened.txt";
+	
 	private JLabel userManaField;
 	private JLabel userManaFieldPrefix;
 	private JLabel towerTitle;
@@ -467,7 +471,43 @@ public class MordorFrame extends JFrame{
 		    	infoDescription.setText("");
 		    }
 		});
+		
+		
+		//menu item listeners
+		
+		//start game
+		startMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				scene.start();
+			}
+        }); 
+		
+		//stop game
+		pauseMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				scene.pause();
+			}
+        }); 
+		
+		//restart game
+		restartMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				reset();
+			}
+        }); 
+		
+		//exit game
+		exitMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(ABORT);
+			}
+        });
 	}
+	
 	
 	/**
 	 * Factory method publishing mechanism to instantiate a <code>MordorFrame</code>
@@ -560,4 +600,5 @@ public class MordorFrame extends JFrame{
 //		System.out.println("MordorFrame.reset(): void called");
 //		System.out.println("MordorFrame.reset(): void returned");
 	}
+
 }

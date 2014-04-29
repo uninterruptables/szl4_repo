@@ -6,6 +6,7 @@ package team.uninter.mordorq.gamespace;
 import javax.swing.*;
 
 import team.uninter.mordorq.utils.RoundInitiator;
+
 import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
@@ -40,6 +41,7 @@ public class Scene extends JPanel{
 	private Casted activeObject;
 	private Animator animator;
 	private int round;
+	java.util.Timer timer;
 	
 	/**
 	 * Constructor for building a simple/empty <code>Scene</code>.
@@ -74,11 +76,23 @@ public class Scene extends JPanel{
 	}
 	
 	public void start(){
-		animator.run();
+		timer = new java.util.Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+			  System.out.println("timer runing");
+			  animator.run(1);
+			}
+		}, 1000, 1000);
 	}
 	
 	public void start(int tick){
 		animator.run(tick);
+	}
+	
+	public void pause(){
+		timer.cancel();
+		timer = null;
 	}
 	
 	/**
