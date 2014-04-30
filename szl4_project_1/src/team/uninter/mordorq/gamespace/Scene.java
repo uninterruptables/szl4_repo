@@ -140,6 +140,20 @@ public class Scene extends JPanel{
 	public void nextRound(){
 		enemies = RoundInitiator.initRound(round++);
 		if(enemies.isEmpty()) endGame(true);
+		else
+			placeFrom( enemies,(RoadGrid)grids.get(0) );
+	}
+	
+	/**
+	 * Places all the elements from a list to a chain of gtids.
+	 * 
+	 * @param enemies
+	 * @param grid
+	 * */
+	private void placeFrom(List<? extends Controlable> enemies, RoadGrid grid){
+		if(enemies.size() == 0 || grid == null) return;
+		grid.setVulnerable((EnemyTroop)enemies.remove(0));
+		placeFrom( enemies,(RoadGrid)grid.get(Neighbour.SOUTH) );
 	}
 	
 	/**
