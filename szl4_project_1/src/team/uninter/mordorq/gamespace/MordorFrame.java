@@ -308,6 +308,9 @@ public class MordorFrame extends JFrame{
 		gameMenu.addSeparator();
 		gameMenu.add(exitMenuItem);
 		
+		pauseMenuItem.setEnabled(false);
+		restartMenuItem.setEnabled(false);
+		
 		super.setJMenuBar(menubar);
 		
 		//set textarea background color
@@ -479,6 +482,9 @@ public class MordorFrame extends JFrame{
 		startMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				startMenuItem.setEnabled(false);
+				pauseMenuItem.setEnabled(true);
+				restartMenuItem.setEnabled(true);
 				scene.start();
 			}
         }); 
@@ -487,7 +493,15 @@ public class MordorFrame extends JFrame{
 		pauseMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				scene.pause();
+				if(scene.timer != null){
+					pauseMenuItem.setText("Continue Game");
+					startMenuItem.setEnabled(false);
+					scene.pause();
+				}
+				else{
+					pauseMenuItem.setText("Pause Game");
+					scene.start();
+				}
 			}
         }); 
 		
@@ -495,6 +509,8 @@ public class MordorFrame extends JFrame{
 		restartMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				pauseMenuItem.setText("Pause Game");
+				startMenuItem.setEnabled(false);
 				reset();
 			}
         }); 
@@ -588,7 +604,9 @@ public class MordorFrame extends JFrame{
 		//TODO: JOptionPane.showMessageDialog(...);
 //		System.out.println("MordorFrame.gameOver(): void called");
 //		System.out.println("MordorFrame.gameOver(): void returned");
-//		System.out.println("Game Over");
+		JOptionPane.showMessageDialog(this, "Game Over");
+		startMenuItem.setEnabled(false);
+		pauseMenuItem.setEnabled(false);
 	}
 	
 	/**
@@ -599,6 +617,20 @@ public class MordorFrame extends JFrame{
 		// contentPane .add(scene)
 //		System.out.println("MordorFrame.reset(): void called");
 //		System.out.println("MordorFrame.reset(): void returned");
+		int input = JOptionPane.showOptionDialog(this, "Are you sure?", "Restart Game", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+
+		if(input == JOptionPane.OK_OPTION)
+		{
+			//TODO: load default state
+			
+			
+		    startMenuItem.setEnabled(false);
+		    pauseMenuItem.setText("Pause Game");
+		    pauseMenuItem.setEnabled(true);
+		    restartMenuItem.setEnabled(true);
+		    
+		    
+		}
 	}
 
 }
