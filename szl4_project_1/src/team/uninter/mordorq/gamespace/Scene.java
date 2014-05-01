@@ -316,7 +316,7 @@ public class Scene extends JPanel{
 		 * It handles all the reading from file, the wiring/binding of grids that the <code>Scene</code>
 		 * is going to .
 		 * 
-		 * @return a list of <>TerrainGrid</code>
+		 * @return a list of <code>TerrainGrid</code>
 		 * */
 		private List<TerrainGrid> buildScene() throws IOException {
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
