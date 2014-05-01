@@ -4,9 +4,13 @@
 package team.uninter.mordorq.utils;
 
 import team.uninter.mordorq.gamespace.*;
+
 import org.xml.sax.helpers.*;
+
 import javax.xml.parsers.*;
+
 import org.xml.sax.*;
+
 import java.util.*;
 import java.io.*;
 /**
@@ -42,15 +46,16 @@ public class RoundInitiator {
 	 * @param round indicating for which number of round the enemies must be constructed.
 	 * @return a collection of enemies ready to swarm the game space.
 	 * */
-	public static List<Controlable> initRound(int round){
-		//TODO:
-//		System.out.println("RoundInitiator.initRound(int): List called");
+	public static List<Controlable> initRoundFor(Scene scene, int round){
 		List<Controlable> enemies = new ArrayList<Controlable>();
 		XMLReader reader = null;
 		try{
 			reader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
 			reader.setContentHandler(new RoundHandler(enemies, round));
 			reader.parse(filePath);
+			
+			List<Controlable> temp = new ArrayList<Controlable>(enemies);
+			new Thread(new PlaceWorker( temp,(RoadGrid)scene.getGrids().get(0) )).start();
 			
 		}catch(SAXException e){
 			System.out.println("sax error: "+e.getMessage());
@@ -59,8 +64,45 @@ public class RoundInitiator {
 		} catch (IOException exc) {
 			System.out.println("io error: "+exc.getMessage());
 		}
-//		System.out.println("RoundInitiator.initRound(int): List returned");
 		return enemies;
+	}
+	
+	private static class PlaceWorker implements Runnable {
+		
+		private static final long WORKER_TIMEOUT = 2000;
+		
+		private List<? extends Controlable> enemySource;
+		private RoadGrid root;
+		private long timeout;
+		
+		PlaceWorker(List<? extends Controlable> enemySource, RoadGrid root) {
+			this.enemySource = enemySource;
+			this.timeout = WORKER_TIMEOUT;
+			this.root = root;
+		}
+		
+		@Override
+		public void run() {
+			try {
+				while(!enemySource.isEmpty()) {
+					placeFrom( enemySource,root );
+					Thread.sleep( this.timeout );
+				}
+			}catch(InterruptedException e) {}
+		}
+		
+		/**
+		 * Places all the elements from a list to a chain of grids recursively.
+		 * 
+		 * @param enemies from to place the elements
+		 * @param grid from to which to place the elements onto
+		 * */
+		private static void placeFrom(List<? extends Controlable> enemies, RoadGrid grid){
+			if(enemies.isEmpty() || grid == null) return;
+			if(grid.getVulnerable() == null)
+				grid.setVulnerable((EnemyTroop)enemies.remove(0));
+			placeFrom( enemies,(RoadGrid)grid.get(Neighbour.SOUTH) );
+		}
 	}
 	
 	/**
@@ -153,8 +195,6 @@ public class RoundInitiator {
 				inRound = false;
 				activeName = null;
 			}
-		}
-		
-		
+		}	
 	}
 }

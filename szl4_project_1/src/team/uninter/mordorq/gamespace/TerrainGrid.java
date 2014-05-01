@@ -31,10 +31,7 @@ abstract public class TerrainGrid extends GameObject{
 	 */
 	public TerrainGrid(int x, int y) {
 		super(x, y);
-		//TODO remove sysout
-//		System.out.println("TerrainGrid.TerrainGrid(x,y) called");		
 		neighbours = new HashMap<Neighbour,TerrainGrid>();
-//		System.out.println("TerrainGrid.TerrainGrid(x,y) returned");
 	}
 	
 	public TerrainGrid(int x, int y, int utility, int id) {
@@ -50,21 +47,15 @@ abstract public class TerrainGrid extends GameObject{
 	 * @param utility
 	 */
 	public TerrainGrid(int utility) {
-		//TODO remove sysout
-//		System.out.println("TerrainGrid.TerrainGrid(utility) called");	
 		this.utility = utility;
 		neighbours = new HashMap<Neighbour,TerrainGrid>();
-//		System.out.println("TerrainGrid.TerrainGrid(utility) returned");
 	}
 	
 	/**
 	 * Contructor without parameter
 	 */
 	public TerrainGrid(){
-		//TODO remove sysout
-//		System.out.println("TerrainGrid.TerrainGrid() called");	
 		neighbours = new HashMap<Neighbour,TerrainGrid>();
-//		System.out.println("TerrainGrid.TerrainGrid() returned");
 	};
 	
 	/**
@@ -82,9 +73,6 @@ abstract public class TerrainGrid extends GameObject{
 	 * @return
 	 */
 	public final int getUtility(){
-		//TODO remove sysout
-//		System.out.println("TerrainGrid.getUtility() called");	
-//		System.out.println("TerrainGrid.getUtility() returned");
 		return this.utility;
 	}
 	
@@ -93,10 +81,7 @@ abstract public class TerrainGrid extends GameObject{
 	}
 	
 	public final void setUtility(int utility){
-		//TODO remove sysout
-//		System.out.println("TerrainGrid.setUtility(utility) called");	
 		this.utility = utility;
-//		System.out.println("TerrainGrid.setUtility(utility) returned");
 	}
 
 	/**
@@ -163,10 +148,7 @@ abstract public class TerrainGrid extends GameObject{
 	 * @return
 	 */
 	public final TerrainGrid get(Neighbour neighbour){
-		//TODO remove sysout
-//		System.out.println("TerrainGrid get(Neighbour neightbour) called");
 		TerrainGrid grid = neighbours.get(neighbour);
-//		System.out.println("TerrainGrid get(Neighbour neightbour) returned");
 		return grid;
 	}
 	
@@ -177,9 +159,6 @@ abstract public class TerrainGrid extends GameObject{
 	 * @param grid
 	 */
 	public final  void set(Neighbour neighbour, TerrainGrid grid){
-		//TODO remove sysout
-//		System.out.println("TerrainGrid set(Neighbour neighbour, TerrainGrid grid) called");
 		neighbours.put(neighbour, grid);
-//		System.out.println("TerrainGrid set(Neighbour neighbour, TerrainGrid grid) returned");
 	}
 }

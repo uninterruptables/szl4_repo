@@ -138,23 +138,10 @@ public class Scene extends JPanel{
 	 * new round does not supply new enemies then the game has been won!
 	 * */
 	public void nextRound(){
-		enemies = RoundInitiator.initRound(round++);
+		enemies = RoundInitiator.initRoundFor( this,round++ );
 		if(enemies.isEmpty()) endGame(true);
-		else
-			placeFrom( enemies,(RoadGrid)grids.get(0) );
 	}
 	
-	/**
-	 * Places all the elements from a list to a chain of gtids.
-	 * 
-	 * @param enemies
-	 * @param grid
-	 * */
-	private void placeFrom(List<? extends Controlable> enemies, RoadGrid grid){
-		if(enemies.size() == 0 || grid == null) return;
-		grid.setVulnerable((EnemyTroop)enemies.remove(0));
-		placeFrom( enemies,(RoadGrid)grid.get(Neighbour.SOUTH) );
-	}
 	
 	/**
 	 * Notifies the <code>Scene</code> about the end of the current game.
@@ -165,9 +152,9 @@ public class Scene extends JPanel{
 		if(wasWinning) owner.win();
 		else {
 			//clear collections
-			grids = new ArrayList<TerrainGrid>();
-			towers = new ArrayList<Tower>();
-			enemies = new ArrayList<Controlable>();
+			grids.clear();   //grids   = null;   //new ArrayList<TerrainGrid>();
+			towers.clear();  //towers  = null;  //new ArrayList<Tower>();
+			enemies.clear(); //enemies = null; //new ArrayList<Controlable>();
 			owner.gameOver();
 			
 		}
@@ -337,11 +324,13 @@ public class Scene extends JPanel{
 			int height = 0;
 
 			BufferedReader reader = null;
+			int lineNum = 0;
 			try{
 			  reader = new BufferedReader(new InputStreamReader(
 					  							new FileInputStream(filePath)));
 			  String line;
 			  while((line=reader.readLine()) != null){
+				  ++lineNum;
 				  String[] parts = line.split(" ");
 				  for(String _util : parts){
 					  try{
@@ -365,17 +354,23 @@ public class Scene extends JPanel{
 			try{
 				  reader = new BufferedReader(new InputStreamReader(
 						  							new FileInputStream(filePath)));
+				  List<Integer> spawnUtils = Scene.Builder.createSpawnUtilitiesFor( lineNum );
 				  String line;
 				  int x = 0, y = 0;
 				  while((line=reader.readLine()) != null){
 					  String[] parts = line.split(" ");
 					  
 					  /* adding the entering space for newly spawn enemies */
-					  RoadGrid enterGrid = new RoadGrid(1);
+					  RoadGrid enterGrid = new RoadGrid( spawnUtils.get(y) );
+					  enterGrid.setX(-16);
+					  enterGrid.setY(0);
 					  x++;
 					  if(y > 0) {
-						  enterGrid.set(Neighbour.NORTH, grids.get((y-1)*height + 0));
-						  grids.get((y-1)*height + 0).set(Neighbour.SOUTH, enterGrid);
+						  TerrainGrid north = grids.get((y-1)*height + 0);
+						  enterGrid.set(Neighbour.NORTH, north);
+						  north.set(Neighbour.SOUTH, enterGrid);
+						  
+						  enterGrid.setY(north.getY() + 16);
 					  }
 					  grids.add(enterGrid);
 					  
@@ -387,13 +382,13 @@ public class Scene extends JPanel{
 						  }
 						  else if(x > 0){
 							  TerrainGrid west = grids.get(y*height + (x-1));
-							  grid.setX(west.getX() + 10);
+							  grid.setX(west.getX() + 16);
 							  grid.set(Neighbour.WEST, west);
 							  west.set(Neighbour.EAST, grid);;
 						  }
 						  if(y > 0){
 							  TerrainGrid north = grids.get((y-1)*height + x);
-							  grid.setY(north.getY() + 10);
+							  grid.setY(north.getY() + 16);
 							  grid.set(Neighbour.NORTH, north);
 							  north.set(Neighbour.SOUTH, grid);
 						  }
@@ -413,6 +408,21 @@ public class Scene extends JPanel{
 					}
 				}
 			return grids;
+		}
+		
+		/**
+		 * Creates a list of integers representing utilities for the spawn chain of <code>RoadGrid</code>s.
+		 * 
+		 * @param numberOfLines that indicates how many rows of grids are expected to be
+		 * @return a list of utilities
+		 * */
+		private static List<Integer> createSpawnUtilitiesFor(int numberOfLines) {
+			List<Integer> utilities = new ArrayList<Integer>();
+			for(int i = 1, n = numberOfLines - 2; i <= n ; i++)
+				utilities.add( i/2 + i%2 );
+			utilities.add(2);
+			utilities.add(1);
+			return utilities;
 		}
 	}
 }
