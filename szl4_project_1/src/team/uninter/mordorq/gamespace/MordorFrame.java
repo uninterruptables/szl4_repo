@@ -44,7 +44,7 @@ public class MordorFrame extends JFrame{
 	private JLabel towerRuneTitle;
 	private JLabel trapRuneTitle;
 	private JLabel infoTitle;
-//	private JLabel infoDescription;
+	private JLabel magicTitle;
 	private JTextArea infoDescription;
 	private Scene scene;
 	
@@ -63,6 +63,9 @@ public class MordorFrame extends JFrame{
 	private JPanel lowerLogicalPanel;
 	private JPanel infoPanel;
 	private JPanel infoSeparatorPanel;
+	private JPanel magicSeparatorPanel;
+	private JPanel magicPanel;
+	private JPanel innerMagicPanel;
 	
 	private JSplitPane splitHorizontal;
 	private JSplitPane manaSplitter;
@@ -70,6 +73,7 @@ public class MordorFrame extends JFrame{
 	private JSplitPane runeSplitter;
 	private JSplitPane logicalSplitter;
 	private JSplitPane infoSplitter;
+	private JSplitPane magicSplitter;
 	
 	private JMenuBar menubar;
 	private JMenu gameMenu;
@@ -87,6 +91,8 @@ public class MordorFrame extends JFrame{
 	private JButton speedDecreaseTrap;
 	private JButton poisonTrap;
 	
+	private JButton barricade;
+	
 	private JButton plusSpeedTowerRune;
 	private JButton plusDmdTowerTune;
 	private JButton plusRangeTowerRune;
@@ -97,6 +103,10 @@ public class MordorFrame extends JFrame{
 	private JButton plusSpeedDecreaseTrapRune;
 	private JButton plusDmgDecreaseTrapRune;
 	private JButton plusPoisonTrapRune;
+	
+	private JButton nazgulMagic;
+	private JButton iceWindMagic;
+	private JButton poisonFogMagic;
 	
 	
 	
@@ -137,16 +147,16 @@ public class MordorFrame extends JFrame{
 		userManaFieldPrefix.setFont(font1);
 		
 		towerTitle  = new JLabel("Towers");
-		trapTitle  = new JLabel("Traps");
+		trapTitle  = new JLabel("Traps & Barricade");
 		towerRuneTitle  = new JLabel("Tower Runes");
 		trapRuneTitle  = new JLabel("Trap Runes");
+		magicTitle = new JLabel("Magics");
 		infoTitle = new JLabel("Info");
-//		infoDescription = new JLabel();
 		infoDescription = new JTextArea();
 		infoDescription.setFont(font2);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(875, 600));
+		setMinimumSize(new Dimension(900, 700));
 		setResizable( false );
 		
 		gamePanel = new JPanel();
@@ -164,6 +174,9 @@ public class MordorFrame extends JFrame{
 		lowerLogicalPanel = new JPanel();
 		infoSeparatorPanel = new JPanel();
 		infoPanel = new JPanel();
+		magicSeparatorPanel = new JPanel();
+		magicPanel = new JPanel();
+		innerMagicPanel = new JPanel();
 		
 		splitHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		manaSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
@@ -171,6 +184,7 @@ public class MordorFrame extends JFrame{
 		runeSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		logicalSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		infoSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		magicSplitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		
 		basicTower = new JButton("Basic");
 		rangeTower = new JButton("Long Range");
@@ -180,6 +194,8 @@ public class MordorFrame extends JFrame{
 		dmgDecreaseTrap = new JButton("Weakening");
 		speedDecreaseTrap = new JButton("Slower");
 		poisonTrap = new JButton("Poisonous");
+		
+		barricade = new JButton("Barricade");
 		
 		plusSpeedTowerRune = new JButton("+Speed");
 		plusDmdTowerTune = new JButton("+Damage");
@@ -191,6 +207,10 @@ public class MordorFrame extends JFrame{
 		plusSpeedDecreaseTrapRune = new JButton("+Slower");
 		plusDmgDecreaseTrapRune = new JButton("+Weakening");
 		plusPoisonTrapRune = new JButton("+Poisonous");
+		
+		nazgulMagic = new JButton("Nazgul");
+		iceWindMagic = new JButton("Ice Wing");
+		poisonFogMagic = new JButton("Poison Fog");
 		
 		
 		this.setLayout(new BorderLayout());
@@ -249,12 +269,25 @@ public class MordorFrame extends JFrame{
 		infoSeparatorPanel.add(infoSplitter, BorderLayout.CENTER);
 		
 		infoSplitter.add(trapRunePanel);
-		infoSplitter.add(infoPanel);
+		infoSplitter.add(magicSeparatorPanel);
 		
 		trapRunePanel.setLayout(new BorderLayout());
 		trapRunePanel.add(trapRuneTitle, BorderLayout.NORTH);
 		trapRunePanel.add(innerTrapRunePanel, BorderLayout.CENTER);
 		innerTrapRunePanel.setLayout(new GridLayout(2,2));
+		
+		magicSeparatorPanel.setLayout(new BorderLayout());
+		magicSeparatorPanel.add(magicSplitter);
+		
+		magicSplitter.add(magicPanel);
+		magicSplitter.add(infoPanel);
+		
+		
+		magicPanel.setLayout(new BorderLayout());
+		magicPanel.add(magicTitle, BorderLayout.NORTH);
+		magicPanel.add(innerMagicPanel, BorderLayout.CENTER);
+		innerMagicPanel.setLayout(new GridLayout(2,2));
+		
 		
 		infoPanel.setLayout(new BorderLayout());
 		infoPanel.add(infoTitle, BorderLayout.NORTH);
@@ -269,6 +302,7 @@ public class MordorFrame extends JFrame{
 		innerTrapPanel.add(dmgDecreaseTrap);
 		innerTrapPanel.add(speedDecreaseTrap);
 		innerTrapPanel.add(poisonTrap);
+		innerTrapPanel.add(barricade);
 		
 		innerTowerRunePanel.add(plusDmdTowerTune);
 		innerTowerRunePanel.add(plusRangeTowerRune);
@@ -281,8 +315,12 @@ public class MordorFrame extends JFrame{
 		innerTrapRunePanel.add(plusSpeedDecreaseTrapRune);
 		innerTrapRunePanel.add(plusPoisonTrapRune);
 		
+		innerMagicPanel.add(nazgulMagic);
+		innerMagicPanel.add(iceWindMagic);
+		innerMagicPanel.add(poisonFogMagic);
+		
 		//make dividers to unmoveable
-		splitHorizontal.setDividerLocation(600);
+		splitHorizontal.setDividerLocation(650);
 		
 		splitHorizontal.setEnabled( false );
 		manaSplitter.setEnabled( false );
@@ -392,6 +430,15 @@ public class MordorFrame extends JFrame{
 		    }
 		});
 		
+		barricade.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.POISONOUS_TRAP_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
 		//for tower runes
 		plusDmdTowerTune.addMouseListener(new java.awt.event.MouseAdapter() {
 		    public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -474,6 +521,283 @@ public class MordorFrame extends JFrame{
 		    	infoDescription.setText("");
 		    }
 		});
+		
+		//for magics
+		nazgulMagic.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.NAZGUL_MAGIC_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		iceWindMagic.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.ICE_WIND_MAGIC_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		poisonFogMagic.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText(StringResources.POISON_FOG_MAGIC_INFO);
+		    }
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	infoDescription.setText("");
+		    }
+		});
+		
+		
+		//click event listeners
+		
+		//for towers
+		basicTower.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Basic Tower");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		fastTower.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Fast Tower");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		greatTower.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Great Tower");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		rangeTower.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Long Distace Tower");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		//for traps & barricade
+		
+		barricade.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Barricade");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		dmgDecreaseTrap.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Decrease Damage Trap");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		poisonTrap.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Poison Trap");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		speedDecreaseTrap.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Slow Down Trap");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		//for tower runes
+		plusDmdTowerTune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Damage Booster Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusDwarfDmdTowerTune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Damage Boost Dwarven Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusElfDmdTowerTune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Damage Boost Elven Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusHobbitTowerTune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Damage Boost Hobbit Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusRangeTowerRune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Radius Increasing Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusSpeedTowerRune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Speed Booster Tower Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		//for trap runes
+		plusDmgDecreaseTrapRune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Weaken Trap Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusPoisonTrapRune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Poison Trap Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		plusSpeedDecreaseTrapRune.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Freeze Trap Rune");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		//for magics
+		nazgulMagic.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Nazgul");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		iceWindMagic.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Ice Wind");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
+		
+		poisonFogMagic.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					scene.setActiveObject("Poison Fog");
+				} catch (InstantiationException | IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+        });
 		
 		
 		//menu item listeners
