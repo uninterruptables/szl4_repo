@@ -5,6 +5,9 @@ package team.uninter.mordorq.gamespace;
 
 import javax.swing.*;
 
+import java.awt.event.*;
+
+import team.uninter.mordorq.utils.GameUtil;
 import team.uninter.mordorq.utils.RoundInitiator;
 
 import java.util.concurrent.*;
@@ -31,7 +34,7 @@ import java.io.*;
  * @see Tower
  * @see Scene.Builder
  */
-@SuppressWarnings({"serial", "unused"})
+@SuppressWarnings("serial")
 public class Scene extends JPanel{
 
 	private static final Map<String, Class<? extends Casted>> availableAOs;
@@ -115,6 +118,11 @@ public class Scene extends JPanel{
 		this.enemies = new ArrayList<Controlable>();
 		this.round = 0;
 		animator = new Animator(this);
+		initListeners();
+	}
+	
+	private void initListeners() {
+		this.addMouseListener(new SceneMouseListener( this ));
 	}
 	
 	public void start(){
@@ -128,13 +136,33 @@ public class Scene extends JPanel{
 		}, 1000, 1000);
 	}
 	
+	/**
+	 * Starts the game play.
+	 * */
 	public void start(int tick){
 		animator.run(tick);
 	}
 	
+	/**
+	 * Pauses the game play.
+	 * */
 	public void pause(){
 		timer.cancel();
 		timer = null;
+	}
+	
+	
+	/**
+	 * Casts the active object to the given point.
+	 * 
+	 * @param point representing the ( x,y ) coordinates onto which the active object
+	 * 				 is to be casted
+	 * */
+	public void castOn(java.awt.Point point) {
+		if(activeObject instanceof Magic)
+			cast((Magic)activeObject);
+		else
+			place( activeObject,GameUtil.getGridByXY(grids, point.x, point.y));
 	}
 	
 	/**
@@ -214,6 +242,7 @@ public class Scene extends JPanel{
 				grid.repaint();
 			}
 		}
+		if(activeObject != null) activeObject.repaint();
 	}
 	
 	/**
@@ -304,6 +333,52 @@ public class Scene extends JPanel{
 		return round;
 	}
 	
+	/**
+	 * Manages the relevant mouse events sent to the <code>Scene</code>.
+	 * */
+	private static class SceneMouseListener extends MouseAdapter {
+		
+		SceneMouseListener(Scene owner) {
+			this.owner = owner;
+		}
+		
+		/**
+		 * Calls upon the cast mechanism defined in the owner <code>Scene</code> 
+		 * according to the state of the active object.
+		 * 
+		 * @param e the mouse event that triggers the casting
+		 * */
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			if(owner.activeObject != null)
+				owner.castOn( e.getPoint() );
+		}
+
+		/**
+		 * Manages the image to use when drawing the active object
+		 * according to the underlying grid, and of course the state
+		 * of the active object.
+		 * 
+		 * @param e the mouse event defining the current position of the mouse
+		 * 			 thus the active object itself.
+		 * */
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			if(owner.activeObject != null) {
+				java.awt.Point p = e.getPoint();
+				//TODO: suprevise !!
+				owner.activeObject.setLocation(p.x - 8, p.y - 8);;
+				TerrainGrid gridBeneath = GameUtil.getGridByXY(owner.grids, p.x, p.y);
+				if( !owner.activeObject.canCastOn(gridBeneath) ) {
+					owner.activeObject.setRedImage();
+				}
+				else
+					owner.activeObject.setNormalImage();
+			}
+		}
+		
+		private Scene owner;
+	}
 	
 	
 	/**

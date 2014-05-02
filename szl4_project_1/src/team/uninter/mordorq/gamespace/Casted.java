@@ -1,6 +1,5 @@
 package team.uninter.mordorq.gamespace;
 
-import java.awt.Color;
 
 @SuppressWarnings("serial")
 abstract public class Casted extends GameObject {
@@ -31,7 +30,8 @@ abstract public class Casted extends GameObject {
 	}
 	
 	//TODO:
-	public void setImageColor(Color color){}
+	public void setRedImage() {}
+	public void setNormalImage() {}
 	
 	abstract public boolean canCastOn(TerrainGrid grid);
 }
