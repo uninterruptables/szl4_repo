@@ -34,6 +34,8 @@ import java.io.*;
 @SuppressWarnings({"serial", "unused"})
 public class Scene extends JPanel{
 
+	private static final Map<String, Class<? extends Casted>> availableAOs;
+	
 	private List<TerrainGrid> grids;
 	private List<Tower> towers;
 	private List<Controlable> enemies;
@@ -42,6 +44,46 @@ public class Scene extends JPanel{
 	private Animator animator;
 	private int round;
 	java.util.Timer timer;
+	
+	/**
+	 * Constructs the available active objects cache from which the 
+	 * selection of the currently selected active object is performed. 
+	 * */
+	static {
+	 	availableAOs = new HashMap<String, Class<? extends Casted>>();
+	 	//availableAOs.put("", XY.class);
+	 	/* Barricade */
+	 	availableAOs.put("Barricade", Barricade.class);
+	 	
+	 	/* Towers */
+	 	availableAOs.put("Basic Tower", BasicTower.class);
+	 	availableAOs.put("Fast Tower", FastTower.class);
+	 	availableAOs.put("Great Tower", GreatTower.class);
+	 	availableAOs.put("Long Distace Tower", LongDistanceTower.class);
+	 	
+	 	/* Traps */
+	 	availableAOs.put("Decrease Damage Trap", DecreaseDamageTrap.class);
+	 	availableAOs.put("Poison Trap", PoisonTrap.class);
+	 	availableAOs.put("Slow Down Trap", SlowDownTrap.class);
+	 	
+	 	/* Runes */
+	 	availableAOs.put("Damage Boost Dwarven Tower Rune", DamageBoostDwarvenTowerRune.class);
+	 	availableAOs.put("Damage Boost Hobbit Tower Rune",  DamageBoostHobbitTowerRune.class);
+	 	availableAOs.put("Damage Boost Elven Tower Rune",   DamageBoostElvenTowerRune.class);
+	 	availableAOs.put("Damage Booster Tower Rune",       DamageBoosterTowerRune.class);
+	 	
+	 	availableAOs.put("Radius Increasing Tower Rune", RadiusIncTowerRune.class);
+	 	availableAOs.put("Speed Booster Tower Rune", SpeedBoosterTowerRune.class);
+	 	
+	 	availableAOs.put("Freeze Trap Rune", FreezeTrapRune.class);
+	 	availableAOs.put("Poison Trap Rune", PoisonTrapRune.class);
+	 	availableAOs.put("Weaken Trap Rune", WeakenTrapRune.class);
+	 	
+	 	/* Magic */
+	 	availableAOs.put("Nazgul", Nazgul.class);
+	 	availableAOs.put("Ice Wind", IceWindMagic.class);
+	 	availableAOs.put("Poison Fog", PoisonFogMagic.class);
+	}
 	
 	/**
 	 * Constructor for building a simple/empty <code>Scene</code>.
@@ -187,9 +229,12 @@ public class Scene extends JPanel{
 	 * Sets the active object which is about to be placed and casted.
 	 * 
 	 * @param objectName identifies the object class that is about to be instantiated.
+	 * @throws IllegalAccessException 
+	 * @throws InstantiationException 
 	 * */
-	public void setActiveObject(String objectName){
-		//TODO:
+	public void setActiveObject(String objectName) 
+							throws InstantiationException, IllegalAccessException{
+		this.activeObject = availableAOs.get(objectName).newInstance();
 	}
 	
 	/**

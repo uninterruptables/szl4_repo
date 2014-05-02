@@ -196,13 +196,13 @@ public class MordorFrame extends JFrame{
 		this.setLayout(new BorderLayout());
 		
 		//window setup
-		this.add(splitHorizontal, new BorderLayout().CENTER);
+		this.add(splitHorizontal, BorderLayout.CENTER);
 		splitHorizontal.add(gamePanel);
 		splitHorizontal.add(actionPanel);
 		
 		//actionPanel setup
 		actionPanel.setLayout(new BorderLayout());
-		actionPanel.add(manaSplitter, new BorderLayout().CENTER);
+		actionPanel.add(manaSplitter, BorderLayout.CENTER);
 		
 		manaSplitter.add(manaPanel);
 		manaSplitter.add(logicalSplitter);
@@ -218,47 +218,47 @@ public class MordorFrame extends JFrame{
 	
 		//upper logical separation (tower,trap) setup
 		upperLogicalPanel.setLayout(new BorderLayout());
-		upperLogicalPanel.add(towerTrapSplitter, new BorderLayout().CENTER);
+		upperLogicalPanel.add(towerTrapSplitter, BorderLayout.CENTER);
 
 		towerTrapSplitter.add(towerPanel);
 		towerTrapSplitter.add(trapPanel);
 
 		towerPanel.setLayout(new BorderLayout());
-		towerPanel.add(towerTitle, new BorderLayout().NORTH);
-		towerPanel.add(innerTowerPanel, new BorderLayout().CENTER);
+		towerPanel.add(towerTitle, BorderLayout.NORTH);
+		towerPanel.add(innerTowerPanel, BorderLayout.CENTER);
 		innerTowerPanel.setLayout(new GridLayout(2,2));
 		
 		trapPanel.setLayout(new BorderLayout());
-		trapPanel.add(trapTitle, new BorderLayout().NORTH);
-		trapPanel.add(innerTrapPanel, new BorderLayout().CENTER);
+		trapPanel.add(trapTitle, BorderLayout.NORTH);
+		trapPanel.add(innerTrapPanel, BorderLayout.CENTER);
 		innerTrapPanel.setLayout(new GridLayout(2,2));
 		
 		//lower logical separation (runes) setup
 		lowerLogicalPanel.setLayout(new BorderLayout());
-		lowerLogicalPanel.add(runeSplitter, new BorderLayout().CENTER);
+		lowerLogicalPanel.add(runeSplitter, BorderLayout.CENTER);
 		
 		runeSplitter.add(towerRunePanel);
 		runeSplitter.add(infoSeparatorPanel);
 		
 		towerRunePanel.setLayout(new BorderLayout());
-		towerRunePanel.add(towerRuneTitle, new BorderLayout().NORTH);
-		towerRunePanel.add(innerTowerRunePanel, new BorderLayout().CENTER);
+		towerRunePanel.add(towerRuneTitle, BorderLayout.NORTH);
+		towerRunePanel.add(innerTowerRunePanel, BorderLayout.CENTER);
 		innerTowerRunePanel.setLayout(new GridLayout(3,2));		
 		
 		infoSeparatorPanel.setLayout(new BorderLayout());
-		infoSeparatorPanel.add(infoSplitter, new BorderLayout().CENTER);
+		infoSeparatorPanel.add(infoSplitter, BorderLayout.CENTER);
 		
 		infoSplitter.add(trapRunePanel);
 		infoSplitter.add(infoPanel);
 		
 		trapRunePanel.setLayout(new BorderLayout());
-		trapRunePanel.add(trapRuneTitle, new BorderLayout().NORTH);
-		trapRunePanel.add(innerTrapRunePanel, new BorderLayout().CENTER);
+		trapRunePanel.add(trapRuneTitle, BorderLayout.NORTH);
+		trapRunePanel.add(innerTrapRunePanel, BorderLayout.CENTER);
 		innerTrapRunePanel.setLayout(new GridLayout(2,2));
 		
 		infoPanel.setLayout(new BorderLayout());
-		infoPanel.add(infoTitle, new BorderLayout().NORTH);
-		infoPanel.add(infoDescription, new BorderLayout().CENTER);
+		infoPanel.add(infoTitle, BorderLayout.NORTH);
+		infoPanel.add(infoDescription, BorderLayout.CENTER);
 		
 		//add buttons to panels
 		innerTowerPanel.add(basicTower);
@@ -544,11 +544,7 @@ public class MordorFrame extends JFrame{
 	 * @return a new instance of the MordorFrame class
 	 * */
 	public static MordorFrame newInstance(String filePath) throws IOException{
-		//TODO:
-//		System.out.println("MordorFrame.newInstance(String): MordorFrame called");
-		MordorFrame frame = new MordorFrame(filePath);
-//		System.out.println("MordorFrame.newInstance(String): MordorFrame returned");
-		return frame;
+		return new MordorFrame(filePath);
 	}
 	
 	/**
@@ -558,9 +554,6 @@ public class MordorFrame extends JFrame{
 	 * @return the <code>Scene</code> instance contained by this <code>MordorFrame</code> object.
 	 * */
 	public Scene getScene(){
-		//TODO:
-//		System.out.println("MordorFrame.getScene(): Scene called");
-//		System.out.println("MordorFrame.getScene(): Scene returned");
 		return scene;
 	}
 	
@@ -570,9 +563,6 @@ public class MordorFrame extends JFrame{
 	 * @return the remaining mana being at the users disposal.
 	 * */
 	public int getUserMana(){
-		//TODO:
-//		System.out.println("MordorFrame.getUserMana(): int called");
-//		System.out.println("MordorFrame.getUserMana(): int returned");
 		return Integer.parseInt(userManaField.getText());
 	}
 	
@@ -582,10 +572,7 @@ public class MordorFrame extends JFrame{
 	 * @param mana the new amount of mana the user can spend. 
 	 * */
 	public void setUserMana(int mana){
-		//TODO:
-//		System.out.println("MordorFrame.setUserMana(int): void called");
 		userManaField.setText(Integer.toString(mana));
-//		System.out.println("MordorFrame.setUserMana(int): void returned");
 	}
 	
 	/**
@@ -593,8 +580,6 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void win(){
 		//TODO: JOptionPane.showMessageDialog(...);
-//		System.out.println("MordorFrame.win(): void called");
-//		System.out.println("MordorFrame.win(): void returned");
 	}
 	
 	/**
@@ -602,8 +587,6 @@ public class MordorFrame extends JFrame{
 	 * */
 	public void gameOver(){
 		//TODO: JOptionPane.showMessageDialog(...);
-//		System.out.println("MordorFrame.gameOver(): void called");
-//		System.out.println("MordorFrame.gameOver(): void returned");
 		JOptionPane.showMessageDialog(this, "Game Over");
 		startMenuItem.setEnabled(false);
 		pauseMenuItem.setEnabled(false);
@@ -615,8 +598,6 @@ public class MordorFrame extends JFrame{
 	public void reset(){
 		//TODO: scene = new Scene.Builder()...build()
 		// contentPane .add(scene)
-//		System.out.println("MordorFrame.reset(): void called");
-//		System.out.println("MordorFrame.reset(): void returned");
 		int input = JOptionPane.showOptionDialog(this, "Are you sure?", "Restart Game", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 
 		if(input == JOptionPane.OK_OPTION)
@@ -628,9 +609,6 @@ public class MordorFrame extends JFrame{
 		    pauseMenuItem.setText("Pause Game");
 		    pauseMenuItem.setEnabled(true);
 		    restartMenuItem.setEnabled(true);
-		    
-		    
 		}
 	}
-
 }

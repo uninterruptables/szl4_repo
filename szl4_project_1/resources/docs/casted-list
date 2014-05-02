@@ -1,0 +1,29 @@
+TOWERS
+	BasicTower	  [+]
+	FastTower	  [+]
+	GreatTower	  [+]
+	LongDistanceTower [+]
+
+TRAPS
+	DecreaseDamageTrap	[+]
+	PoisonTrap		[+]
+	SlowDownTrap		[+]
+
+
+RUNES
+	DamageBoostDwarvenTowerRune	[+]
+	DamageBoostElvenTowerRune	[+]
+	DamageBoosterTowerRune		[+]
+	DamageBoostHobbitTowerRune	[+]
+	RadiusIncTowerRune		[+]
+	SpeedBoosterTowerRune		[+]
+
+	FreezeTrapRune			[+]
+	PoisonTrapRune			[+]
+	WeakenTrapRune			[+]
+	
+MAGIC
+	Nazghul		[+]
+	IceWindMagic	[+]
+	PoisonFogMagic	[+]
+	
