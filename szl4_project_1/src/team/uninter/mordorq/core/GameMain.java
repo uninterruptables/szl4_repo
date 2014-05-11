@@ -11,7 +11,6 @@ public class GameMain {
 			MordorFrame.newInstance(SCENE_DESC);
 		} catch (Exception e) {
 			System.out.println("in MordorQuest main: " + e.getClass().getName() + ": " + e.getMessage());
-			e.printStackTrace();
 		}
 	}
 }
