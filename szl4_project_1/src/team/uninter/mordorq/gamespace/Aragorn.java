@@ -2,8 +2,13 @@ package team.uninter.mordorq.gamespace;
 
 
 
+import java.io.File;
+import java.io.IOException;
+
 import team.uninter.mordorq.skeleton.TroopStepSimulator;
 import team.uninter.mordorq.utils.GameConstants;
+
+import javax.imageio.*;
 
 /**
  * @author Danyik Dávid
@@ -15,9 +20,14 @@ public class Aragorn extends Human{
 	
  
 	 private static Aragorn instance = null;
-			 
-	 image = new Image("/resources/images/aragorn_16p.jpg");
-	 
+		
+	 public void LoadImageApp() {
+	       try {
+	           image = ImageIO.read(new File("/resources/images/aragorn_16p.jpg"));
+	       } catch (IOException e) {
+	       }
+
+	    }
 	  private Aragorn(int health, int damage, int reward){
 		  super();
 		  //TODO remove sysout
@@ -25,6 +35,7 @@ public class Aragorn extends Human{
 		  this.health = health;
 		  this.damage = damage;
 		  this.rewardMana = reward;
+		  
 //		  System.out.println("Aragorn.Aragorn(health,damage) returned");
 	  }
 
