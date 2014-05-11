@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class SpeedBoosterTowerRune extends TowerRune{
 	
 	//a class used to create runes that can increase a tower's speed.
@@ -18,7 +20,7 @@ public class SpeedBoosterTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 //		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) called");
-		tower.setMaxCooldown(tower.getMaxCooldown()-10);
+		tower.setMaxCooldown(tower.getMaxCooldown() - GameConstants.PLUS_SPEED_TOWER_RUNE_SPEED_AMOUNT);
 //		System.out.println("SpeedBoosterTowerRune.injectOn(Tower) returned");
 	}
 	

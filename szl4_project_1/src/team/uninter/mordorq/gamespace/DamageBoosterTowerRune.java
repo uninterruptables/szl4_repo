@@ -6,7 +6,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 	
 	//Class used to increase damage versus everything. On inject on, it calls the tower-s
 	//setAllDamage function, to increase it's damage
-	float extraDamage;
+//	float extraDamage;
 	
 	public DamageBoosterTowerRune() {
 		super();
@@ -23,7 +23,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 //		System.out.println("DamageBoosterTowerRune.injectOn(Tower) called");
-		tower.addAllDamage(GameConstants.DAMAGE_BOOST_TOWER_RUNE);
+		tower.addAllDamage(GameConstants.PLUS_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT);
 //		System.out.println("DamageBoosterTowerRune.injectOn(Tower) returned");
 	}
 
