@@ -55,9 +55,9 @@ public class Elf extends EnemyTroop {
 	 * (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-	public int getReward() {
-		return rewardMana;		
-	}
+//	public int getReward() {
+//		return rewardMana;		
+//	}
 	
 	/* Method how and how many damage get the elf.
 	 * (non-Javadoc)

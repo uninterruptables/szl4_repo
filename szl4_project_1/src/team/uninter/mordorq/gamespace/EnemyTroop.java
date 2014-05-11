@@ -111,28 +111,28 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	/**
 	 * @return the maxCooldown
 	 */
-	public int getMaxCooldown() {
+	public final int getMaxCooldown() {
 		return maxCooldown;
 	}
 	
 	/**
 	 * @param maxCooldown the maxCooldown to set
 	 */
-	public void setMaxCooldown(int maxCooldown) {
+	public final void setMaxCooldown(int maxCooldown) {
 		this.maxCooldown = maxCooldown;
 	}
 	
 	/**
 	 * @return the rewardMana
 	 */
-	public int getRewardMana() {
+	public final int getRewardMana() {
 		return rewardMana;
 	}
 	
 	/**
 	 * @param rewardMana the rewardMana to set
 	 */
-	public void setRewardMana(int rewardMana) {
+	public final void setRewardMana(int rewardMana) {
 		this.rewardMana = rewardMana;
 	}
 
@@ -173,7 +173,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 	 * @param grid onto which we want to place the clone or from which the search starts
 	 * @return true only if the clone could be placed
 	 * */
-	private boolean split(RoadGrid grid){
+	private final boolean split(RoadGrid grid){
 		if(grid.getVulnerable() == null){
 			int h;
 			this.setHealth((h = this.getHealth()/2));
@@ -236,6 +236,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 		this.cooldown = cooldown;
 	}
 	
-	public abstract int getReward();
+//	public abstract int getReward();
 
 }
