@@ -56,9 +56,9 @@ public class Human extends EnemyTroop {
 	 *  (non-Javadoc)
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-	public int getReward() {
-		return rewardMana;		
-	}
+//	public int getReward() {
+//		return rewardMana;		
+//	}
 	
 	/** Method how and how many damage get the human.
 	 *  (non-Javadoc)

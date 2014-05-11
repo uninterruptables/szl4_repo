@@ -65,7 +65,7 @@ public class MissileDamageSimulator implements Simulatable {
 	    while(troop.isActive()){
 	    	tower.controlIt();
 	    }
-	    frame.getScene().rewardUser(troop.getReward());
+	    frame.getScene().rewardUser(troop.getRewardMana());
 	    System.out.println("MissileDamageSimulator finished the simulation..");
 	}
 }
