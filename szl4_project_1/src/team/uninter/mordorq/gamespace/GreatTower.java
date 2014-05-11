@@ -16,7 +16,8 @@ public class GreatTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 //		System.out.println("GreatTower.GreatTower(x,y) called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.GREAT_TOWER_RADIUS;
 //		System.out.println("GreatTower.GreatTower(x,y) returned");
 	}
 	
@@ -24,7 +25,8 @@ public class GreatTower extends Tower {
 		super();
 		//TODO remove sysout
 //		System.out.println("GreatTower.GreatTower() called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.GREAT_TOWER_RADIUS;
 //		System.out.println("GreatTower.GreatTower() returned");
 	}
 	public void notifyWith(EnemyTroop target){

@@ -16,7 +16,8 @@ public class LongDistanceTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 //		System.out.println("LongDistanceTower.LongDistanceTower(x,y) called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.LONG_DISTANCE_TOWER_RADIUS;
 //		System.out.println("LongDistanceTower.LongDistanceTower(x,y) returned");
 	}
 	
@@ -24,7 +25,8 @@ public class LongDistanceTower extends Tower {
 		super();
 		//TODO remove sysout
 //		System.out.println("LongDistanceTower.LongDistanceTower() called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.LONG_DISTANCE_TOWER_RADIUS;
 //		System.out.println("LongDistanceTower.LongDistanceTower() returned");
 	}
 	

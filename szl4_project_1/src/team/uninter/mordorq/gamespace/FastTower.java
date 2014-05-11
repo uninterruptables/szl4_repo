@@ -16,7 +16,8 @@ public class FastTower extends Tower {
 		super (x, y);
 		//TODO remove sysout
 //		System.out.println("FastTower.FastTower(x,y) called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.FAST_TOWER_RADIUS;
 //		System.out.println("FastTower.FastTower(x,y) returned");
 	}
 	
@@ -24,7 +25,8 @@ public class FastTower extends Tower {
 		super();
 		//TODO remove sysout
 //		System.out.println("FastTower.FastTower() called");
-		roadGrids = new ArrayList<TargetPublisher>();
+//		roadGrids = new ArrayList<TargetPublisher>();
+		this.radius = GameConstants.FAST_TOWER_RADIUS;
 //		System.out.println("FastTower.FastTower() returned");
 	}
 	

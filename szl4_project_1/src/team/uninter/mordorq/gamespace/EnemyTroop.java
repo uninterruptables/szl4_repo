@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import team.uninter.mordorq.gamespace.Tower.Missile;
+import team.uninter.mordorq.utils.GameConstants;
 import team.uninter.mordorq.utils.PathFinder;
 
 @SuppressWarnings("serial")
@@ -91,14 +92,20 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable{
 				return;
 			}
 		}
+		List<StatusModifier> removeable = new ArrayList<StatusModifier>();
 		for(StatusModifier sm : statusModifiers){
 			sm.setDuration(sm.getDuration() - 1);
 			if(sm.getDuration() <= 0){
+				removeable.add(sm);
 				sm.reverseAffect(this);
-				statusModifiers.remove(sm);
-				return;
+			}
+			else{
+				if(sm instanceof PoisonStatus && sm.getDuration()%GameConstants.POISONOUS_STATUS_TIME_INTERVAL == 0){
+					((PoisonStatus) sm).affect(this);
+				}
 			}
 		}
+		statusModifiers.removeAll(removeable);
 	}
 	
 	/**
