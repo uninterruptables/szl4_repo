@@ -3,6 +3,8 @@
  */
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -17,6 +19,8 @@ import java.util.TimerTask;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JPanel;
+
+import org.apache.log4j.Logger;
 
 import team.uninter.mordorq.utils.GameUtil;
 import team.uninter.mordorq.utils.RoundInitiator;
@@ -47,6 +51,7 @@ import team.uninter.mordorq.utils.RoundInitiator;
 public class Scene extends JPanel {
 
 	private static final Map<String, Class<? extends Casted>> availableAOs;
+	private static final Logger logger = Logger.getLogger(Scene.class);
 
 	private List<TerrainGrid> grids;
 	private List<Tower> towers;
@@ -55,6 +60,7 @@ public class Scene extends JPanel {
 	private Casted activeObject;
 	private Animator animator;
 	private int round;
+	private int lineWidth;
 	java.util.Timer timer;
 
 	/**
@@ -111,11 +117,12 @@ public class Scene extends JPanel {
 	 * usage of the public class Builder which constructs the initial
 	 * <code>Scene</code>.
 	 * */
-	protected Scene(MordorFrame owner, List<TerrainGrid> grids) {
+	protected Scene(MordorFrame owner, List<TerrainGrid> grids, int lineWidth) {
 		this();
 		this.owner = owner;
 		this.grids = grids;
-
+		this.lineWidth = lineWidth;
+		initPanel();
 	}
 
 	/**
@@ -128,6 +135,22 @@ public class Scene extends JPanel {
 		this.round = 0;
 		animator = new Animator(this);
 		initListeners();
+	}
+
+	private void initPanel() {
+
+		this.setLayout(new GridLayout());
+		/*
+		 * logger.debug("Scene.initPanel()=====================");
+		 * this.setLayout(new FlowLayout()); for (TerrainGrid grid : grids) {
+		 * logger.debug("grid " + grid.toString() + " was added to " +
+		 * this.toString()); this.add(grid); }
+		 * 
+		 * logger.debug("width,height: " + (16 * lineWidth)); //
+		 * 
+		 * logger.debug("=======================================");
+		 */
+		this.setPreferredSize(new Dimension(640, 640));
 	}
 
 	private void initListeners() {
@@ -416,6 +439,7 @@ public class Scene extends JPanel {
 
 		private String filePath = "resources/descriptors/simuframed.txt";
 		private MordorFrame owner;
+		private int lineWidth;
 
 		/**
 		 * The public constructor enforces the users to supply the owner
@@ -448,7 +472,7 @@ public class Scene extends JPanel {
 		 * */
 		public Scene build() throws IOException {
 			List<TerrainGrid> grids = buildScene();
-			return new Scene(owner, grids);
+			return new Scene(owner, grids, lineWidth);
 		}
 
 		/**
@@ -468,9 +492,12 @@ public class Scene extends JPanel {
 		 * @return a list of <code>TerrainGrid</code>
 		 * */
 		private List<TerrainGrid> buildScene() throws IOException {
+			logger.debug("============ SCENE =============");
+			logger.debug("building scene from " + filePath);
+
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
-			int height = 0;
+			int width = 0;
 
 			BufferedReader reader = null;
 			int lineNum = 0;
@@ -479,11 +506,13 @@ public class Scene extends JPanel {
 						new FileInputStream(filePath)));
 				String line;
 				while ((line = reader.readLine()) != null) {
+					width = 0;
 					++lineNum;
 					String[] parts = line.split(" ");
 					for (String _util : parts) {
 						try {
 							int util = Integer.parseInt(_util);
+							++width;
 							if (!bucketHash.containsKey(util))
 								bucketHash.put(util, new ArrayList<TerrainGrid>());
 							List<TerrainGrid> _grids = bucketHash.get(util);
@@ -503,7 +532,10 @@ public class Scene extends JPanel {
 					}
 				}
 			}
+			logger.debug("width: " + width);
+			this.lineWidth = width;
 			try {
+				logger.debug("========== GRIDS ============");
 				reader = new BufferedReader(new InputStreamReader(
 						new FileInputStream(filePath)));
 				List<Integer> spawnUtils = Scene.Builder.createSpawnUtilitiesFor(lineNum);
@@ -513,45 +545,47 @@ public class Scene extends JPanel {
 					String[] parts = line.split(" ");
 
 					/* adding the entering space for newly spawn enemies */
+					logger.debug("spawnUtil@" + y + ": " + spawnUtils.get(y));
 					RoadGrid enterGrid = new RoadGrid(spawnUtils.get(y));
 					enterGrid.setX(-16);
 					enterGrid.setY(0);
 					x++;
 					if (y > 0) {
-						TerrainGrid north = grids.get((y - 1) * height + 0);
+						TerrainGrid north = grids.get((y - 1) * width + 0);
 						enterGrid.set(Neighbour.NORTH, north);
 						north.set(Neighbour.SOUTH, enterGrid);
 
-						enterGrid.setY(north.getY() + 16);
+						enterGrid.setY(y * 16);
 					}
 					grids.add(enterGrid);
+					logger.debug("enterGrid was placed at ( " + enterGrid.getX() + "," + enterGrid.getY() + " ) with u: " + enterGrid.getUtility());
 
 					for (String _util : parts) {
 						if (!_util.isEmpty()) {
 							TerrainGrid grid = bucketHash.get(Integer.valueOf(_util)).get(0);
-							if (x < 0) {
+							grid.setY(y * 16);
+
+							if (x <= 0)
 								grid.setX(0);
-								grid.setX(0);
-							}
 							else if (x > 0) {
-								TerrainGrid west = grids.get(y * height + (x - 1));
+								TerrainGrid west = grids.get(y * width + (x - 1));
 								grid.setX(west.getX() + 16);
 								grid.set(Neighbour.WEST, west);
 								west.set(Neighbour.EAST, grid);
-								;
 							}
 							if (y > 0) {
-								TerrainGrid north = grids.get((y - 1) * height + x);
-								grid.setY(north.getY() + 16);
+								TerrainGrid north = grids.get((y - 1) * width + x);
 								grid.set(Neighbour.NORTH, north);
 								north.set(Neighbour.SOUTH, grid);
 							}
 							grids.add(grid);
+							logger.debug("grid was placed to ( " + grid.getX() + "," + grid.getY() + " ) with u: " + grid.getUtility());
 							x++;
 						}
 					}
 					x = 0;
 					y++;
+					logger.debug("=========( " + x + "," + y + " )=========");
 				}
 			} catch (IOException e) {
 				throw e;
