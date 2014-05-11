@@ -30,22 +30,19 @@ public class Animator implements Runnable{
 	
 	public void run(int n) {
 		for(int i = 0; i < n; i++){
+			List<Controlable> removeable = new ArrayList<Controlable>();
+			
 			for(Controlable enemy : scene.getEnemies()){
 				if(enemy.isActive()){
 					enemy.controlIt();
 				}
 				else{
-					scene.getEnemies().remove(enemy);
-					return;
+					removeable.add(enemy);
 				}
 			}
-			//remove enemy in a new loop
-			//to prevent inconsistent states
-			for(Controlable enemy : scene.getEnemies()){
-				if(!enemy.isActive()){
-					scene.getEnemies().remove(enemy);
-				}
-			}
+			//to prevent ConcurrentModificationException 
+			scene.getEnemies().removeAll(removeable);
+
 			if(enemies.isEmpty()){
 				scene.endRound();
 			}

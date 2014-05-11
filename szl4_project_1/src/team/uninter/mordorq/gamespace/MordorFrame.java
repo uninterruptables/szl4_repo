@@ -927,7 +927,10 @@ public class MordorFrame extends JFrame{
 		if(input == JOptionPane.OK_OPTION)
 		{
 			//TODO: load default state
-			
+			if(scene.timer != null){
+				scene.pause();
+			}
+			scene.start();
 			
 		    startMenuItem.setEnabled(false);
 		    pauseMenuItem.setText("Pause Game");
