@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+
+
 import team.uninter.mordorq.skeleton.TroopStepSimulator;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -11,8 +13,11 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class Aragorn extends Human{
 	
-	  private static Aragorn instance = null;
-
+ 
+	 private static Aragorn instance = null;
+			 
+	 image = new Image("/resources/images/aragorn_16p.jpg");
+	 
 	  private Aragorn(int health, int damage, int reward){
 		  super();
 		  //TODO remove sysout
@@ -32,4 +37,5 @@ public class Aragorn extends Human{
 //		  System.out.println("Aragorn.getInstance() returned");
 		  return instance;
 	  }
+	 
 }
