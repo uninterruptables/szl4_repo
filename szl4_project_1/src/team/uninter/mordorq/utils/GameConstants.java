@@ -139,7 +139,7 @@ public class GameConstants {
 
 	
 	
-	public static int DAMAGE_BOOST_TOWER_RUNE = 3;
+//	public static int DAMAGE_BOOST_TOWER_RUNE = 3;
 	
 	//magic constatns
 	public static int NAZGUL_MAGIC_COST = 500;

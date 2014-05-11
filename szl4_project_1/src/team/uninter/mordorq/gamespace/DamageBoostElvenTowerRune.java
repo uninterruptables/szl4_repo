@@ -1,10 +1,12 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class DamageBoostElvenTowerRune extends TowerRune{
 	
 	//Class used to increase damage versus elves. On inject on, it calls the tower-s
 	//setSpecies function, to increase it's damage
-	float extraDamage;
+//	float extraDamage;
 	
 	public DamageBoostElvenTowerRune() {
 		super();
@@ -21,7 +23,7 @@ public class DamageBoostElvenTowerRune extends TowerRune{
 	public void injectOn(Tower tower)
 	{
 //		System.out.println("DamageBoostElvenTowerRune.injectOn(Tower) called");
-		tower.setSpeciesDamage("elf", tower.getSpeciesDamage("elf")+10);
+		tower.setSpeciesDamage("elf", tower.getSpeciesDamage("elf") + GameConstants.PLUS_ELF_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT);
 //		System.out.println("DamageBoostElvenTowerRune.injectOn(Tower) returned");
 	}
 	

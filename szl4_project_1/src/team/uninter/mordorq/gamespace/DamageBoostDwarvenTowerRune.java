@@ -1,10 +1,12 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class DamageBoostDwarvenTowerRune extends TowerRune{
 	
 	//Class used to increase damage versus dwarves. On inject on, it calls the tower-s
 	//setSpecies function, to increase it's damage
-	int extraDamage;
+//	int extraDamage;
 	
 	public DamageBoostDwarvenTowerRune() {
 		super();
@@ -15,6 +17,6 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 	}
 	
 	public void injectOn(Tower tower)	{
-		tower.setSpeciesDamage("dwarf", tower.getSpeciesDamage("dwarf")+10);
+		tower.setSpeciesDamage("dwarf", tower.getSpeciesDamage("dwarf") + GameConstants.PLUS_DWARF_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT);
 	}	
 }
