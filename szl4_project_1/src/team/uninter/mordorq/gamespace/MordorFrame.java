@@ -166,7 +166,7 @@ public class MordorFrame extends JFrame {
 		infoDescription.setFont(font2);
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(900, 700));
+		setMinimumSize(new Dimension(900, 750));
 		setResizable(false);
 
 		gamePanel = new JPanel();
@@ -365,7 +365,8 @@ public class MordorFrame extends JFrame {
 
 		initEventListeners();
 
-		this.getContentPane().add(scene, BorderLayout.WEST);
+//		this.getContentPane().add(scene, BorderLayout.CENTER);
+		gamePanel.add(scene, BorderLayout.CENTER);
 		this.pack();
 	}
 
