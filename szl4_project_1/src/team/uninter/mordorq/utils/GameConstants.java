@@ -131,9 +131,14 @@ public class GameConstants {
 	public static int POISONOUS_TRAP_RUNE_POISON_AMOUNT = 5;
 	
 	
-	
+	//statusmodifier constants
 	public static int WEAKEN_STATUS_DURATION = 6;
+	public static int SLOWER_STATUS_DURATION = 6;
+	public static int POISONOUS_STATUS_DURATION = 6;
+	public static int POISONOUS_STATUS_TIME_INTERVAL = 6;
 
+	
+	
 	public static int DAMAGE_BOOST_TOWER_RUNE = 3;
 	
 	//magic constatns
