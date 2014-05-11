@@ -38,7 +38,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		super(x, y);
 		try {
 	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {
+	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
 	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
@@ -47,7 +47,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		super(x, y, utility, id);
 		try {
 	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {
+	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
 	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
@@ -61,7 +61,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		super(utility);
 		try {
 	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {
+	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
 	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
@@ -73,7 +73,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		super();
 		try {
 	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {
+	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
 	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
