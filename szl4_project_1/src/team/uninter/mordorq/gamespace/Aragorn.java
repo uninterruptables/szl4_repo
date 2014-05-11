@@ -21,15 +21,14 @@ public class Aragorn extends Human{
  
 	 private static Aragorn instance = null;
 		
-	 public void LoadImageApp() {
-	       try {
+	 
+	  private Aragorn(int health, int damage, int reward){
+		  super();
+		  try {
 	           image = ImageIO.read(new File("/resources/images/aragorn_16p.jpg"));
 	       } catch (IOException e) {
 	       }
 
-	    }
-	  private Aragorn(int health, int damage, int reward){
-		  super();
 		  //TODO remove sysout
 //		  System.out.println("Aragorn.Aragorn(health,damage) called");
 		  this.health = health;

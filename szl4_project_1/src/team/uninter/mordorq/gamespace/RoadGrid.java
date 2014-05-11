@@ -1,7 +1,11 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 /**
  * Responsible to ensure a place for enemy troops, traps and barricdes
@@ -19,6 +23,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * 
 	 * subscribers - towers for those this grid is in range
 	 */
+	
 	private Trap trap;
 	private Vulnerable vulnerable;
 	private final List<TargetSubscriber> subscribers;
@@ -31,11 +36,19 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid(int x, int y) {
 		super(x, y);
+		try {
+	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+	       } catch (IOException e) {
+	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
 	public RoadGrid(int x, int y, int utility, int id) {
 		super(x, y, utility, id);
+		try {
+	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+	       } catch (IOException e) {
+	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
@@ -46,6 +59,10 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid(int utility) {
 		super(utility);
+		try {
+	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+	       } catch (IOException e) {
+	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
@@ -54,6 +71,10 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid() {
 		super();
+		try {
+	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+	       } catch (IOException e) {
+	       }
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
