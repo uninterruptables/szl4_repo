@@ -20,12 +20,12 @@ public class BasicTower extends Tower {
 	// but certain values.
 	public BasicTower(int x, int y) {
 		super(x, y);
+		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.BASIC_TOWER_RADIUS;
 	}
 
 	public BasicTower() {
-		super();
-		this.radius = GameConstants.BASIC_TOWER_RADIUS;
+		this(0, 0);
 	}
 
 	@Override
