@@ -1,72 +1,71 @@
 package team.uninter.mordorq.gamespace;
 
-import java.util.ArrayList;
+import org.apache.log4j.Logger;
 
 @SuppressWarnings("serial")
-abstract public class Trap extends InjectionTarget{
-	
-	//generic class used to handle trap objects, that can be placed on roads.
-	//They contain a number of different effects they can apply on enemy troops.
+abstract public class Trap extends InjectionTarget {
 
-//	ArrayList<StatusModifier> effects;
-	StatusModifier effects;
+	private static final Logger logger = Logger.getLogger(Trap.class);
+	// generic class used to handle trap objects, that can be placed on roads.
+	// They contain a number of different effects they can apply on enemy
+	// troops.
+	StatusModifier effect;
+
 	protected Trap() {
 		super();
-//		System.out.println("Trap() called");
-//		effects=new ArrayList<>();
-//		System.out.println("Trap() returned");
-	}
-	protected Trap(int x, int y) {
-		super(x, y);
-//		System.out.println("Trap(Int, Int) called");
-//		effects=new ArrayList<>();
-//		System.out.println("Trap(Int, Int) returned");
 	}
 
-	//method used to add additional effects to the trap (mainly via runes)
+	protected Trap(int x, int y) {
+		super(x, y);
+	}
+
+	// method used to add additional effects to the trap (mainly via runes)
 	public void addEffect(StatusModifier newStatus) {
-//		System.out.println("Trap.addEffect(StatusModifier) called");
-//		effects.add(newStatus);
-		this.effects = newStatus;
-//		System.out.println("Trap.addEffect(StatusModifier) returned");
+		this.effect = newStatus;
+		logger.debug("effect " + effect.toString() + " was set for " + this.toString());
 	}
-	//method called, when it affects an enemy
-	public void affect(EnemyTroop enemyTroop)
-	{
-//		System.out.println("Trap.affect(EnemyTroop) called");
-//		for(StatusModifier sm : effects){
-//			sm.apply(enemyTroop);
-//		}
-//		System.out.println("Trap.affect(EnemyTroop) returned");
-		this.effects.apply(enemyTroop);
-		
+
+	// method called, when it affects an enemy
+	public void affect(EnemyTroop enemyTroop) {
+		this.effect.apply(enemyTroop);
+
 	}
-	//method that helps to determine whether a certain injectable can be injected on it, or not
+
+	// method that helps to determine whether a certain injectable can be
+	// injected on it, or not
+	@Override
 	public final boolean canInject(Injectable injectable) {
 		return injectable.canInjectOn(this);
 	}
-	
-	//during the cast of a terrainGrid
+
+	// during the cast of a terrainGrid
+	@Override
 	public final void castOn(TerrainGrid grid) {
-		//TODO:
+		logger.debug("in Trap.castOn for " + this.toString());
+		((RoadGrid) grid).setTrap(this);
+		logger.debug("in Trap.castOn " + this.toString() + " wast cast onto " + grid.toString());
 	}
-	
-	//checks, wheter it can be casted on a grid or not
+
+	// checks, wheter it can be casted on a grid or not
+	@Override
 	public final boolean canCastOn(TerrainGrid grid) {
-		return grid.isAvailableFor(this);
+		boolean res = grid.isAvailableFor(this);
+		logger.debug("in Trap.canCastOn " + this.toString() + " was " + (res == true ? "" : "not ") + "casted to " + grid.toString());
+		return res;
 	}
-	
-	//injects an injectable
-	public final void inject(Injectable inject)
-	{
-//		System.out.println("Trap.Inject(Injectable) returned");
+
+	// injects an injectable
+	@Override
+	public final void inject(Injectable inject) {
 		inject.injectOn(this);
+		logger.debug("in Trap.inject: " + this.toString() + " was injected on " + inject.toString());
 		this.remainingRunePlace--;
-//		System.out.println("Trap.Inject(Injectable) returned");
+		logger.debug(remainingRunePlace + " rune places remained in " + this.toString());
 	}
-	
-	public StatusModifier getEffect(){
-		return this.effects;
+
+	public StatusModifier getEffect() {
+		logger.debug("effect " + effect.toString() + " was queried from " + this.toString());
+		return this.effect;
 	}
 
 }

@@ -1,46 +1,48 @@
 package team.uninter.mordorq.gamespace;
 
+import org.apache.log4j.Logger;
+
+@SuppressWarnings("serial")
 public abstract class Rune extends Casted implements Injectable {
+
+	private static final Logger logger = Logger.getLogger(Rune.class);
 
 	protected Rune() {
 		super();
-//		System.out.println("Rune() called");
-//		System.out.println("Rune() returned");
 	}
-	
+
 	protected Rune(int x, int y) {
 		super(x, y);
-//		System.out.println("Rune(Int, Int) called");
-//		System.out.println("Rune(Int, Int) returned");
 	}
-	
-	public boolean canCastOn(TerrainGrid grid)
-	{
-//		System.out.println("Rune.canCastOn(TerrainGrid) called");
-		if(grid.getInjectionTarget()!=null)
-		{
-			boolean ret=grid.getInjectionTarget().canInject(this);
-//			System.out.println("Rune.canCastOn(TerrainGrid) returned");
+
+	@Override
+	public boolean canCastOn(TerrainGrid grid) {
+		logger.debug("in Rune.canCastOn for " + this.toString());
+
+		InjectionTarget target = grid.getInjectionTarget();
+		if (target != null) {
+			boolean ret = target.canInject(this);
+			logger.debug("Rune.canCastOn " + grid.toString() + " returns " + ret + " for " + this.toString());
 			return ret;
 		}
-		else
-			{
-//				System.out.println("Rune.canCastOn(TerrainGrid) returned");
-				return false;
-			}
+		else {
+			logger.debug("Rune.canCastOn returns false for " + this.toString() + " in [else]");
+			return false;
+		}
 	}
-	
-	public final void castOn(TerrainGrid grid)
-	{
-//		System.out.println("Rune.castOn(object) called");
-		if(grid.getInjectionTarget()!=null)
-		{
-			if(grid.getInjectionTarget().canInject(this))
-			{	
-				grid.getInjectionTarget().inject(this);
+
+	@Override
+	public final void castOn(TerrainGrid grid) {
+		logger.debug("in Rune.castOn " + grid.toString() + " for " + this.toString());
+
+		InjectionTarget target = grid.getInjectionTarget();
+		if (target != null) {
+			if (target.canInject(this)) {
+				target.inject(this);
+				logger.debug("grid " + grid.toString() + " injected " + this.toString());
 			}
 		}
-//		System.out.println("Rune.castOn(object) returned");
+		logger.debug("on " + grid.toString() + " injectionTarget was null: " + (target == null));
 	}
 
 }
