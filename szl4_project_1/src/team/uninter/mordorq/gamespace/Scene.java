@@ -60,7 +60,6 @@ public class Scene extends JPanel {
 	private Casted activeObject;
 	private Animator animator;
 	private int round;
-	private int lineWidth;
 	java.util.Timer timer;
 
 	/**
@@ -117,11 +116,10 @@ public class Scene extends JPanel {
 	 * usage of the public class Builder which constructs the initial
 	 * <code>Scene</code>.
 	 * */
-	protected Scene(MordorFrame owner, List<TerrainGrid> grids, int lineWidth) {
+	protected Scene(MordorFrame owner, List<TerrainGrid> grids) {
 		this();
 		this.owner = owner;
 		this.grids = grids;
-		this.lineWidth = lineWidth;
 		initPanel();
 	}
 
@@ -158,6 +156,7 @@ public class Scene extends JPanel {
 	}
 
 	public void start() {
+		logger.debug("Scene.start() was called");
 		timer = new java.util.Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -166,6 +165,7 @@ public class Scene extends JPanel {
 				animator.run(1);
 			}
 		}, 1000, 1000);
+		logger.debug("timer " + timer.toString() + " was initialised");
 	}
 
 	/**
@@ -173,6 +173,7 @@ public class Scene extends JPanel {
 	 * */
 	public void start(int tick) {
 		animator.run(tick);
+		logger.debug("in Scene.start(int) animator was kicked");
 	}
 
 	/**
@@ -181,6 +182,7 @@ public class Scene extends JPanel {
 	public void pause() {
 		timer.cancel();
 		timer = null;
+		logger.debug("in Scene.pause timer was set to " + timer == null ? null : timer.toString());
 	}
 
 	/**
@@ -191,6 +193,8 @@ public class Scene extends JPanel {
 	 *            object is to be casted
 	 * */
 	public void castOn(java.awt.Point point) {
+		logger.debug("Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
+		logger.debug("Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
 		if (activeObject instanceof Magic)
 			cast((Magic) activeObject);
 		else
@@ -222,12 +226,15 @@ public class Scene extends JPanel {
 	 *            instance.
 	 * */
 	public void place(Casted casted, TerrainGrid grid) {
+		logger.debug("in Scene.place( casted,grid )");
 		casted.castOn(grid);
 		if (casted instanceof Tower) {
+			logger.debug("casted is a" + casted.getClass());
 			towers.add((Tower) casted);
 			animator.add((Tower) casted);
 			for (TerrainGrid _grid : grids) {
 				if (_grid.isInRangeOf((Tower) casted)) {
+					logger.debug("grid " + _grid.toString() + " was attached to " + casted.toString());
 					((Tower) casted).attach((RoadGrid) _grid);
 					((RoadGrid) _grid).attach((Tower) casted);
 				}
@@ -239,6 +246,8 @@ public class Scene extends JPanel {
 	 * Notifies the <code>Scene</code> about that another round has ended.
 	 * */
 	public void endRound() {
+		logger.debug("round ended");
+		this.owner.endRound(round);
 	}
 
 	/**
@@ -258,6 +267,7 @@ public class Scene extends JPanel {
 	 *            indicates how the game has ended: by winning or loosing it
 	 * */
 	public void endGame(boolean wasWinning) {
+		logger.debug("game ended with " + (wasWinning == true ? "victory" : "defeate"));
 		if (wasWinning)
 			owner.win();
 		else {
@@ -439,7 +449,6 @@ public class Scene extends JPanel {
 
 		private String filePath = "resources/descriptors/simuframed.txt";
 		private MordorFrame owner;
-		private int lineWidth;
 
 		/**
 		 * The public constructor enforces the users to supply the owner
@@ -472,7 +481,7 @@ public class Scene extends JPanel {
 		 * */
 		public Scene build() throws IOException {
 			List<TerrainGrid> grids = buildScene();
-			return new Scene(owner, grids, lineWidth);
+			return new Scene(owner, grids);
 		}
 
 		/**
@@ -533,7 +542,6 @@ public class Scene extends JPanel {
 				}
 			}
 			logger.debug("width: " + width);
-			this.lineWidth = width;
 			try {
 				logger.debug("========== GRIDS ============");
 				reader = new BufferedReader(new InputStreamReader(
@@ -568,7 +576,7 @@ public class Scene extends JPanel {
 							if (x <= 0)
 								grid.setX(0);
 							else if (x > 0) {
-								TerrainGrid west = grids.get(y * width + (x - 1));
+								TerrainGrid west = grids.get(grids.size() - 1);
 								grid.setX(west.getX() + 16);
 								grid.set(Neighbour.WEST, west);
 								west.set(Neighbour.EAST, grid);
@@ -583,9 +591,9 @@ public class Scene extends JPanel {
 							x++;
 						}
 					}
+					logger.debug("=========( " + x + "," + y + " )=========");
 					x = 0;
 					y++;
-					logger.debug("=========( " + x + "," + y + " )=========");
 				}
 			} catch (IOException e) {
 				throw e;

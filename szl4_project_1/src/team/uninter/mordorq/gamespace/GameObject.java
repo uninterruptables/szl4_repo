@@ -9,10 +9,14 @@ import java.awt.Image;
 
 import javax.swing.JPanel;
 
+import org.apache.log4j.Logger;
+
 //generic class used to handle all gameObjects. All of them have coordinates, and an image, that
 //will be rendered to them. 
 @SuppressWarnings("serial")
 public abstract class GameObject extends JPanel {
+
+	private static final Logger logger = Logger.getLogger(GameObject.class);
 
 	protected Image image;
 	protected int x, y;
@@ -53,10 +57,12 @@ public abstract class GameObject extends JPanel {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.drawImage(image, x, y, this);
+		logger.debug("paint was called for " + this.getClass());
 	}
 
 	@Override
 	public void repaint() {
 		super.repaint();
+		logger.debug("repaint was called in " + this.getClass());
 	}
 }

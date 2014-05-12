@@ -365,7 +365,7 @@ public class MordorFrame extends JFrame {
 
 		initEventListeners();
 
-//		this.getContentPane().add(scene, BorderLayout.CENTER);
+		// this.getContentPane().add(scene, BorderLayout.CENTER);
 		gamePanel.add(scene, BorderLayout.CENTER);
 		this.pack();
 	}
@@ -1009,5 +1009,19 @@ public class MordorFrame extends JFrame {
 			pauseMenuItem.setEnabled(true);
 			restartMenuItem.setEnabled(true);
 		}
+	}
+
+	/**
+	 * Notifies the user about the end of a round.
+	 * 
+	 * @param roundNum
+	 * */
+	public void endRound(int roundNum) {
+		JOptionPane.showMessageDialog(
+				this,
+				"Round " + roundNum + " was Survived. Prepare for another siege!",
+				"Round Ended",
+				JOptionPane.INFORMATION_MESSAGE
+				);
 	}
 }
