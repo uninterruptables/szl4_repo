@@ -14,13 +14,13 @@ public class Aragorn extends Human {
 
 	static {
 		rewardMana = GameConstants.ARAGORN_REWARD;
+		tryLoad(new File("resources/images/aragorn_16p.png"));
 	}
 
 	private static Aragorn instance = null;
 
 	private Aragorn(int health, int damage) {
 		super();
-		super.tryLoad(new File("resources/images/aragorn_16p.png"));
 		this.health = health;
 		this.damage = damage;
 	}

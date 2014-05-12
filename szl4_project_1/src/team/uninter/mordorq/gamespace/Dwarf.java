@@ -12,6 +12,7 @@ public class Dwarf extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.DWARF_REWARD;
+		tryLoad(new File("resources/images/dwarf_16p.png"));
 	}
 
 	/**
@@ -41,8 +42,7 @@ public class Dwarf extends EnemyTroop {
 	 * @param reward
 	 */
 	public Dwarf(int x, int y, int health, int damage) {
-		super(x, y);
-		super.tryLoad(new File("resources/images/dwarf_16p.png"));
+		super(x, y);		
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;

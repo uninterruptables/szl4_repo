@@ -14,13 +14,13 @@ public class Legolas extends Elf {
 
 	static {
 		rewardMana = GameConstants.LEGOLAS_REWARD;
+		tryLoad(new File("resources/images/legolas_16p.png"));
 	}
 
 	private static Legolas instance = null;
 
 	private Legolas(int health, int damage) {
 		super();
-		super.tryLoad(new File("resources/images/legolas_16p.png"));
 		this.health = health;
 		this.damage = damage;
 	}

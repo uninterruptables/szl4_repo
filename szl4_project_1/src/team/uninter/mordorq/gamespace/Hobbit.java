@@ -12,6 +12,7 @@ public class Hobbit extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.HOBBIT_REWARD;
+		tryLoad(new File("resources/images/hobbit5_16p.png"));
 	}
 
 	/**
@@ -42,7 +43,6 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit(int x, int y, int health, int damage) {
 		super(x, y);
-		super.tryLoad(new File("resources/images/hobbit5_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;

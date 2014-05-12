@@ -19,7 +19,7 @@ public abstract class GameObject extends JPanel {
 
 	private static final Logger logger = Logger.getLogger(GameObject.class);
 
-	protected Image image;
+	protected static Image image;
 	protected int x, y;
 
 	public GameObject(int x, int y) {
@@ -59,11 +59,11 @@ public abstract class GameObject extends JPanel {
 	}
 
 
-	protected final void tryLoad(File imageFile) {
+	protected static final void tryLoad(File imageFile) {
 		try {
 			image = ImageIO.read(imageFile);
 		} catch (Exception e) {
-			logger.fatal("image load failed in " + this.toString());
+			logger.fatal("image load failed for "+imageFile.toString());
 		}
 	}
 }

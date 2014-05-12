@@ -12,6 +12,7 @@ public class Elf extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.ELF_REWARD;
+		tryLoad(new File("resources/images/elf15_16p.png"));
 	}
 
 	/**
@@ -42,7 +43,6 @@ public class Elf extends EnemyTroop {
 	 */
 	public Elf(int x, int y, int health, int damage) {
 		super(x, y);
-		this.tryLoad(new File("resources/images/elf15_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;

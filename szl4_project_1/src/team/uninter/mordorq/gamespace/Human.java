@@ -13,6 +13,7 @@ public class Human extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.HUMAN_REWARD;
+		tryLoad(new File("resources/images/human_16p.png"));
 	}
 
 	/**
@@ -43,7 +44,6 @@ public class Human extends EnemyTroop {
 	 */
 	public Human(int x, int y, int health, int damage) {
 		super(x, y);
-		super.tryLoad(new File("resources/images/human_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;

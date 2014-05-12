@@ -29,6 +29,10 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	private Vulnerable vulnerable;
 	private final List<TargetSubscriber> subscribers;
 
+	static {
+		tryLoad(new File("resources/images/roadgrid_16p.jpg"));
+	}
+	
 	/**
 	 * Contructor with position parameters
 	 * 
@@ -43,7 +47,6 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		super(x, y);
 		this.utility = utility;
 		this.id = id;
-		super.tryLoad(new File("/resources/images/roadgrid_16p.jpg"));
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
@@ -60,13 +63,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * Contructor without parameter
 	 */
 	public RoadGrid() {
-		super();
-		try {
-			image = ImageIO.read(new File("resources/images/roadgrid_16p.jpg"));
-		} catch (IOException e) {
-			System.out.println("Elszallt a roadgrid");
-		}
-		subscribers = new ArrayList<TargetSubscriber>();
+		this(0, 0, 0, 0);
 	}
 
 	/**

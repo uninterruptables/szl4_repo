@@ -20,6 +20,10 @@ public class GroundGrid extends TerrainGrid {
 	private boolean available = true;
 	private Tower tower;
 
+	static {
+		tryLoad(new File("resources/images/groundgrid_16p.png"));
+	}
+	
 	/**
 	 * Contructor with position parameters
 	 * 
@@ -32,7 +36,6 @@ public class GroundGrid extends TerrainGrid {
 
 	public GroundGrid(int x, int y, int utility, int id) {
 		super(x, y, utility, id);
-		this.tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	/**
