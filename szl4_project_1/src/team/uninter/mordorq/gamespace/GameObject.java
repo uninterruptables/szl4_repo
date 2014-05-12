@@ -4,7 +4,6 @@
 package team.uninter.mordorq.gamespace;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
 
@@ -54,19 +53,11 @@ public abstract class GameObject extends JPanel {
 		return image;
 	}
 
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, x, y, this);
-		logger.debug("paint was called for " + this.getClass());
+	public void drawObject(Graphics g) {
+		g.drawImage(image, x, y, 16, 16, null);
+		logger.debug("drawObject was called for " + this.getClass());
 	}
 
-	@Override
-	public void repaint() {
-		super.repaint();
-		logger.debug("repaint was called in " + this.getClass());
-	}
 
 	protected final void tryLoad(File imageFile) {
 		try {

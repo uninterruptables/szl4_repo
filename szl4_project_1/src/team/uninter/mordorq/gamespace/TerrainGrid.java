@@ -3,6 +3,7 @@ package team.uninter.mordorq.gamespace;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.awt.Graphics;
 /**
  * *Responsible to ensure a unified
  * class for the area units on the gamespace 
@@ -161,4 +162,6 @@ abstract public class TerrainGrid extends GameObject{
 	public final  void set(Neighbour neighbour, TerrainGrid grid){
 		neighbours.put(neighbour, grid);
 	}
+	
+	public abstract void drawGrid(Graphics g);
 }

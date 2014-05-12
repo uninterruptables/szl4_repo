@@ -16,6 +16,6 @@ public interface Vulnerable {
 	void interactWith(EnemyTroop troop);
 
 	void interactWith(Missile missile);
-    void paint(Graphics g);
+    void drawObject(Graphics g);
 	void repaint();
 }

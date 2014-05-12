@@ -62,7 +62,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	public RoadGrid() {
 		super();
 		try {
-			image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+			image = ImageIO.read(new File("resources/images/roadgrid_16p.jpg"));
 		} catch (IOException e) {
 			System.out.println("Elszallt a roadgrid");
 		}
@@ -134,12 +134,12 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
+	public void drawGrid(Graphics g) {
+		super.drawObject(g);
 		if (vulnerable != null)
-			this.vulnerable.paint(g);
+			this.vulnerable.drawObject(g);
 		else if (trap != null)
-			this.trap.paint(g);
+			this.trap.drawObject(g);
 	}
 
 	/**

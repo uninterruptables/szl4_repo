@@ -276,16 +276,16 @@ public class Scene extends JPanel {
 	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void paint(Graphics g) {
-		logger.debug("in Scene.paint(g)");
-		super.paint(g);
+	protected void paintComponent(Graphics g) {
+		logger.debug("in Scene.paintComponent(g)");
+		super.paintComponent(g);
 		if (grids != null) {
 			for (TerrainGrid grid : grids) {
-				grid.paint(g);
+				grid.drawGrid(g);
 			}
 		}
 		if (activeObject != null)
-			activeObject.paint(g);
+			activeObject.drawObject(g);
 	}
 
 	/**

@@ -226,10 +226,10 @@ abstract public class Tower extends InjectionTarget
 	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void paint(Graphics g) {
-		logger.debug("in Tower.paint(g) for " + this.toString());
-		super.paint(g);
-		missile.paint(g);
+	public void drawObject(Graphics g) {
+		logger.debug("in Tower.drawObject(g) for " + this.toString());
+		super.drawObject(g);
+		missile.drawObject(g);
 	}
 	
 

@@ -32,7 +32,7 @@ public class GroundGrid extends TerrainGrid {
 
 	public GroundGrid(int x, int y, int utility, int id) {
 		super(x, y, utility, id);
-		this.tryLoad(new File("resources/images/groundrid_16p.png"));
+		this.tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	/**
@@ -99,10 +99,10 @@ public class GroundGrid extends TerrainGrid {
 	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
+	public void drawGrid(Graphics g) {
+		this.drawObject(g);
 		if (tower != null)
-			this.tower.paint(g);
+			this.tower.drawObject(g);
 	}
 
 	/**
