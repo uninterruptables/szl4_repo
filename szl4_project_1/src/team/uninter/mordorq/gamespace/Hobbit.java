@@ -5,8 +5,13 @@ import team.uninter.mordorq.utils.GameConstants;
 
 @SuppressWarnings("serial")
 public class Hobbit extends EnemyTroop {
-	// Specific EnemyTroop, called Hobbit. Have little less life then other specific troop, less speed, and less damage.
-	
+	// Specific EnemyTroop, called Hobbit. Have little less life then other
+	// specific troop, less speed, and less damage.
+
+	static {
+		rewardMana = GameConstants.HOBBIT_REWARD;
+	}
+
 	/**
 	 * Hobbit with no parameter.
 	 */
@@ -14,12 +19,12 @@ public class Hobbit extends EnemyTroop {
 		super();
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
-		rewardMana = GameConstants.HOBBIT_REWARD;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 	}
-	
+
 	/**
 	 * Hobbit with two parameter.
+	 * 
 	 * @param x
 	 * @param y
 	 */
@@ -27,45 +32,50 @@ public class Hobbit extends EnemyTroop {
 		super(x, y);
 		health = GameConstants.HOBBIT_HEALTH;
 		damage = GameConstants.HOBBIT_DAMAGE;
-		rewardMana = GameConstants.HOBBIT_REWARD;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 	}
-	
+
 	/**
 	 * Hobbit with five parameters, attributes.
+	 * 
 	 * @param x
 	 * @param y
 	 * @param health
 	 * @param damage
 	 * @param reward
 	 */
-	public Hobbit(int x, int y, int health, int damage, int reward) {
+	public Hobbit(int x, int y, int health, int damage) {
 		super(x, y);
 		this.health = health;
 		this.damage = damage;
-		this.rewardMana = reward;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
 	}
-	
-	protected EnemyTroop createClone(int health){
-		return new Hobbit(x, y, health, damage, rewardMana);
+
+	@Override
+	protected EnemyTroop createClone(int health) {
+		return new Hobbit(x, y, health, damage);
 	}
 
-	/* Return the amount of the reward for one hobbit killing.
-	 * (non-Javadoc)
+	/*
+	 * Return the amount of the reward for one hobbit killing. (non-Javadoc)
+	 * 
 	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
 	 */
-//	public int getReward()	{
-//		return rewardMana;
-//	}
-	
-	/*  Method how and how many damage get the hobbit.
-	 * (non-Javadoc)
-	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq.gamespace.Tower.Missile)
+	// public int getReward() {
+	// return rewardMana;
+	// }
+
+	/*
+	 * Method how and how many damage get the hobbit. (non-Javadoc)
+	 * 
+	 * @see
+	 * team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq
+	 * .gamespace.Tower.Missile)
 	 */
 	@Override
 	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getHobbitDamage());
-		if(health <= 0 && currentGrid != null) currentGrid.remove();
+		if (health <= 0 && currentGrid != null)
+			currentGrid.remove();
 	}
 }
