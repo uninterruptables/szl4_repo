@@ -1,9 +1,6 @@
 package team.uninter.mordorq.gamespace;
 
 import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -23,10 +20,7 @@ public class Aragorn extends Human {
 
 	private Aragorn(int health, int damage) {
 		super();
-		try {
-			image = ImageIO.read(new File("/resources/images/aragorn_16p.jpg"));
-		} catch (IOException e) {
-		}
+		super.tryLoad(new File("resources/images/aragorn_16p.png"));
 		this.health = health;
 		this.damage = damage;
 	}

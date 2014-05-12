@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.utils.GameConstants;
 
 /**
@@ -20,6 +22,7 @@ public class Gimli extends Dwarf {
 		super();
 		this.health = health;
 		this.damage = damage;
+		this.tryLoad(new File("resources/images/gimli_16p.png"));
 	}
 
 	public static Gimli getInstance() {

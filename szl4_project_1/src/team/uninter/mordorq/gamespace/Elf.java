@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -16,10 +18,7 @@ public class Elf extends EnemyTroop {
 	 * Elf with no parameter.
 	 */
 	public Elf() {
-		super();
-		health = GameConstants.ELF_HEALTH;
-		damage = GameConstants.ELF_DAMAGE;
-		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
+		this(0, 0, GameConstants.ELF_HEALTH, GameConstants.ELF_DAMAGE);
 	}
 
 	/**
@@ -29,10 +28,7 @@ public class Elf extends EnemyTroop {
 	 * @param y
 	 */
 	public Elf(int x, int y) {
-		super(x, y);
-		health = GameConstants.ELF_HEALTH;
-		damage = GameConstants.ELF_DAMAGE;
-		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
+		this(x, y, GameConstants.ELF_HEALTH, GameConstants.ELF_DAMAGE);
 	}
 
 	/**
@@ -46,6 +42,7 @@ public class Elf extends EnemyTroop {
 	 */
 	public Elf(int x, int y, int health, int damage) {
 		super(x, y);
+		this.tryLoad(new File("resources/images/elf15_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;

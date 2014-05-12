@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -17,10 +19,7 @@ public class Human extends EnemyTroop {
 	 * Human with no parameter.
 	 */
 	public Human() {
-		super();
-		health = GameConstants.HUMAN_HEALTH;
-		damage = GameConstants.HUMAN_DAMAGE;
-		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
+		this(0, 0, GameConstants.HUMAN_HEALTH, GameConstants.HUMAN_DAMAGE);
 	}
 
 	/**
@@ -30,10 +29,7 @@ public class Human extends EnemyTroop {
 	 * @param y
 	 */
 	public Human(int x, int y) {
-		super(x, y);
-		health = GameConstants.HUMAN_HEALTH;
-		damage = GameConstants.HUMAN_DAMAGE;
-		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
+		this(x, y, GameConstants.HUMAN_HEALTH, GameConstants.HUMAN_DAMAGE);
 	}
 
 	/**
@@ -47,6 +43,7 @@ public class Human extends EnemyTroop {
 	 */
 	public Human(int x, int y, int health, int damage) {
 		super(x, y);
+		super.tryLoad(new File("resources/images/human_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;

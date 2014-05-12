@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.utils.GameConstants;
 
 /**
@@ -18,6 +20,7 @@ public class Legolas extends Elf {
 
 	private Legolas(int health, int damage) {
 		super();
+		super.tryLoad(new File("resources/images/legolas_16p.png"));
 		this.health = health;
 		this.damage = damage;
 	}
