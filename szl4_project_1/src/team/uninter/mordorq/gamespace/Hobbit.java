@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -16,10 +18,7 @@ public class Hobbit extends EnemyTroop {
 	 * Hobbit with no parameter.
 	 */
 	public Hobbit() {
-		super();
-		health = GameConstants.HOBBIT_HEALTH;
-		damage = GameConstants.HOBBIT_DAMAGE;
-		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
+		this(0, 0, GameConstants.HOBBIT_HEALTH, GameConstants.HOBBIT_DAMAGE);
 	}
 
 	/**
@@ -29,10 +28,7 @@ public class Hobbit extends EnemyTroop {
 	 * @param y
 	 */
 	public Hobbit(int x, int y) {
-		super(x, y);
-		health = GameConstants.HOBBIT_HEALTH;
-		damage = GameConstants.HOBBIT_DAMAGE;
-		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
+		this(x, y, GameConstants.HOBBIT_HEALTH, GameConstants.HOBBIT_DAMAGE);
 	}
 
 	/**
@@ -46,6 +42,7 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit(int x, int y, int health, int damage) {
 		super(x, y);
+		super.tryLoad(new File("resources/images/hobbit5_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
@@ -56,21 +53,11 @@ public class Hobbit extends EnemyTroop {
 		return new Hobbit(x, y, health, damage);
 	}
 
-	/*
-	 * Return the amount of the reward for one hobbit killing. (non-Javadoc)
-	 * 
-	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
-	 */
-	// public int getReward() {
-	// return rewardMana;
-	// }
-
-	/*
+	/**
 	 * Method how and how many damage get the hobbit. (non-Javadoc)
 	 * 
-	 * @see
-	 * team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq
-	 * .gamespace.Tower.Missile)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq
+	 *      .gamespace.Tower.Missile)
 	 */
 	@Override
 	protected void speciesInteractWith(Missile missile) {

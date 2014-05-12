@@ -6,7 +6,9 @@ package team.uninter.mordorq.gamespace;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
@@ -64,5 +66,13 @@ public abstract class GameObject extends JPanel {
 	public void repaint() {
 		super.repaint();
 		logger.debug("repaint was called in " + this.getClass());
+	}
+
+	protected final void tryLoad(File imageFile) {
+		try {
+			image = ImageIO.read(imageFile);
+		} catch (Exception e) {
+			logger.fatal("image load failed in " + this.toString());
+		}
 	}
 }

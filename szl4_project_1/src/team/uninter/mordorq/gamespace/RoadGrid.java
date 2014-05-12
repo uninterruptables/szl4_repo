@@ -23,7 +23,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * 
 	 * subscribers - towers for those this grid is in range
 	 */
-	
+
 	private Trap trap;
 	private Vulnerable vulnerable;
 	private final List<TargetSubscriber> subscribers;
@@ -35,20 +35,14 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * @param y
 	 */
 	public RoadGrid(int x, int y) {
-		super(x, y);
-		try {
-	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
-	       }
-		subscribers = new ArrayList<TargetSubscriber>();
+		this(x, y, 0, 0);
 	}
 
 	public RoadGrid(int x, int y, int utility, int id) {
-		super(x, y, utility, id);
-		try {
-	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
-	       }
+		super(x, y);
+		this.utility = utility;
+		this.id = id;
+		super.tryLoad(new File("/resources/images/roadgrid_16p.jpg"));
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 
@@ -58,12 +52,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 * @param utility
 	 */
 	public RoadGrid(int utility) {
-		super(utility);
-		try {
-	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
-	       }
-		subscribers = new ArrayList<TargetSubscriber>();
+		this(0, 0, utility, 0);
 	}
 
 	/**
@@ -72,9 +61,10 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	public RoadGrid() {
 		super();
 		try {
-	           image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
-	       } catch (IOException e) {System.out.println("Elszallt a roadgrid");
-	       }
+			image = ImageIO.read(new File("/resources/images/roadgrid_16p.jpg"));
+		} catch (IOException e) {
+			System.out.println("Elszallt a roadgrid");
+		}
 		subscribers = new ArrayList<TargetSubscriber>();
 	}
 

@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -16,10 +18,7 @@ public class Dwarf extends EnemyTroop {
 	 * Dwarf with no parameter.
 	 */
 	public Dwarf() {
-		super();
-		health = GameConstants.DWARF_HEALTH;
-		damage = GameConstants.DWARF_DAMAGE;
-		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
+		this(0, 0, GameConstants.DWARF_HEALTH, GameConstants.DWARF_DAMAGE);
 	}
 
 	/**
@@ -29,10 +28,7 @@ public class Dwarf extends EnemyTroop {
 	 * @param y
 	 */
 	public Dwarf(int x, int y) {
-		super(x, y);
-		health = GameConstants.DWARF_HEALTH;
-		damage = GameConstants.DWARF_DAMAGE;
-		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
+		this(x, y, GameConstants.DWARF_HEALTH, GameConstants.DWARF_DAMAGE);
 	}
 
 	/**
@@ -46,6 +42,7 @@ public class Dwarf extends EnemyTroop {
 	 */
 	public Dwarf(int x, int y, int health, int damage) {
 		super(x, y);
+		super.tryLoad(new File("resources/images/dwarf_16p.png"));
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
@@ -56,21 +53,11 @@ public class Dwarf extends EnemyTroop {
 		return new Dwarf(x, y, health, damage);
 	}
 
-	/*
-	 * Return the amount of the reward for one dwarf killing. (non-Javadoc)
+	/**
+	 * Method how and how many damage get the dwarf.
 	 * 
-	 * @see team.uninter.mordorq.gamespace.EnemyTroop#getReward()
-	 */
-	// public int getReward() {
-	// return rewardMana;
-	// }
-
-	/*
-	 * Method how and how many damage get the dwarf. (non-Javadoc)
-	 * 
-	 * @see
-	 * team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq
-	 * .gamespace.Tower.Missile)
+	 * @see team.uninter.mordorq.gamespace.EnemyTroop#interactWith(team.uninter.mordorq
+	 *      .gamespace.Tower.Missile)
 	 */
 	@Override
 	protected void speciesInteractWith(Missile missile) {

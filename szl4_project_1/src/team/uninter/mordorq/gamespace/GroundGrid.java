@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.io.File;
+
 /**
  * Responsible to ensure a place for towers
  * 
@@ -29,6 +31,7 @@ public class GroundGrid extends TerrainGrid {
 
 	public GroundGrid(int x, int y, int utility, int id) {
 		super(x, y, utility, id);
+		this.tryLoad(new File("resources/images/groundrid_16p.png"));
 	}
 
 	/**
@@ -37,14 +40,14 @@ public class GroundGrid extends TerrainGrid {
 	 * @param utility
 	 */
 	public GroundGrid(int utility) {
-		super(utility);
+		this(0, 0, utility, 0);
 	}
 
 	/**
 	 * Contructor without parameter
 	 */
 	public GroundGrid() {
-		super(0);
+		this(0, 0, 0, 0);
 	}
 
 	/**
