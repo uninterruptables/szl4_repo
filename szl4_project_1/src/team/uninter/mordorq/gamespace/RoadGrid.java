@@ -1,5 +1,6 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -127,15 +128,18 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	}
 
 	/**
-	 * Repaint
+	 * Paints this component and all the components referenced by it.
+	 * 
+	 * @param g the <code>Graphics</code> instance responsible for drawings
+	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void repaint() {
-		super.repaint();
+	public void paint(Graphics g) {
+		super.paint(g);
 		if (vulnerable != null)
-			this.vulnerable.repaint();
+			this.vulnerable.paint(g);
 		else if (trap != null)
-			this.trap.repaint();
+			this.trap.paint(g);
 	}
 
 	/**

@@ -4,7 +4,7 @@
 package team.uninter.mordorq.gamespace;
 
 import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -137,18 +137,6 @@ public class Scene extends JPanel {
 	}
 
 	private void initPanel() {
-
-		this.setLayout(new GridLayout());
-		/*
-		 * logger.debug("Scene.initPanel()=====================");
-		 * this.setLayout(new FlowLayout()); for (TerrainGrid grid : grids) {
-		 * logger.debug("grid " + grid.toString() + " was added to " +
-		 * this.toString()); this.add(grid); }
-		 * 
-		 * logger.debug("width,height: " + (16 * lineWidth)); //
-		 * 
-		 * logger.debug("=======================================");
-		 */
 		this.setPreferredSize(new Dimension(640, 640));
 	}
 
@@ -282,18 +270,22 @@ public class Scene extends JPanel {
 	}
 
 	/**
-	 * Delegates the call to all of its game space elements.
-	 * */
+	 * Paints this component and all the components referenced by it.
+	 * 
+	 * @param g the <code>Graphics</code> instance responsible for drawings
+	 * 		     in the Java Graphics FrameWork
+	 */
 	@Override
-	public void repaint() {
-		super.repaint();
+	public void paint(Graphics g) {
+		logger.debug("in Scene.paint(g)");
+		super.paint(g);
 		if (grids != null) {
 			for (TerrainGrid grid : grids) {
-				grid.repaint();
+				grid.paint(g);
 			}
 		}
 		if (activeObject != null)
-			activeObject.repaint();
+			activeObject.paint(g);
 	}
 
 	/**

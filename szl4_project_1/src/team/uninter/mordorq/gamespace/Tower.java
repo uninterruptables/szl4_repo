@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
 
+import java.awt.Graphics;
 import java.io.File;
 
 @SuppressWarnings("serial")
@@ -218,12 +219,19 @@ abstract public class Tower extends InjectionTarget
 		return result;
 	}
 
+	/**
+	 * Paints this component and all the components referenced by it.
+	 * 
+	 * @param g the <code>Graphics</code> instance responsible for drawings
+	 * 		     in the Java Graphics FrameWork
+	 */
 	@Override
-	public void repaint() {
-		logger.debug("in Tower.repaint() for " + this.toString());
-		super.repaint();
-		missile.repaint();
+	public void paint(Graphics g) {
+		logger.debug("in Tower.paint(g) for " + this.toString());
+		super.paint(g);
+		missile.paint(g);
 	}
+	
 
 	public abstract static class Missile extends GameObject implements Controlable {
 
@@ -313,8 +321,6 @@ abstract public class Tower extends InjectionTarget
 			setTargetPosition(target.getX() + GameConstants.GRID_SIZE / 2, target.getY() + GameConstants.GRID_SIZE / 2);
 			int xVector = targetX - getX();
 			int yVector = targetY - getY();
-			// int vectorLength = (int) Math.round(Math.sqrt(xVector^2 +
-			// yVector^2));
 			int vectorLength = (int) Math.sqrt(Math.pow(xVector, 2) + Math.pow(yVector, 2));
 			float xNormal = (xVector * (1 / (float) vectorLength));
 			float yNormal = (yVector * (1 / (float) vectorLength));
@@ -358,15 +364,6 @@ abstract public class Tower extends InjectionTarget
 
 		public final int getHobbitDamage() {
 			return this.racialDamages.get("hobbit");
-		}
-
-		@Override
-		public void repaint() {
-			if (state == MissileState.ON_THE_FLY) {
-				logger.debug("in Missile.repaint() for " + this.toString());
-				super.repaint();
-			}
-
 		}
 
 		/**

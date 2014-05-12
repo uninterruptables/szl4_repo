@@ -1,5 +1,6 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Graphics;
 import java.io.File;
 
 /**
@@ -92,13 +93,16 @@ public class GroundGrid extends TerrainGrid {
 	}
 
 	/**
-	 * Repaint
+	 * Paints this component and all the components referenced by it.
+	 * 
+	 * @param g the <code>Graphics</code> instance responsible for drawings
+	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
-	public void repaint() {
-		super.repaint();
+	public void paint(Graphics g) {
+		super.paint(g);
 		if (tower != null)
-			this.tower.repaint();
+			this.tower.paint(g);
 	}
 
 	/**
