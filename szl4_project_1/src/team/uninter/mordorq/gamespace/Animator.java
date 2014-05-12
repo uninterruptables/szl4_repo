@@ -50,7 +50,8 @@ public class Animator implements Runnable {
 			scene.getEnemies().removeAll(removeable);
 
 			if (enemies.isEmpty()) {
-				scene.endRound();
+//				scene.endRound();
+				scene.nextRound();
 				logger.debug("in Animator.run(n): round " + scene.getRoundNumber() + " ended in " + this.toString());
 			}
 			if (Math.random() * 100 - 2.0 <= 0) {
