@@ -13,7 +13,7 @@ public class SlowDownTrap extends Trap {
 	
 	static {
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/slow_trap_grid_16_red.jpg"));
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/slow_trap_grid_16_red.png"));
 		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slow_trap_grid_16p.png"));
 	}
 	

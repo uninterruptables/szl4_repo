@@ -1,8 +1,19 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.HashMap;
+
+import team.uninter.mordorq.gamespace.Casted.ImageColor;
 import team.uninter.mordorq.utils.GameConstants;
 
 public class RadiusIncTowerRune extends TowerRune{
+	
+	static {
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
+	}
 	
 	//a class used to create runes that can increase a tower's radius.
 //	int extraRadius;

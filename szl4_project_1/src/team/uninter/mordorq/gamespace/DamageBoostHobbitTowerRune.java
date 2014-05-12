@@ -1,5 +1,10 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.HashMap;
+
+import team.uninter.mordorq.gamespace.Casted.ImageColor;
 import team.uninter.mordorq.utils.GameConstants;
 
 public class DamageBoostHobbitTowerRune extends TowerRune{
@@ -8,6 +13,12 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 	//Class used to increase damage versus hobbits. On inject on, it calls the tower-s
 	//setSpecies function, to increase it's damage
 //	float extraDamage;
+	
+	static {
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
+	}
 	
 	public DamageBoostHobbitTowerRune() {
 		super();

@@ -1,5 +1,10 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.HashMap;
+
+import team.uninter.mordorq.gamespace.Casted.ImageColor;
 import team.uninter.mordorq.utils.GameConstants;
 
 public class WeakenTrapRune extends TrapRune{
@@ -7,6 +12,12 @@ public class WeakenTrapRune extends TrapRune{
 	//effect list. On inject on, it calls the trap's
 	//addEffect function, to add the extra effect
 //	int weakenAmount;
+	
+	static {
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
+	}
 	
 	public WeakenTrapRune() {
 		super();
