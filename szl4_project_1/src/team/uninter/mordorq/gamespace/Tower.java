@@ -9,6 +9,8 @@ import org.apache.log4j.Logger;
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
 
+import java.io.File;
+
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget
 		implements TargetSubscriber, Controlable {
@@ -238,6 +240,7 @@ abstract public class Tower extends InjectionTarget
 			super(x, y);
 			racialDamages = new HashMap<String, Integer>();
 			state = MissileState.WAITING;
+			super.tryLoad(new File("resources/images/missile_4p.gif"));
 		}
 
 		@Override
