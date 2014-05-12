@@ -1,5 +1,9 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.HashMap;
+
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -7,8 +11,16 @@ import team.uninter.mordorq.utils.GameConstants;
 public class GreatTower extends Tower {
 	// One of the few descendants of the Tower class, with no special methods,
 	// but certain values.
+
+	static {
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/strong_tower_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/strong_tower_16p.png"));
+	}
+
 	public GreatTower(int x, int y) {
 		super(x, y);
+		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.GREAT_TOWER_RADIUS;
 	}
 
@@ -42,5 +54,4 @@ public class GreatTower extends Tower {
 		}
 
 	}
-
 }

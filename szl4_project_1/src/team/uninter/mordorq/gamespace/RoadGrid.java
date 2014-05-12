@@ -199,7 +199,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	@Override
 	public boolean isAvailableFor(Barricade barricade) {
-		return true;
+		return this.vulnerable == null;
 	}
 
 	/**

@@ -12,7 +12,7 @@ public class BasicTower extends Tower {
 
 	static {
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/basic_tower_16p.png"));
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/basic_tower_16p_red.png"));
 		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/basic_tower_16p.png"));
 	}
 
