@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
 
+import team.uninter.mordorq.gamespace.Casted.ImageColor;
 import team.uninter.mordorq.utils.GameUtil;
 import team.uninter.mordorq.utils.RoundInitiator;
 
@@ -409,8 +410,11 @@ public class Scene extends JPanel {
 		 * */
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if (owner.activeObject != null)
+			logger.debug("in Scene.mouseClicked");
+			if (owner.activeObject != null) {
 				owner.castOn(e.getPoint());
+				logger.debug("in Scene.mouseClicked: activeObject " + owner.activeObject.toString() + " was casted at " + e.getPoint().toString());
+			}
 		}
 
 		/**
@@ -423,17 +427,20 @@ public class Scene extends JPanel {
 		 * */
 		@Override
 		public void mouseEntered(MouseEvent e) {
+			logger.debug("in Scene.mouseEntered");
 			if (owner.activeObject != null) {
 				java.awt.Point p = e.getPoint();
-				// TODO: suprevise !!
 				owner.activeObject.setLocation(p.x - 8, p.y - 8);
-				;
+				logger.debug("in Scene.mouseEntered: setting activeObject " + owner.activeObject.toString() + " to ( " + (p.x - 8) + "," + (p.y - 8) + " )");
 				TerrainGrid gridBeneath = GameUtil.getGridByXY(owner.grids, p.x, p.y);
 				if (!owner.activeObject.canCastOn(gridBeneath)) {
-					owner.activeObject.setRedImage();
+					owner.activeObject.setImage(ImageColor.RED);
+					logger.debug("in Scene.mouseEntered: setting ImageColor.RED for " + owner.activeObject.toString());
 				}
-				else
-					owner.activeObject.setNormalImage();
+				else {
+					owner.activeObject.setImage(ImageColor.NORMAL);
+					logger.debug("in Scene.mouseEntered: setting ImageColor.NORMAL for " + owner.activeObject.toString());
+				}
 			}
 		}
 

@@ -1,5 +1,13 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.Map;
+
+import javax.imageio.ImageIO;
+
+import org.apache.log4j.Logger;
+
 @SuppressWarnings("serial")
 abstract public class Casted extends GameObject {
 
@@ -10,6 +18,8 @@ abstract public class Casted extends GameObject {
 	// casted) and canCastOn (returns, if the given object can be casted on a
 	// terrainGrid. Good, for user feedback mostly)
 
+	private static Logger logger = Logger.getLogger(Casted.class);
+	protected static Map<ImageColor, Image> avalImages;
 	protected int manaCost;
 
 	protected Casted() {
@@ -31,12 +41,21 @@ abstract public class Casted extends GameObject {
 		return manaCost;
 	}
 
-	// TODO:
-	public void setRedImage() {
-	}
-
-	public void setNormalImage() {
+	public final void setImage(ImageColor color) {
+		super.image = avalImages.get(color);
 	}
 
 	abstract public boolean canCastOn(TerrainGrid grid);
+
+	public static enum ImageColor {
+		RED, NORMAL
+	}
+
+	protected static final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
+		try {
+			target.put(color, ImageIO.read(imageFile));
+		} catch (Exception e) {
+			logger.fatal("loading image " + imageFile.toString() + " failed");
+		}
+	}
 }

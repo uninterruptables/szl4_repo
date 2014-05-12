@@ -216,6 +216,13 @@ abstract public class Tower extends InjectionTarget
 		return result;
 	}
 
+	@Override
+	public void repaint() {
+		logger.debug("in Tower.repaint() for " + this.toString());
+		super.repaint();
+		missile.repaint();
+	}
+
 	public abstract static class Missile extends GameObject implements Controlable {
 
 		private static final Logger logger = Logger.getLogger(Missile.class);
@@ -348,6 +355,15 @@ abstract public class Tower extends InjectionTarget
 
 		public final int getHobbitDamage() {
 			return this.racialDamages.get("hobbit");
+		}
+
+		@Override
+		public void repaint() {
+			if (state == MissileState.ON_THE_FLY) {
+				logger.debug("in Missile.repaint() for " + this.toString());
+				super.repaint();
+			}
+
 		}
 
 		/**
