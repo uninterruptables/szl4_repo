@@ -112,8 +112,9 @@ public class RoundInitiator {
 		@Override
 		public void run() {
 			try {
+				int rnum = 0;
 				while (!enemySource.isEmpty()) {
-					logger.debug("placing new enemy..");
+					logger.debug(" placing new enemies for " + (++rnum) + "th time");
 					placeFrom(enemySource, root, 0);
 					Thread.sleep(this.timeout);
 				}
@@ -138,7 +139,7 @@ public class RoundInitiator {
 				grid.setVulnerable(enemy);
 			}
 			TerrainGrid tGrid = grid.get(Neighbour.SOUTH);
-			logger.debug("south grid is: " + tGrid.toString());
+			logger.debug(" south grid is: " + tGrid.toString());
 			placeFrom(enemies, (RoadGrid) tGrid, ++depth);
 		}
 	}

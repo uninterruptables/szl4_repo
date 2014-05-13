@@ -641,7 +641,7 @@ public class Scene extends JPanel {
 								west.set(Neighbour.EAST, grid);
 							}
 							if (y > 0) {
-								TerrainGrid north = grids.get((y - 1) * width + x);
+								TerrainGrid north = grids.get((y - 1) * (width + 1) + x);
 								grid.set(Neighbour.NORTH, north);
 								north.set(Neighbour.SOUTH, grid);
 							}
