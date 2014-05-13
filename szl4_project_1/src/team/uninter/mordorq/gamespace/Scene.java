@@ -139,6 +139,14 @@ public class Scene extends JPanel {
 	}
 
 	private void initPanel() {
+
+		RoadGrid maxUtil = new RoadGrid(1);
+		for (TerrainGrid g : grids) {
+			if (g.getUtility() > maxUtil.getUtility())
+				maxUtil = (RoadGrid) g;
+		}
+		maxUtil.setVulnerable(MountainOfDoom.getInstance(this));
+
 		this.setPreferredSize(new Dimension(640, 640));
 	}
 
@@ -626,9 +634,6 @@ public class Scene extends JPanel {
 									break;
 								}
 							}
-							// /////////////
-							// hibakezel�s nem �rt m�g ide ha gridet nem
-							// tal�lja.
 
 							grid.setY(y * 16);
 
