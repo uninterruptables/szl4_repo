@@ -202,3 +202,31 @@
 2014-05-13/18:17:41.894/CESTDEBUG Scene.castOn( point ) ~ point: ( 257,88 )
 2014-05-13/18:17:48.245/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
 2014-05-13/18:17:48.246/CESTDEBUG Scene.castOn( point ) ~ point: ( 202,69 )
+2014-05-13/18:28:31.847/CESTDEBUG scene: in round 0
+2014-05-13/18:28:33.058/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:33.059/CESTDEBUG Scene.castOn( point ) ~ point: ( 117,86 )
+2014-05-13/18:28:34.974/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:34.974/CESTDEBUG Scene.castOn( point ) ~ point: ( 133,29 )
+2014-05-13/18:28:36.546/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:36.546/CESTDEBUG Scene.castOn( point ) ~ point: ( 181,28 )
+2014-05-13/18:28:38.287/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:38.287/CESTDEBUG Scene.castOn( point ) ~ point: ( 202,89 )
+2014-05-13/18:28:39.789/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:39.789/CESTDEBUG Scene.castOn( point ) ~ point: ( 205,99 )
+2014-05-13/18:28:40.216/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:40.216/CESTDEBUG Scene.castOn( point ) ~ point: ( 197,105 )
+2014-05-13/18:28:40.496/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:28:40.497/CESTDEBUG Scene.castOn( point ) ~ point: ( 199,105 )
+2014-05-13/18:31:21.604/CESTDEBUG scene: in round 0
+2014-05-13/18:31:26.825/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:31:26.825/CESTDEBUG Scene.castOn( point ) ~ point: ( 125,88 )
+2014-05-13/18:31:29.103/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:31:29.103/CESTDEBUG Scene.castOn( point ) ~ point: ( 103,23 )
+2014-05-13/18:31:33.698/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:31:33.701/CESTDEBUG Scene.castOn( point ) ~ point: ( 200,86 )
+2014-05-13/18:31:40.572/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:31:40.572/CESTDEBUG Scene.castOn( point ) ~ point: ( 173,25 )
+2014-05-13/18:32:19.808/CESTDEBUG scene: in round 1
+2014-05-13/18:33:11.585/CESTDEBUG scene: in round 2
+2014-05-13/18:34:08.180/CESTDEBUG scene: in round 3
+2014-05-13/18:34:58.636/CESTDEBUG scene: in round 4

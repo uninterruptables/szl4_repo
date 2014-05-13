@@ -181,7 +181,6 @@ public class Scene extends JPanel {
 		timer.cancel();
 		timer = null;
 	}
-	
 
 	/**
 	 * Casts the active object to the given point.
@@ -193,18 +192,16 @@ public class Scene extends JPanel {
 	public void castOn(java.awt.Point point) {
 		logger.debug(" Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
 		logger.debug(" Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
-		if(owner.getUserMana() - activeObject.manaCost >= 0){
+		if (owner.getUserMana() - activeObject.manaCost >= 0) {
 			owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
 		}
-		else{
+		else {
 			return;
 		}
 		if (activeObject instanceof Magic)
 			cast((Magic) activeObject);
 		else
 			place(activeObject, GameUtil.getGridByXY(grids, point.x, point.y));
-
-		
 
 		activeObject = null;
 	}
@@ -219,7 +216,8 @@ public class Scene extends JPanel {
 	public void cast(Magic magic) {
 		if (enemies != null) {
 			for (Controlable enemy : enemies)
-				((EnemyTroop) enemy).addAll(magic.getStatusModifiers());
+				for (StatusModifier statMod : magic.getStatusModifiers())
+					statMod.apply((EnemyTroop) enemy);
 		}
 	}
 
