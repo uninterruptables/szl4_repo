@@ -10,10 +10,10 @@ public class Elf extends EnemyTroop {
 	// Specific EnemyTroop, called Elf. Have less life then other specific
 	// troop, more speed, and a little more damage
 
-//	static {
-//		rewardMana = GameConstants.ELF_REWARD;
-//		tryLoad(new File("resources/images/elf_16p.png"));
-//	}
+	// static {
+	// rewardMana = GameConstants.ELF_REWARD;
+	// tryLoad(new File("resources/images/elf_16p.png"));
+	// }
 
 	/**
 	 * Elf with no parameter.
@@ -79,7 +79,5 @@ public class Elf extends EnemyTroop {
 	@Override
 	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getElfDamage());
-		if (health <= 0 && currentGrid != null)
-			currentGrid.remove();
 	}
 }

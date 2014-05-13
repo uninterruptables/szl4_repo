@@ -10,10 +10,10 @@ public class Hobbit extends EnemyTroop {
 	// Specific EnemyTroop, called Hobbit. Have little less life then other
 	// specific troop, less speed, and less damage.
 
-//	static {
-//		rewardMana = GameConstants.HOBBIT_REWARD;
-//		tryLoad(new File("resources/images/hobbit_16p.png"));
-//	}
+	// static {
+	// rewardMana = GameConstants.HOBBIT_REWARD;
+	// tryLoad(new File("resources/images/hobbit_16p.png"));
+	// }
 
 	/**
 	 * Hobbit with no parameter.
@@ -68,7 +68,5 @@ public class Hobbit extends EnemyTroop {
 	@Override
 	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getHobbitDamage());
-		if (health <= 0 && currentGrid != null)
-			currentGrid.remove();
 	}
 }
