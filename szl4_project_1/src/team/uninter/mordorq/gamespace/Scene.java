@@ -164,7 +164,7 @@ public class Scene extends JPanel {
 				System.out.println("timer runing");
 				animator.run(1);
 			}
-		}, 1000, 1000);
+		}, 1000, 33);
 	}
 
 	/**
