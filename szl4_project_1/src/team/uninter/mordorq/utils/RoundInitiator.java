@@ -111,7 +111,7 @@ public class RoundInitiator {
 			try {
 				while (!enemySource.isEmpty()) {
 					logger.debug("placing new enemy..");
-					placeFrom(enemySource, root);
+					placeFrom(enemySource, root, 0);
 					Thread.sleep(this.timeout);
 				}
 			} catch (InterruptedException e) {
@@ -126,15 +126,15 @@ public class RoundInitiator {
 		 * @param grid
 		 *            from to which to place the elements onto
 		 * */
-		private static void placeFrom(List<? extends Controlable> enemies, RoadGrid grid) {
+		private static void placeFrom(List<? extends Controlable> enemies, RoadGrid grid, int depth) {
 			if (enemies.isEmpty() || grid == null)
 				return;
 			if (grid.getVulnerable() == null) {
 				EnemyTroop enemy = (EnemyTroop) enemies.remove(0);
-				logger.debug(" enemy " + enemy.toString() + " was placed in PlaceWorker onto grid.u: " + grid.getUtility());
+				logger.debug(" enemy " + enemy.toString() + " was placed in PlaceWorker onto grid.u: " + grid.getUtility() + " in depth of " + depth);
 				grid.setVulnerable(enemy);
 			}
-			placeFrom(enemies, (RoadGrid) grid.get(Neighbour.SOUTH));
+			placeFrom(enemies, (RoadGrid) grid.get(Neighbour.SOUTH), ++depth);
 		}
 	}
 

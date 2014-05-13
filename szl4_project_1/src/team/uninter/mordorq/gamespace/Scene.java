@@ -172,7 +172,8 @@ public class Scene extends JPanel {
 	public void pause() {
 		timer.cancel();
 		timer = null;
-//		logger.debug("in Scene.pause timer was set to " + timer == null ? null : timer.toString());
+		// logger.debug("in Scene.pause timer was set to " + timer == null ?
+		// null : timer.toString());
 	}
 
 	/**
@@ -259,6 +260,8 @@ public class Scene extends JPanel {
 	 * */
 	public void endGame(boolean wasWinning) {
 		logger.debug("game ended with " + (wasWinning == true ? "victory" : "defeate"));
+		// TODO: check
+		timer.cancel();
 		if (wasWinning)
 			owner.win();
 		else {
@@ -267,15 +270,15 @@ public class Scene extends JPanel {
 			towers.clear(); // towers = null; //new ArrayList<Tower>();
 			enemies.clear(); // enemies = null; //new ArrayList<Controlable>();
 			owner.gameOver();
-
 		}
 	}
 
 	/**
 	 * Paints this component and all the components referenced by it.
 	 * 
-	 * @param g the <code>Graphics</code> instance responsible for drawings
-	 * 		     in the Java Graphics FrameWork
+	 * @param g
+	 *            the <code>Graphics</code> instance responsible for drawings in
+	 *            the Java Graphics FrameWork
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -533,20 +536,20 @@ public class Scene extends JPanel {
 						}
 					}
 				}
-				
-				//new code
+
+				// new code
 				for (Entry<Integer, List<TerrainGrid>> entry : bucketHash.entrySet()) {
-				    Integer key = entry.getKey();
-				    List<TerrainGrid> value = entry.getValue();
-				    
-				    List<Boolean> valueList = new ArrayList<Boolean>(); 
-				    for(int i = 0; i < value.size(); i++){
-				    	valueList.add(new Boolean(false));
-				    }
-				    usageChecker.put(key, valueList);
+					Integer key = entry.getKey();
+					List<TerrainGrid> value = entry.getValue();
+
+					List<Boolean> valueList = new ArrayList<Boolean>();
+					for (int i = 0; i < value.size(); i++) {
+						valueList.add(new Boolean(false));
+					}
+					usageChecker.put(key, valueList);
 				}
-				/////////
-				
+				// ///////
+
 			} catch (IOException e) {
 				throw e;
 			} finally {
@@ -569,51 +572,60 @@ public class Scene extends JPanel {
 					String[] parts = line.split(" ");
 
 					/* adding the entering space for newly spawn enemies */
-					logger.debug("spawnUtil@" + y + ": " + spawnUtils.get(y));
+					// logger.debug("spawnUtil@" + y + ": " +
+					// spawnUtils.get(y));
 					RoadGrid enterGrid = new RoadGrid(spawnUtils.get(y));
 					enterGrid.setX(-16);
 					enterGrid.setY(0);
+					logger.debug(" entr grid at y of " + y + " is " + enterGrid.toString());
+					grids.add(enterGrid);
 					x++;
+					// TODO:
 					if (y > 0) {
-						TerrainGrid north = grids.get((y - 1) * width + 0);
+						int index = (y - 1) * (width + 1);
+						TerrainGrid north = grids.get(index);
+						logger.debug(" noth grid at ( " + north.getX() + "," + north.getY() + "  )" + " is " + north.toString());
 						enterGrid.set(Neighbour.NORTH, north);
 						north.set(Neighbour.SOUTH, enterGrid);
 
 						enterGrid.setY(y * 16);
+						logger.debug(" entr grid at ( " + enterGrid.getX() + "," + enterGrid.getY() + "  )" + " is " + north.toString());
 					}
-					grids.add(enterGrid);
-					logger.debug("enterGrid was placed at ( " + enterGrid.getX() + "," + enterGrid.getY() + " ) with u: " + enterGrid.getUtility());
+					// logger.debug("enterGrid was placed at ( " +
+					// enterGrid.getX() + "," + enterGrid.getY() + " ) with u: "
+					// + enterGrid.getUtility());
 
 					for (String _util : parts) {
 						if (!_util.isEmpty()) {
-//							TerrainGrid grid = bucketHash.get(Integer.valueOf(_util)).get(0);
-							
-							//new code
+							// TerrainGrid grid =
+							// bucketHash.get(Integer.valueOf(_util)).get(0);
+
+							// new code
 							TerrainGrid grid = null;
 							boolean foundNotUsed = false;
-							
+
 							for (Entry<Integer, List<Boolean>> entry : usageChecker.entrySet()) {
-							    Integer key = entry.getKey();
-							    List<Boolean> value = entry.getValue();
-							    
-							    for(int i = 0; i < value.size(); i++){
-							    	if(Integer.valueOf(key).equals(Integer.valueOf(_util))){
-							    		if(value.get(i) == false){
-							    			value.set(i, true);
-								    		grid = bucketHash.get(Integer.valueOf(_util)).get(i);
-								    		foundNotUsed = true;
-								    		break;
-							    		}
-							    	}
-							    }
-							    if(foundNotUsed){
-							    	break;
-							    }
+								Integer key = entry.getKey();
+								List<Boolean> value = entry.getValue();
+
+								for (int i = 0; i < value.size(); i++) {
+									if (Integer.valueOf(key).equals(Integer.valueOf(_util))) {
+										if (value.get(i) == false) {
+											value.set(i, true);
+											grid = bucketHash.get(Integer.valueOf(_util)).get(i);
+											foundNotUsed = true;
+											break;
+										}
+									}
+								}
+								if (foundNotUsed) {
+									break;
+								}
 							}
-							///////////////
-							//hibakezelés nem árt még ide ha gridet nem találja.
-							
-							
+							// /////////////
+							// hibakezelï¿½s nem ï¿½rt mï¿½g ide ha gridet nem
+							// talï¿½lja.
+
 							grid.setY(y * 16);
 
 							if (x <= 0)
