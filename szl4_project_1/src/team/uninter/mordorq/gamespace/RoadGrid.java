@@ -26,9 +26,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	private Vulnerable vulnerable;
 	private final List<TargetSubscriber> subscribers;
 
-//	static {
-//		tryLoad(new File("resources/images/roadgrid_16p.png"));
-//	}
+	// static {
+	// tryLoad(new File("resources/images/roadgrid_16p.png"));
+	// }
 
 	/**
 	 * Contructor with position parameters
@@ -133,8 +133,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 *            the Java Graphics FrameWork
 	 */
 	@Override
-	public void drawGrid(Graphics g) {
-		super.drawObject(g);
+	public void drawContent(Graphics g) {
 		if (vulnerable != null)
 			this.vulnerable.drawObject(g);
 		else if (trap != null)
@@ -217,10 +216,10 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	@Override
 	public boolean isAvailableFor(Rune rune) {
-		if(trap != null){
+		if (trap != null) {
 			return trap.canInject(rune);
 		}
-		else{
+		else {
 			return false;
 		}
 	}

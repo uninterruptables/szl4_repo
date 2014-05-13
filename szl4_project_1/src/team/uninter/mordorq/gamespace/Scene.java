@@ -290,9 +290,10 @@ public class Scene extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (grids != null) {
-			for (TerrainGrid grid : grids) {
-				grid.drawGrid(g);
-			}
+			for (TerrainGrid grid : grids)
+				grid.drawObject(g);
+			for (TerrainGrid grid : grids)
+				grid.drawContent(g);
 		}
 		if (activeObject != null)
 			activeObject.drawObject(g);
