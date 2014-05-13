@@ -1,7 +1,5 @@
 package team.uninter.mordorq.gamespace;
 
-import java.awt.Graphics;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +8,9 @@ import org.apache.log4j.Logger;
 
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
+
+import java.awt.Graphics;
+import java.io.File;
 
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget
@@ -124,6 +125,7 @@ abstract public class Tower extends InjectionTarget
 	@Override
 	public final void inject(Injectable inject) {
 		inject.injectOn(this);
+		this.remainingRunePlace--;
 		logger.debug("in Tower.inject: " + inject.toString() + " was injected into " + this.toString());
 	}
 
@@ -221,16 +223,16 @@ abstract public class Tower extends InjectionTarget
 	/**
 	 * Paints this component and all the components referenced by it.
 	 * 
-	 * @param g
-	 *            the <code>Graphics</code> instance responsible for drawings in
-	 *            the Java Graphics FrameWork
+	 * @param g the <code>Graphics</code> instance responsible for drawings
+	 * 		     in the Java Graphics FrameWork
 	 */
 	@Override
 	public void drawObject(Graphics g) {
-		logger.debug("in Tower.drawObject(g) for " + this.toString());
+//		logger.debug("in Tower.drawObject(g) for " + this.toString());
 		super.drawObject(g);
 		missile.drawObject(g);
 	}
+	
 
 	public abstract static class Missile extends GameObject implements Controlable {
 
@@ -247,7 +249,7 @@ abstract public class Tower extends InjectionTarget
 			super(x, y);
 			racialDamages = new HashMap<String, Integer>();
 			state = MissileState.WAITING;
-			super.tryLoad(new File("resources/images/missile_4p.png"));
+			super.tryLoad(new File("resources/images/missile_4p.gif"));
 		}
 
 		@Override

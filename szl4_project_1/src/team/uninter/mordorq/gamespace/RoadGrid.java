@@ -217,7 +217,12 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	@Override
 	public boolean isAvailableFor(Rune rune) {
-		return trap.canInject(rune);
+		if(trap != null){
+			return trap.canInject(rune);
+		}
+		else{
+			return false;
+		}
 	}
 
 	@Override
