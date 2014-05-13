@@ -10,9 +10,9 @@ public class MountainOfDoom extends DamageTaker {
 	// Special class at the program, only role is to tell the player,
 	// he lost the game if any of the enemies reach this on the scene
 	
-	static {
-		tryLoad(new File("resources/images/Mount_Doom_16_48.png"));
-	}
+//	static {
+//		tryLoad(new File("resources/images/Mount_Doom_16_48.png"));
+//	}
 	
 	private Scene owner;
 
@@ -20,6 +20,7 @@ public class MountainOfDoom extends DamageTaker {
 		super();
 		this.owner = owner;
 		this.health = 1;
+		tryLoad(new File("resources/images/Mount_Doom_16_48.png"));
 	}
 
 	public static synchronized MountainOfDoom getInstance(Scene scene) {

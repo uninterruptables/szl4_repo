@@ -12,10 +12,10 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class Legolas extends Elf {
 
-	static {
-		rewardMana = GameConstants.LEGOLAS_REWARD;
-		tryLoad(new File("resources/images/legolas_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.LEGOLAS_REWARD;
+//		tryLoad(new File("resources/images/legolas_16p.png"));
+//	}
 
 	private static Legolas instance = null;
 
@@ -23,6 +23,8 @@ public class Legolas extends Elf {
 		super();
 		this.health = health;
 		this.damage = damage;
+		rewardMana = GameConstants.LEGOLAS_REWARD;
+		tryLoad(new File("resources/images/legolas_16p.png"));
 	}
 
 	public static Legolas getInstance() {

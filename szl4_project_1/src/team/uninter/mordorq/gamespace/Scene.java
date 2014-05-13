@@ -172,7 +172,7 @@ public class Scene extends JPanel {
 	public void pause() {
 		timer.cancel();
 		timer = null;
-		logger.debug("in Scene.pause timer was set to " + timer == null ? null : timer.toString());
+//		logger.debug("in Scene.pause timer was set to " + timer == null ? null : timer.toString());
 	}
 
 	/**

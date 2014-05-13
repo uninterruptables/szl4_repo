@@ -12,10 +12,10 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class Aragorn extends Human {
 
-	static {
-		rewardMana = GameConstants.ARAGORN_REWARD;
-		tryLoad(new File("resources/images/aragorn_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.ARAGORN_REWARD;
+//		tryLoad(new File("resources/images/aragorn_16p.png"));
+//	}
 
 	private static Aragorn instance = null;
 
@@ -23,6 +23,8 @@ public class Aragorn extends Human {
 		super();
 		this.health = health;
 		this.damage = damage;
+		rewardMana = GameConstants.ARAGORN_REWARD;
+		tryLoad(new File("resources/images/aragorn_16p.png"));
 	}
 
 	public static Aragorn getInstance() {

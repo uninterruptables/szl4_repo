@@ -26,9 +26,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	private Vulnerable vulnerable;
 	private final List<TargetSubscriber> subscribers;
 
-	static {
-		tryLoad(new File("resources/images/roadgrid_16p.png"));
-	}
+//	static {
+//		tryLoad(new File("resources/images/roadgrid_16p.png"));
+//	}
 
 	/**
 	 * Contructor with position parameters
@@ -38,6 +38,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid(int x, int y) {
 		this(x, y, 0, 0);
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
 
 	public RoadGrid(int x, int y, int utility, int id) {
@@ -45,6 +46,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 		this.utility = utility;
 		this.id = id;
 		subscribers = new ArrayList<TargetSubscriber>();
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
 
 	/**
@@ -54,6 +56,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid(int utility) {
 		this(0, 0, utility, 0);
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
 
 	/**
@@ -61,6 +64,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public RoadGrid() {
 		this(0, 0, 0, 0);
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
 
 	/**

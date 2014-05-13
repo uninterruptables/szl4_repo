@@ -10,16 +10,18 @@ public class Dwarf extends EnemyTroop {
 	// Specific EnemyTroop, called Dwarf. Have much more life then other
 	// specific troop, less speed, and a little more damage
 
-	static {
-		rewardMana = GameConstants.DWARF_REWARD;
-		tryLoad(new File("resources/images/dwarf_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.DWARF_REWARD;
+//		tryLoad(new File("resources/images/dwarf_16p.png"));
+//	}
 
 	/**
 	 * Dwarf with no parameter.
 	 */
 	public Dwarf() {
 		this(0, 0, GameConstants.DWARF_HEALTH, GameConstants.DWARF_DAMAGE);
+		rewardMana = GameConstants.DWARF_REWARD;
+		tryLoad(new File("resources/images/dwarf_16p.png"));
 	}
 
 	/**
@@ -30,6 +32,8 @@ public class Dwarf extends EnemyTroop {
 	 */
 	public Dwarf(int x, int y) {
 		this(x, y, GameConstants.DWARF_HEALTH, GameConstants.DWARF_DAMAGE);
+		rewardMana = GameConstants.DWARF_REWARD;
+		tryLoad(new File("resources/images/dwarf_16p.png"));
 	}
 
 	/**
@@ -46,6 +50,8 @@ public class Dwarf extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
+		rewardMana = GameConstants.DWARF_REWARD;
+		tryLoad(new File("resources/images/dwarf_16p.png"));
 	}
 
 	@Override

@@ -21,7 +21,8 @@ public abstract class GameObject extends JPanel {
 
 	private static final Logger logger = Logger.getLogger(GameObject.class);
 
-	protected static Image image;
+//	protected static Image image;
+	protected Image image;
 	protected int x, y;
 
 	public GameObject(int x, int y) {
@@ -64,7 +65,8 @@ public abstract class GameObject extends JPanel {
 		return GameUtil.slicePackagesFrom(super.toString());
 	}
 
-	protected static final void tryLoad(File imageFile) {
+//	protected static final void tryLoad(File imageFile) {
+	protected final void tryLoad(File imageFile) {
 		try {
 			image = ImageIO.read(imageFile);
 		} catch (Exception e) {

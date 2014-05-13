@@ -10,16 +10,18 @@ public class Elf extends EnemyTroop {
 	// Specific EnemyTroop, called Elf. Have less life then other specific
 	// troop, more speed, and a little more damage
 
-	static {
-		rewardMana = GameConstants.ELF_REWARD;
-		tryLoad(new File("resources/images/elf_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.ELF_REWARD;
+//		tryLoad(new File("resources/images/elf_16p.png"));
+//	}
 
 	/**
 	 * Elf with no parameter.
 	 */
 	public Elf() {
 		this(0, 0, GameConstants.ELF_HEALTH, GameConstants.ELF_DAMAGE);
+		rewardMana = GameConstants.ELF_REWARD;
+		tryLoad(new File("resources/images/elf_16p.png"));
 	}
 
 	/**
@@ -30,6 +32,8 @@ public class Elf extends EnemyTroop {
 	 */
 	public Elf(int x, int y) {
 		this(x, y, GameConstants.ELF_HEALTH, GameConstants.ELF_DAMAGE);
+		rewardMana = GameConstants.ELF_REWARD;
+		tryLoad(new File("resources/images/elf_16p.png"));
 	}
 
 	/**
@@ -46,6 +50,8 @@ public class Elf extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.ELF_COOLDOWN;
+		rewardMana = GameConstants.ELF_REWARD;
+		tryLoad(new File("resources/images/elf_16p.png"));
 	}
 
 	@Override

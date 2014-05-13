@@ -11,16 +11,18 @@ public class Human extends EnemyTroop {
 	// others will be compare to this.
 	// Have average life, speed and damage
 
-	static {
-		rewardMana = GameConstants.HUMAN_REWARD;
-		tryLoad(new File("resources/images/human_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.HUMAN_REWARD;
+//		tryLoad(new File("resources/images/human_16p.png"));
+//	}
 
 	/**
 	 * Human with no parameter.
 	 */
 	public Human() {
 		this(0, 0, GameConstants.HUMAN_HEALTH, GameConstants.HUMAN_DAMAGE);
+		rewardMana = GameConstants.HUMAN_REWARD;
+		tryLoad(new File("resources/images/human_16p.png"));
 	}
 
 	/**
@@ -31,6 +33,8 @@ public class Human extends EnemyTroop {
 	 */
 	public Human(int x, int y) {
 		this(x, y, GameConstants.HUMAN_HEALTH, GameConstants.HUMAN_DAMAGE);
+		rewardMana = GameConstants.HUMAN_REWARD;
+		tryLoad(new File("resources/images/human_16p.png"));
 	}
 
 	/**
@@ -47,6 +51,8 @@ public class Human extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HUMAN_COOLDOWN;
+		rewardMana = GameConstants.HUMAN_REWARD;
+		tryLoad(new File("resources/images/human_16p.png"));
 	}
 
 	@Override

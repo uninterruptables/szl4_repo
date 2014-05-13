@@ -20,9 +20,9 @@ public class GroundGrid extends TerrainGrid {
 	private boolean available = true;
 	private Tower tower;
 
-	static {
-		tryLoad(new File("resources/images/groundgrid_16p.png"));
-	}
+//	static {
+//		tryLoad(new File("resources/images/groundgrid_16p.png"));
+//	}
 	
 	/**
 	 * Contructor with position parameters
@@ -32,10 +32,12 @@ public class GroundGrid extends TerrainGrid {
 	 */
 	public GroundGrid(int x, int y) {
 		super(x, y);
+		tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	public GroundGrid(int x, int y, int utility, int id) {
 		super(x, y, utility, id);
+		tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	/**
@@ -45,6 +47,7 @@ public class GroundGrid extends TerrainGrid {
 	 */
 	public GroundGrid(int utility) {
 		this(0, 0, utility, 0);
+		tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	/**
@@ -52,6 +55,7 @@ public class GroundGrid extends TerrainGrid {
 	 */
 	public GroundGrid() {
 		this(0, 0, 0, 0);
+		tryLoad(new File("resources/images/groundgrid_16p.png"));
 	}
 
 	/**

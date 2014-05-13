@@ -10,16 +10,18 @@ public class Hobbit extends EnemyTroop {
 	// Specific EnemyTroop, called Hobbit. Have little less life then other
 	// specific troop, less speed, and less damage.
 
-	static {
-		rewardMana = GameConstants.HOBBIT_REWARD;
-		tryLoad(new File("resources/images/hobbit_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.HOBBIT_REWARD;
+//		tryLoad(new File("resources/images/hobbit_16p.png"));
+//	}
 
 	/**
 	 * Hobbit with no parameter.
 	 */
 	public Hobbit() {
 		this(0, 0, GameConstants.HOBBIT_HEALTH, GameConstants.HOBBIT_DAMAGE);
+		rewardMana = GameConstants.HOBBIT_REWARD;
+		tryLoad(new File("resources/images/hobbit_16p.png"));
 	}
 
 	/**
@@ -30,6 +32,8 @@ public class Hobbit extends EnemyTroop {
 	 */
 	public Hobbit(int x, int y) {
 		this(x, y, GameConstants.HOBBIT_HEALTH, GameConstants.HOBBIT_DAMAGE);
+		rewardMana = GameConstants.HOBBIT_REWARD;
+		tryLoad(new File("resources/images/hobbit_16p.png"));
 	}
 
 	/**
@@ -46,6 +50,8 @@ public class Hobbit extends EnemyTroop {
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.HOBBIT_COOLDOWN;
+		rewardMana = GameConstants.HOBBIT_REWARD;
+		tryLoad(new File("resources/images/hobbit_16p.png"));
 	}
 
 	@Override

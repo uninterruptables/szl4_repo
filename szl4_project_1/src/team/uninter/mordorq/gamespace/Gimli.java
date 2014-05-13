@@ -12,10 +12,10 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class Gimli extends Dwarf {
 
-	static {
-		rewardMana = GameConstants.GIMLI_REWARD;
-		tryLoad(new File("resources/images/gimli_16p.png"));
-	}
+//	static {
+//		rewardMana = GameConstants.GIMLI_REWARD;
+//		tryLoad(new File("resources/images/gimli_16p.png"));
+//	}
 
 	private static Gimli instance = null;
 
@@ -23,6 +23,8 @@ public class Gimli extends Dwarf {
 		super();
 		this.health = health;
 		this.damage = damage;
+		rewardMana = GameConstants.GIMLI_REWARD;
+		tryLoad(new File("resources/images/gimli_16p.png"));
 	}
 
 	public static Gimli getInstance() {
