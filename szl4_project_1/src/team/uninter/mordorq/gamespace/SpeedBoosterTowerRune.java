@@ -9,21 +9,27 @@ import team.uninter.mordorq.utils.GameConstants;
 
 public class SpeedBoosterTowerRune extends TowerRune{
 	
-	static {
-		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
-	}
+//	static {
+//		avalImages = new HashMap<ImageColor, Image>();
+//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
+//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
+//	}
 	
 	//a class used to create runes that can increase a tower's speed.
 	public SpeedBoosterTowerRune() {
 		super();
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
 //		System.out.println("SpeedBoosterTowerRune() called");
 //		System.out.println("SpeedBoosterTowerRune() returned");
 	}
 	
 	public SpeedBoosterTowerRune(int x, int y) {
 		super(x, y);
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) called");
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) returned");
 	}

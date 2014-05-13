@@ -13,14 +13,17 @@ public class WeakenTrapRune extends TrapRune{
 	//addEffect function, to add the extra effect
 //	int weakenAmount;
 	
-	static {
-		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
-	}
+//	static {
+//		avalImages = new HashMap<ImageColor, Image>();
+//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
+//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
+//	}
 	
 	public WeakenTrapRune() {
 		super();
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
 //		System.out.println("WeakenTrapRune() called");
 //		weakenAmount = GameConstants.WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT;
 //		System.out.println("WeakenTrapRune() returned");
@@ -28,6 +31,9 @@ public class WeakenTrapRune extends TrapRune{
 	
 	public WeakenTrapRune(int x, int y) {
 		super(x, y);
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
 //		System.out.println("WeakenTrapRune(Int, Int) called");
 //		weakenAmount = GameConstants.WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT;
 //		System.out.println("WeakenTrapRune(Int, Int) returned");

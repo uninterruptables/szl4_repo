@@ -3,6 +3,7 @@ package team.uninter.mordorq.gamespace;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
@@ -20,7 +21,8 @@ abstract public class Casted extends GameObject {
 	// terrainGrid. Good, for user feedback mostly)
 
 	private static Logger logger = Logger.getLogger(Casted.class);
-	protected static Map<ImageColor, Image> avalImages;
+//	protected static Map<ImageColor, Image> avalImages;
+	protected Map<ImageColor, Image> avalImages;
 	protected ImageColor color;
 	protected int manaCost;
 

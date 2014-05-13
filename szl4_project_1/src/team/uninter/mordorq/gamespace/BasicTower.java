@@ -10,16 +10,19 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class BasicTower extends Tower {
 
-	static {
-		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/basic_tower_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/basic_tower_16p.png"));
-	}
+//	static {
+//		avalImages = new HashMap<ImageColor, Image>();
+//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/basic_tower_16p_red.png"));
+//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/basic_tower_16p.png"));
+//	}
 
 	// One of the few descendants of the Tower class, with no special methods,
 	// but certain values.
 	public BasicTower(int x, int y) {
 		super(x, y);
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/basic_tower_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/basic_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.BASIC_TOWER_RADIUS;
 	}

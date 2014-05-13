@@ -12,14 +12,17 @@ public class GreatTower extends Tower {
 	// One of the few descendants of the Tower class, with no special methods,
 	// but certain values.
 
-	static {
-		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/strong_tower_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/strong_tower_16p.png"));
-	}
+//	static {
+//		avalImages = new HashMap<ImageColor, Image>();
+//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/strong_tower_16p_red.png"));
+//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/strong_tower_16p.png"));
+//	}
 
 	public GreatTower(int x, int y) {
 		super(x, y);
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/strong_tower_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/strong_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.GREAT_TOWER_RADIUS;
 	}

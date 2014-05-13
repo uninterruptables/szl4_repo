@@ -230,6 +230,7 @@ public class Scene extends JPanel {
 				}
 			}
 		}
+		repaint();
 	}
 
 	/**

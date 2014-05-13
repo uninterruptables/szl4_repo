@@ -12,18 +12,24 @@ public class FreezeTrapRune extends TrapRune{
 	//effect list. On inject on, it calls the trap's
 	//addEffect function, to add the extra effect
 	
-	static {
+//	static {
+//		avalImages = new HashMap<ImageColor, Image>();
+//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/slowtraprune_16p_red.png"));
+//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slowtraprune_16p.png"));
+//	}
+	
+	public FreezeTrapRune() {
+		super();
 		avalImages = new HashMap<ImageColor, Image>();
 		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/slowtraprune_16p_red.png"));
 		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slowtraprune_16p.png"));
 	}
 	
-	public FreezeTrapRune() {
-		super();
-	}
-	
 	public FreezeTrapRune(int x, int y) {
 		super(x, y);
+		avalImages = new HashMap<ImageColor, Image>();
+		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/slowtraprune_16p_red.png"));
+		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slowtraprune_16p.png"));
 	}
 	
 	public void injectOn(Trap trap){
