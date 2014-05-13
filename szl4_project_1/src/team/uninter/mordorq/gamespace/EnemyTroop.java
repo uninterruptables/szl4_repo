@@ -143,14 +143,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	}
 
 	/**
-	 * @param rewardMana
-	 *            the rewardMana to set
-	 */
-	public final void setRewardMana(int rewardMana) {
-		this.rewardMana = rewardMana;
-	}
-
-	/**
 	 * THis class set the troops current grids.
 	 * 
 	 * @param grid

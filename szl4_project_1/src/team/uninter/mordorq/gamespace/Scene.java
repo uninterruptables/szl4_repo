@@ -201,6 +201,9 @@ public class Scene extends JPanel {
 			cast((Magic) activeObject);
 		else
 			place(activeObject, GameUtil.getGridByXY(grids, point.x, point.y));
+
+		owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
+		activeObject = null;
 	}
 
 	/**
@@ -270,7 +273,6 @@ public class Scene extends JPanel {
 	 *            indicates how the game has ended: by winning or loosing it
 	 * */
 	public void endGame(boolean wasWinning) {
-		logger.debug("game ended with " + (wasWinning == true ? "victory" : "defeate"));
 		// TODO: check
 		timer.cancel();
 		if (wasWinning)
