@@ -12,19 +12,9 @@ public class Animator implements Runnable {
 
 	private static final Logger logger = Logger.getLogger(Animator.class);
 	private Scene scene;
-	private List<Tower> towers;
-	private List<? extends Controlable> enemies;
-
-	public Animator(Scene scene, List<Tower> towers, List<EnemyTroop> enemies) {
-		this.scene = scene;
-		this.towers = towers;
-		this.enemies = enemies;
-	}
 
 	public Animator(Scene scene) {
 		this.scene = scene;
-		towers = scene.getTowers();
-		enemies = scene.getEnemies();
 	}
 
 	@Override
@@ -33,6 +23,7 @@ public class Animator implements Runnable {
 	}
 
 	public void run(int n) {
+		logger.debug(" scene: " + scene.toString());
 		for (int i = 0; i < n; i++) {
 			List<Controlable> removeable = new ArrayList<Controlable>();
 
@@ -49,9 +40,10 @@ public class Animator implements Runnable {
 				}
 			}
 			// to prevent ConcurrentModificationException
+			// scene.getEnemies().removeAll(removeable);
 			scene.getEnemies().removeAll(removeable);
 
-			if (enemies.isEmpty()) {
+			if (scene.getEnemies().isEmpty()) {
 				// scene.endRound();
 				scene.nextRound();
 				logger.debug(" in Animator.run(n): round " + scene.getRoundNumber() + " ended in " + GameUtil.fetchFrom(this.toString(), "Animator"));
@@ -71,13 +63,9 @@ public class Animator implements Runnable {
 	}
 
 	private void fog() {
-		for (Tower tower : towers) {
+		for (Tower tower : scene.getTowers()) {
 			FogStatus fogStat = new FogStatus();
 			fogStat.apply(tower);
 		}
-	}
-
-	public void add(Tower tower) {
-		this.towers.add(tower);
 	}
 }

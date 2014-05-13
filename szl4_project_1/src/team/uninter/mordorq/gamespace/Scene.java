@@ -229,7 +229,6 @@ public class Scene extends JPanel {
 		casted.castOn(grid);
 		if (casted instanceof Tower) {
 			towers.add((Tower) casted);
-			animator.add((Tower) casted);
 			for (TerrainGrid _grid : grids) {
 				if (_grid.isInRangeOf((Tower) casted)) {
 					((Tower) casted).attach((RoadGrid) _grid);
@@ -244,7 +243,7 @@ public class Scene extends JPanel {
 	 * Notifies the <code>Scene</code> about that another round has ended.
 	 * */
 	public void endRound() {
-		logger.debug("round ended");
+		logger.debug(" round ended");
 		this.owner.endRound(round);
 	}
 
@@ -253,6 +252,7 @@ public class Scene extends JPanel {
 	 * new round does not supply new enemies then the game has been won!
 	 * */
 	public void nextRound() {
+		logger.debug(" scene: " + this.toString());
 		enemies = RoundInitiator.initRoundFor(this, round++);
 		if (enemies.isEmpty())
 			endGame(true);
@@ -371,7 +371,7 @@ public class Scene extends JPanel {
 	 * 
 	 * @return the list of towers the scene contains
 	 * */
-	public List<Tower> getTowers() {
+	public synchronized List<Tower> getTowers() {
 		return towers;
 	}
 
@@ -380,7 +380,7 @@ public class Scene extends JPanel {
 	 * 
 	 * @return the list of enemies the scene contains
 	 * */
-	public List<Controlable> getEnemies() {
+	public synchronized List<Controlable> getEnemies() {
 		return enemies;
 	}
 

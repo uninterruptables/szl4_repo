@@ -207,9 +207,11 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 			logger.debug(" in EnemyTroop.split(grid) " + grid.toString() + " was notified by" + this.toString());
 			return true;
 		}
-		for (Neighbour n : Neighbour.values())
-			if (grid.get(n).getUtility() > 0 && split((RoadGrid) grid.get(n)))
+		for (Neighbour n : Neighbour.values()) {
+			if (grid.get(n).getUtility() > 0 && split((RoadGrid) grid.get(n))) {
 				return true;
+			}
+		}
 		logger.debug(" in EnemyTroop.split(grid) split failed");
 		return false;
 	}
