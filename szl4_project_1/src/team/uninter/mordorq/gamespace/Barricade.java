@@ -31,6 +31,7 @@ public class Barricade extends Casted implements Vulnerable {
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/barricade_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		health = GameConstants.BARRICADE_HEALTH;
+		manaCost = GameConstants.BARRICADE_COST;
 	}
 
 	@Override

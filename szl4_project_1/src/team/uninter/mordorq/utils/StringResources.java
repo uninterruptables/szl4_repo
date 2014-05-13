@@ -24,7 +24,7 @@ public class StringResources {
 	public static String PLUS_WEAKENING_TRAP_RUNE_INFO = "Increase trap's damage decrease \nCost: "+GameConstants.WEAKEN_TRAP_RUNE_COST+"\n+Damae decrease: "+GameConstants.WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT; 
 	public static String PLUS_POISONOUS_TRAP_RUNE_INFO = "Increase trap's poison damage \nCost: "+GameConstants.POISONOUS_TRAP_RUNE_COST+"\n+Poison damage: "+GameConstants.POISONOUS_TRAP_RUNE_POISON_AMOUNT; 
 	
-	public static String NAZGUL_MAGIC_INFO = "Cost: "+GameConstants.NAZGUL_MAGIC_COST+"\nFreeze every enemy for "+Math.floor((double)GameConstants.NAZGUL_MAGIC_DURATION/(double)GameConstants.FPS)+" sec";
-	public static String ICE_WIND_MAGIC_INFO = "Cost: "+GameConstants.ICE_WIND_MAGIC_COST+"\nDo something for "+Math.floor((double)GameConstants.ICE_WIND_MAGIC_DURATION/(double)GameConstants.FPS)+" sec";
+	public static String NAZGUL_MAGIC_INFO = "Cost: "+GameConstants.NAZGUL_MAGIC_COST+"\nWeaken every enemy for "+Math.floor((double)GameConstants.NAZGUL_MAGIC_DURATION/(double)GameConstants.FPS)+" sec";
+	public static String ICE_WIND_MAGIC_INFO = "Cost: "+GameConstants.ICE_WIND_MAGIC_COST+"\nSlow every enemy for "+Math.floor((double)GameConstants.ICE_WIND_MAGIC_DURATION/(double)GameConstants.FPS)+" sec";
 	public static String POISON_FOG_MAGIC_INFO = "Cost: "+GameConstants.POISON_FOG_MAGIC_COST+"\nPoison all enemies for "+Math.floor((double)GameConstants.POISON_FOG_MAGIC_DURATION/(double)GameConstants.FPS)+" sec";
 }

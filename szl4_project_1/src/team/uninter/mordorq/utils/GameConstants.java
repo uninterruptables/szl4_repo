@@ -51,7 +51,7 @@ public class GameConstants {
 	public static int GREAT_MISSILE_HOBBIT_DAMAGE = 20;
 
 	public static int GREAT_TOWER_COST = 250;
-	public static int GREAT_TOWER_RADIUS = 100;
+	public static int GREAT_TOWER_RADIUS = 80;
 	public static int GREAT_TOWER_MAXCOOLDOWN = 60;
 
 	// enemy constants
@@ -75,58 +75,58 @@ public class GameConstants {
 	public static int DWARF_COOLDOWN = 21;
 	public static int HOBBIT_COOLDOWN = 18;
 
-	public static int ARAGORN_HEALTH = 200;
+	public static int ARAGORN_HEALTH = 1000;
 	public static int ARAGORN_DAMAGE = 100;
 	public static int ARAGORN_REWARD = 100;
 
-	public static int GIMLI_HEALTH = 250;
+	public static int GIMLI_HEALTH = 1200;
 	public static int GIMLI_DAMAGE = 100;
 	public static int GIMLI_REWARD = 100;
 
-	public static int LEGOLAS_HEALTH = 150;
+	public static int LEGOLAS_HEALTH = 7000;
 	public static int LEGOLAS_DAMAGE = 100;
 	public static int LEGOLAS_REWARD = 100;
 
 	// trap & barricade constants
-	public static int DECREASE_DAMAGE_TRAP_COST = 250;
+	public static int DECREASE_DAMAGE_TRAP_COST = 150;
 	public static int DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT = 5;
 
-	public static int SLOWER_TRAP__COST = 250;
+	public static int SLOWER_TRAP__COST = 150;
 	public static int SLOWER_TRAP_SLOW_AMOUNT = 5;
 
-	public static int POISONOUS_TRAP_COST = 250;
+	public static int POISONOUS_TRAP_COST = 150;
 	public static int POISONOUS_TRAP_POISON_AMOUNT = 2;
 
 	public static int BARRICADE_COST = 50;
 	public static int BARRICADE_HEALTH = 50;
 
 	// tower rune constants
-	public static int PLUS_DAMAGE_TOWER_RUNE_COST = 250;
+	public static int PLUS_DAMAGE_TOWER_RUNE_COST = 150;
 	public static int PLUS_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT = 5;
 
-	public static int PLUS_RANGE_TOWER_RUNE_COST = 250;
-	public static int PLUS_RANGE_TOWER_RUNE_RANGE_AMOUNT = 5;
+	public static int PLUS_RANGE_TOWER_RUNE_COST = 150;
+	public static int PLUS_RANGE_TOWER_RUNE_RANGE_AMOUNT = 10;
 
-	public static int PLUS_SPEED_TOWER_RUNE_COST = 250;
+	public static int PLUS_SPEED_TOWER_RUNE_COST = 150;
 	public static int PLUS_SPEED_TOWER_RUNE_SPEED_AMOUNT = 5;
 
-	public static int PLUS_ELF_DAMAGE_TOWER_RUNE_COST = 250;
+	public static int PLUS_ELF_DAMAGE_TOWER_RUNE_COST = 150;
 	public static int PLUS_ELF_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT = 5;
 
-	public static int PLUS_DWARF_DAMAGE_TOWER_RUNE_COST = 250;
+	public static int PLUS_DWARF_DAMAGE_TOWER_RUNE_COST = 150;
 	public static int PLUS_DWARF_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT = 5;
 
-	public static int PLUS_HOBBIT_DAMAGE_TOWER_RUNE_COST = 250;
+	public static int PLUS_HOBBIT_DAMAGE_TOWER_RUNE_COST = 150;
 	public static int PLUS_HOBBIT_DAMAGE_TOWER_RUNE_DAMAGE_AMOUNT = 5;
 
 	// trap rune constants
-	public static int WEAKEN_TRAP_RUNE_COST = 250;
+	public static int WEAKEN_TRAP_RUNE_COST = 150;
 	public static int WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT = 5;
 
-	public static int SLOWER_TRAP_RUNE_COST = 250;
+	public static int SLOWER_TRAP_RUNE_COST = 150;
 	public static int SLOWER_TRAP_RUNE_SLOW_AMOUNT = 5;
 
-	public static int POISONOUS_TRAP_RUNE_COST = 250;
+	public static int POISONOUS_TRAP_RUNE_COST = 150;
 	public static int POISONOUS_TRAP_RUNE_POISON_AMOUNT = 2;
 
 	// statusmodifier constants
@@ -135,7 +135,6 @@ public class GameConstants {
 	public static int POISONOUS_STATUS_DURATION = 60;
 	public static int POISONOUS_STATUS_TIME_INTERVAL = 30;
 
-	// public static int DAMAGE_BOOST_TOWER_RUNE = 3;
 
 	// magic constatns
 	public static int NAZGUL_MAGIC_COST = 500;
