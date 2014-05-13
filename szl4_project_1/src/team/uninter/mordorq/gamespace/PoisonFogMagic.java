@@ -15,6 +15,8 @@ public class PoisonFogMagic extends Magic{
 	
 	public PoisonFogMagic(int x, int y) {
 		super(x, y);
+		effects.add(new PoisonStatus());
+		this.manaCost = GameConstants.POISON_FOG_MAGIC_COST;
 //		System.out.println("PoisonFogMagic(Int, Int) called");
 //		System.out.println("PoisonFogMagic(Int, Int) returned");
 	}

@@ -16,6 +16,8 @@ public class IceWindMagic extends Magic{
 	
 	public IceWindMagic(int x, int y) {
 		super(x, y);
+		effects.add(new SlowStatus());
+		this.manaCost = GameConstants.ICE_WIND_MAGIC_COST;
 //		System.out.println("IceWindMagic(Int, Int) called");
 //		System.out.println("IceWindMagic(Int, Int) returned");
 	}

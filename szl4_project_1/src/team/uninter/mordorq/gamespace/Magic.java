@@ -19,7 +19,6 @@ public abstract class Magic extends Casted {
 	// It's manacost can be asked, for user input check.
 	private static final Logger logger = Logger.getLogger(Magic.class);
 
-	int manaCost;
 	protected ArrayList<StatusModifier> effects;
 
 	protected Magic() {

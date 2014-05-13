@@ -14,6 +14,8 @@ public class Nazgul extends Magic{
 	}
 	public Nazgul(int x, int y) {
 		super(x, y);
+		effects.add(new WeakenStatus());	
+		this.manaCost = GameConstants.NAZGUL_MAGIC_COST;
 //		System.out.println("Nazgul(Int, Int) called");
 //		System.out.println("Nazgul(Int, Int) returned");
 	}
