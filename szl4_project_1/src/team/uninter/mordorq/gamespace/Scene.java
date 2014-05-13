@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimerTask;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -505,6 +506,7 @@ public class Scene extends JPanel {
 
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
+			Map<Integer, List<Boolean>> usageChecker = new HashMap<Integer, List<Boolean>>();
 			int width = 0;
 
 			BufferedReader reader = null;
@@ -530,6 +532,20 @@ public class Scene extends JPanel {
 						}
 					}
 				}
+				
+				//new code
+				for (Entry<Integer, List<TerrainGrid>> entry : bucketHash.entrySet()) {
+				    Integer key = entry.getKey();
+				    List<TerrainGrid> value = entry.getValue();
+				    
+				    List<Boolean> valueList = new ArrayList<Boolean>(); 
+				    for(int i = 0; i < value.size(); i++){
+				    	valueList.add(new Boolean(false));
+				    }
+				    usageChecker.put(key, valueList);
+				}
+				/////////
+				
 			} catch (IOException e) {
 				throw e;
 			} finally {
@@ -569,7 +585,34 @@ public class Scene extends JPanel {
 
 					for (String _util : parts) {
 						if (!_util.isEmpty()) {
-							TerrainGrid grid = bucketHash.get(Integer.valueOf(_util)).get(0);
+//							TerrainGrid grid = bucketHash.get(Integer.valueOf(_util)).get(0);
+							
+							//new code
+							TerrainGrid grid = null;
+							boolean foundNotUsed = false;
+							
+							for (Entry<Integer, List<Boolean>> entry : usageChecker.entrySet()) {
+							    Integer key = entry.getKey();
+							    List<Boolean> value = entry.getValue();
+							    
+							    for(int i = 0; i < value.size(); i++){
+							    	if(Integer.valueOf(key).equals(Integer.valueOf(_util))){
+							    		if(value.get(i) == false){
+							    			value.set(i, true);
+								    		grid = bucketHash.get(Integer.valueOf(_util)).get(i);
+								    		foundNotUsed = true;
+								    		break;
+							    		}
+							    	}
+							    }
+							    if(foundNotUsed){
+							    	break;
+							    }
+							}
+							///////////////
+							//hibakezelés nem árt még ide ha gridet nem találja.
+							
+							
 							grid.setY(y * 16);
 
 							if (x <= 0)

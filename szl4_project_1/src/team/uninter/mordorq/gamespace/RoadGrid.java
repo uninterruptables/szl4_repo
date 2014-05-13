@@ -30,7 +30,7 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	private final List<TargetSubscriber> subscribers;
 
 	static {
-		tryLoad(new File("resources/images/roadgrid_16p.jpg"));
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
 	
 	/**
