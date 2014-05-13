@@ -975,7 +975,12 @@ public class MordorFrame extends JFrame {
 	 * Notifies the user about the positive output of the game!
 	 * */
 	public void win() {
-		// TODO: JOptionPane.showMessageDialog(...);
+		JOptionPane.showMessageDialog(
+				this,
+				"The Game was Won! LZ for President!!",
+				"Win!",
+				JOptionPane.INFORMATION_MESSAGE
+				);
 	}
 
 	/**
