@@ -4,32 +4,32 @@
 		<human>0</human>
 		<dwarf>0</dwarf>
 		<elf>0</elf>
-		<hobbit>10</hobbit>
+		<hobbit>21</hobbit>
 	</round>
 	<round id='1'>
 		<human>0</human>
 		<dwarf>0</dwarf>
-		<elf>5</elf>
-		<hobbit>5</hobbit>
+		<elf>13</elf>
+		<hobbit>13</hobbit>
 	</round>
 	<round id='2'>
 		<human>0</human>
 		<dwarf>0</dwarf>
-		<elf>5</elf>
-		<hobbit>7</hobbit>
+		<elf>15</elf>
+		<hobbit>21</hobbit>
 	</round>
 	<round id='3'>
 		<human>0</human>
 		<dwarf>0</dwarf>
-		<elf>10</elf>
-		<hobbit>10</hobbit>
+		<elf>13</elf>
+		<hobbit>13</hobbit>
 	</round>
 	<round id='4'>
 		<human>0</human>
 		<dwarf>0</dwarf>
 		<elf>0</elf>
 		<hobbit>0</hobbit>
-		<legolas />
+		<legolas>1</legolas>
 	</round>
 	<round id='5'>
 		<human>0</human>
@@ -48,7 +48,7 @@
 		<dwarf>0</dwarf>
 		<elf>0</elf>
 		<hobbit>0</hobbit>
-		<gimli />
+		<gimli>1</gimli>
 	</round>
 	<round id='8'>
 		<human>5</human>
@@ -61,6 +61,6 @@
 		<dwarf>0</dwarf>
 		<elf>0</elf>
 		<hobbit>0</hobbit>
-		<aragorn />
+		<aragorn>1</aragorn>
 	</round>
 </round-root>
