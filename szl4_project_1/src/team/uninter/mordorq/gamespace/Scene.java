@@ -157,7 +157,6 @@ public class Scene extends JPanel {
 	}
 
 	public void start() {
-		logger.debug("Scene.start() was called");
 		timer = new java.util.Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -166,7 +165,6 @@ public class Scene extends JPanel {
 				animator.run(1);
 			}
 		}, 1000, 1000);
-		logger.debug("timer " + timer.toString() + " was initialised");
 	}
 
 	/**
@@ -174,7 +172,6 @@ public class Scene extends JPanel {
 	 * */
 	public void start(int tick) {
 		animator.run(tick);
-		logger.debug("in Scene.start(int) animator was kicked");
 	}
 
 	/**
@@ -231,15 +228,12 @@ public class Scene extends JPanel {
 	 *            instance.
 	 * */
 	public void place(Casted casted, TerrainGrid grid) {
-		logger.debug("in Scene.place( casted,grid )");
 		casted.castOn(grid);
 		if (casted instanceof Tower) {
-			logger.debug("casted is a" + casted.getClass());
 			towers.add((Tower) casted);
 			animator.add((Tower) casted);
 			for (TerrainGrid _grid : grids) {
 				if (_grid.isInRangeOf((Tower) casted)) {
-					logger.debug("grid " + _grid.toString() + " was attached to " + casted.toString());
 					((Tower) casted).attach((RoadGrid) _grid);
 					((RoadGrid) _grid).attach((Tower) casted);
 				}
@@ -295,7 +289,6 @@ public class Scene extends JPanel {
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		logger.debug("in Scene.paintComponent(g)");
 		super.paintComponent(g);
 		if (grids != null) {
 			for (TerrainGrid grid : grids) {
@@ -420,12 +413,10 @@ public class Scene extends JPanel {
 		 * */
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			logger.debug("in Scene.mouseClicked");
 			Point p = e.getPoint();
 			TerrainGrid gridUnder = GameUtil.getGridByXY(owner.grids, p.x, p.y);
 			if (owner.activeObject != null && owner.activeObject.canCastOn(gridUnder)) {
 				owner.castOn(e.getPoint());
-				logger.debug("in Scene.mouseClicked: activeObject " + owner.activeObject.toString() + " was casted at " + e.getPoint().toString());
 			}
 		}
 
@@ -448,20 +439,16 @@ public class Scene extends JPanel {
 		 * */
 		@Override
 		public void mouseMoved(MouseEvent e) {
-			logger.debug("in Scene.mouseEntered");
 			if (owner.activeObject != null) {
 				java.awt.Point p = e.getPoint();
 				owner.activeObject.setX(p.x - 8);
 				owner.activeObject.setY(p.y - 8);
-				logger.debug("in Scene.mouseEntered: setting activeObject " + owner.activeObject.toString() + " to ( " + (p.x - 8) + "," + (p.y - 8) + " )");
 				TerrainGrid gridBeneath = GameUtil.getGridByXY(owner.grids, p.x, p.y);
 				if (!owner.activeObject.canCastOn(gridBeneath)) {
 					owner.activeObject.setImage(ImageColor.RED);
-					logger.debug("in Scene.mouseEntered: setting ImageColor.RED for " + owner.activeObject.toString());
 				}
 				else {
 					owner.activeObject.setImage(ImageColor.NORMAL);
-					logger.debug("in Scene.mouseEntered: setting ImageColor.NORMAL for " + owner.activeObject.toString());
 				}
 			}
 			owner.repaint();
@@ -531,9 +518,6 @@ public class Scene extends JPanel {
 		 * @return a list of <code>TerrainGrid</code>
 		 * */
 		private List<TerrainGrid> buildScene() throws IOException {
-			logger.debug("============ SCENE =============");
-			logger.debug("building scene from " + filePath);
-
 			List<TerrainGrid> grids = new ArrayList<TerrainGrid>();
 			Map<Integer, List<TerrainGrid>> bucketHash = new HashMap<Integer, List<TerrainGrid>>();
 			Map<Integer, List<Boolean>> usageChecker = new HashMap<Integer, List<Boolean>>();
@@ -563,7 +547,6 @@ public class Scene extends JPanel {
 					}
 				}
 
-				// new code
 				for (Entry<Integer, List<TerrainGrid>> entry : bucketHash.entrySet()) {
 					Integer key = entry.getKey();
 					List<TerrainGrid> value = entry.getValue();
@@ -574,7 +557,6 @@ public class Scene extends JPanel {
 					}
 					usageChecker.put(key, valueList);
 				}
-				// ///////
 
 			} catch (IOException e) {
 				throw e;
@@ -586,9 +568,7 @@ public class Scene extends JPanel {
 					}
 				}
 			}
-			logger.debug("width: " + width);
 			try {
-				logger.debug("========== GRIDS ============");
 				reader = new BufferedReader(new InputStreamReader(
 						new FileInputStream(filePath)));
 				List<Integer> spawnUtils = Scene.Builder.createSpawnUtilitiesFor(lineNum);
@@ -597,36 +577,22 @@ public class Scene extends JPanel {
 				while ((line = reader.readLine()) != null) {
 					String[] parts = line.split(" ");
 
-					/* adding the entering space for newly spawn enemies */
-					// logger.debug("spawnUtil@" + y + ": " +
-					// spawnUtils.get(y));
 					RoadGrid enterGrid = new RoadGrid(spawnUtils.get(y));
 					enterGrid.setX(-16);
 					enterGrid.setY(0);
-					logger.debug(" entr grid at y of " + y + " is " + enterGrid.toString());
 					grids.add(enterGrid);
 					x++;
-					// TODO:
 					if (y > 0) {
 						int index = (y - 1) * (width + 1);
 						TerrainGrid north = grids.get(index);
-						logger.debug(" noth grid at ( " + north.getX() + "," + north.getY() + "  )" + " is " + north.toString());
 						enterGrid.set(Neighbour.NORTH, north);
 						north.set(Neighbour.SOUTH, enterGrid);
 
 						enterGrid.setY(y * 16);
-						logger.debug(" entr grid at ( " + enterGrid.getX() + "," + enterGrid.getY() + "  )" + " is " + north.toString());
 					}
-					// logger.debug("enterGrid was placed at ( " +
-					// enterGrid.getX() + "," + enterGrid.getY() + " ) with u: "
-					// + enterGrid.getUtility());
 
 					for (String _util : parts) {
 						if (!_util.isEmpty()) {
-							// TerrainGrid grid =
-							// bucketHash.get(Integer.valueOf(_util)).get(0);
-
-							// new code
 							TerrainGrid grid = null;
 							boolean foundNotUsed = false;
 
@@ -665,11 +631,9 @@ public class Scene extends JPanel {
 								north.set(Neighbour.SOUTH, grid);
 							}
 							grids.add(grid);
-							logger.debug("grid was placed to ( " + grid.getX() + "," + grid.getY() + " ) with u: " + grid.getUtility());
 							x++;
 						}
 					}
-					logger.debug("=========( " + x + "," + y + " )=========");
 					x = 0;
 					y++;
 				}

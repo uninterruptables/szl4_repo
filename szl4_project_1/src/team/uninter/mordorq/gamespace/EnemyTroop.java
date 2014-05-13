@@ -26,7 +26,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	 */
 	private static final Logger logger = Logger.getLogger(EnemyTroop.class);
 	protected static int speciesCooldown;
-	// TODO: reward mana
 	protected static int rewardMana;
 
 	protected int cooldown;
@@ -169,16 +168,17 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 
 	@Override
 	public final void interactWith(EnemyTroop troop) {
+		logger.debug(" in EnemyTroop.interactWith");
 	}
 
 	@Override
 	public final void interactWith(Missile missile) {
 		if (Math.random() * 1000 - 2 <= 0) {
 			split(currentGrid);
-			logger.debug("in EnemyTroop.interactWith(missile) " + this.toString() + " was split");
+			logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was split");
 		}
 		speciesInteractWith(missile);
-		logger.debug("in EnemyTroop.interactWith(missile) " + this.toString() + " was damaged by " + missile.toString());
+		logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was damaged by " + missile.toString());
 	}
 
 	protected abstract EnemyTroop createClone(int health);
@@ -197,13 +197,13 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 			int h;
 			this.setHealth((h = this.getHealth() / 2));
 			grid.notifyAllWith(createClone(h));
-			logger.debug("in EnemyTroop.split(grid) " + grid.toString() + " was notified by" + this.toString());
+			logger.debug(" in EnemyTroop.split(grid) " + grid.toString() + " was notified by" + this.toString());
 			return true;
 		}
 		for (Neighbour n : Neighbour.values())
 			if (grid.get(n).getUtility() > 0 && split((RoadGrid) grid.get(n)))
 				return true;
-		logger.debug("in EnemyTroop.split(grid) split failed");
+		logger.debug(" in EnemyTroop.split(grid) split failed");
 		return false;
 	}
 
@@ -268,7 +268,4 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	public final void setCooldown(int cooldown) {
 		this.cooldown = cooldown;
 	}
-
-	// public abstract int getReward();
-
 }
