@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
 
+import team.uninter.mordorq.utils.GameUtil;
+
 //generic class used to handle all gameObjects. All of them have coordinates, and an image, that
 //will be rendered to them. 
 @SuppressWarnings("serial")
@@ -55,6 +57,11 @@ public abstract class GameObject extends JPanel {
 
 	public void drawObject(Graphics g) {
 		g.drawImage(image, x, y, 16, 16, null);
+	}
+
+	@Override
+	public String toString() {
+		return GameUtil.slicePackagesFrom(super.toString());
 	}
 
 	protected static final void tryLoad(File imageFile) {
