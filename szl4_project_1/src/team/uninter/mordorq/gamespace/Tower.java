@@ -216,6 +216,14 @@ abstract public class Tower extends InjectionTarget
 			missile.drawObject(g);
 	}
 
+	@Override
+	public final void notifyWith(EnemyTroop target) {
+		MissileState actualState = this.missile.getState();
+		if (actualState.equals(MissileState.WAITING)) {
+			fire(target);
+		}
+	}
+
 	public abstract static class Missile extends GameObject implements Controlable {
 
 		private int deltaX, deltaY;
