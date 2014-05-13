@@ -10,16 +10,11 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import org.apache.log4j.Logger;
-
 //generic class used to handle all gameObjects. All of them have coordinates, and an image, that
 //will be rendered to them. 
 @SuppressWarnings("serial")
 public abstract class GameObject extends JPanel {
 
-	private static final Logger logger = Logger.getLogger(GameObject.class);
-
-	// protected static Image image;
 	protected Image image;
 	protected int x, y;
 
@@ -68,7 +63,6 @@ public abstract class GameObject extends JPanel {
 		try {
 			image = ImageIO.read(imageFile);
 		} catch (Exception e) {
-			logger.fatal("image load failed for " + imageFile.toString());
 		}
 	}
 }
