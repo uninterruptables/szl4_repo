@@ -23,7 +23,7 @@ public class GameConstants {
 	public static int BASIC_MISSILE_DWARF_DAMAGE = 10;
 	public static int BASIC_MISSILE_HOBBIT_DAMAGE = 10;
 
-	public static int BASIC_TOWER_COST = 250;
+	public static int BASIC_TOWER_COST = 200;
 	public static int BASIC_TOWER_RADIUS = 100;
 	public static int BASIC_TOWER_MAXCOOLDOWN = 45;
 
@@ -36,13 +36,13 @@ public class GameConstants {
 	public static int FAST_TOWER_RADIUS = 100;
 	public static int FAST_TOWER_MAXCOOLDOWN = 25;
 
-	public static int LONG_DISTANCE_MISSILE_ELF_DAMAGE = 7;
-	public static int LONG_DISTANCE_MISSILE_HUMAN_DAMAGE = 7;
-	public static int LONG_DISTANCE_MISSILE_DWARF_DAMAGE = 7;
-	public static int LONG_DISTANCE_MISSILE_HOBBIT_DAMAGE = 7;
+	public static int LONG_DISTANCE_MISSILE_ELF_DAMAGE = 8;
+	public static int LONG_DISTANCE_MISSILE_HUMAN_DAMAGE = 8;
+	public static int LONG_DISTANCE_MISSILE_DWARF_DAMAGE = 8;
+	public static int LONG_DISTANCE_MISSILE_HOBBIT_DAMAGE = 8;
 
 	public static int LONG_DISTANCE_TOWER_COST = 250;
-	public static int LONG_DISTANCE_TOWER_RADIUS = 125;
+	public static int LONG_DISTANCE_TOWER_RADIUS = 150;
 	public static int LONG_DISTANCE_TOWER_MAXCOOLDOWN = 45;
 
 	public static int GREAT_MISSILE_ELF_DAMAGE = 20;
@@ -50,7 +50,7 @@ public class GameConstants {
 	public static int GREAT_MISSILE_DWARF_DAMAGE = 20;
 	public static int GREAT_MISSILE_HOBBIT_DAMAGE = 20;
 
-	public static int GREAT_TOWER_COST = 250;
+	public static int GREAT_TOWER_COST = 400;
 	public static int GREAT_TOWER_RADIUS = 80;
 	public static int GREAT_TOWER_MAXCOOLDOWN = 60;
 
