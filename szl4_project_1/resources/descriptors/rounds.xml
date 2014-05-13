@@ -23,7 +23,6 @@
 		<dwarf>0</dwarf>
 		<elf>10</elf>
 		<hobbit>10</hobbit>
-		<boss applied='false' />
 	</round>
 	<round id='4'>
 		<human>0</human>
