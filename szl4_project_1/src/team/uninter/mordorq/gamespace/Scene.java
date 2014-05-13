@@ -193,14 +193,18 @@ public class Scene extends JPanel {
 	public void castOn(java.awt.Point point) {
 		logger.debug(" Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
 		logger.debug(" Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
+		if(owner.getUserMana() - activeObject.manaCost >= 0){
+			owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
+		}
+		else{
+			return;
+		}
 		if (activeObject instanceof Magic)
 			cast((Magic) activeObject);
 		else
 			place(activeObject, GameUtil.getGridByXY(grids, point.x, point.y));
 
-		if(owner.getUserMana() - activeObject.manaCost >= 0){
-			owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
-		}
+		
 
 		activeObject = null;
 	}
