@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.HashMap;
 
 import team.uninter.mordorq.gamespace.Casted.ImageColor;
+import team.uninter.mordorq.utils.GameConstants;
 
 public class PoisonTrap extends Trap {
 	//Class use to create a trap, that decreases the enemy troops health, by applying a
@@ -21,6 +22,7 @@ public class PoisonTrap extends Trap {
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
+		this.manaCost = GameConstants.POISONOUS_TRAP_COST;
 //		System.out.println("PoisonTrap() called");
 		PoisonStatus statMod = new PoisonStatus();
 		addEffect(statMod);
@@ -32,6 +34,7 @@ public class PoisonTrap extends Trap {
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
+		this.manaCost = GameConstants.POISONOUS_TRAP_COST;
 //		System.out.println("PoisonTrap(Int, Int) called");
 		PoisonStatus statMod = new PoisonStatus();
 		addEffect(statMod);

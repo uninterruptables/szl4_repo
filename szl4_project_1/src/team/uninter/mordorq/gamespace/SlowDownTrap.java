@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.HashMap;
 
 import team.uninter.mordorq.gamespace.Casted.ImageColor;
+import team.uninter.mordorq.utils.GameConstants;
 
 public class SlowDownTrap extends Trap {
 	
@@ -22,6 +23,7 @@ public class SlowDownTrap extends Trap {
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/slow_trap_grid_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slow_trap_grid_16p.png"));
+		this.manaCost = GameConstants.SLOWER_TRAP__COST;
 //		System.out.println("SlowDownTrap() called");
 		SlowStatus statMod = new SlowStatus();
 		addEffect(statMod);
@@ -32,6 +34,7 @@ public class SlowDownTrap extends Trap {
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/slow_trap_grid_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/slow_trap_grid_16p.png"));
+		this.manaCost = GameConstants.SLOWER_TRAP__COST;
 //		System.out.println("SlowDownTrap(Int, Int) called");
 		SlowStatus statMod = new SlowStatus();
 		addEffect(statMod);

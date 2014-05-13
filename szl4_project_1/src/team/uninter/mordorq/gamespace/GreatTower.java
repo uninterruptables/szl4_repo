@@ -26,6 +26,7 @@ public class GreatTower extends Tower {
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/strong_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.GREAT_TOWER_RADIUS;
+		this.manaCost = GameConstants.GREAT_TOWER_COST;
 	}
 
 	public GreatTower() {

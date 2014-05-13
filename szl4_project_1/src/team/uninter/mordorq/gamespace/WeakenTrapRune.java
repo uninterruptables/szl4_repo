@@ -24,6 +24,7 @@ public class WeakenTrapRune extends TrapRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
+		this.manaCost = GameConstants.WEAKEN_TRAP_RUNE_COST;
 //		System.out.println("WeakenTrapRune() called");
 //		weakenAmount = GameConstants.WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT;
 //		System.out.println("WeakenTrapRune() returned");
@@ -34,6 +35,7 @@ public class WeakenTrapRune extends TrapRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/weaktraprune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weaktraprune_16p.png"));
+		this.manaCost = GameConstants.WEAKEN_TRAP_RUNE_COST;
 //		System.out.println("WeakenTrapRune(Int, Int) called");
 //		weakenAmount = GameConstants.WEAKEN_TRAP_RUNE_WEAKEN_AMOUNT;
 //		System.out.println("WeakenTrapRune(Int, Int) returned");

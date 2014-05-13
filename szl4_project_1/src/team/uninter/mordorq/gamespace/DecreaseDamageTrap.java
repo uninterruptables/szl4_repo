@@ -24,6 +24,7 @@ public class DecreaseDamageTrap extends Trap{
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/weak_trap_grid_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weak_trap_grid_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
+		this.manaCost = GameConstants.DECREASE_DAMAGE_TRAP_COST;
 //		System.out.println("DecreaseDamageTrap() called");
 //		WeakenStatus statMod = new WeakenStatus(GameConstants.DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT, GameConstants.WEAKEN_STATUS_DURATION);
 		WeakenStatus statMod = new WeakenStatus();
@@ -35,6 +36,7 @@ public class DecreaseDamageTrap extends Trap{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/weak_trap_grid_16_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/weak_trap_grid_16p.png"));
+		this.manaCost = GameConstants.DECREASE_DAMAGE_TRAP_COST;
 		super.image = avalImages.get(ImageColor.NORMAL);
 //		System.out.println("DecreaseDamageTrap(Int, Int) called");
 //		WeakenStatus statMod = new WeakenStatus(GameConstants.DECREASE_DAMAGE_TRAP_WEAKEN_AMOUNT, GameConstants.WEAKEN_STATUS_DURATION);
