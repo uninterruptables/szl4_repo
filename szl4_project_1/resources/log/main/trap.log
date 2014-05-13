@@ -2999,3 +2999,98 @@
 2014-05-13/18:11:47.683/CESTDEBUGeffect PoisonStatus was set for SlowDownTrap
 2014-05-13/18:11:47.683/CESTDEBUGin Trap.inject: SlowDownTrap was injected on PoisonTrapRune
 2014-05-13/18:11:47.683/CESTDEBUG0 rune places remained in SlowDownTrap
+2014-05-13/18:17:44.662/CESTDEBUGeffect WeakenStatus was set for DecreaseDamageTrap
+2014-05-13/18:17:44.783/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.784/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.791/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.792/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.799/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.800/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.806/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.813/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.819/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.828/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.829/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.839/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.849/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.857/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.857/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.867/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.882/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.889/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.899/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.906/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.913/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.922/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.933/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.934/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was not casted to GroundGrid
+2014-05-13/18:17:44.950/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.970/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.977/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.984/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.994/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:44.994/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.003/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.013/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.023/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.073/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.080/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.089/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.099/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.107/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.115/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.123/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.140/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.148/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.149/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.166/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.173/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.180/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.191/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.198/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.205/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.216/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.234/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.242/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.251/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.262/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.269/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.280/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.286/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.295/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.307/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.313/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.321/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.334/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.343/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.353/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.354/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.362/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.374/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.383/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.394/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.405/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.413/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.413/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.420/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.423/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.430/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.436/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.442/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.450/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.464/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.486/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.607/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.626/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.645/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.848/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.859/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.870/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.877/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.891/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.906/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:45.924/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:46.293/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:48.245/CESTDEBUGin Trap.canCastOn DecreaseDamageTrap was casted to RoadGrid
+2014-05-13/18:17:48.247/CESTDEBUGin Trap.castOn for DecreaseDamageTrap
+2014-05-13/18:17:48.248/CESTDEBUGin Trap.castOn DecreaseDamageTrap wast cast onto RoadGrid

@@ -39,17 +39,14 @@ public class Animator implements Runnable {
 					logger.debug(" Rmvd.: enemy as ~ h: " + et.getHealth() + " at ( " + et.getX() + "," + et.getY() + " )");
 				}
 			}
-			// to prevent ConcurrentModificationException
-			// scene.getEnemies().removeAll(removeable);
-			for(Controlable troop : removeable){
-				scene.rewardUser(((EnemyTroop)troop).getRewardMana());
+
+			for (Controlable troop : removeable) {
+				scene.rewardUser(((EnemyTroop) troop).getRewardMana());
 			}
 			scene.getEnemies().removeAll(removeable);
 
 			if (scene.getEnemies().isEmpty()) {
-				// scene.endRound();
 				scene.nextRound();
-				logger.debug(" in Animator.run(n): round " + scene.getRoundNumber() + " ended in " + GameUtil.fetchFrom(this.toString(), "Animator"));
 			}
 			if (Math.random() * 100 - 2.0 <= 0) {
 				fog();
@@ -58,7 +55,6 @@ public class Animator implements Runnable {
 			for (Controlable tower : scene.getTowers()) {
 				if (tower.isActive()) {
 					tower.controlIt();
-					logger.debug(" in Animator.run(n): " + tower.toString() + " was controlled in " + this.toString());
 				}
 			}
 			scene.repaint();

@@ -181,3 +181,24 @@
 2014-05-13/18:11:57.217/CESTDEBUG Scene.castOn( point ) ~ activeObject: DamageBoosterTowerRune
 2014-05-13/18:11:57.217/CESTDEBUG Scene.castOn( point ) ~ point: ( 134,87 )
 2014-05-13/18:12:27.499/CESTDEBUG scene: in round 10
+2014-05-13/18:15:47.176/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:15:47.201/CESTDEBUG Scene.castOn( point ) ~ point: ( 124,91 )
+2014-05-13/18:15:49.113/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:15:49.113/CESTDEBUG Scene.castOn( point ) ~ point: ( 164,21 )
+2014-05-13/18:15:51.138/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:15:51.139/CESTDEBUG Scene.castOn( point ) ~ point: ( 207,87 )
+2014-05-13/18:15:53.619/CESTDEBUG scene: in round 0
+2014-05-13/18:16:21.432/CESTDEBUG Scene.castOn( point ) ~ activeObject: Nazgul
+2014-05-13/18:16:21.432/CESTDEBUG Scene.castOn( point ) ~ point: ( 180,292 )
+2014-05-13/18:16:33.907/CESTDEBUG Scene.castOn( point ) ~ activeObject: IceWindMagic
+2014-05-13/18:16:33.907/CESTDEBUG Scene.castOn( point ) ~ point: ( 112,292 )
+2014-05-13/18:16:49.124/CESTDEBUG scene: in round 1
+2014-05-13/18:17:13.897/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonFogMagic
+2014-05-13/18:17:13.897/CESTDEBUG Scene.castOn( point ) ~ point: ( 73,264 )
+2014-05-13/18:17:23.722/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonFogMagic
+2014-05-13/18:17:23.722/CESTDEBUG Scene.castOn( point ) ~ point: ( 129,431 )
+2014-05-13/18:17:41.758/CESTDEBUG scene: in round 2
+2014-05-13/18:17:41.894/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:17:41.894/CESTDEBUG Scene.castOn( point ) ~ point: ( 257,88 )
+2014-05-13/18:17:48.245/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:17:48.246/CESTDEBUG Scene.castOn( point ) ~ point: ( 202,69 )
