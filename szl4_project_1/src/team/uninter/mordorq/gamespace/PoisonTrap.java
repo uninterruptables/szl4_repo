@@ -19,8 +19,8 @@ public class PoisonTrap extends Trap {
 	public PoisonTrap() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
 //		System.out.println("PoisonTrap() called");
 		PoisonStatus statMod = new PoisonStatus();
 		addEffect(statMod);
@@ -30,8 +30,8 @@ public class PoisonTrap extends Trap {
 	public PoisonTrap(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poison_trap_grid_2_16_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poison_trap_grid_2_16p.png"));
 //		System.out.println("PoisonTrap(Int, Int) called");
 		PoisonStatus statMod = new PoisonStatus();
 		addEffect(statMod);

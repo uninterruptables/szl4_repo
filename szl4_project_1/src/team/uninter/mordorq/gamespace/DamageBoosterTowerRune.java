@@ -22,8 +22,8 @@ public class DamageBoosterTowerRune extends TowerRune{
 	public DamageBoosterTowerRune() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
 //		System.out.println("DamageBoosterTowerRune() called");
 //		System.out.println("DamageBoosterTowerRune() returned");
 	}
@@ -31,8 +31,8 @@ public class DamageBoosterTowerRune extends TowerRune{
 	public DamageBoosterTowerRune(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
 //		System.out.println("DamageBoosterTowerRune(Int, Int) called");
 //		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
 	}

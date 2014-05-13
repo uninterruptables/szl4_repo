@@ -20,8 +20,8 @@ public class RadiusIncTowerRune extends TowerRune{
 	public RadiusIncTowerRune() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
 //		System.out.println("RadiusIncRune() called");
 //		System.out.println("RadiusIncRune() returned");
 	}
@@ -29,8 +29,8 @@ public class RadiusIncTowerRune extends TowerRune{
 	public RadiusIncTowerRune(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
 //		System.out.println("RadiusIncRune(Int, Int) called");
 //		System.out.println("RadiusIncRune(Int, Int) returned");
 	}

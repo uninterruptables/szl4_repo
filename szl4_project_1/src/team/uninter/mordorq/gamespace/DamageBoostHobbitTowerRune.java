@@ -23,8 +23,8 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 	public DamageBoostHobbitTowerRune() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
 //		System.out.println("DamageBoostHobbitTowerRune() called");
 //		System.out.println("DamageBoostHobbitTowerRune() returned");
 	}
@@ -32,8 +32,8 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 	public DamageBoostHobbitTowerRune(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
 //		System.out.println("DamageBoostHobbitTowerRune(Int, Int) called");
 //		System.out.println("DamageBoostHobbitTowerRune(Int, Int) returned");
 	}

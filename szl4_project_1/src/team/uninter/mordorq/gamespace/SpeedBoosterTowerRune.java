@@ -19,8 +19,8 @@ public class SpeedBoosterTowerRune extends TowerRune{
 	public SpeedBoosterTowerRune() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
 //		System.out.println("SpeedBoosterTowerRune() called");
 //		System.out.println("SpeedBoosterTowerRune() returned");
 	}
@@ -28,8 +28,8 @@ public class SpeedBoosterTowerRune extends TowerRune{
 	public SpeedBoosterTowerRune(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) called");
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) returned");
 	}
