@@ -226,13 +226,17 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 
 	@Override
 	public boolean isInRangeOf(Tower tower) {
+		if(this.x < 0){
+			return false;
+		}
+		
 		int currentX = super.x;
 		int currentY = super.y;
 		int targetX = tower.getX();
 		int targetY = tower.getY();
 		int distanceX = targetX - currentX;
 		int distanceY = targetY - currentY;
-		int distance = (int) Math.sqrt(distanceX ^ 2 + distanceY ^ 2);
+		int distance = (int) Math.sqrt(distanceX*distanceX + distanceY * distanceY);
 		return distance <= tower.getRadius();
 	}
 }

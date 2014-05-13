@@ -24,7 +24,7 @@ public class GameConstants {
 	public static int BASIC_MISSILE_HOBBIT_DAMAGE = 10;
 
 	public static int BASIC_TOWER_COST = 250;
-	public static int BASIC_TOWER_RADIUS = 45;
+	public static int BASIC_TOWER_RADIUS = 100;
 	public static int BASIC_TOWER_MAXCOOLDOWN = 45;
 
 	public static int FAST_MISSILE_ELF_DAMAGE = 10;
