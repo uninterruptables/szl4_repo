@@ -166,7 +166,7 @@ public class MordorFrame extends JFrame {
 		infoDescription.setFont(font2);
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(900, 750));
+		setMinimumSize(new Dimension(900, 700));
 		setResizable(false);
 
 		gamePanel = new JPanel();
@@ -327,7 +327,7 @@ public class MordorFrame extends JFrame {
 		innerMagicPanel.add(poisonFogMagic);
 
 		// make dividers to unmoveable
-		splitHorizontal.setDividerLocation(650);
+		splitHorizontal.setDividerLocation(645);
 
 		splitHorizontal.setEnabled(false);
 		manaSplitter.setEnabled(false);
@@ -362,6 +362,8 @@ public class MordorFrame extends JFrame {
 		// and upper border
 		infoDescription.setBackground(infoPanel.getBackground());
 		infoDescription.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.BLACK));
+		
+		gamePanel.setBackground(infoPanel.getBackground());
 
 		initEventListeners();
 
