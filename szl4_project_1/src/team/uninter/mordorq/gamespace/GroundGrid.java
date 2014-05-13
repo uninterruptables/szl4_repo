@@ -96,7 +96,12 @@ public class GroundGrid extends TerrainGrid {
 	 */
 	@Override
 	public boolean isAvailableFor(Rune rune) {
-		return tower.canInject(rune);
+		if(tower != null){
+			return tower.canInject(rune);
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**
