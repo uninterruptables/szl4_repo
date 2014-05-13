@@ -22,8 +22,8 @@ public class PoisonTrapRune extends TrapRune{
 	public PoisonTrapRune() {
 		super();
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/poisontraprune_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poisontraprune_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poisontraprune_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poisontraprune_16p.png"));
 	}
 	
 	public PoisonTrapRune(int x, int y) {

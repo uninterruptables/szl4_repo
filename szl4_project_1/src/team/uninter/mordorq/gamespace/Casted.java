@@ -60,7 +60,8 @@ abstract public class Casted extends GameObject {
 		RED, NORMAL
 	}
 
-	protected static final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
+//	protected static final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
+	protected final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
 		try {
 			target.put(color, ImageIO.read(imageFile));
 		} catch (Exception e) {

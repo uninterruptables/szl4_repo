@@ -21,8 +21,8 @@ public class FastTower extends Tower {
 	public FastTower(int x, int y) {
 		super(x, y);
 		avalImages = new HashMap<ImageColor, Image>();
-		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/fast_tower_16p_red.png"));
-		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/fast_tower_16p.png"));
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/fast_tower_16p_red.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/fast_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.FAST_TOWER_RADIUS;
 	}

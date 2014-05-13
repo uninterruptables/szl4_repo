@@ -172,6 +172,8 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	 */
 	public void setTrap(Trap trap) {
 		this.trap = trap;
+		this.trap.setX(this.x);
+		this.trap.setY(this.y);
 	}
 
 	/**
