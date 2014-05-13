@@ -12,10 +12,6 @@ import team.uninter.mordorq.utils.GameConstants;
 @SuppressWarnings("serial")
 public class Aragorn extends Human {
 
-//	static {
-//		rewardMana = GameConstants.ARAGORN_REWARD;
-//		tryLoad(new File("resources/images/aragorn_16p.png"));
-//	}
 
 	private static Aragorn instance = null;
 
