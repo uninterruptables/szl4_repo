@@ -10,7 +10,6 @@ import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -28,7 +27,6 @@ import team.uninter.mordorq.gamespace.Legolas;
 import team.uninter.mordorq.gamespace.Neighbour;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.Scene;
-import team.uninter.mordorq.gamespace.TerrainGrid;
 
 /**
  * It is responsible for the creation/instantiation of each enemy in a given
@@ -45,7 +43,8 @@ import team.uninter.mordorq.gamespace.TerrainGrid;
 @SuppressWarnings("rawtypes")
 public class RoundInitiator {
 
-	private static final Logger logger = Logger.getLogger(RoundInitiator.class);
+	// private static final Logger logger =
+	// Logger.getLogger(RoundInitiator.class);
 	private static String filePath = "resources/descriptors/rounds.xml";
 
 	/**
@@ -67,7 +66,6 @@ public class RoundInitiator {
 	 * @return a collection of enemies ready to swarm the game space.
 	 * */
 	public static List<Controlable> initRoundFor(Scene scene, int round) {
-		logger.debug(" starting round " + round + " for scene");
 		List<Controlable> enemies = new ArrayList<Controlable>();
 		XMLReader reader = null;
 		try {
@@ -75,10 +73,6 @@ public class RoundInitiator {
 			reader.setContentHandler(new RoundHandler(enemies, round));
 			reader.parse(filePath);
 
-			// logger.debug(" enemies:============== ");
-			// for (Controlable c : enemies)
-			// logger.debug("\tenemy: " + c.toString());
-			// logger.debug("======================= ");
 			List<Controlable> temp = new ArrayList<Controlable>(enemies);
 
 			new Thread(new PlaceWorker(temp, (RoadGrid) scene.getGrids().get(0))).start();
@@ -95,8 +89,6 @@ public class RoundInitiator {
 
 	private static class PlaceWorker implements Runnable {
 
-		// private static final Logger logger =
-		// Logger.getLogger(PlaceWorker.class);
 		private static final long WORKER_TIMEOUT = 2000;
 
 		private List<? extends Controlable> enemySource;
@@ -112,10 +104,8 @@ public class RoundInitiator {
 		@Override
 		public void run() {
 			try {
-				int rnum = 0;
 				while (!enemySource.isEmpty()) {
-					logger.debug(" placing new enemies for " + (++rnum) + "th time");
-					placeFrom(enemySource, root, 0);
+					placeFrom(enemySource, root);
 					Thread.sleep(this.timeout);
 				}
 			} catch (InterruptedException e) {
@@ -130,17 +120,14 @@ public class RoundInitiator {
 		 * @param grid
 		 *            from to which to place the elements onto
 		 * */
-		private static void placeFrom(List<? extends Controlable> enemies, RoadGrid grid, int depth) {
+		private static void placeFrom(List<? extends Controlable> enemies, RoadGrid grid) {
 			if (enemies.isEmpty() || grid == null)
 				return;
 			if (grid.getVulnerable() == null) {
 				EnemyTroop enemy = (EnemyTroop) enemies.remove(0);
-				logger.debug(" enemy " + enemy.toString() + " was placed in PlaceWorker onto grid.u: " + grid.getUtility() + " in depth of " + depth);
 				grid.setVulnerable(enemy);
 			}
-			TerrainGrid tGrid = grid.get(Neighbour.SOUTH);
-			logger.debug(" south grid is: " + tGrid.toString());
-			placeFrom(enemies, (RoadGrid) tGrid, ++depth);
+			placeFrom(enemies, (RoadGrid) grid.get(Neighbour.SOUTH));
 		}
 	}
 

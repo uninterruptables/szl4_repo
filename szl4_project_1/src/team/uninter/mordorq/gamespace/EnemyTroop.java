@@ -24,7 +24,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	 * battle, how many mana (reward) will go to the player.
 	 * 
 	 */
-	private static Logger logger = Logger.getLogger(EnemyTroop.class);
+	private static final Logger logger = Logger.getLogger(EnemyTroop.class);
 	protected static int speciesCooldown;
 	// TODO: reward mana
 	protected static int rewardMana;
@@ -79,27 +79,25 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	 */
 	@Override
 	public final void controlIt() {
-		logger.debug("in EnemyTroop.controlIt");
+
+		logger.debug(" at ( " + this.x + "," + this.y + " ) was ET of " + this.toString());
+
 		if (cooldown > 0) {
 			cooldown--;
-			logger.debug(this.toString() + " still has " + cooldown + " ticks left");
 			if (cooldown <= 0) {
 				targetGrid = PathFinder.findPathFrom(this.currentGrid);
 				Vulnerable targetVulnerable = targetGrid.getVulnerable();
 				if (targetVulnerable == null) {
 					currentGrid.remove();
 					targetGrid.notifyAllWith(this);
-					logger.debug(this.toString() + " moved to " + targetGrid.toString());
 				}
 				else {
 					targetVulnerable.interactWith(this);
-					logger.debug(this.toString() + " interacted with " + targetVulnerable.toString());
 				}
 
 				Trap targetTrap = targetGrid.getTrap();
 				if (targetTrap != null) {
 					targetTrap.affect(this);
-					logger.debug(targetTrap.toString() + " affected " + this.toString());
 				}
 
 				cooldown = maxCooldown;
@@ -108,17 +106,14 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 		}
 		List<StatusModifier> removeable = new ArrayList<StatusModifier>();
 		for (StatusModifier sm : statusModifiers) {
-			logger.debug("in EnemyTroop.controlIt statmod " + sm.toString() + " was checked");
 			sm.setDuration(sm.getDuration() - 1);
 			if (sm.getDuration() <= 0) {
 				removeable.add(sm);
 				sm.reverseAffect(this);
-				logger.debug("in EnemyTroop.controlIt statmod " + sm.toString() + " was removed");
 			}
 			else {
 				if (sm instanceof PoisonStatus && sm.getDuration() % GameConstants.POISONOUS_STATUS_TIME_INTERVAL == 0) {
 					((PoisonStatus) sm).affect(this);
-					logger.debug("in EnemyTroop.controlIt statmod " + sm.toString() + " affected " + this.toString());
 				}
 			}
 		}

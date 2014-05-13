@@ -8,6 +8,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -152,6 +153,7 @@ public class Scene extends JPanel {
 
 	private void initListeners() {
 		this.addMouseListener(new SceneMouseListener(this));
+		this.addMouseMotionListener(new SceneMouseMotionListener(this));
 	}
 
 	public void start() {
@@ -425,6 +427,15 @@ public class Scene extends JPanel {
 			}
 		}
 
+		private Scene owner;
+	}
+
+	private static class SceneMouseMotionListener extends MouseMotionAdapter {
+
+		public SceneMouseMotionListener(Scene owner) {
+			this.owner = owner;
+		}
+
 		/**
 		 * Manages the image to use when drawing the active object according to
 		 * the underlying grid, and of course the state of the active object.
@@ -434,11 +445,12 @@ public class Scene extends JPanel {
 		 *            thus the active object itself.
 		 * */
 		@Override
-		public void mouseEntered(MouseEvent e) {
+		public void mouseMoved(MouseEvent e) {
 			logger.debug("in Scene.mouseEntered");
 			if (owner.activeObject != null) {
 				java.awt.Point p = e.getPoint();
-				owner.activeObject.setLocation(p.x - 8, p.y - 8);
+				owner.activeObject.setX(p.x - 8);
+				owner.activeObject.setY(p.y - 8);
 				logger.debug("in Scene.mouseEntered: setting activeObject " + owner.activeObject.toString() + " to ( " + (p.x - 8) + "," + (p.y - 8) + " )");
 				TerrainGrid gridBeneath = GameUtil.getGridByXY(owner.grids, p.x, p.y);
 				if (!owner.activeObject.canCastOn(gridBeneath)) {
