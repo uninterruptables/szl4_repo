@@ -73,7 +73,9 @@ public class RoundInitiator {
 			reader.setContentHandler(new RoundHandler(enemies, round));
 			reader.parse(filePath);
 
-			List<Controlable> temp = new ArrayList<Controlable>(enemies);
+			List<Controlable> temp = new ArrayList<Controlable>();
+			for (Controlable c : enemies)
+				temp.add(c);
 
 			new Thread(new PlaceWorker(temp, (RoadGrid) scene.getGrids().get(0))).start();
 

@@ -10,10 +10,10 @@ public class Dwarf extends EnemyTroop {
 	// Specific EnemyTroop, called Dwarf. Have much more life then other
 	// specific troop, less speed, and a little more damage
 
-//	static {
-//		rewardMana = GameConstants.DWARF_REWARD;
-//		tryLoad(new File("resources/images/dwarf_16p.png"));
-//	}
+	// static {
+	// rewardMana = GameConstants.DWARF_REWARD;
+	// tryLoad(new File("resources/images/dwarf_16p.png"));
+	// }
 
 	/**
 	 * Dwarf with no parameter.
@@ -46,7 +46,7 @@ public class Dwarf extends EnemyTroop {
 	 * @param reward
 	 */
 	public Dwarf(int x, int y, int health, int damage) {
-		super(x, y);		
+		super(x, y);
 		this.health = health;
 		this.damage = damage;
 		maxCooldown = cooldown = GameConstants.DWARF_COOLDOWN;
@@ -68,7 +68,5 @@ public class Dwarf extends EnemyTroop {
 	@Override
 	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getDwarfDamage());
-		if (health <= 0 && currentGrid != null)
-			currentGrid.remove();
 	}
 }

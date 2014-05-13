@@ -11,10 +11,10 @@ public class Human extends EnemyTroop {
 	// others will be compare to this.
 	// Have average life, speed and damage
 
-//	static {
-//		rewardMana = GameConstants.HUMAN_REWARD;
-//		tryLoad(new File("resources/images/human_16p.png"));
-//	}
+	// static {
+	// rewardMana = GameConstants.HUMAN_REWARD;
+	// tryLoad(new File("resources/images/human_16p.png"));
+	// }
 
 	/**
 	 * Human with no parameter.
@@ -77,7 +77,5 @@ public class Human extends EnemyTroop {
 	@Override
 	protected void speciesInteractWith(Missile missile) {
 		this.setHealth(this.getHealth() - missile.getHumanDamage());
-		if (health <= 0 && currentGrid != null)
-			currentGrid.remove();
 	}
 }

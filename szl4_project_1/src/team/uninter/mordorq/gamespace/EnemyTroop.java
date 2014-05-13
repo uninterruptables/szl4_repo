@@ -79,44 +79,48 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	@Override
 	public final void controlIt() {
 
-		logger.debug(" at ( " + this.x + "," + this.y + " ) was ET of " + this.toString());
+		if (!(currentGrid == null)) {
+			logger.debug(" at ( " + this.x + "," + this.y + " ) was ET of " + this.toString());
+			if (cooldown > 0) {
+				cooldown--;
+				if (cooldown <= 0) {
+					targetGrid = PathFinder.findPathFrom(this.currentGrid);
+					Vulnerable targetVulnerable = targetGrid.getVulnerable();
+					if (targetVulnerable == null) {
+						currentGrid.remove();
+						targetGrid.notifyAllWith(this);
+					}
+					else {
+						targetVulnerable.interactWith(this);
+					}
 
-		if (cooldown > 0) {
-			cooldown--;
-			if (cooldown <= 0) {
-				targetGrid = PathFinder.findPathFrom(this.currentGrid);
-				Vulnerable targetVulnerable = targetGrid.getVulnerable();
-				if (targetVulnerable == null) {
-					currentGrid.remove();
-					targetGrid.notifyAllWith(this);
+					Trap targetTrap = targetGrid.getTrap();
+					if (targetTrap != null) {
+						targetTrap.affect(this);
+					}
+
+					cooldown = maxCooldown;
+					return;
+				}
+			}
+			List<StatusModifier> removeable = new ArrayList<StatusModifier>();
+			for (StatusModifier sm : statusModifiers) {
+				sm.setDuration(sm.getDuration() - 1);
+				if (sm.getDuration() <= 0) {
+					removeable.add(sm);
+					sm.reverseAffect(this);
 				}
 				else {
-					targetVulnerable.interactWith(this);
+					if (sm instanceof PoisonStatus && sm.getDuration() % GameConstants.POISONOUS_STATUS_TIME_INTERVAL == 0) {
+						((PoisonStatus) sm).affect(this);
+					}
 				}
-
-				Trap targetTrap = targetGrid.getTrap();
-				if (targetTrap != null) {
-					targetTrap.affect(this);
-				}
-
-				cooldown = maxCooldown;
-				return;
 			}
+			statusModifiers.removeAll(removeable);
 		}
-		List<StatusModifier> removeable = new ArrayList<StatusModifier>();
-		for (StatusModifier sm : statusModifiers) {
-			sm.setDuration(sm.getDuration() - 1);
-			if (sm.getDuration() <= 0) {
-				removeable.add(sm);
-				sm.reverseAffect(this);
-			}
-			else {
-				if (sm instanceof PoisonStatus && sm.getDuration() % GameConstants.POISONOUS_STATUS_TIME_INTERVAL == 0) {
-					((PoisonStatus) sm).affect(this);
-				}
-			}
+		else {
+			logger.debug(" in " + this.toString() + " current grid was null");
 		}
-		statusModifiers.removeAll(removeable);
 	}
 
 	/**
@@ -173,12 +177,15 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 
 	@Override
 	public final void interactWith(Missile missile) {
+		speciesInteractWith(missile);
+		logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was damaged by " + missile.toString());
+		if (health <= 0 && currentGrid != null) {
+			currentGrid.remove();
+		}
 		if (Math.random() * 1000 - 2 <= 0) {
 			split(currentGrid);
 			logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was split");
 		}
-		speciesInteractWith(missile);
-		logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was damaged by " + missile.toString());
 	}
 
 	protected abstract EnemyTroop createClone(int health);
