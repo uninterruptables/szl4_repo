@@ -68,4 +68,9 @@ public class Animator implements Runnable {
 			fogStat.apply(tower);
 		}
 	}
+
+	@Override
+	public String toString() {
+		return GameUtil.slicePackagesFrom(super.toString());
+	}
 }
