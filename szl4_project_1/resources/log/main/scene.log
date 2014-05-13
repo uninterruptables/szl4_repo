@@ -1,0 +1,9 @@
+2014-05-13/17:23:42.811/CESTDEBUG scene: in round 0
+2014-05-13/17:23:46.494/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:23:46.495/CESTDEBUG Scene.castOn( point ) ~ point: ( 199,89 )
+2014-05-13/17:23:51.414/CESTDEBUG Scene.castOn( point ) ~ activeObject: FastTower
+2014-05-13/17:23:51.414/CESTDEBUG Scene.castOn( point ) ~ point: ( 198,25 )
+2014-05-13/17:24:01.773/CESTDEBUG Scene.castOn( point ) ~ activeObject: LongDistanceTower
+2014-05-13/17:24:01.773/CESTDEBUG Scene.castOn( point ) ~ point: ( 132,86 )
+2014-05-13/17:24:38.342/CESTDEBUG scene: in round 1
+2014-05-13/17:25:29.493/CESTDEBUG scene: in round 2

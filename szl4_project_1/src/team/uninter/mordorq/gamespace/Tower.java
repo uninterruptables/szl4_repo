@@ -212,7 +212,7 @@ abstract public class Tower extends InjectionTarget
 	@Override
 	public void drawObject(Graphics g) {
 		super.drawObject(g);
-		if (missile.isActive())
+		if (missile.state == MissileState.ON_THE_FLY)
 			missile.drawObject(g);
 	}
 
