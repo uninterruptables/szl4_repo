@@ -50,20 +50,20 @@ public class GameConstants {
 	public static int GREAT_MISSILE_DWARF_DAMAGE = 20;
 	public static int GREAT_MISSILE_HOBBIT_DAMAGE = 20;
 
-	public static int GREAT_TOWER_COST = 250;
-	public static int GREAT_TOWER_RADIUS = 60;
+	public static int GREAT_TOWER_COST = 400;
+	public static int GREAT_TOWER_RADIUS = 80;
 	public static int GREAT_TOWER_MAXCOOLDOWN = 60;
 
 	// enemy constants
 	public static int ELF_HEALTH = 20;
-	public static int HUMAN_HEALTH = 20;
-	public static int DWARF_HEALTH = 20;
-	public static int HOBBIT_HEALTH = 20;
+	public static int HUMAN_HEALTH = 30;
+	public static int DWARF_HEALTH = 40;
+	public static int HOBBIT_HEALTH = 25;
 
-	public static int ELF_DAMAGE = 10;
-	public static int HUMAN_DAMAGE = 10;
+	public static int ELF_DAMAGE = 7;
+	public static int HUMAN_DAMAGE = 8;
 	public static int DWARF_DAMAGE = 10;
-	public static int HOBBIT_DAMAGE = 10;
+	public static int HOBBIT_DAMAGE = 5;
 
 	public static int ELF_REWARD = 10;
 	public static int HUMAN_REWARD = 10;
