@@ -158,7 +158,6 @@ public class Scene extends JPanel {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
-				System.out.println("timer runing");
 				animator.run(1);
 			}
 		}, 1000, 33);

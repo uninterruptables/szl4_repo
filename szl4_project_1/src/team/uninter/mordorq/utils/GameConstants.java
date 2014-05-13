@@ -50,8 +50,8 @@ public class GameConstants {
 	public static int GREAT_MISSILE_DWARF_DAMAGE = 20;
 	public static int GREAT_MISSILE_HOBBIT_DAMAGE = 20;
 
-	public static int GREAT_TOWER_COST = 400;
-	public static int GREAT_TOWER_RADIUS = 80;
+	public static int GREAT_TOWER_COST = 250;
+	public static int GREAT_TOWER_RADIUS = 60;
 	public static int GREAT_TOWER_MAXCOOLDOWN = 60;
 
 	// enemy constants
