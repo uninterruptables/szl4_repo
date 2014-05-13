@@ -3,14 +3,11 @@ package team.uninter.mordorq.gamespace;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import team.uninter.mordorq.utils.GameUtil;
 
 @SuppressWarnings("all")
 public class Animator implements Runnable {
 
-	private static final Logger logger = Logger.getLogger(Animator.class);
 	private Scene scene;
 
 	public Animator(Scene scene) {
@@ -23,7 +20,6 @@ public class Animator implements Runnable {
 	}
 
 	public void run(int n) {
-		logger.debug(" scene: " + scene.toString());
 		for (int i = 0; i < n; i++) {
 			List<Controlable> removeable = new ArrayList<Controlable>();
 
@@ -31,12 +27,10 @@ public class Animator implements Runnable {
 				if (enemy.isActive()) {
 					EnemyTroop et = (EnemyTroop) enemy;
 					et.controlIt();
-					logger.debug(" Ctrl.: enemy as ~ h: " + et.getHealth() + " at ( " + et.getX() + "," + et.getY() + " )");
 				}
 				else {
 					removeable.add(enemy);
 					EnemyTroop et = (EnemyTroop) enemy;
-					logger.debug(" Rmvd.: enemy as ~ h: " + et.getHealth() + " at ( " + et.getX() + "," + et.getY() + " )");
 				}
 			}
 
@@ -50,7 +44,6 @@ public class Animator implements Runnable {
 			}
 			if (Math.random() * 100 - 2.0 <= 0) {
 				fog();
-				logger.debug(" in Animator.run(n): fog activated");
 			}
 			for (Controlable tower : scene.getTowers()) {
 				if (tower.isActive()) {

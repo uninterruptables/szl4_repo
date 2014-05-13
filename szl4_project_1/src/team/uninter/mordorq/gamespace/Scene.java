@@ -23,8 +23,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JPanel;
 
-import org.apache.log4j.Logger;
-
 import team.uninter.mordorq.gamespace.Casted.ImageColor;
 import team.uninter.mordorq.utils.GameUtil;
 import team.uninter.mordorq.utils.RoundInitiator;
@@ -55,7 +53,6 @@ import team.uninter.mordorq.utils.RoundInitiator;
 public class Scene extends JPanel {
 
 	private static final Map<String, Class<? extends Casted>> availableAOs;
-	private static final Logger logger = Logger.getLogger(Scene.class);
 
 	private List<TerrainGrid> grids;
 	private List<Tower> towers;
@@ -190,8 +187,6 @@ public class Scene extends JPanel {
 	 *            object is to be casted
 	 * */
 	public void castOn(java.awt.Point point) {
-		logger.debug(" Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
-		logger.debug(" Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
 		if (owner.getUserMana() - activeObject.manaCost >= 0) {
 			owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
 		}
@@ -249,7 +244,6 @@ public class Scene extends JPanel {
 	 * Notifies the <code>Scene</code> about that another round has ended.
 	 * */
 	public void endRound() {
-		logger.debug(" round ended");
 		this.owner.endRound(round);
 	}
 
@@ -258,7 +252,6 @@ public class Scene extends JPanel {
 	 * new round does not supply new enemies then the game has been won!
 	 * */
 	public void nextRound() {
-		logger.debug(" scene: in round " + round);
 		enemies = RoundInitiator.initRoundFor(this, round++);
 		if (enemies.isEmpty())
 			endGame(true);
@@ -271,15 +264,13 @@ public class Scene extends JPanel {
 	 *            indicates how the game has ended: by winning or loosing it
 	 * */
 	public void endGame(boolean wasWinning) {
-		// TODO: check
 		timer.cancel();
 		if (wasWinning)
 			owner.win();
 		else {
-			// clear collections
-			grids.clear(); // grids = null; //new ArrayList<TerrainGrid>();
-			towers.clear(); // towers = null; //new ArrayList<Tower>();
-			enemies.clear(); // enemies = null; //new ArrayList<Controlable>();
+			grids.clear();
+			towers.clear();
+			enemies.clear();
 			owner.gameOver();
 		}
 	}
