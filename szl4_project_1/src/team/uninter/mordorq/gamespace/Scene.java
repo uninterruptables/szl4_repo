@@ -181,6 +181,7 @@ public class Scene extends JPanel {
 		timer.cancel();
 		timer = null;
 	}
+	
 
 	/**
 	 * Casts the active object to the given point.
