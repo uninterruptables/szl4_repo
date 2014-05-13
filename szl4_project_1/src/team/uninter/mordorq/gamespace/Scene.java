@@ -577,18 +577,19 @@ public class Scene extends JPanel {
 					RoadGrid enterGrid = new RoadGrid(spawnUtils.get(y));
 					enterGrid.setX(-16);
 					enterGrid.setY(0);
-					logger.debug(" entr grid is " + enterGrid.toString() + " at y of " + y);
+					logger.debug(" entr grid at y of " + y + " is " + enterGrid.toString());
 					grids.add(enterGrid);
 					x++;
 					// TODO:
 					if (y > 0) {
 						int index = (y - 1) * (width + 1);
 						TerrainGrid north = grids.get(index);
-						logger.debug(" noth grid is " + north.toString() + " with x of " + north.getX());
+						logger.debug(" noth grid at ( " + north.getX() + "," + north.getY() + "  )" + " is " + north.toString());
 						enterGrid.set(Neighbour.NORTH, north);
 						north.set(Neighbour.SOUTH, enterGrid);
 
 						enterGrid.setY(y * 16);
+						logger.debug(" entr grid at ( " + enterGrid.getX() + "," + enterGrid.getY() + "  )" + " is " + north.toString());
 					}
 					// logger.debug("enterGrid was placed at ( " +
 					// enterGrid.getX() + "," + enterGrid.getY() + " ) with u: "
