@@ -28,6 +28,7 @@ import team.uninter.mordorq.gamespace.Legolas;
 import team.uninter.mordorq.gamespace.Neighbour;
 import team.uninter.mordorq.gamespace.RoadGrid;
 import team.uninter.mordorq.gamespace.Scene;
+import team.uninter.mordorq.gamespace.TerrainGrid;
 
 /**
  * It is responsible for the creation/instantiation of each enemy in a given
@@ -74,11 +75,12 @@ public class RoundInitiator {
 			reader.setContentHandler(new RoundHandler(enemies, round));
 			reader.parse(filePath);
 
-			logger.debug(" enemies:============== ");
-			for (Controlable c : enemies)
-				logger.debug("\tenemy: " + c.toString());
-			logger.debug("======================= ");
+			// logger.debug(" enemies:============== ");
+			// for (Controlable c : enemies)
+			// logger.debug("\tenemy: " + c.toString());
+			// logger.debug("======================= ");
 			List<Controlable> temp = new ArrayList<Controlable>(enemies);
+
 			new Thread(new PlaceWorker(temp, (RoadGrid) scene.getGrids().get(0))).start();
 
 		} catch (SAXException e) {
@@ -93,7 +95,8 @@ public class RoundInitiator {
 
 	private static class PlaceWorker implements Runnable {
 
-		private static final Logger logger = Logger.getLogger(PlaceWorker.class);
+		// private static final Logger logger =
+		// Logger.getLogger(PlaceWorker.class);
 		private static final long WORKER_TIMEOUT = 2000;
 
 		private List<? extends Controlable> enemySource;
@@ -134,7 +137,9 @@ public class RoundInitiator {
 				logger.debug(" enemy " + enemy.toString() + " was placed in PlaceWorker onto grid.u: " + grid.getUtility() + " in depth of " + depth);
 				grid.setVulnerable(enemy);
 			}
-			placeFrom(enemies, (RoadGrid) grid.get(Neighbour.SOUTH), ++depth);
+			TerrainGrid tGrid = grid.get(Neighbour.SOUTH);
+			logger.debug("south grid is: " + tGrid.toString());
+			placeFrom(enemies, (RoadGrid) tGrid, ++depth);
 		}
 	}
 

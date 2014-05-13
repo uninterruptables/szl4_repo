@@ -5,6 +5,7 @@ package team.uninter.mordorq.gamespace;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -408,7 +409,9 @@ public class Scene extends JPanel {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			logger.debug("in Scene.mouseClicked");
-			if (owner.activeObject != null) {
+			Point p = e.getPoint();
+			TerrainGrid gridUnder = GameUtil.getGridByXY(owner.grids, p.x, p.y);
+			if (owner.activeObject != null && owner.activeObject.canCastOn(gridUnder)) {
 				owner.castOn(e.getPoint());
 				logger.debug("in Scene.mouseClicked: activeObject " + owner.activeObject.toString() + " was casted at " + e.getPoint().toString());
 			}
@@ -439,6 +442,7 @@ public class Scene extends JPanel {
 					logger.debug("in Scene.mouseEntered: setting ImageColor.NORMAL for " + owner.activeObject.toString());
 				}
 			}
+			owner.repaint();
 		}
 
 		private Scene owner;
