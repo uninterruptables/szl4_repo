@@ -24,6 +24,7 @@ public class PoisonTrapRune extends TrapRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/poisontraprune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/poisontraprune_16p.png"));
+		this.manaCost = GameConstants.POISONOUS_TRAP_RUNE_COST;
 	}
 	
 	public PoisonTrapRune(int x, int y) {

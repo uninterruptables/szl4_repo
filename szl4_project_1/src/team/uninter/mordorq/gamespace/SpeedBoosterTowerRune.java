@@ -21,6 +21,7 @@ public class SpeedBoosterTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_SPEED_TOWER_RUNE_COST;
 //		System.out.println("SpeedBoosterTowerRune() called");
 //		System.out.println("SpeedBoosterTowerRune() returned");
 	}
@@ -30,6 +31,7 @@ public class SpeedBoosterTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/FastTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/FastTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_SPEED_TOWER_RUNE_COST;
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) called");
 //		System.out.println("SpeedBoosterTowerRune(Int, Int) returned");
 	}

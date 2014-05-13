@@ -198,7 +198,10 @@ public class Scene extends JPanel {
 		else
 			place(activeObject, GameUtil.getGridByXY(grids, point.x, point.y));
 
-		owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
+		if(owner.getUserMana() - activeObject.manaCost >= 0){
+			owner.setUserMana(owner.getUserMana() - activeObject.manaCost);
+		}
+
 		activeObject = null;
 	}
 

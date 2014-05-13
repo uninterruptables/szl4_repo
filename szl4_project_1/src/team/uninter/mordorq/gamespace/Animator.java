@@ -41,6 +41,9 @@ public class Animator implements Runnable {
 			}
 			// to prevent ConcurrentModificationException
 			// scene.getEnemies().removeAll(removeable);
+			for(Controlable troop : removeable){
+				scene.rewardUser(((EnemyTroop)troop).getRewardMana());
+			}
 			scene.getEnemies().removeAll(removeable);
 
 			if (scene.getEnemies().isEmpty()) {

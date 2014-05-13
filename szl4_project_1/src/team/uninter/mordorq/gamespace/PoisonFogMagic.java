@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class PoisonFogMagic extends Magic{
 
 	//Class used to simulate a magical spell, that applies a poison status on every unit on the map
@@ -7,6 +9,7 @@ public class PoisonFogMagic extends Magic{
 		super();
 //		System.out.println("PoisonFogMagic() called");
 		effects.add(new PoisonStatus());
+		this.manaCost = GameConstants.POISON_FOG_MAGIC_COST;
 //		System.out.println("PoisonFogMagic() returned");
 	}
 	

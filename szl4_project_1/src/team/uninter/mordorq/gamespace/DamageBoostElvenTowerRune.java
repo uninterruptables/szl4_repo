@@ -24,6 +24,7 @@ public class DamageBoostElvenTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/elf_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/elf_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_ELF_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoostElvenTowerRune() called");
 //		System.out.println("DamageBoostElvenTowerRune() returned");
 	}
@@ -33,6 +34,7 @@ public class DamageBoostElvenTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/elf_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/elf_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_ELF_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoostElvenTowerRune(Int, Int) called");
 //		System.out.println("DamageBoostElvenTowerRune(Int, Int) returned");
 	}

@@ -26,6 +26,7 @@ public class BasicTower extends Tower {
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/basic_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.BASIC_TOWER_RADIUS;
+		this.manaCost = GameConstants.BASIC_TOWER_COST;
 	}
 
 	public BasicTower() {

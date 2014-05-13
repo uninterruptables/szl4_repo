@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import team.uninter.mordorq.utils.GameConstants;
+
 public class IceWindMagic extends Magic{
 
 	
@@ -8,6 +10,7 @@ public class IceWindMagic extends Magic{
 		super();
 //		System.out.println("IceWindMagic() called");
 		effects.add(new SlowStatus());
+		this.manaCost = GameConstants.ICE_WIND_MAGIC_COST;
 //		System.out.println("IceWindMagic() returned");
 	}
 	

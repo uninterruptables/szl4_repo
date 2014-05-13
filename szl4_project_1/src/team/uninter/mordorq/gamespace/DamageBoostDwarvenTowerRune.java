@@ -24,6 +24,7 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/dwarf_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/dwarf_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_DWARF_DAMAGE_TOWER_RUNE_COST;
 	}
 	
 	public DamageBoostDwarvenTowerRune(int x, int y) {
@@ -31,6 +32,7 @@ public class DamageBoostDwarvenTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/dwarf_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/dwarf_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_DWARF_DAMAGE_TOWER_RUNE_COST;
 	}
 	
 	public void injectOn(Tower tower)	{

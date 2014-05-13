@@ -26,6 +26,7 @@ public class FastTower extends Tower {
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/fast_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.FAST_TOWER_RADIUS;
+		this.manaCost = GameConstants.FAST_TOWER_COST;
 	}
 
 	public FastTower() {

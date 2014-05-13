@@ -24,6 +24,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoosterTowerRune() called");
 //		System.out.println("DamageBoosterTowerRune() returned");
 	}
@@ -33,6 +34,7 @@ public class DamageBoosterTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/DamageTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/DamageTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoosterTowerRune(Int, Int) called");
 //		System.out.println("DamageBoosterTowerRune(Int, Int) returned");
 	}

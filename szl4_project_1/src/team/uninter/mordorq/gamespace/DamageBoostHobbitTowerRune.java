@@ -25,6 +25,7 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_HOBBIT_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoostHobbitTowerRune() called");
 //		System.out.println("DamageBoostHobbitTowerRune() returned");
 	}
@@ -34,6 +35,7 @@ public class DamageBoostHobbitTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/hobbit_tower_rune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/hobbit_tower_rune_16p.png"));
+		this.manaCost = GameConstants.PLUS_HOBBIT_DAMAGE_TOWER_RUNE_COST;
 //		System.out.println("DamageBoostHobbitTowerRune(Int, Int) called");
 //		System.out.println("DamageBoostHobbitTowerRune(Int, Int) returned");
 	}

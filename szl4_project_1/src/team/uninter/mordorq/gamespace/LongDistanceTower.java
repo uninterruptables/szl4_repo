@@ -26,6 +26,7 @@ public class LongDistanceTower extends Tower {
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/longr_tower_16p.png"));
 		super.image = avalImages.get(ImageColor.NORMAL);
 		this.radius = GameConstants.LONG_DISTANCE_TOWER_RADIUS;
+		this.manaCost = GameConstants.LONG_DISTANCE_TOWER_COST;
 	}
 
 	public LongDistanceTower() {

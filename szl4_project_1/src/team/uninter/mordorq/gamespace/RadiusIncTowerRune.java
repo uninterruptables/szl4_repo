@@ -22,6 +22,7 @@ public class RadiusIncTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_RANGE_TOWER_RUNE_COST;
 //		System.out.println("RadiusIncRune() called");
 //		System.out.println("RadiusIncRune() returned");
 	}
@@ -31,6 +32,7 @@ public class RadiusIncTowerRune extends TowerRune{
 		avalImages = new HashMap<ImageColor, Image>();
 		tryLoad(avalImages, ImageColor.RED, new File("resources/images/RangeTowerRune_16p_red.png"));
 		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/RangeTowerRune_16p.png"));
+		this.manaCost = GameConstants.PLUS_RANGE_TOWER_RUNE_COST;
 //		System.out.println("RadiusIncRune(Int, Int) called");
 //		System.out.println("RadiusIncRune(Int, Int) returned");
 	}
