@@ -1,5 +1,7 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Graphics;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,9 +10,6 @@ import org.apache.log4j.Logger;
 
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
-
-import java.awt.Graphics;
-import java.io.File;
 
 @SuppressWarnings("serial")
 abstract public class Tower extends InjectionTarget
@@ -42,13 +41,10 @@ abstract public class Tower extends InjectionTarget
 	 * */
 	@Override
 	public final void controlIt() {
-		logger.debug("in Tower.controlIt for " + this.toString());
 		if (fogStatus != null) {
-			logger.debug("in Tower.controlIt for " + this.toString() + " fog is active");
 			fogStatus.setDuration(fogStatus.getDuration() - 1);
 			if (fogStatus.getDuration() - 1 <= 0) {
 				removeFogStatus();
-				logger.debug("in Tower.controlIt for " + this.toString() + " fog was removed");
 			}
 		}
 		missile.controlIt();
@@ -89,17 +85,14 @@ abstract public class Tower extends InjectionTarget
 	@Override
 	public final void castOn(TerrainGrid targetGrid) {
 		((GroundGrid) targetGrid).reserve(this);
-		logger.debug("in Tower.castOn: " + this.toString() + " was casted on " + targetGrid.toString());
 	}
 
 	@Override
 	public final boolean canInject(Injectable inj) {
 		if (inj.canInjectOn(this)) {
-			logger.debug("in Tower.canInject: " + this.toString() + " can inject " + inj.toString());
 			return true;
 		}
 		else {
-			logger.debug("in Tower.canInject: " + this.toString() + " cannot inject " + inj.toString());
 			return false;
 		}
 	}
@@ -107,17 +100,14 @@ abstract public class Tower extends InjectionTarget
 	@Override
 	public final void attach(TargetPublisher publisher) {
 		this.roadGrids.add(publisher);
-		logger.debug("in Tower.attach(publisher): " + publisher.toString() + " was added to " + this.toString());
 	}
 
 	@Override
 	public final boolean canCastOn(TerrainGrid grid) {
 		if (grid.isAvailableFor(this)) {
-			logger.debug("in Tower.canCastOn: " + grid.toString() + " was available for " + this.toString());
 			return true;
 		}
 		else {
-			logger.debug("in Tower.canCastOn: " + grid.toString() + " was not available for " + this.toString());
 			return false;
 		}
 	}
@@ -126,7 +116,6 @@ abstract public class Tower extends InjectionTarget
 	public final void inject(Injectable inject) {
 		inject.injectOn(this);
 		this.remainingRunePlace--;
-		logger.debug("in Tower.inject: " + inject.toString() + " was injected into " + this.toString());
 	}
 
 	public final int getSpeciesDamage(String type) {
@@ -154,7 +143,6 @@ abstract public class Tower extends InjectionTarget
 	}
 
 	public void addAllDamage(int damage) {
-		logger.debug("in Tower.addAllDamage: " + damage + " was added to " + this.toString());
 		for (String key : missile.racialDamages.keySet()) {
 			missile.racialDamages.put(key, missile.racialDamages.get(key) + damage);
 		}
@@ -162,18 +150,14 @@ abstract public class Tower extends InjectionTarget
 
 	@Override
 	final public boolean isActive() {
-		logger.debug("in Tower.isActive");
 		if (missile.state.equals(MissileState.FIRE_READY)) {
 			EnemyTroop target = getNewTarget();
-			logger.debug("in Tower.isActive: " + (target == null ? null : target.toString()) + " was nominated as new target");
 			if (target == null)
 				missile.set(MissileState.WAITING);
 			else
 				fire(target);
 		}
-		boolean res = missile.isActive();
-		logger.debug("Tower " + this.toString() + ".isActive: " + res);
-		return res;
+		return missile.isActive();
 	}
 
 	/**
@@ -185,7 +169,6 @@ abstract public class Tower extends InjectionTarget
 	 * @see Tower#fire(EnemyTroop)
 	 * */
 	private EnemyTroop getNewTarget() {
-		logger.debug("in Tower.getNewTarget");
 		List<TargetPublisher> inrangeGrids = inRange(roadGrids);
 		for (TargetPublisher publisher : inrangeGrids) {
 			if (publisher.contains(missile.getTarget())) {
@@ -210,7 +193,6 @@ abstract public class Tower extends InjectionTarget
 	 * @return a list containing the filtered, valid results
 	 * */
 	private List<TargetPublisher> inRange(List<TargetPublisher> publishers) {
-		logger.debug("in Tower.inRange");
 		if (fogStatus == null)
 			return publishers;
 		List<TargetPublisher> result = new ArrayList<TargetPublisher>();
@@ -223,20 +205,17 @@ abstract public class Tower extends InjectionTarget
 	/**
 	 * Paints this component and all the components referenced by it.
 	 * 
-	 * @param g the <code>Graphics</code> instance responsible for drawings
-	 * 		     in the Java Graphics FrameWork
+	 * @param g
+	 *            the <code>Graphics</code> instance responsible for drawings in
+	 *            the Java Graphics FrameWork
 	 */
 	@Override
 	public void drawObject(Graphics g) {
-//		logger.debug("in Tower.drawObject(g) for " + this.toString());
 		super.drawObject(g);
 		missile.drawObject(g);
 	}
-	
 
 	public abstract static class Missile extends GameObject implements Controlable {
-
-		private static final Logger logger = Logger.getLogger(Missile.class);
 
 		private int deltaX, deltaY;
 		protected HashMap<String, Integer> racialDamages;
@@ -249,7 +228,7 @@ abstract public class Tower extends InjectionTarget
 			super(x, y);
 			racialDamages = new HashMap<String, Integer>();
 			state = MissileState.WAITING;
-			super.tryLoad(new File("resources/images/missile_4p.gif"));
+			super.tryLoad(new File("resources/images/missile.png"));
 		}
 
 		@Override
@@ -265,7 +244,7 @@ abstract public class Tower extends InjectionTarget
 				moveAhead();
 				if (inRange()) {
 					target.interactWith(this);
-					logger.debug("in Missile.controlIt: " + this.toString() + " interacts with " + target);
+					logger.debug("in Missile.controlIt: " + this.toString() + " interacts with " + target.toString());
 					this.set(maxCooldown);
 					this.set(MissileState.DORMANT);
 				}
@@ -365,6 +344,12 @@ abstract public class Tower extends InjectionTarget
 
 		public final int getHobbitDamage() {
 			return this.racialDamages.get("hobbit");
+		}
+
+		@Override
+		public void drawObject(Graphics g) {
+			super.drawObject(g);
+			logger.debug(" missile " + this.toString() + " was drawn");
 		}
 
 		/**

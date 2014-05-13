@@ -190,8 +190,8 @@ public class Scene extends JPanel {
 	 *            object is to be casted
 	 * */
 	public void castOn(java.awt.Point point) {
-		logger.debug("Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
-		logger.debug("Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
+		logger.debug(" Scene.castOn( point ) ~ activeObject: " + activeObject.toString());
+		logger.debug(" Scene.castOn( point ) ~ point: ( " + point.x + "," + point.y + " )");
 		if (activeObject instanceof Magic)
 			cast((Magic) activeObject);
 		else
@@ -252,7 +252,7 @@ public class Scene extends JPanel {
 	 * new round does not supply new enemies then the game has been won!
 	 * */
 	public void nextRound() {
-		logger.debug(" scene: " + this.toString());
+		logger.debug(" scene: in round " + round);
 		enemies = RoundInitiator.initRoundFor(this, round++);
 		if (enemies.isEmpty())
 			endGame(true);
