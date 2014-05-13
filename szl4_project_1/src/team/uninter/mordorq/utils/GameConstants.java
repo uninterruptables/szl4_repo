@@ -131,7 +131,7 @@ public class GameConstants {
 
 	// statusmodifier constants
 	public static int WEAKEN_STATUS_DURATION = 6;
-	public static int SLOWER_STATUS_DURATION = 6;
+	public static int SLOWER_STATUS_DURATION = 200;
 	public static int POISONOUS_STATUS_DURATION = 6;
 	public static int POISONOUS_STATUS_TIME_INTERVAL = 6;
 

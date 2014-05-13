@@ -58,7 +58,7 @@ public class SlowStatus extends StatusModifier{
 			}
 		}
 
-		SlowStatus newStatus = new SlowStatus(this.slowAmount, GameConstants.WEAKEN_STATUS_DURATION, this.id);
+		SlowStatus newStatus = new SlowStatus(this.slowAmount, GameConstants.SLOWER_STATUS_DURATION, this.id);
 		enemy.add(newStatus);
 		newStatus.affect(enemy);
 	}

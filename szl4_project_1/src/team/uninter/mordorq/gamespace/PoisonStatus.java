@@ -57,7 +57,7 @@ public class PoisonStatus extends StatusModifier{
 			}
 		}
 
-		PoisonStatus newStatus = new PoisonStatus(this.poisonDamage, GameConstants.WEAKEN_STATUS_DURATION, this.id);
+		PoisonStatus newStatus = new PoisonStatus(this.poisonDamage, GameConstants.POISONOUS_STATUS_DURATION, this.id);
 		enemy.add(newStatus);
 		newStatus.affect(enemy);
 	}
