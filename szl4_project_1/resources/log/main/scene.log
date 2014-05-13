@@ -1,0 +1,183 @@
+2014-05-13/17:45:46.735/CESTDEBUG scene: in round 0
+2014-05-13/17:45:50.791/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:45:50.792/CESTDEBUG Scene.castOn( point ) ~ point: ( 201,90 )
+2014-05-13/17:45:52.495/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:45:52.496/CESTDEBUG Scene.castOn( point ) ~ point: ( 166,28 )
+2014-05-13/17:45:53.947/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:45:53.948/CESTDEBUG Scene.castOn( point ) ~ point: ( 135,88 )
+2014-05-13/17:46:40.138/CESTDEBUG scene: in round 1
+2014-05-13/17:47:28.450/CESTDEBUG scene: in round 2
+2014-05-13/17:48:17.586/CESTDEBUG scene: in round 3
+2014-05-13/17:49:01.821/CESTDEBUG Scene.castOn( point ) ~ activeObject: DamageBoosterTowerRune
+2014-05-13/17:49:01.837/CESTDEBUG Scene.castOn( point ) ~ point: ( 139,88 )
+2014-05-13/17:49:08.539/CESTDEBUG scene: in round 4
+2014-05-13/17:54:36.321/CESTDEBUG scene: in round 0
+2014-05-13/17:54:37.645/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:54:37.645/CESTDEBUG Scene.castOn( point ) ~ point: ( 137,86 )
+2014-05-13/17:54:39.329/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:54:39.330/CESTDEBUG Scene.castOn( point ) ~ point: ( 166,20 )
+2014-05-13/17:54:41.459/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:54:41.460/CESTDEBUG Scene.castOn( point ) ~ point: ( 202,87 )
+2014-05-13/17:57:17.255/CESTDEBUG scene: in round 0
+2014-05-13/17:57:28.212/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:57:28.212/CESTDEBUG Scene.castOn( point ) ~ point: ( 134,90 )
+2014-05-13/17:57:30.454/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:57:30.455/CESTDEBUG Scene.castOn( point ) ~ point: ( 151,24 )
+2014-05-13/17:57:32.231/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/17:57:32.231/CESTDEBUG Scene.castOn( point ) ~ point: ( 200,88 )
+2014-05-13/17:58:21.589/CESTDEBUG scene: in round 0
+2014-05-13/18:00:47.068/CESTDEBUG scene: in round 0
+2014-05-13/18:01:27.447/CESTDEBUG scene: in round 0
+2014-05-13/18:01:47.498/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:01:47.498/CESTDEBUG Scene.castOn( point ) ~ point: ( 128,87 )
+2014-05-13/18:01:49.562/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:01:49.563/CESTDEBUG Scene.castOn( point ) ~ point: ( 168,23 )
+2014-05-13/18:03:01.589/CESTDEBUG scene: in round 0
+2014-05-13/18:03:17.997/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:03:17.997/CESTDEBUG Scene.castOn( point ) ~ point: ( 136,86 )
+2014-05-13/18:03:19.984/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:03:19.985/CESTDEBUG Scene.castOn( point ) ~ point: ( 164,29 )
+2014-05-13/18:03:21.947/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:03:21.948/CESTDEBUG Scene.castOn( point ) ~ point: ( 204,88 )
+2014-05-13/18:04:02.862/CESTDEBUG scene: in round 1
+2014-05-13/18:05:00.936/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:05:00.937/CESTDEBUG Scene.castOn( point ) ~ point: ( 452,86 )
+2014-05-13/18:05:02.626/CESTDEBUG scene: in round 2
+2014-05-13/18:05:06.536/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/18:05:06.537/CESTDEBUG Scene.castOn( point ) ~ point: ( 346,105 )
+2014-05-13/18:05:35.319/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:05:35.319/CESTDEBUG Scene.castOn( point ) ~ point: ( 240,76 )
+2014-05-13/18:05:37.542/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:05:37.542/CESTDEBUG Scene.castOn( point ) ~ point: ( 266,58 )
+2014-05-13/18:05:39.343/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:05:39.343/CESTDEBUG Scene.castOn( point ) ~ point: ( 271,40 )
+2014-05-13/18:05:41.709/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:05:41.710/CESTDEBUG Scene.castOn( point ) ~ point: ( 283,41 )
+2014-05-13/18:05:58.975/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:05:58.975/CESTDEBUG Scene.castOn( point ) ~ point: ( 233,72 )
+2014-05-13/18:06:01.013/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:01.013/CESTDEBUG Scene.castOn( point ) ~ point: ( 248,55 )
+2014-05-13/18:06:01.596/CESTDEBUG scene: in round 3
+2014-05-13/18:06:03.483/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:03.483/CESTDEBUG Scene.castOn( point ) ~ point: ( 247,41 )
+2014-05-13/18:06:05.242/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:05.242/CESTDEBUG Scene.castOn( point ) ~ point: ( 234,37 )
+2014-05-13/18:06:07.225/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:07.225/CESTDEBUG Scene.castOn( point ) ~ point: ( 230,57 )
+2014-05-13/18:06:15.026/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:06:15.027/CESTDEBUG Scene.castOn( point ) ~ point: ( 214,72 )
+2014-05-13/18:06:17.058/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:06:17.058/CESTDEBUG Scene.castOn( point ) ~ point: ( 217,54 )
+2014-05-13/18:06:18.775/CESTDEBUG Scene.castOn( point ) ~ activeObject: Barricade
+2014-05-13/18:06:18.776/CESTDEBUG Scene.castOn( point ) ~ point: ( 220,40 )
+2014-05-13/18:06:21.698/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:21.698/CESTDEBUG Scene.castOn( point ) ~ point: ( 202,39 )
+2014-05-13/18:06:23.467/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:23.467/CESTDEBUG Scene.castOn( point ) ~ point: ( 195,57 )
+2014-05-13/18:06:25.914/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:25.914/CESTDEBUG Scene.castOn( point ) ~ point: ( 199,72 )
+2014-05-13/18:06:38.940/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:38.940/CESTDEBUG Scene.castOn( point ) ~ point: ( 182,74 )
+2014-05-13/18:06:41.080/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:41.080/CESTDEBUG Scene.castOn( point ) ~ point: ( 181,57 )
+2014-05-13/18:06:43.237/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrap
+2014-05-13/18:06:43.237/CESTDEBUG Scene.castOn( point ) ~ point: ( 180,39 )
+2014-05-13/18:06:55.287/CESTDEBUG scene: in round 4
+2014-05-13/18:07:33.601/CESTDEBUG scene: in round 5
+2014-05-13/18:08:35.091/CESTDEBUG scene: in round 6
+2014-05-13/18:09:02.631/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:02.631/CESTDEBUG Scene.castOn( point ) ~ point: ( 150,139 )
+2014-05-13/18:09:05.134/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:05.134/CESTDEBUG Scene.castOn( point ) ~ point: ( 174,135 )
+2014-05-13/18:09:07.738/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:07.738/CESTDEBUG Scene.castOn( point ) ~ point: ( 185,137 )
+2014-05-13/18:09:12.059/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:12.059/CESTDEBUG Scene.castOn( point ) ~ point: ( 86,139 )
+2014-05-13/18:09:14.310/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:14.310/CESTDEBUG Scene.castOn( point ) ~ point: ( 73,136 )
+2014-05-13/18:09:16.942/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:16.942/CESTDEBUG Scene.castOn( point ) ~ point: ( 54,137 )
+2014-05-13/18:09:19.356/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:19.356/CESTDEBUG Scene.castOn( point ) ~ point: ( 69,134 )
+2014-05-13/18:09:22.284/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:22.284/CESTDEBUG Scene.castOn( point ) ~ point: ( 153,136 )
+2014-05-13/18:09:24.359/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:24.359/CESTDEBUG Scene.castOn( point ) ~ point: ( 183,131 )
+2014-05-13/18:09:26.345/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:26.345/CESTDEBUG Scene.castOn( point ) ~ point: ( 181,119 )
+2014-05-13/18:09:28.204/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:28.204/CESTDEBUG Scene.castOn( point ) ~ point: ( 167,121 )
+2014-05-13/18:09:29.809/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:29.809/CESTDEBUG Scene.castOn( point ) ~ point: ( 157,117 )
+2014-05-13/18:09:31.768/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:31.768/CESTDEBUG Scene.castOn( point ) ~ point: ( 85,116 )
+2014-05-13/18:09:33.466/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:33.466/CESTDEBUG Scene.castOn( point ) ~ point: ( 67,123 )
+2014-05-13/18:09:35.251/CESTDEBUG Scene.castOn( point ) ~ activeObject: SlowDownTrap
+2014-05-13/18:09:35.251/CESTDEBUG Scene.castOn( point ) ~ point: ( 54,121 )
+2014-05-13/18:09:38.086/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:38.086/CESTDEBUG Scene.castOn( point ) ~ point: ( 83,101 )
+2014-05-13/18:09:40.295/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:40.295/CESTDEBUG Scene.castOn( point ) ~ point: ( 87,87 )
+2014-05-13/18:09:42.333/CESTDEBUG scene: in round 7
+2014-05-13/18:09:42.443/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:42.444/CESTDEBUG Scene.castOn( point ) ~ point: ( 90,72 )
+2014-05-13/18:09:44.522/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:44.522/CESTDEBUG Scene.castOn( point ) ~ point: ( 107,66 )
+2014-05-13/18:09:46.685/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:46.685/CESTDEBUG Scene.castOn( point ) ~ point: ( 126,73 )
+2014-05-13/18:09:49.446/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:49.446/CESTDEBUG Scene.castOn( point ) ~ point: ( 142,71 )
+2014-05-13/18:09:51.199/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:51.199/CESTDEBUG Scene.castOn( point ) ~ point: ( 153,75 )
+2014-05-13/18:09:53.003/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:53.003/CESTDEBUG Scene.castOn( point ) ~ point: ( 149,89 )
+2014-05-13/18:09:54.406/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:54.406/CESTDEBUG Scene.castOn( point ) ~ point: ( 155,106 )
+2014-05-13/18:09:56.305/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:56.305/CESTDEBUG Scene.castOn( point ) ~ point: ( 165,106 )
+2014-05-13/18:09:57.879/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:09:57.879/CESTDEBUG Scene.castOn( point ) ~ point: ( 180,105 )
+2014-05-13/18:10:00.217/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:00.217/CESTDEBUG Scene.castOn( point ) ~ point: ( 182,90 )
+2014-05-13/18:10:02.194/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:02.194/CESTDEBUG Scene.castOn( point ) ~ point: ( 170,72 )
+2014-05-13/18:10:04.979/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:04.979/CESTDEBUG Scene.castOn( point ) ~ point: ( 142,55 )
+2014-05-13/18:10:07.703/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:07.703/CESTDEBUG Scene.castOn( point ) ~ point: ( 149,41 )
+2014-05-13/18:10:10.643/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:10.643/CESTDEBUG Scene.castOn( point ) ~ point: ( 169,136 )
+2014-05-13/18:10:17.787/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:17.787/CESTDEBUG Scene.castOn( point ) ~ point: ( 168,39 )
+2014-05-13/18:10:20.396/CESTDEBUG Scene.castOn( point ) ~ activeObject: DecreaseDamageTrap
+2014-05-13/18:10:20.396/CESTDEBUG Scene.castOn( point ) ~ point: ( 116,43 )
+2014-05-13/18:10:39.041/CESTDEBUG Scene.castOn( point ) ~ activeObject: Nazgul
+2014-05-13/18:10:39.042/CESTDEBUG Scene.castOn( point ) ~ point: ( 150,252 )
+2014-05-13/18:10:43.185/CESTDEBUG scene: in round 8
+2014-05-13/18:10:49.471/CESTDEBUG Scene.castOn( point ) ~ activeObject: Nazgul
+2014-05-13/18:10:49.471/CESTDEBUG Scene.castOn( point ) ~ point: ( 156,388 )
+2014-05-13/18:10:58.913/CESTDEBUG Scene.castOn( point ) ~ activeObject: IceWindMagic
+2014-05-13/18:10:58.914/CESTDEBUG Scene.castOn( point ) ~ point: ( 112,374 )
+2014-05-13/18:11:07.155/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonFogMagic
+2014-05-13/18:11:07.155/CESTDEBUG Scene.castOn( point ) ~ point: ( 128,224 )
+2014-05-13/18:11:30.774/CESTDEBUG Scene.castOn( point ) ~ activeObject: WeakenTrapRune
+2014-05-13/18:11:30.776/CESTDEBUG Scene.castOn( point ) ~ point: ( 168,106 )
+2014-05-13/18:11:33.034/CESTDEBUG Scene.castOn( point ) ~ activeObject: WeakenTrapRune
+2014-05-13/18:11:33.035/CESTDEBUG Scene.castOn( point ) ~ point: ( 170,140 )
+2014-05-13/18:11:35.324/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrapRune
+2014-05-13/18:11:35.324/CESTDEBUG Scene.castOn( point ) ~ point: ( 154,120 )
+2014-05-13/18:11:39.615/CESTDEBUG scene: in round 9
+2014-05-13/18:11:41.422/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrapRune
+2014-05-13/18:11:41.423/CESTDEBUG Scene.castOn( point ) ~ point: ( 167,119 )
+2014-05-13/18:11:44.383/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrapRune
+2014-05-13/18:11:44.384/CESTDEBUG Scene.castOn( point ) ~ point: ( 185,119 )
+2014-05-13/18:11:47.682/CESTDEBUG Scene.castOn( point ) ~ activeObject: PoisonTrapRune
+2014-05-13/18:11:47.683/CESTDEBUG Scene.castOn( point ) ~ point: ( 77,130 )
+2014-05-13/18:11:51.089/CESTDEBUG Scene.castOn( point ) ~ activeObject: RadiusIncTowerRune
+2014-05-13/18:11:51.089/CESTDEBUG Scene.castOn( point ) ~ point: ( 167,26 )
+2014-05-13/18:11:55.173/CESTDEBUG Scene.castOn( point ) ~ activeObject: DamageBoosterTowerRune
+2014-05-13/18:11:55.173/CESTDEBUG Scene.castOn( point ) ~ point: ( 199,88 )
+2014-05-13/18:11:57.217/CESTDEBUG Scene.castOn( point ) ~ activeObject: DamageBoosterTowerRune
+2014-05-13/18:11:57.217/CESTDEBUG Scene.castOn( point ) ~ point: ( 134,87 )
+2014-05-13/18:12:27.499/CESTDEBUG scene: in round 10
