@@ -28,6 +28,13 @@ public class PoisonStatus extends StatusModifier{
 		id = GameConstants.STATUS_MODIFIER_ID++;
 	}
 	
+	public PoisonStatus(int poisonDamage, int duration)
+	{
+		this.poisonDamage = poisonDamage;
+		this.duration = duration;
+		id = GameConstants.STATUS_MODIFIER_ID++;
+	}
+	
 	public PoisonStatus(int poisonDamage, int duration, int identifier)
 	{
 		this.poisonDamage = poisonDamage;

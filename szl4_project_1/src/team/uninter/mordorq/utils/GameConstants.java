@@ -139,12 +139,15 @@ public class GameConstants {
 
 	// magic constatns
 	public static int NAZGUL_MAGIC_COST = 500;
-	public static int NAZGUL_MAGIC_FREEZE_DURATION = 150;
+	public static int NAZGUL_MAGIC_DURATION = 150;
+	public static int NAZGUL_MAGIC_STRENGHT = 150;
 
 	public static int ICE_WIND_MAGIC_COST = 500;
 	public static int ICE_WIND_MAGIC_DURATION = 150;
+	public static int ICE_WIND_MAGIC_STRENGHT = 150;
 
 	public static int POISON_FOG_MAGIC_COST = 500;
 	public static int POISON_FOG_MAGIC_DURATION = 150;
+	public static int POISON_FOG_MAGIC_STRENGHT = 150;
 
 }

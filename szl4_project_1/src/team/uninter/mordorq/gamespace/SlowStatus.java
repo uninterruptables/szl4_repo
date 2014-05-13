@@ -27,6 +27,12 @@ public class SlowStatus extends StatusModifier{
 		this.duration = GameConstants.SLOWER_STATUS_DURATION;
 		id = GameConstants.STATUS_MODIFIER_ID++;
 	}
+	public SlowStatus(int slowAmount, int duration)
+	{
+		this.slowAmount = slowAmount;
+		this.duration = duration;
+		id = GameConstants.STATUS_MODIFIER_ID++;
+	}
 	
 	public SlowStatus(int slowAmount, int duration, int identifier)
 	{
