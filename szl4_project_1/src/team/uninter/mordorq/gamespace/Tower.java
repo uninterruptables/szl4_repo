@@ -212,7 +212,8 @@ abstract public class Tower extends InjectionTarget
 	@Override
 	public void drawObject(Graphics g) {
 		super.drawObject(g);
-		missile.drawObject(g);
+		if (missile.isActive())
+			missile.drawObject(g);
 	}
 
 	public abstract static class Missile extends GameObject implements Controlable {
@@ -228,7 +229,7 @@ abstract public class Tower extends InjectionTarget
 			super(x, y);
 			racialDamages = new HashMap<String, Integer>();
 			state = MissileState.WAITING;
-			super.tryLoad(new File("resources/images/missile.png"));
+			tryLoad(new File("resources/images/missile.png"));
 		}
 
 		@Override

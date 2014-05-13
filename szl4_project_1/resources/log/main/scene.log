@@ -2,3 +2,9 @@
 2014-05-13/16:22:28.964/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
 2014-05-13/16:22:28.964/CESTDEBUG Scene.castOn( point ) ~ point: ( 201,198 )
 2014-05-13/16:22:46.403/CESTDEBUG scene: in round 1
+2014-05-13/16:34:18.897/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/16:34:18.897/CESTDEBUG Scene.castOn( point ) ~ point: ( 362,263 )
+2014-05-13/16:36:25.970/CESTDEBUG scene: in round 0
+2014-05-13/16:36:30.922/CESTDEBUG Scene.castOn( point ) ~ activeObject: BasicTower
+2014-05-13/16:36:30.922/CESTDEBUG Scene.castOn( point ) ~ point: ( 263,213 )
+2014-05-13/16:37:38.494/CESTDEBUG scene: in round 1
