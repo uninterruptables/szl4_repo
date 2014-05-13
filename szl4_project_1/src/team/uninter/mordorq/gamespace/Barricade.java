@@ -20,12 +20,6 @@ public class Barricade extends Casted implements Vulnerable {
 	private int health;
 	private RoadGrid currentGrid;
 
-//	static {
-//		avalImages = new HashMap<ImageColor, Image>();
-//		Casted.tryLoad(avalImages, ImageColor.RED, new File("resources/images/barricade_16p_red.png"));
-//		Casted.tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/barricade_16p.png"));
-//	}
-
 	public Barricade() {
 		this(0, 0);
 	}

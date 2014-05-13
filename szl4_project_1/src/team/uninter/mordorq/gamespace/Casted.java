@@ -21,7 +21,6 @@ abstract public class Casted extends GameObject {
 	// terrainGrid. Good, for user feedback mostly)
 
 	private static Logger logger = Logger.getLogger(Casted.class);
-//	protected static Map<ImageColor, Image> avalImages;
 	protected Map<ImageColor, Image> avalImages;
 	protected ImageColor color;
 	protected int manaCost;
@@ -60,7 +59,6 @@ abstract public class Casted extends GameObject {
 		RED, NORMAL
 	}
 
-//	protected static final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
 	protected final void tryLoad(Map<ImageColor, Image> target, ImageColor color, File imageFile) {
 		try {
 			target.put(color, ImageIO.read(imageFile));
