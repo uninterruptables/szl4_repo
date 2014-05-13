@@ -93,6 +93,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 					Trap targetTrap = targetGrid.getTrap();
 					if (targetTrap != null) {
 						targetTrap.affect(this);
+						clearCorpse();
 					}
 
 					cooldown = maxCooldown;
