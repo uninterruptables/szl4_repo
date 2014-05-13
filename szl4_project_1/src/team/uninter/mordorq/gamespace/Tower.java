@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import team.uninter.mordorq.gamespace.Tower.Missile.MissileState;
 import team.uninter.mordorq.utils.GameConstants;
 
@@ -15,7 +13,6 @@ import team.uninter.mordorq.utils.GameConstants;
 abstract public class Tower extends InjectionTarget
 		implements TargetSubscriber, Controlable {
 
-	private static final Logger logger = Logger.getLogger(Tower.class);
 	protected int radius;
 	protected Missile missile;
 	protected FogStatus fogStatus = null;
@@ -77,7 +74,6 @@ abstract public class Tower extends InjectionTarget
 	}
 
 	public void fire(EnemyTroop enemy) {
-		logger.debug("in Tower.fire(enemy) for " + this.toString() + ": " + enemy.toString() + " was targeted");
 		missile.setPosition(getX(), getY());
 		missile.setTarget(enemy);
 	}
@@ -242,10 +238,8 @@ abstract public class Tower extends InjectionTarget
 
 		@Override
 		public final void controlIt() {
-			logger.debug("in Missile.controlIt");
 			if (cooldown > 0) {
 				cooldown--;
-				logger.debug("in Missile.controlIt: " + this.toString() + " has " + cooldown + " ticks left");
 				if (cooldown <= 0)
 					state = MissileState.FIRE_READY;
 			}
@@ -253,12 +247,10 @@ abstract public class Tower extends InjectionTarget
 				moveAhead();
 				if (inRange()) {
 					target.interactWith(this);
-					logger.debug("in Missile.controlIt: " + this.toString() + " interacts with " + target.toString());
 					this.set(maxCooldown);
 					this.set(MissileState.DORMANT);
 				}
 			}
-			logger.debug("in Missile.controlIt: " + this.toString() + " was set to " + this.state.toString());
 		}
 
 		protected boolean inRange() {
@@ -306,7 +298,6 @@ abstract public class Tower extends InjectionTarget
 		}
 
 		protected final void moveAhead() {
-			logger.debug("in Missile.moveAhead: " + this.toString() + " was at ( " + super.x + "," + super.y + " )");
 			setTargetPosition(target.getX() + GameConstants.GRID_SIZE / 2, target.getY() + GameConstants.GRID_SIZE / 2);
 			int xVector = targetX - getX();
 			int yVector = targetY - getY();
@@ -319,19 +310,16 @@ abstract public class Tower extends InjectionTarget
 
 			this.x += deltaX;
 			this.y += deltaY;
-			logger.debug("in Missile.moveAhead: " + this.toString() + " ended up at ( " + super.x + "," + super.y + " )");
 		}
 
 		public final void setPosition(int x, int y) {
 			this.setX(x);
 			this.setY(y);
-			logger.debug("in Missile.setPosition: " + this.toString() + " was set to ( " + super.x + "," + super.y + " )");
 		}
 
 		public final void setTargetPosition(int x, int y) {
 			this.targetX = x;
 			this.targetY = y;
-			logger.debug("in Missile.setTargetPosition: target " + this.target.toString() + " was set to ( " + targetX + "," + targetY + " )");
 		}
 
 		@Override
@@ -358,7 +346,6 @@ abstract public class Tower extends InjectionTarget
 		@Override
 		public void drawObject(Graphics g) {
 			super.drawObject(g);
-			logger.debug(" missile " + this.toString() + " was drawn");
 		}
 
 		/**

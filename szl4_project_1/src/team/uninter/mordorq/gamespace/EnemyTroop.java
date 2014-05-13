@@ -3,8 +3,6 @@ package team.uninter.mordorq.gamespace;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import team.uninter.mordorq.gamespace.Tower.Missile;
 import team.uninter.mordorq.utils.GameConstants;
 import team.uninter.mordorq.utils.PathFinder;
@@ -24,7 +22,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	 * battle, how many mana (reward) will go to the player.
 	 * 
 	 */
-	private static final Logger logger = Logger.getLogger(EnemyTroop.class);
 	protected static int speciesCooldown;
 	protected static int rewardMana;
 
@@ -80,7 +77,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	public final void controlIt() {
 
 		if (!(currentGrid == null)) {
-			logger.debug(" at ( " + this.x + "," + this.y + " ) was ET of " + this.toString());
 			if (cooldown > 0) {
 				cooldown--;
 				if (cooldown <= 0) {
@@ -117,9 +113,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 				}
 			}
 			statusModifiers.removeAll(removeable);
-		}
-		else {
-			logger.debug(" in " + this.toString() + " current grid was null");
 		}
 	}
 
@@ -158,13 +151,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 		return this.currentGrid;
 	}
 
-	/*
-	 * This class used to check if a troop have more health than 0. If
-	 * not....the troop is not active more, means the trrop is dead.
-	 * (non-Javadoc)
-	 * 
-	 * @see team.uninter.mordorq.gamespace.Controlable#isActive()
-	 */
 	@Override
 	public final boolean isActive() {
 		return health > 0;
@@ -172,19 +158,16 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 
 	@Override
 	public final void interactWith(EnemyTroop troop) {
-		logger.debug(" in EnemyTroop.interactWith");
 	}
 
 	@Override
 	public final void interactWith(Missile missile) {
 		speciesInteractWith(missile);
-		logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was damaged by " + missile.toString());
 		if (health <= 0 && currentGrid != null) {
 			currentGrid.remove();
 		}
 		if (Math.random() * 1000 - 2 <= 0) {
 			split(currentGrid);
-			logger.debug(" in EnemyTroop.interactWith(missile) " + this.toString() + " was split");
 		}
 	}
 
@@ -204,7 +187,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 			int h;
 			this.setHealth((h = this.getHealth() / 2));
 			grid.notifyAllWith(createClone(h));
-			logger.debug(" in EnemyTroop.split(grid) " + grid.toString() + " was notified by" + this.toString());
 			return true;
 		}
 		for (Neighbour n : Neighbour.values()) {
@@ -212,7 +194,6 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 				return true;
 			}
 		}
-		logger.debug(" in EnemyTroop.split(grid) split failed");
 		return false;
 	}
 
