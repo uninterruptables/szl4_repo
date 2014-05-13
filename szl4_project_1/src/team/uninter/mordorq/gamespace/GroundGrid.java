@@ -20,10 +20,10 @@ public class GroundGrid extends TerrainGrid {
 	private boolean available = true;
 	private Tower tower;
 
-//	static {
-//		tryLoad(new File("resources/images/groundgrid_16p.png"));
-//	}
-	
+	// static {
+	// tryLoad(new File("resources/images/groundgrid_16p.png"));
+	// }
+
 	/**
 	 * Contructor with position parameters
 	 * 
@@ -96,10 +96,10 @@ public class GroundGrid extends TerrainGrid {
 	 */
 	@Override
 	public boolean isAvailableFor(Rune rune) {
-		if(tower != null){
+		if (tower != null) {
 			return tower.canInject(rune);
 		}
-		else{
+		else {
 			return false;
 		}
 	}
@@ -107,12 +107,12 @@ public class GroundGrid extends TerrainGrid {
 	/**
 	 * Paints this component and all the components referenced by it.
 	 * 
-	 * @param g the <code>Graphics</code> instance responsible for drawings
-	 * 		     in the Java Graphics FrameWork
+	 * @param g
+	 *            the <code>Graphics</code> instance responsible for drawings in
+	 *            the Java Graphics FrameWork
 	 */
 	@Override
-	public void drawGrid(Graphics g) {
-		this.drawObject(g);
+	public void drawContent(Graphics g) {
 		if (tower != null)
 			this.tower.drawObject(g);
 	}

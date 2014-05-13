@@ -14,7 +14,7 @@ public class GameConstants {
 	public static int MOUNTAIN_UTILITY = 1000;
 
 	// tower and missile constatns
-	public static int MISSILE_VELOCITY = 1;
+	public static int MISSILE_VELOCITY = 5;
 	public static int MAX_TOWER_RADIUS = 300;
 	public static int MIN_MISSILE_COOLDOWN = 30;
 
