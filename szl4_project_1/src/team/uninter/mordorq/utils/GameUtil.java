@@ -8,7 +8,9 @@ public class GameUtil {
 
 	public static TerrainGrid getGridByXY(List<TerrainGrid> grids, int x, int y){
 		for(TerrainGrid g : grids){
-			if(g.getX() == x && g.getY() == y){
+			int xInteger = (x - x % GameConstants.GRID_SIZE);
+			int yInteger = (y - y % GameConstants.GRID_SIZE);
+			if(g.getX() == xInteger && g.getY() == yInteger){
 				return g;
 			}
 		}
