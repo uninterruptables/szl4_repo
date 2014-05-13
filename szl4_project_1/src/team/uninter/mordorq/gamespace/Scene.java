@@ -180,8 +180,6 @@ public class Scene extends JPanel {
 	public void pause() {
 		timer.cancel();
 		timer = null;
-		// logger.debug("in Scene.pause timer was set to " + timer == null ?
-		// null : timer.toString());
 	}
 
 	/**
@@ -402,6 +400,12 @@ public class Scene extends JPanel {
 
 		SceneMouseListener(Scene owner) {
 			this.owner = owner;
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			owner.activeObject = null;
+			owner.repaint();
 		}
 
 		/**
