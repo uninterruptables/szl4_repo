@@ -1,8 +1,14 @@
 package team.uninter.mordorq.gamespace;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.log4j.Logger;
+
+import team.uninter.mordorq.gamespace.Casted.ImageColor;
 
 @SuppressWarnings("serial")
 public abstract class Magic extends Casted {
@@ -19,11 +25,17 @@ public abstract class Magic extends Casted {
 	protected Magic() {
 		super();
 		effects = new ArrayList<StatusModifier>();
+		avalImages = new HashMap<ImageColor, Image>();
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/magic.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/magic.png"));
 	}
 
 	protected Magic(int x, int y) {
 		super(x, y);
 		effects = new ArrayList<StatusModifier>();
+		avalImages = new HashMap<ImageColor, Image>();
+		tryLoad(avalImages, ImageColor.RED, new File("resources/images/magic.png"));
+		tryLoad(avalImages, ImageColor.NORMAL, new File("resources/images/magic.png"));
 	}
 
 	public ArrayList<StatusModifier> getStatusModifiers() {
@@ -39,6 +51,11 @@ public abstract class Magic extends Casted {
 	public final boolean canCastOn(TerrainGrid grid) {
 		logger.debug("can cast " + this.toString() + " on " + grid.toString());
 		return true;
+	}
+	
+	@Override
+	public void drawObject(Graphics g) {
+		g.drawImage(avalImages.get(color), super.x, super.y, 50, 20, null);
 	}
 
 }
