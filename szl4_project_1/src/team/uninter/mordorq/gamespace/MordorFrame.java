@@ -89,7 +89,7 @@ public class MordorFrame extends JFrame {
 	private JMenu gameMenu;
 	private JMenuItem startMenuItem;
 	private JMenuItem pauseMenuItem;
-	private JMenuItem restartMenuItem;
+//	private JMenuItem restartMenuItem;
 	private JMenuItem exitMenuItem;
 
 	private JButton basicTower;
@@ -343,18 +343,18 @@ public class MordorFrame extends JFrame {
 		gameMenu = new JMenu("Game");
 		startMenuItem = new JMenuItem("Start Game");
 		pauseMenuItem = new JMenuItem("Pause Game");
-		restartMenuItem = new JMenuItem("Restart Game");
+//		restartMenuItem = new JMenuItem("Restart Game");
 		exitMenuItem = new JMenuItem("Exit");
 
 		menubar.add(gameMenu);
 		gameMenu.add(startMenuItem);
 		gameMenu.add(pauseMenuItem);
-		gameMenu.add(restartMenuItem);
+//		gameMenu.add(restartMenuItem);
 		gameMenu.addSeparator();
 		gameMenu.add(exitMenuItem);
 
 		pauseMenuItem.setEnabled(false);
-		restartMenuItem.setEnabled(false);
+//		restartMenuItem.setEnabled(false);
 
 		super.setJMenuBar(menubar);
 
@@ -874,7 +874,7 @@ public class MordorFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				startMenuItem.setEnabled(false);
 				pauseMenuItem.setEnabled(true);
-				restartMenuItem.setEnabled(true);
+//				restartMenuItem.setEnabled(true);
 				scene.start();
 			}
 		});
@@ -895,15 +895,20 @@ public class MordorFrame extends JFrame {
 			}
 		});
 
-		// restart game
-		restartMenuItem.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				pauseMenuItem.setText("Pause Game");
-				startMenuItem.setEnabled(false);
-				reset();
-			}
-		});
+//		// restart game
+//		restartMenuItem.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				pauseMenuItem.setText("Pause Game");
+//				startMenuItem.setEnabled(false);
+//				try {
+//					reset();
+//				} catch (IOException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//			}
+//		});
 
 		// exit game
 		exitMenuItem.addActionListener(new ActionListener() {
@@ -995,26 +1000,29 @@ public class MordorFrame extends JFrame {
 
 	/**
 	 * Resets the game space for another game!
+	 * @throws IOException 
 	 * */
-	public void reset() {
-		// TODO: scene = new Scene.Builder()...build()
-		// contentPane .add(scene)
-		int input = JOptionPane.showOptionDialog(this, "Are you sure?", "Restart Game", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-
-		if (input == JOptionPane.OK_OPTION)
-		{
-			// TODO: load default state
-			if (scene.timer != null) {
-				scene.pause();
-			}
-			scene.start();
-
-			startMenuItem.setEnabled(false);
-			pauseMenuItem.setText("Pause Game");
-			pauseMenuItem.setEnabled(true);
-			restartMenuItem.setEnabled(true);
-		}
-	}
+//	public void reset() throws IOException {
+//		// TODO: scene = new Scene.Builder()...build()
+//		// contentPane .add(scene)
+//		int input = JOptionPane.showOptionDialog(this, "Are you sure?", "Restart Game", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//
+//		if (input == JOptionPane.OK_OPTION)
+//		{
+//			
+//			if (scene.timer != null) {
+//				scene.pause();
+//			}
+//			scene.reset();
+//			repaint();
+//			scene.start();
+//
+//			startMenuItem.setEnabled(false);
+//			pauseMenuItem.setText("Pause Game");
+//			pauseMenuItem.setEnabled(true);
+//			restartMenuItem.setEnabled(true);
+//		}
+//	}
 
 	/**
 	 * Notifies the user about the end of a round.

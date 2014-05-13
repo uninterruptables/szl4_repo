@@ -264,7 +264,7 @@ abstract public class Tower extends InjectionTarget
 		protected boolean inRange() {
 			int xDistance = Math.abs(targetX - getX());
 			int yDistance = Math.abs(targetY - getY());
-			int distance = (int) Math.sqrt(xDistance ^ 2 + yDistance ^ 2);
+			int distance = (int) Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 
 			if (distance <= GameConstants.MISSILE_VELOCITY)
 				return true;
