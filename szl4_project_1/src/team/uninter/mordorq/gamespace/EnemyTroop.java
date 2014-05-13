@@ -109,6 +109,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 				else {
 					if (sm instanceof PoisonStatus && sm.getDuration() % GameConstants.POISONOUS_STATUS_TIME_INTERVAL == 0) {
 						((PoisonStatus) sm).affect(this);
+						clearCorpse();
 					}
 				}
 			}
@@ -163,11 +164,20 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	@Override
 	public final void interactWith(Missile missile) {
 		speciesInteractWith(missile);
+
+		clearCorpse();
+
+		if (isActive() && (Math.random() * 1000 - 2 <= 0)) {
+			split(currentGrid);
+		}
+	}
+
+	/**
+	 * Removes the corpse of this unit if necessary.
+	 * */
+	protected void clearCorpse() {
 		if (health <= 0 && currentGrid != null) {
 			currentGrid.remove();
-		}
-		if (Math.random() * 1000 - 2 <= 0) {
-			split(currentGrid);
 		}
 	}
 
