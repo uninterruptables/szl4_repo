@@ -55,15 +55,13 @@ public abstract class GameObject extends JPanel {
 
 	public void drawObject(Graphics g) {
 		g.drawImage(image, x, y, 16, 16, null);
-		logger.debug("drawObject was called for " + this.getClass());
 	}
-
 
 	protected static final void tryLoad(File imageFile) {
 		try {
 			image = ImageIO.read(imageFile);
 		} catch (Exception e) {
-			logger.fatal("image load failed for "+imageFile.toString());
+			logger.fatal("image load failed for " + imageFile.toString());
 		}
 	}
 }

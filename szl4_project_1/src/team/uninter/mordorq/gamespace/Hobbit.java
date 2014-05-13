@@ -12,7 +12,7 @@ public class Hobbit extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.HOBBIT_REWARD;
-		tryLoad(new File("resources/images/hobbit5_16p.png"));
+		tryLoad(new File("resources/images/hobbit_16p.png"));
 	}
 
 	/**

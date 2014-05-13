@@ -2,11 +2,8 @@ package team.uninter.mordorq.gamespace;
 
 import java.awt.Graphics;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 
 /**
  * Responsible to ensure a place for enemy troops, traps and barricdes
@@ -30,9 +27,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	private final List<TargetSubscriber> subscribers;
 
 	static {
-		tryLoad(new File("resources/images/roadgrid_16p.jpg"));
+		tryLoad(new File("resources/images/roadgrid_16p.png"));
 	}
-	
+
 	/**
 	 * Contructor with position parameters
 	 * 
@@ -127,8 +124,9 @@ public class RoadGrid extends TerrainGrid implements TargetPublisher {
 	/**
 	 * Paints this component and all the components referenced by it.
 	 * 
-	 * @param g the <code>Graphics</code> instance responsible for drawings
-	 * 		     in the Java Graphics FrameWork
+	 * @param g
+	 *            the <code>Graphics</code> instance responsible for drawings in
+	 *            the Java Graphics FrameWork
 	 */
 	@Override
 	public void drawGrid(Graphics g) {

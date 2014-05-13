@@ -12,7 +12,7 @@ public class Elf extends EnemyTroop {
 
 	static {
 		rewardMana = GameConstants.ELF_REWARD;
-		tryLoad(new File("resources/images/elf15_16p.png"));
+		tryLoad(new File("resources/images/elf_16p.png"));
 	}
 
 	/**
