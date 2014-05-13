@@ -210,9 +210,12 @@ public class Scene extends JPanel {
 	 * */
 	public void cast(Magic magic) {
 		if (enemies != null) {
-			for (Controlable enemy : enemies)
-				for (StatusModifier statMod : magic.getStatusModifiers())
+			for (Controlable enemy : enemies) {
+				for (StatusModifier statMod : magic.getStatusModifiers()) {
 					statMod.apply((EnemyTroop) enemy);
+					((EnemyTroop) enemy).clearCorpse();
+				}
+			}
 		}
 	}
 

@@ -176,7 +176,7 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	/**
 	 * Removes the corpse of this unit if necessary.
 	 * */
-	protected void clearCorpse() {
+	public void clearCorpse() {
 		if (health <= 0 && currentGrid != null) {
 			currentGrid.remove();
 		}
