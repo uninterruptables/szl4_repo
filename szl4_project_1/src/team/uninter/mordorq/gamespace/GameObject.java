@@ -58,10 +58,10 @@ public abstract class GameObject extends JPanel {
 		g.drawImage(image, x, y, 16, 16, null);
 	}
 
-	// @Override
-	// public String toString() {
-	// return GameUtil.slicePackagesFrom(super.toString());
-	// }
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName();
+	}
 
 	// protected static final void tryLoad(File imageFile) {
 	protected final void tryLoad(File imageFile) {

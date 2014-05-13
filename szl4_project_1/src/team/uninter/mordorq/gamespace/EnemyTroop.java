@@ -80,7 +80,8 @@ abstract public class EnemyTroop extends DamageTaker implements Controlable {
 	public final void controlIt() {
 
 		logger.debug(" at ( " + this.x + "," + this.y + " ) was ET of " + this.toString());
-
+		logger.debug(" " + this.toString() + " at " + currentGrid.toString() + " at ( " + currentGrid.getX() + "," + currentGrid.getY() + " )");
+		logger.debug(" and on the grid: " + (currentGrid.getVulnerable() != null));
 		if (cooldown > 0) {
 			cooldown--;
 			if (cooldown <= 0) {
