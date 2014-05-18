@@ -56,8 +56,8 @@ public class GameConstants {
 
 	// enemy constants
 	public static int ELF_HEALTH = 20;
-	public static int HUMAN_HEALTH = 30;
-	public static int DWARF_HEALTH = 40;
+	public static int HUMAN_HEALTH = 35;
+	public static int DWARF_HEALTH = 50;
 	public static int HOBBIT_HEALTH = 25;
 
 	public static int ELF_DAMAGE = 7;
@@ -72,18 +72,18 @@ public class GameConstants {
 
 	public static int ELF_COOLDOWN = 13;
 	public static int HUMAN_COOLDOWN = 16;
-	public static int DWARF_COOLDOWN = 21;
+	public static int DWARF_COOLDOWN = 23;
 	public static int HOBBIT_COOLDOWN = 18;
 
-	public static int ARAGORN_HEALTH = 1000;
+	public static int ARAGORN_HEALTH = 2000;
 	public static int ARAGORN_DAMAGE = 100;
 	public static int ARAGORN_REWARD = 100;
 
-	public static int GIMLI_HEALTH = 1200;
+	public static int GIMLI_HEALTH = 1500;
 	public static int GIMLI_DAMAGE = 100;
 	public static int GIMLI_REWARD = 100;
 
-	public static int LEGOLAS_HEALTH = 7000;
+	public static int LEGOLAS_HEALTH = 580;
 	public static int LEGOLAS_DAMAGE = 100;
 	public static int LEGOLAS_REWARD = 100;
 
